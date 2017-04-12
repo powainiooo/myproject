@@ -135,7 +135,7 @@ textarea {
 @media screen and (max-width: 767px) {
     .android select {
         -webkit-appearance: none;
-        background: url(../images/common/arrow-black24.png) no-repeat 95% center;
+        background: url(../images/arrow-black24.png) no-repeat 95% center;
         -moz-background-size: 12px 7px;
         -o-background-size: 12px 7px;
         -webkit-background-size: 12px 7px;
@@ -326,82 +326,82 @@ a {
     font-size: 12px;
 }
 .hgroup.titCollection .secTit:after {
-    background-image: url(../images/common/line-dotted-red01.png);
+    background-image: url(../images/line-dotted-red01.png);
 }
 .hgroup.titCollection .secTit .ti:before {
     width: 32px;
     height: 30px;
-    background-image: url(../images/common/icon-butterfly.png);
+    background-image: url(../images/icon-butterfly.png);
     left: -47px;
 }
 .hgroup.titCollection .secTit .ti:after {
     width: 33px;
     height: 29px;
-    background-image: url(../images/common/icon-bird.png);
+    background-image: url(../images/icon-bird.png);
     right: -50px;
 }
 .hgroup.titPickup .secTit:after {
-    background-image: url(../images/common/line-dotted-blue01.png);
+    background-image: url(../images/line-dotted-blue01.png);
 }
 .hgroup.titPickup .secTit .ti:before {
     width: 28px;
     height: 35px;
-    background-image: url(../images/common/icon-grape.png);
+    background-image: url(../images/icon-grape.png);
     left: -43px;
     top: 3px;
 }
 .hgroup.titPickup .secTit .ti:after {
     width: 32px;
     height: 30px;
-    background-image: url(../images/common/icon-apple.png);
+    background-image: url(../images/icon-apple.png);
     right: -45px;
     top: 7px;
 }
 .hgroup.titBrand .secTit:after {
-    background-image: url(../images/common/line-dotted-red01.png);
+    background-image: url(../images/line-dotted-red01.png);
 }
 .hgroup.titBrand .secTit .ti:before {
     width: 65px;
     height: 38px;
-    background-image: url(../images/common/icon-car.png);
+    background-image: url(../images/icon-car.png);
     left: -80px;
     top: 5px;
 }
 .hgroup.titBrand .secTit .ti:after {
     width: 51px;
     height: 35px;
-    background-image: url(../images/common/icon-helicopter.png);
+    background-image: url(../images/icon-helicopter.png);
     right: -63px;
     top: 5px;
 }
 .hgroup.titFair .secTit:after {
-    background-image: url(../images/common/line-dotted-green01.png);
+    background-image: url(../images/line-dotted-green01.png);
 }
 .hgroup.titFair .secTit .ti:before {
     width: 23px;
     height: 29px;
-    background-image: url(../images/common/icon-strawberry.png);
+    background-image: url(../images/icon-strawberry.png);
     left: -50px;
 }
 .hgroup.titFair .secTit .ti:after {
     width: 31px;
     height: 28px;
-    background-image: url(../images/common/icon-cherry.png);
+    background-image: url(../images/icon-cherry.png);
     right: -52px;
 }
 .hgroup.titFaq .secTit:after {
-    background-image: url(../images/common/line-dotted-orange01.png);
+    background-image: url(../images/line-dotted-orange01.png);
 }
 .hgroup.titFaq .secTit .ti:before, .hgroup.titFaq .secTit .ti:after {
     width: 32px;
     height: 32px;
 }
 .hgroup.titFaq .secTit .ti:before {
-    background-image: url(../images/faq/icon-doughnut01.png);
+    background-image: url(../images/icon-doughnut01.png);
     left: -41px;
 }
 .hgroup.titFaq .secTit .ti:after {
-    background-image: url(../images/faq/icon-doughnut02.png);
+    background-image: url(../images/icon-doughnut02.png);
     right: -41px;
 }
 
@@ -485,7 +485,7 @@ a {
     }
 }
 .bgGray {
-    background-image: url(../images/common/bg-dotted-gray.jpg);
+    background-image: url(../images/bg-dotted-gray.jpg);
     background-repeat: repeat;
 }
 
@@ -524,13 +524,13 @@ a {
     margin-left: -47px;
 }
 .aboutList li .imgArea div.clothes {
-    background-image: url(../images/top/move-clothes.png);
+    background-image: url(../images/move-clothes.png);
 }
 .aboutList li .imgArea div.shoes {
-    background-image: url(../images/top/move-shoes.png);
+    background-image: url(../images/move-shoes.png);
 }
 .aboutList li .imgArea div.gift {
-    background-image: url(../images/top/move-gift.png);
+    background-image: url(../images/move-gift.png);
 }
 .aboutList li .txtArea {
     padding: 16px 0;
@@ -585,7 +585,7 @@ a {
 .brand .secBrand .cloudBg {
     width: 100%;
     height: 406px;
-    background-image: url(../images/top/bg-cloud.png);
+    background-image: url(../images/bg-cloud.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -598,7 +598,7 @@ a {
     .brand .secBrand .cloudBg {
         height: 276px;
         background-size: 767px auto;
-        background-image: url(../images/top/bg-cloud_sp.png) !important;
+        background-image: url(../images/bg-cloud_sp.png) !important;
         background-position: center top;
     }
 }
@@ -617,7 +617,7 @@ a {
 }
 .faqGroup .faqArea .faqBox > dt {
     position: relative;
-    background-image: url(../images/faq/arrow-faq-down.png);
+    background-image: url(../images/arrow-faq-down.png);
     background-position: left 24px;
     background-repeat: no-repeat;
     background-size: 14px  auto;
@@ -636,7 +636,7 @@ a {
 }
 .faqGroup .faqArea .faqBox > dt.active {
     color: #f87e34;
-    background-image: url(../images/faq/arrow-faq-up.png);
+    background-image: url(../images/arrow-faq-up.png);
 }
 .faqGroup .faqArea .faqBox > dd {
     padding: 0 0 20px 40px;
@@ -807,10 +807,10 @@ a {
     padding: 6px 19px 5px;
 }
 .pagingArea .pageNav li.prevPage a {
-    background-image: url(../images/shop/arrow-pager-prev.png);
+    background-image: url(../images/arrow-pager-prev.png);
 }
 .pagingArea .pageNav li.nextPage a {
-    background-image: url(../images/shop/arrow-pager-next.png);
+    background-image: url(../images/arrow-pager-next.png);
 }
 @media screen and (max-width: 767px) {
     .pagingArea {
@@ -853,7 +853,7 @@ a {
     text-align: center;
 }
 .tabs li a span {
-    background: url(../images/common/arrow-white5.png) no-repeat 0 center;
+    background: url(../images/arrow-white5.png) no-repeat 0 center;
     display: inline-block;
     padding-left: 11px;
 }
@@ -1013,7 +1013,7 @@ input[type="checkbox"] {
 .shop .selectList .select2-selection__arrow {
     height: 35px !important;
     width: 48px !important;
-    background: url(../images/common/arrow-black24.png) no-repeat center center;
+    background: url(../images/arrow-black24.png) no-repeat center center;
     background-size: 10px auto;
 }
 .inquiry .selectList .select2-selection__arrow b,
@@ -1046,7 +1046,7 @@ input[type="checkbox"] {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    background-image: url(../images/common/icon-error.png);
+    background-image: url(../images/icon-error.png);
     position: absolute;
     top: 0;
     left: 0;
@@ -1220,7 +1220,7 @@ input[type="checkbox"] {
 }
 
 .fancybox-close {
-    background: url(../images/common/btn-fancybox-close.png) no-repeat center center;
+    background: url(../images/btn-fancybox-close.png) no-repeat center center;
     position: absolute;
     top: 16px;
     right: 16px;
@@ -1514,7 +1514,7 @@ input[type="checkbox"] {
     margin-right: 0;
 }
 
-/* Vertical thumbnails 
+/* Vertical thumbnails
 ----------------------*/
 .sp-left-thumbnails .sp-thumbnail-container,
 .sp-right-thumbnails .sp-thumbnail-container {
@@ -2997,13 +2997,13 @@ header .btnArea > li#lanNav > p {
     -o-transition: opacity 0.1s;
     -webkit-transition: opacity 0.1s;
     transition: opacity 0.1s;
-    background: #f5f5f5 url(../images/common/arrow-black10.png) no-repeat center 78px;
+    background: #f5f5f5 url(../images/arrow-black10.png) no-repeat center 78px;
     cursor: pointer;
     height: 100%;
     padding-top: 33px;
 }
 header .btnArea > li#lanNav > p.active {
-    background-image: url(../images/common/arrow-black10-active.png);
+    background-image: url(../images/arrow-black10-active.png);
 }
 .no-touch header .btnArea > li#lanNav > p:hover {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
@@ -3099,7 +3099,7 @@ footer #pagetop a {
     -webkit-transition: padding 0.2s;
     -webkit-transition-delay: 0.2s;
     transition: padding 0.2s 0.2s;
-    background: url(../images/common/pagetop-plane.png) no-repeat center 0;
+    background: url(../images/pagetop-plane.png) no-repeat center 0;
     display: block;
     height: 0;
     overflow: hidden;
@@ -3107,7 +3107,7 @@ footer #pagetop a {
     width: 100%;
 }
 footer #pagetop a:before {
-    background: url(../images/common/pagetop-txt.png) no-repeat center bottom;
+    background: url(../images/pagetop-txt.png) no-repeat center bottom;
     content: '';
     display: block;
     height: 100%;
@@ -3267,7 +3267,7 @@ footer #pagetop.stop {
         border-bottom: 1px solid #eee;
     }
     #header .btnArea > li#lanNav > p {
-        background-image: url(../images/common/arrow-black24.png);
+        background-image: url(../images/arrow-black24.png);
         background-position: 37px center;
         -moz-background-size: 12px 7px;
         -o-background-size: 12px 7px;
@@ -3276,7 +3276,7 @@ footer #pagetop.stop {
         height: 55px;
     }
     #header .btnArea > li#lanNav > p.active {
-        background-image: url(../images/common/arrow-black24-active.png);
+        background-image: url(../images/arrow-black24-active.png);
     }
     #header .btnArea > li#lanNav .lanList {
         padding: 0;
@@ -3293,7 +3293,7 @@ footer #pagetop.stop {
         padding: 17px 9.375% 17px 65px;
     }
     #header #navBtn {
-        background: url(../images/common/bg-nav_sp.png) no-repeat center center;
+        background: url(../images/bg-nav_sp.png) no-repeat center center;
         -moz-background-size: 61px auto;
         -o-background-size: 61px auto;
         -webkit-background-size: 61px auto;
@@ -3307,7 +3307,7 @@ footer #pagetop.stop {
     }
     #header #navBtn:before {
         content: '';
-        background: url(../images/common/btn-nav_sp.png) no-repeat center center;
+        background: url(../images/btn-nav_sp.png) no-repeat center center;
         -moz-background-size: 61px auto;
         -o-background-size: 61px auto;
         -webkit-background-size: 61px auto;
@@ -3316,7 +3316,7 @@ footer #pagetop.stop {
         height: 78px;
     }
     #header #navBtn.active:before {
-        background-image: url(../images/common/btn-nav-close_sp.png);
+        background-image: url(../images/btn-nav-close_sp.png);
     }
 
     footer {
@@ -3372,7 +3372,7 @@ footer #pagetop.stop {
         -o-transition: none;
         -webkit-transition: none;
         transition: none;
-        background-image: url(../images/common/pagetop_sp.png);
+        background-image: url(../images/pagetop_sp.png);
         background-position: center center;
         -moz-background-size: 52px 75px;
         -o-background-size: 52px 75px;
@@ -3401,11 +3401,11 @@ footer #pagetop.stop {
     background-position: center center;
 }
 .home .secMv .mvImg {
-    background-image: url(../images/top/bg-mv.jpg);
+    background-image: url(../images/bg-mv.jpg);
     min-height: 648px;
 }
 .home .secMv .mvfixed {
-    background-image: url(../images/top/bg-top-mv-bottom01.jpg);
+    background-image: url(../images/bg-top-mv-bottom01.jpg);
     background-position: center center;
     height: 380px;
     position: relative;
@@ -3425,16 +3425,16 @@ footer #pagetop.stop {
 }
 .home .secMv .mvfixed .bg:before {
     top: 0;
-    background-image: url(../images/top/line-mv-top.png);
+    background-image: url(../images/line-mv-top.png);
 }
 .home .secMv .mvfixed .bg:after {
     bottom: 0;
-    background-image: url(../images/top/line-mv-bottom.png);
+    background-image: url(../images/line-mv-bottom.png);
 }
 .home .secMv .mvfixed .bg .hgroup {
     width: 373px;
     height: 322px;
-    background: url(../images/top/bg-top-mv-bottom02.png) no-repeat center center;
+    background: url(../images/bg-top-mv-bottom02.png) no-repeat center center;
     position: absolute;
     top: -76px;
     left: 50%;
@@ -3448,7 +3448,7 @@ footer #pagetop.stop {
     margin: 48px 0 7px;
 }
 .home .secMv .mvfixed .bg .hgroup .secTit:after {
-    background-image: url(../images/common/line-dotted-white01.png);
+    background-image: url(../images/line-dotted-white01.png);
 }
 .home .secMv .mvfixed .bg .txt {
     text-align: center;
@@ -3512,12 +3512,12 @@ footer #pagetop.stop {
     height: 80px;
 }
 .home .secCollection .slideInner .sp-arrows .sp-arrow.sp-previous-arrow {
-    background: url(../images/top/arrow-slide-prev.png) no-repeat center center;
+    background: url(../images/arrow-slide-prev.png) no-repeat center center;
     left: 50%;
     margin-left: -150px;
 }
 .home .secCollection .slideInner .sp-arrows .sp-arrow.sp-next-arrow {
-    background: url(../images/top/arrow-slide-next.png) no-repeat center center;
+    background: url(../images/arrow-slide-next.png) no-repeat center center;
     right: 50%;
     margin-right: -150px;
 }
@@ -3566,18 +3566,18 @@ footer #pagetop.stop {
     margin-bottom: 40px;
 }
 .home .secShop .hgroup .secTit:after {
-    background-image: url(../images/common/line-dotted-orange01.png);
+    background-image: url(../images/line-dotted-orange01.png);
 }
 .home .secShop .hgroup .secTit .ti:before {
     width: 28px;
     height: 30px;
-    background-image: url(../images/common/icon-doughnut.png);
+    background-image: url(../images/icon-doughnut.png);
     left: -47px;
 }
 .home .secShop .hgroup .secTit .ti:after {
     width: 29px;
     height: 29px;
-    background-image: url(../images/common/icon-biscuit.png);
+    background-image: url(../images/icon-biscuit.png);
     right: -47px;
 }
 .home .secShop .detail {
@@ -3594,7 +3594,7 @@ footer #pagetop.stop {
     width: 46%;
     height: 0;
     padding-top: 25%;
-    background-image: url(../images/top/img-shop.jpg);
+    background-image: url(../images/img-shop.jpg);
     background-size: cover;
     background-position: center center;
 }
@@ -3626,7 +3626,7 @@ footer #pagetop.stop {
 .home .secShop .detail .txtArea .btn.org span {
     display: inline-block;
     padding-left: 35px;
-    background-image: url(../images/common/icon-cart.png);
+    background-image: url(../images/icon-cart.png);
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 25px auto;
@@ -3645,7 +3645,7 @@ footer #pagetop.stop {
     padding-top: 17%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url(../fair/early-summer/img/top_bnr/bnr-fair01-earlysummerfair.gif);
+    background-image: url(../images/bnr-fair01-earlysummerfair.gif);
     background-size: contain;
     margin-top:20px;
 }
@@ -3761,7 +3761,7 @@ footer #pagetop.stop {
     margin-top: 20px;
 }
 .home .secCharacter {
-    background-image: url(../images/top/bg-sky.jpg);
+    background-image: url(../images/bg-sky.jpg);
     background-size: cover;
     padding-bottom: 0 !important;
 }
@@ -3772,19 +3772,19 @@ footer #pagetop.stop {
     margin-bottom: 40px;
 }
 .home .secCharacter .inner .hgroup .secTit:after {
-    background-image: url(../images/common/line-dotted-blue01.png);
+    background-image: url(../images/line-dotted-blue01.png);
 }
 .home .secCharacter .inner .hgroup .secTit .ti:before {
     width: 33px;
     height: 32px;
-    background-image: url(../images/common/icon-san.png);
+    background-image: url(../images/icon-san.png);
     left: -44px;
     top: 10px;
 }
 .home .secCharacter .inner .hgroup .secTit .ti:after {
     width: 47px;
     height: 30px;
-    background-image: url(../images/common/icon-tree.png);
+    background-image: url(../images/icon-tree.png);
     right: -57px;
     top: 10px;
 }
@@ -3867,12 +3867,12 @@ footer #pagetop.stop {
 }
 .home .secCharacter .inner .character ul li.beans .chara {
     height: 250px;
-    background-image: url(../images/top/bg-beans.png);
+    background-image: url(../images/bg-beans.png);
     background-repeat: no-repeat;
     top: 10px;
 }
 .home .secCharacter .inner .character ul li.cabbit .chara {
-    background-image: url(../images/top/bg-cabbit.png);
+    background-image: url(../images/bg-cabbit.png);
     background-repeat: no-repeat;
     height: 260px;
 }
@@ -3911,168 +3911,17 @@ footer #pagetop.stop {
     background: #ff6e79;
 }
 .collection .secCollection .tabs li.baby a {
-    background-image: url(../images/collection/ico_baby.png);
+    background-image: url(../images/ico_baby.png);
 }
 .collection .secCollection .tabs li.kids {
     background: #b6dbf8;
 }
 .collection .secCollection .tabs li.kids a {
-    background-image: url(../images/collection/ico_kids.png);
+    background-image: url(../images/ico_kids.png);
 }
 .collection .secCollection .list {
     height: 0;
     position: relative;
-    /*  2016ss
-  &.list01 {
-      padding-top: 57%;
-      li {
-          &:first-child {
-              left: 0;
-              top: 0;
-          }
-          &:nth-child(2) {
-              left: 34%;
-              top: 0;
-          }
-          &:nth-child(3) {
-              bottom: 0;
-              left: 34%;
-          }
-          &:nth-child(4) {
-              bottom: 0;
-              left: 0;
-          }
-          &:last-child {
-              right: 0;
-              top: 0;
-          }
-      }
-  }
-  &.list02 {
-      padding-top: 107%;
-      li {
-          &:first-child {
-              left: 0;
-              top: 0;
-          }
-          &:nth-child(2) {
-              right: 0;
-              top: 23.36%;
-          }
-          &:nth-child(3) {
-              right: 0;
-              top: 0;
-          }
-          &:nth-child(4) {
-              bottom: 23.36%;
-              right: 0;
-          }
-          &:nth-child(5) {
-              bottom: 0;
-              left: 0;
-          }
-          &:nth-child(6) {
-              bottom: 31.77%;
-              left: 0;
-          }
-          &:nth-child(7) {
-              bottom: 0;
-              left: 34%;
-          }
-          &:last-child {
-              bottom: 0;
-              right: 0;
-          }
-      }
-  }
-  &.list03 {
-      padding-top: 116%;
-      li {
-          &:first-child {
-              right: 0;
-              top: 0;
-          }
-          &:nth-child(2) {
-              bottom: 0;
-              right: 0;
-          }
-          &:nth-child(3) {
-              left: 0;
-              top: 50.86%;
-          }
-          &:nth-child(4) {
-              left: 0;
-              top: 0;
-          }
-          &:last-child {
-              bottom: 0;
-              left: 0;
-          }
-      }
-  }
-  &.list04 {
-      padding-top: 57%;
-      li {
-          &:first-child {
-              right: 0;
-              top: 0;
-          }
-          &:nth-child(2) {
-              bottom: 0;
-              left: 34%;
-          }
-          &:nth-child(3) {
-              left: 34%;
-              top: 0;
-          }
-          &:nth-child(4) {
-              bottom: 0;
-              left: 0;
-          }
-          &:last-child {
-              left: 0;
-              top: 0;
-          }
-      }
-  }
-  &.list05 {
-      padding-top: 107%;
-      li {
-          &:first-child {
-              right: 0;
-              top: 0;
-          }
-          &:nth-child(2) {
-              left: 0;
-              top: 0;
-          }
-          &:nth-child(3) {
-              right: 0;
-              top: 23.36%;
-          }
-          &:nth-child(4) {
-              bottom: 31.77%;
-              left: 0;
-          }
-          &:nth-child(5) {
-              bottom: 23.36%;
-              right: 0;
-          }
-          &:nth-child(6) {
-              bottom: 0;
-              left: 34%;
-          }
-          &:nth-child(7) {
-              bottom: 0;
-              right: 0;
-          }
-          &:last-child {
-              bottom: 0;
-              left: 0;
-          }
-      }
-  }
-  */
 }
 .collection .secCollection .list li {
     position: absolute;
@@ -4250,7 +4099,7 @@ footer #pagetop.stop {
 }
 
 .brand #content {
-    background: url(../images/brand/bg-sky.jpg) repeat center;
+    background: url(../images/bg-sky.jpg) repeat center;
 }
 .brand .secBrand {
     padding-bottom: 374px;
@@ -4349,7 +4198,7 @@ footer #pagetop.stop {
 }
 .brand.none .secBrand .cloudBg {
     height: 250px;
-    background-image: url(../images/brand/bg-cloud.png);
+    background-image: url(../images/bg-cloud.png);
     z-index: 0;
 }
 
@@ -4368,19 +4217,19 @@ footer #pagetop.stop {
     padding-top: 77px;
 }
 .secShopList .container .hgroup.titShop .secTit:after {
-    background-image: url(../images/common/line-dotted-green01.png);
+    background-image: url(../images/line-dotted-green01.png);
 }
 .secShopList .container .hgroup.titShop .secTit .ti:before {
     width: 28px;
     height: 29px;
-    background-image: url(../images/common/icon-grapes.png);
+    background-image: url(../images/icon-grapes.png);
     left: -36px;
     top: 5px;
 }
 .secShopList .container .hgroup.titShop .secTit .ti:after {
     width: 29px;
     height: 38px;
-    background-image: url(../images/common/icon-pineapple.png);
+    background-image: url(../images/icon-pineapple.png);
     right: -41px;
     top: -1px;
 }
@@ -4599,7 +4448,7 @@ footer #pagetop.stop {
     text-align: right;
 }
 .secShopDetail .mapArea .link a {
-    background: url(../images/shop/icon-zoom.png) no-repeat 0 center;
+    background: url(../images/icon-zoom.png) no-repeat 0 center;
     -moz-background-size: 20px 20px;
     -o-background-size: 20px 20px;
     -webkit-background-size: 20px 20px;
@@ -4659,14 +4508,14 @@ footer #pagetop.stop {
     width: 39.1%;
     height: 0;
     padding-top: 4.9%;
-    background-image: url(../images/fair/txt-fait-top01.png);
+    background-image: url(../images/txt-fait-top01.png);
     margin: 3px 0 0 2.9%;
 }
 .fair .secFair .container .topArea .blueBox .txtNote {
     position: relative;
     width: 22.2%;
     padding-top: 1.3%;
-    background-image: url(../images/fair/txt-fait-top02.png);
+    background-image: url(../images/txt-fait-top02.png);
     left: 2.9%;
     margin: 10px 0 0 0;
 }
@@ -4675,7 +4524,7 @@ footer #pagetop.stop {
     width: 56%;
     height: 0;
     padding-top: 25%;
-    background-image: url(../images/fair/bg-fair-top.png);
+    background-image: url(../images/bg-fair-top.png);
     top: 0;
     right: 0;
 }
@@ -4730,7 +4579,7 @@ footer #pagetop.stop {
     height: 24px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-image: url(../images/common/icon-search.png);
+    background-image: url(../images/icon-search.png);
     background-size: contain;
     background-position: center center;
     left: 0;
@@ -4747,7 +4596,7 @@ footer #pagetop.stop {
     margin-top: 40px;
 }
 .fair .secFair .container .presentArea .presentTitArea {
-    background: url(../images/common/bg-dotted-pink.jpg) repeat;
+    background: url(../images/bg-dotted-pink.jpg) repeat;
     color: #fff;
     padding: 14px 40px 1px;
     padding-bottom: 15px;
@@ -4962,17 +4811,17 @@ footer #pagetop.stop {
     margin-bottom: 34px;
 }
 .inquiry .secInquiry .hgroup .secTit:after {
-    background-image: url(../images/common/line-dotted-blue01.png);
+    background-image: url(../images/line-dotted-blue01.png);
 }
 .inquiry .secInquiry .hgroup .ti:before {
-    background-image: url(../images/inquiry/icon-balloon.png);
+    background-image: url(../images/icon-balloon.png);
     height: 44px;
     left: -46px;
     top: -3px;
     width: 29px;
 }
 .inquiry .secInquiry .hgroup .ti:after {
-    background-image: url(../images/inquiry/icon-flower.png);
+    background-image: url(../images/icon-flower.png);
     height: 40px;
     right: -42px;
     top: -1px;
@@ -5007,7 +4856,7 @@ footer #pagetop.stop {
     text-indent: -1em;
 }
 .inquiry .secInquiry .privacy {
-    background: url(../images/common/arrow-black-side5.png) no-repeat 0 center;
+    background: url(../images/arrow-black-side5.png) no-repeat 0 center;
     margin-top: 13px;
     padding-left: 13px;
 }
@@ -5218,7 +5067,7 @@ footer #pagetop.stop {
     position: relative;
     padding-left: 40px;
     background-repeat: no-repeat;
-    background-image: url(../images/common/icon-mail.png);
+    background-image: url(../images/icon-mail.png);
     background-position: left center;
     background-size: 26px auto;
 }
@@ -5281,7 +5130,7 @@ footer #pagetop.stop {
     .home .secMv .mvImg {
         height: 0;
         padding-top: 143.75%;
-        background-image: url(../images/top/bg-mv-sp.jpg);
+        background-image: url(../images/bg-mv-sp.jpg);
         min-height: 0;
     }
     .home .secMv .mvfixed {
@@ -5293,7 +5142,7 @@ footer #pagetop.stop {
         top: -28px;
         height: 0;
         padding-top: 68%;
-        background: url(../images/top/bg-top-mv-bottom02-sp.png) no-repeat center top;
+        background: url(../images/bg-top-mv-bottom02-sp.png) no-repeat center top;
         background-size: 100% auto;
         margin: 0 0 0 -107px !important;
     }
@@ -5413,7 +5262,7 @@ footer #pagetop.stop {
     .home .secFair .picupArea .bnr a {
         height: 0;
         padding-top: 35%;
-        background-image: url(../fair/early-summer/img/top_bnr/bnr-fair01-earlysummerfair_sp.gif);
+        background-image: url(../images/bnr-fair01-earlysummerfair_sp.gif);
         background-size: contain;
         margin-top:20px;
     }
@@ -5596,22 +5445,22 @@ footer #pagetop.stop {
         background: #ff6e79;
     }
     .collection .secCollection .tabs li.baby a {
-        background-image: url(../images/collection/ico_baby_sp.png);
+        background-image: url(../images/ico_baby_sp.png);
     }
     .collection .secCollection .tabs li.kids {
         background: #b6dbf8;
     }
     .collection .secCollection .tabs li.kids a {
-        background-image: url(../images/collection/ico_kids_sp.png);
+        background-image: url(../images/ico_kids_sp.png);
     }
     @media screen and (max-width: 500px) {
         .collection .secCollection .tabs li.baby a {
-            background-image: url(../images/collection/ico_baby_sp.png);
+            background-image: url(../images/ico_baby_sp.png);
             -moz-background-size:auto 28%;
             background-size:auto 28%;
         }
         .collection .secCollection .tabs li.kids a {
-            background-image: url(../images/collection/ico_kids_sp.png);
+            background-image: url(../images/ico_kids_sp.png);
             -moz-background-size:auto 28%;
             background-size:auto 28%;
         }
@@ -5704,13 +5553,13 @@ footer #pagetop.stop {
         -webkit-transform: translate3d(0, 0, 0);
     }
     .brand .secBrand > section.secPromise .aboutList li .imgArea div.clothes {
-        background-image: url(../images/brand/move-clothes_sp.png);
+        background-image: url(../images/move-clothes_sp.png);
     }
     .brand .secBrand > section.secPromise .aboutList li .imgArea div.shoes {
-        background-image: url(../images/brand/move-shoes_sp.png);
+        background-image: url(../images/move-shoes_sp.png);
     }
     .brand .secBrand > section.secPromise .aboutList li .imgArea div.gift {
-        background-image: url(../images/brand/move-pants_sp.png);
+        background-image: url(../images/move-pants_sp.png);
     }
     .brand .secBrand > section.secPromise .aboutList li .txtArea {
         width: 100%;
@@ -5776,7 +5625,7 @@ footer #pagetop.stop {
         padding-top: 40%;
         right: -12%;
         top: 10px;
-        background-image: url(../images/brand/img-cabbit_sp.png);
+        background-image: url(../images/img-cabbit_sp.png);
     }
     .brand.none .noneArea .btn {
         margin-top: 25px !important;
@@ -5786,7 +5635,7 @@ footer #pagetop.stop {
         padding-top: 38.75%;
         left: -12%;
         margin-top: 10px;
-        background-image: url(../images/brand/img-beans_sp.png);
+        background-image: url(../images/img-beans_sp.png);
     }
     .brand.none .cloudBg {
         height: 157px !important;
@@ -5992,15 +5841,15 @@ footer #pagetop.stop {
     }
     .fair .secFair .container .topArea .blueBox .txt {
         padding-top: 30%;
-        background-image: url(../images/fair/txt-fait-top01_sp.png);
+        background-image: url(../images/txt-fait-top01_sp.png);
     }
     .fair .secFair .container .topArea .blueBox .txtNote {
         padding-top: 8.4%;
-        background-image: url(../images/fair/txt-fait-top02_sp.png);
+        background-image: url(../images/txt-fait-top02_sp.png);
     }
     .fair .secFair .container .topArea .blueBox .img {
         padding-top: 54%;
-        background-image: url(../images/fair/bg-fair-top_sp.png);
+        background-image: url(../images/bg-fair-top_sp.png);
     }
     .fair .secFair .container .topArea .txtArea .areaTit {
         padding: 25px 0 10px;
@@ -6213,7 +6062,7 @@ footer #pagetop.stop {
         margin-bottom: 16px;
     }
     .inquiry .secInquiry .read .accordion {
-        background: url(../images/common/arrow-black24.png) no-repeat 90% center;
+        background: url(../images/arrow-black24.png) no-repeat 90% center;
         -moz-background-size: 12px 7px;
         -o-background-size: 12px 7px;
         -webkit-background-size: 12px 7px;
@@ -6233,7 +6082,7 @@ footer #pagetop.stop {
         line-height: 1.5;
     }
     .inquiry .secInquiry .privacy {
-        background-image: url(../images/common/arrow-black-side14.png);
+        background-image: url(../images/arrow-black-side14.png);
         -moz-background-size: 7px 12px;
         -o-background-size: 7px 12px;
         -webkit-background-size: 7px 12px;
@@ -6391,13 +6240,13 @@ footer #pagetop.stop {
     background: #ff6e79;
 }
 .pickup .secPickup .tabs li.underwear a {
-    background-image: url(../images/pickup/ico-underwear.png);
+    background-image: url(../images/ico-underwear.png);
 }
 .pickup .secPickup .tabs li.pants {
     background: #ff9250;
 }
 .pickup .secPickup .tabs li.pants a {
-    background-image: url(../images/pickup/ico-pants.png);
+    background-image: url(../images/ico-pants.png);
 }
 .pickup .secPickup .secBlock .mv {
     text-align: center;
@@ -6536,10 +6385,10 @@ footer #pagetop.stop {
     text-indent: -1em;
 }
 .pickup .secPickup .secBlock#blockPants .ribbonBox .ribbonTit {
-    background-image: url(../images/pickup/bg-ribbon-orange_pc.png);
+    background-image: url(../images/bg-ribbon-orange_pc.png);
 }
 .pickup .secPickup .secBlock#blockPants .ribbonBox .checkList li {
-    background: #fff5eb url(../images/pickup/ico-check-orange.png) no-repeat 30px center;
+    background: #fff5eb url(../images/ico-check-orange.png) no-repeat 30px center;
     font-size: 18px;
     height: 105px;
     line-height: 1.7;
@@ -6552,7 +6401,7 @@ footer #pagetop.stop {
     padding-right: 155px;
 }
 .pickup .secPickup .secBlock#blockPants .ribbonBox .checkList li.icoBaby:before {
-    background-image: url(../images/pickup/img-feature-pants-baby.png);
+    background-image: url(../images/img-feature-pants-baby.png);
     bottom: 5px;
     height: 130px;
     right: 43px;
@@ -6562,7 +6411,7 @@ footer #pagetop.stop {
     padding-right: 250px;
 }
 .pickup .secPickup .secBlock#blockPants .ribbonBox .checkList li.icoPhoto:before {
-    background-image: url(../images/pickup/img-feature-pants-photo.png);
+    background-image: url(../images/img-feature-pants-photo.png);
     bottom: -55px;
     height: 200px;
     right: -36px;
@@ -6604,7 +6453,7 @@ footer #pagetop.stop {
     width: 48%;
 }
 .pickup .secPickup .secBlock#blockUnderwear .detailBox dl dt {
-    background: url(../images/pickup/bg-dotted-pink.jpg) repeat 0 0;
+    background: url(../images/bg-dotted-pink.jpg) repeat 0 0;
     color: #fff;
     font-size: 24px;
     padding: 17px 0 16px;
@@ -6622,7 +6471,7 @@ footer #pagetop.stop {
     margin: 16px 8.33% 0;
 }
 .pickup .secPickup .secBlock#blockUnderwear .detailBox dl .checkList li {
-    background: #fff url(../images/pickup/ico-check-pink.jpg) no-repeat 19px center;
+    background: #fff url(../images/ico-check-pink.jpg) no-repeat 19px center;
 }
 .pickup .secPickup .secBlock#blockUnderwear .detailBox dl .checkList li p {
     padding: 8px 20px 8px 68px;
@@ -6631,7 +6480,7 @@ footer #pagetop.stop {
     padding-right: 95px;
 }
 .pickup .secPickup .secBlock#blockUnderwear .detailBox dl .checkList li.icoPhoto:before {
-    background-image: url(../images/pickup/img-underwear-photo.png);
+    background-image: url(../images/img-underwear-photo.png);
     bottom: -42px;
     height: 152px;
     right: -71px;
@@ -6656,7 +6505,7 @@ footer #pagetop.stop {
     min-height: 83px;
 }
 .pickup .secPickup .secBlock#blockUnderwear .ribbonBox .ribbonTit {
-    background-image: url(../images/pickup/bg-ribbon-pink_pc.png);
+    background-image: url(../images/bg-ribbon-pink_pc.png);
 }
 .pickup .secPickup .secBlock#blockUnderwear .ribbonBox .checkList li {
     background: #fff5eb url(../images/pickup/ico-check-pink.png) no-repeat 30px center;
@@ -6669,7 +6518,7 @@ footer #pagetop.stop {
     padding: 18px 0 17px 80px;
 }
 .pickup .secPickup .secBlock#blockUnderwear .ribbonBox .checkList li.icoPhoto:before {
-    background-image: url(../images/pickup/img-feature-pants-photo.png);
+    background-image: url(../images/img-feature-pants-photo.png);
     bottom: -55px;
     height: 200px;
     right: -36px;
@@ -6837,7 +6686,7 @@ footer #pagetop.stop {
         margin-top: 16px;
     }
     .pickup .secPickup .secBlock#blockPants .ribbonBox .ribbonTit {
-        background-image: url(../images/pickup/bg-ribbon-orange_sp.png);
+        background-image: url(../images/bg-ribbon-orange_sp.png);
     }
     .pickup .secPickup .secBlock#blockPants .ribbonBox .ribbonImg img {
         width: 181px;
@@ -6934,7 +6783,7 @@ footer #pagetop.stop {
         line-height: 1.4 !important;
     }
     .pickup .secPickup .secBlock#blockUnderwear .ribbonBox .ribbonTit {
-        background-image: url(../images/pickup/bg-ribbon-pink_sp.png);
+        background-image: url(../images/bg-ribbon-pink_sp.png);
         font-size: 16px;
     }
     .pickup .secPickup .secBlock#blockUnderwear .ribbonBox .ribbonImg img {
@@ -6982,7 +6831,7 @@ footer #pagetop.stop {
 
     /*------------collection-------------*/
     .tabsDetail .bk {
-        background: url(../images/collection/babyandkids/bg.png) no-repeat center 0;
+        background: url(../images/bg.png) no-repeat center 0;
     }
     .bk_contents {
         width:100%;
@@ -7043,11 +6892,11 @@ footer #pagetop.stop {
     }
 
     .tabsDetail .bk {
-        background: url(../images/collection/babyandkids/bg_sp.png) no-repeat center 0;
+        background: url(../images/bg_sp.png) no-repeat center 0;
     }
     /*------------collection-------------*/
     .tabsDetail .bk {
-        background: url(../images/collection/babyandkids/bg.png) no-repeat center 0;
+        background: url(../images/bg.png) no-repeat center 0;
     }
     .bk_contents {
         width:96%;
