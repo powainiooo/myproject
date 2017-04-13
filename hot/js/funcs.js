@@ -5,6 +5,11 @@ $(document).ready(function() {
 
 /* 导航条
  ---------------------------------------------------------- */
+var winW = $(window).width();
+var winH = $(window).height();
+var oldWinW    = winW;
+var y    = $(window).scrollTop();
+
 var $header  = $('#header');
 var $headerHome = $('.headerHome');
 var pcHeader = {
@@ -39,6 +44,7 @@ var pcHeader = {
     }
 };
 var $pagetop   = $('#pagetop');
+var $footer    = $('#footer');
 var flgPagetop = false;
 var pcPagetop = {
     init: function() {
