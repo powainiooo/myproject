@@ -708,17 +708,6 @@ footer #pagetop.stop {
     top: 0;
     left: 0;
 }
-.home .secCharacter .inner .character ul li.beans .chara {
-    height: 250px;
-    background-image: url(../images/bg-beans.png);
-    background-repeat: no-repeat;
-    top: 10px;
-}
-.home .secCharacter .inner .character ul li.cabbit .chara {
-    background-image: url(../images/bg-cabbit.png);
-    background-repeat: no-repeat;
-    height: 260px;
-}
 .home .cloudBg,
 .brand .secBrand .cloudBg {
     width: 100%;

@@ -382,6 +382,7 @@ var getMediaQuery = function() {
 $(document).ready(function() {
     mediaQuery['new'] = getMediaQuery();
     mediaQuery['old'] = mediaQuery['new'];
+    pcHeader.init();
 
     // ページ読み込み時のカスタムイベント
     $(window).triggerHandler('loadMediaQuery', mediaQuery);
@@ -417,7 +418,9 @@ $(window).on('resize orientationchange', function() {
 
 // 初回ロード時、メディアクエリが変更になった時
 $(window).on('loadMediaQuery changeMediaQuery', function(e, mediaQuery) {
+    console.log("1");
     if (mediaQuery['new'] === 'pc') {
+        console.log("2");
         pcHeader.init();
         pcFooter.init();
         pcPagetop.init();
