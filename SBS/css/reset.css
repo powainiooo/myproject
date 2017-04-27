@@ -1,5 +1,5 @@
 
-*{ margin:0;padding:0;border:0; outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+*{ margin:0;padding:0;border:0; outline:0;font-size:100%;vertical-align:baseline;background:transparent; font-family:'微软雅黑', 'Microsoft Sans Serif', Tahoma, Arial, Verdana, Sans-Serif; color: #4a4a4a;}
 article,aside,canvas,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section,summary {
     display:block;
@@ -14,8 +14,8 @@ q:before, q:after {
     content:none;
 }
 table { border-collapse:collapse;border-spacing:0;}
-
-hr {display:block;height:1px;border-top:1px solid #cccccc;margin:1em 0;}
+.bgcw{ background-color: #FFF;}
+.ovh{ overflow: hidden;}
 
 input, select {
     vertical-align:middle;
@@ -26,6 +26,7 @@ input, select {
 .f13{ font-size: 13px;}
 .f14{ font-size: 14px;}
 .f16{ font-size: 16px;}
+.f18{ font-size: 18px;}
 .f20{ font-size: 20px;}
 .fb{ font-weight: bold;}
 .fn{ font-weight: normal;}
