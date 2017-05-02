@@ -410,6 +410,7 @@ footer #pagetop.stop {
 .home .secPickup .picList li dl dd {
     padding: 0 40px;
     text-align: left;
+    font-size: 14px;
 }
 .home .secPickup .btn {
     margin: 50px auto 10px;
@@ -472,7 +473,7 @@ footer #pagetop.stop {
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 0;
+    bottom: 55px;
     left: 50%;
     margin-left: -50px;
 }
@@ -495,7 +496,8 @@ footer #pagetop.stop {
     top: 10px;
 }
 .hgroup .secTit span.ruby {
-    font-size: 12px;
+    font-size: 16px;
+    margin-top: 20px;
 }
 .hgroup.titCollection .secTit:after {
     background-image: url(../images/line-dotted-red01.png);
@@ -511,9 +513,6 @@ footer #pagetop.stop {
     height: 29px;
     background-image: url(../images/icon-bird.png);
     right: -50px;
-}
-.hgroup.titPickup .secTit:after {
-    background-image: url(../images/line-dotted-blue01.png);
 }
 .hgroup.titPickup .secTit .ti:before {
     width: 28px;
@@ -590,7 +589,7 @@ footer #pagetop.stop {
     margin-bottom: 40px;
 }
 .home .secCharacter .inner .hgroup .secTit:after {
-    background-image: url(../images/line-dotted-blue01.png);
+    background-image: url(../images/line-dotted-orange01.png);
 }
 .home .secCharacter .inner .hgroup .secTit .ti:before {
     width: 33px;
