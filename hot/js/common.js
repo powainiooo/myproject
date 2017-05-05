@@ -184,7 +184,7 @@ var pcHeader = {
             if (pcHeader.showFlg) {
                 pcHeader.showFlg = false;
                 $headerHome.stop().animate({'top': -100}, 300, function(){
-                    $headerHome.css({'top': 0, 'opacity': 0}).removeClass('bg');
+                    $headerHome.css({'top': 0, 'opacity': 0});
                     $headerHome.stop().delay(200).animate({'opacity': 1}, 150);
                 });
             }
@@ -193,7 +193,7 @@ var pcHeader = {
     destroy: function() {
         $(window).off('scroll', pcHeader.change);
         pcHeader.showFlg = false;
-        $headerHome.removeAttr('style').removeClass('bg');
+        $headerHome.removeAttr('style');
     }
 };
 

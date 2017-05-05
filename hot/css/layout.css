@@ -281,9 +281,9 @@ footer #pagetop.stop {
     background-position: center center;
 }
 .home .secMv .mvImg {
-    background-image: url(../images/bg-mv.jpg);
-    min-height: 648px;
+    margin-bottom: -6px;
 }
+
 .home .secMv .mvfixed {
     background-image: url(../images/bg-top-mv-bottom01.jpg);
     background-position: center center;
@@ -835,6 +835,31 @@ footer #pagetop.stop {
 
 .join-pics{ margin-top: 140px;}
 .join-pics img{ width: 100%; vertical-align: bottom;}
+.join-pics .proced{ width: 1160px; margin: 0 auto; position: relative;}
+.join-pics .proced>div{ position: absolute;}
+.join-pics .proced>div a{height: 100px; display: block; background-color: #f00; opacity: 0;}
+.join-pics .proced .frame1{top: 250px; right: 0;}
+.join-pics .proced .frame1 a{ width: 480px;}
+.join-pics .proced .frame2{top: 430px; left: 200px;}
+.join-pics .proced .frame2 a{ width: 270px;}
+.join-pics .proced .frame3{top: 610px; right:245px;}
+.join-pics .proced .frame3 a{ width: 230px;}
+.join-pics .proced .frame4{top: 790px; left: 290px;}
+.join-pics .proced .frame4 a{ width: 190px;}
+.join-pics .proced .frame5{top: 980px; right: 200px;}
+.join-pics .proced .frame5 a{ width: 280px;}
+.join-pics .proced .frame6{top: 1160px; left: 240px;}
+.join-pics .proced .frame6 a{ width: 240px;}
+.join-pics .proced .frame7{top: 1350px; right: 290px;}
+.join-pics .proced .frame7 a{ width: 190px;}
+.join-pics .proced>div:hover ul{ display: block;}
+.join-pics .proced>div ul{ width: 420px; padding: 25px 30px 40px 30px; background-color: #FFF; box-shadow: 0 0 8px rgba(4,0,0,0.5); border-radius: 8px; position: absolute; top: 100px; display: none;}
+.join-pics .proced>div ul li{ font-size: 24px; color: #111111; margin-bottom: 10px;}
+.join-pics .proced .left{ left: 0;}
+.join-pics .proced .right{ right: 0;}
+.join-pics .proced>div ul:before{ content: ""; width: 39px; height: 40px; background: url("../images/arrow1.png") no-repeat; position: absolute; top: -40px;}
+.join-pics .proced>div .left:before{ left: 20px;}
+.join-pics .proced>div .right:before{ right: 20px;}
 
 .join-form-frame{ background-color: #f6f6f6; padding-bottom: 70px;}
 .join-form-content{ width: 425px; border: 1px solid #e2e2e2; margin: 0 auto; padding: 15px 0 40px 0;}
@@ -847,8 +872,8 @@ footer #pagetop.stop {
 /*
     about us
 */
-.aboutus-frame{ width: 1150px; margin: 230px auto 0 auto;}
-.aboutus-info{ color: #2c2c2c; font-size: 16px; margin-bottom: 90px;}
+.aboutus-frame{ width: 1150px; margin: 0px auto 0 auto;}
+.aboutus-info{ color: #2c2c2c; font-size: 16px; margin-bottom: 90px; line-height: 35px;}
 
 .aboutus-work-list{ border-top: 1px dashed #b2b2b2; margin-bottom: 70px;}
 .aboutus-work-list li{ padding: 25px 0 25px 30px; border-bottom: 1px dashed #b2b2b2; overflow: hidden;}
@@ -860,5 +885,29 @@ footer #pagetop.stop {
 .aboutus-store{ margin-bottom: 200px; overflow: hidden;}
 .aboutus-store>p{float: left;}
 .aboutus-store>div{width:574px; height: 378px; float: left; border: 1px solid #999999; border-left: none;}
-.aboutus-store>div h3{ color: #fab625; font-size: 30px; margin: 20px 0 30px 0;}
-.aboutus-store>div div{ color: #3e3e3e; font-size: 20px; line-height: 35px;}
+.aboutus-store>div h3{ color: #3e3e3e; font-size: 30px; margin: 30px 0 40px 0; text-align: center;}
+.aboutus-store>div div{ color: #3e3e3e; font-size: 24px; line-height: 35px; text-align: center;}
+.aboutus-store>div div a{ width: 380px; display: inline-block; color: #fff; font-size: 20px; text-align: center; padding: 10px 0; background-color: #fab625;}
+
+
+/*
+    brand
+*/
+.brand-frame{ width: 1150px; margin: 40px auto 0 auto;}
+.brand-list>div{ color: #2c2c2c; font-size: 18px; background-color: #e5e5e5; padding: 12px 18px;}
+.brand-list ul{ overflow: hidden; margin-top: 30px; margin-bottom: 100px;}
+.brand-list ul li{ float: left; margin-right: 35px; margin-bottom: 60px;}
+.brand-list ul li:nth-child(3n){margin-right: 0;}
+.brand-list ul li>div{ width: 356px; border: 2px solid #ececec;}
+.brand-list ul li>div img{ width: 356px;}
+.brand-list ul li>p{ text-align: center;}
+.brand-list ul li>p a{ color: #3e3e3e; font-size: 18px;}
+
+
+/*
+    news
+*/
+.news-frame{ width: 1160px; margin: 50px auto;}
+.news-title{ padding-bottom: 15px; border-bottom: 2px solid #cccccc; margin-bottom: 40px;}
+.news-title p{ font-size: 20px; color: #2c2c2c; margin-bottom: 10px;}
+.news-title div{ font-size: 24px; color: #0b0b0b;}
