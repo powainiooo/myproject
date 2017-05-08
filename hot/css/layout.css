@@ -48,6 +48,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 500;
+    overflow: hidden;;
 }
 header.headerHome:not(.bg) {
     -moz-box-shadow: none;
@@ -172,6 +173,36 @@ header.headerHome:not(.bg) {
     box-shadow: none;
     background: transparent;
 }
+header .btn-menu{ width: 20px; height: 16px; position: absolute; top: 24px; left: 5%; display: none;}
+header .btn-menu span,header .btn-menu:before,header .btn-menu:after{ width: 20px; height: 2px; display: block; background-color: #B3B3B3;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;}
+header .btn-menu span{ margin-top: 7px;}
+header .btn-menu:before,header .btn-menu:after{ content: ''; position: absolute; left: 0;
+    -webkit-transform-origin: 0 1px;
+    -moz-transform-origin: 0 1px;
+    -ms-transform-origin: 0 1px;
+    -o-transform-origin: 0 1px;
+    transform-origin: 0 1px;}
+header .btn-menu:before{ top: 0;}
+header .btn-menu:after{ bottom: 0;}
+header .btn-menu-close span{ opacity: 0;}
+header .btn-menu-close:before{
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);}
+header .btn-menu-close:after{
+    -webkit-transform: rotateZ(-45deg);
+    -moz-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);}
+
 footer {
     background: #666;
     padding: 38px 40px 28px;
@@ -825,6 +856,7 @@ footer #pagetop.stop {
     clear: both;
 }
 
+
 /*
     join
 */
@@ -868,7 +900,6 @@ footer #pagetop.stop {
 .join-form-input .txt{ width: 260px;  border: 1px solid #e2e2e2; background-color: #fff; padding: 6px 10px;}
 .join-form-input button{ width: 100%; font-size: 18px; color: #FFF; border: none; background-color: #fab625; padding: 15px 0;}
 
-
 /*
     about us
 */
@@ -911,3 +942,71 @@ footer #pagetop.stop {
 .news-title{ padding-bottom: 15px; border-bottom: 2px solid #cccccc; margin-bottom: 40px;}
 .news-title p{ font-size: 20px; color: #2c2c2c; margin-bottom: 10px;}
 .news-title div{ font-size: 24px; color: #0b0b0b;}
+
+
+
+@media screen and (max-width: 768px) {
+    header{ position: static; min-width: auto;}
+    header .logo{ left: auto; right: 5%; top: 15px;}
+    header .logo img{ width: 85px;}
+    header .btnArea{ display: none;}
+    header nav{ border-bottom: 1px solid #ECECEC; min-height: 55px; position: relative; z-index: 50;}
+    header #globalNav .navArea{ border-top: 1px solid #ECECEC; text-align: left; padding-left: 0; margin-top: 55px; display: none;}
+    header #globalNav .navArea li{ display: block; border-bottom: 1px solid #ECECEC; background-color: #FFF;}
+    header #globalNav .navArea li:last-child{ border-bottom: none;}
+    header #globalNav .navArea li a{ padding: 15px 25px;}
+    header .btn-menu{ display: block; z-index: 100;}
+
+    footer{ padding: 5%;}
+    footer .nav{ display: none;}
+    footer .container{ width: 100%;}
+    footer .copyright, footer .txt{ margin-top: 0; text-align: center;}
+
+    .secondNav{ display: none;}
+
+    .aboutus-frame{ width: 100%;}
+
+    .hgroup .secTit{ width: 66%;}
+    .hgroup .secTit span.ti{ font-size: 20px;}
+    .aboutus-info{ margin-bottom: 30px;}
+    .aboutus-info{ padding: 0 5%; line-height: 30px;}
+    .aboutus-work-list{ margin: 0 5% 10% 5%;}
+    .aboutus-work-list li{ padding: 5% 0;}
+    .aboutus-work-list li>p{ width: 100%; float: none;}
+    .aboutus-work-list li>p img{ width: 100%; height: auto;}
+    .aboutus-work-list li>div{ width: 100%; float: none;}
+    .aboutus-work-list li>div h3{ font-size: 20px; margin: 10px 0;}
+    .aboutus-work-list li>div div{ font-size: 16px;}
+    .aboutus-store{ margin: 0 5% 10% 5%;}
+    .aboutus-store>p{ float: none;}
+    .aboutus-store>p img{ width: 100%; height: auto; vertical-align: bottom;}
+    .aboutus-store>div{ width: auto; height: auto; float: none; border-left: 1px solid #999999; border-top: none; overflow: hidden;}
+    .aboutus-store>div h3{ margin: 20px 0; font-size: 20px;}
+    .aboutus-store>div div{ font-size: 16px; margin-top: 20px;}
+    .aboutus-store>div div a{ width: 80%; font-size: 16px; padding: 6px 0; margin-bottom: 20px;}
+
+    .join-pics{ margin-top: 20px;}
+    .hgroup{ padding-top: 30px;}
+
+    .brand-frame{ width: auto; margin: 5%;}
+    .brand-list>div{ font-size: 16px; padding: 8px 12px;}
+    .brand-list ul{ margin-top: 5%; margin-bottom: 20px;}
+    .brand-list ul li{ width: 48%; margin-right: 4%; margin-bottom: 5%;}
+    .brand-list ul li:nth-child(2n){ margin-right: 0;}
+    .brand-list ul li:nth-child(3n){ margin-right: 4%;}
+    .brand-list ul li>div{ width: auto;}
+    .brand-list ul li>div img{ width: 100%; height: auto;}
+    .brand-list ul li>p a{ font-size: 14px;}
+
+    .join-pics .proced{ width: 100%;}
+    .join-form-content{ width: auto; margin: 0 5%; padding: 10px 0 20px 0;}
+    .join-form-input{ width: 90%;  margin-top: 10px;}
+    .join-form-input p{ font-size: 16px;}
+    .join-form-input .txt{ width: 100%; font-size: 14px; box-sizing: border-box;-webkit-box-sizing: border-box;}
+    .join-form-input button{ font-size: 16px; padding: 10px 0;}
+
+    .news-frame{ width: auto; margin: 0 5%;}
+    .news-title{ margin-bottom: 10px;}
+    .news-title p{ font-size: 14px;}
+    .news-title div{ font-size: 18px;}
+}

@@ -1,6 +1,11 @@
 $(document).ready(function() {
     pcHeader.init();
     pcPagetop.init();
+
+    $("#btn-menu").on('click',function(){
+        $(this).toggleClass("btn-menu-close");
+        $("#globalNav .navArea").slideToggle(200);
+    })
 });
 
 /* 导航条
