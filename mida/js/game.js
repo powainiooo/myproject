@@ -8,6 +8,7 @@ var loadingData = new Array(
 
 var imglist = {};
 var imgData = new Array(
+    {name:"logo",path:imgsrc+"./images/logo.png"}
 );
 
 var gameData = {};
@@ -52,108 +53,27 @@ function loading_gameData(){
         },
         function(result){
             imglist = result;
-            //stage.removeChild(loadinglayer);
-            //loadinglayer = null;
-            //gameInit();
+            stage.removeChild(loadinglayer);
+            loadinglayer = null;
+            page1Init();
         }
     );
 }
 
-function startInit(){
-    startLayer = new LSprite();
-    startLayer.graphics.drawRect(0,"#000",[0,0,640,960],true,"rgba(0,0,0,0.5)");
-    stage.addChild(startLayer);
+function page1Init(){
+    page1Layer = new LSprite();
+    page1Layer.graphics.drawRect(0,"#fff100",[0,0,750,1125],true,"#fff100");
+    stage.addChild(page1Layer);
 
-    var title = new LBitmap(new LBitmapData(imglist["title"]));
-    title.x = (LGlobal.width - title.getWidth())/2;
-    title.y = 85;
-    startLayer.addChild(title);
-
-    var txt = new LTextField();
-    txt.text = startTXT;
-    txt.color = start_COLOR;
-    txt.size = 26;
-    txt.width = 460;
-    txt.setWordWrap(true,40);
-    txt.x = (LGlobal.width - txt.getWidth())/2;
-    txt.y = 280;
-    startLayer.addChild(txt);
-
-    var startbt = new LButton(new LBitmap(new LBitmapData(imglist["startbt"])));
-    var btw = startbt.getWidth();
-    if(btw > 443){
-        startbt.scaleX = 443/btw;
-        startbt.scaleY = 443/btw;
-    }
-    startbt.x = (LGlobal.width - startbt.getWidth())/2;
-    startbt.y = 450;
-    startLayer.addChild(startbt);
-    startbt.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        setTimeout(function(){
-
-            var transParams = {type:LTransition.Iris,startPoint:5,shape:LIris.CIRCLE,duration:2,direction:LTransition.OUT,easing:Strong.easeOut,onComplete:function(){
-                stage.removeChild(startLayer);
-                gameInit();
-            }};
-            LTransitionManager.start(startLayer,transParams);
-        },500);
+    var list = LGlobal.divideCoordinate(1957, 664, 1, 11);
+    var data = new LBitmapData(imglist["logo"]);
+    var logo = new LAnimationTimeline(data, list);
+    logo.x = 286;
+    logo.y = 230;
+    logo.speed = 8;
+    logo.setLabel("end",0,10,1,false);
+    logo.addFrameScript("end",function(){
+        logo.stop();
     });
-}
-
-function gameInit(){
-
-}
-
-function endInit(){
-    endLayer = new LSprite();
-    endLayer.graphics.drawRect(0,"#000",[0,0,640,960],true,"rgba(0,0,0,0.5)");
-    stage.addChild(endLayer);
-
-    var frame = new LBitmap(new LBitmapData(imglist["frame"]));
-    frame.x = (LGlobal.width - frame.getWidth())/2;
-    frame.y = 44;
-    endLayer.addChild(frame);
-
-    var txt = new LTextField();
-    txt.text = "恭喜你在双十二中抢购了"+gameData.point+",打败全国"+beat+"%人！"+endTXT;
-    txt.color = endTXT_COLOR;
-    txt.size = 30;
-    txt.width = 430;
-    txt.setWordWrap(true,40);
-    txt.x = 265;
-    txt.y = 80;
-    endLayer.addChild(txt);
-
-    var btreplay = new LButton(new LBitmap(new LBitmapData(imglist["endbt1"])));
-    btreplay.x = (LGlobal.width - btreplay.getWidth())/2;
-    btreplay.y = 490;
-    endLayer.addChild(btreplay);
-    btreplay.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        setTimeout(function(){
-            stage.removeChild(endLayer);
-            stage.removeChild(gameLayer);
-            resetgameData();
-            gameInit();
-        },500);
-    });
-
-    var btshare = new LButton(new LBitmap(new LBitmapData(imglist["endbt2"])));
-    btshare.x = (LGlobal.width - btshare.getWidth())/2;
-    btshare.y = 610;
-    endLayer.addChild(btshare);
-    btshare.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        setTimeout(function(){
-            shareInit();
-        },500);
-    });
-
-    var btattention = new LButton(new LBitmap(new LBitmapData(imglist["endbt3"])));
-    btattention.x = (LGlobal.width - btattention.getWidth())/2;
-    btattention.y = 730;
-    endLayer.addChild(btattention);
-    btattention.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        setTimeout(function(){
-            window.location = attentionAddr;
-        },500);
-    });
+    page1Layer.addChild(logo);
 }
