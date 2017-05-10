@@ -31,11 +31,35 @@ canvas{display: block;}
 #share{ display: none;}
 #share img{ width: 50%; float: right; margin: 5% 5% 0 0;}
 
+#txt1{ width: 100%; font-size: 20px; color: #fff; text-align: center; position: absolute; top: 50%; left: 0; z-index: 100; text-shadow:5px 5px 6px #107bc7, -5px -5px 6px #107bc7; line-height: 230%; display: none;}
+#txt2{ width: 100%; font-size: 30px; color: #fff; text-align: center; position: absolute; top: 70%; left: 0; z-index: 100; text-shadow:5px 5px 6px #107bc7, -5px -5px 6px #107bc7; line-height: 230%;}
+
+
+.img{background:url(../images/img.png)  no-repeat;}
+.c4{height:88px;width:182px;background-position:0 0;}
+.c8{height:83px;width:205px;background-position:0 -88px;}
+.c10{height:158px;width:216px;background-position:0 -171px;}
+.c2{height:254px;width:220px;background-position:0 -329px;}
+.c9{height:223px;width:252px;background-position:0 -583px;}
+.c3{height:196px;width:262px;background-position:0 -806px;}
+.c7{height:328px;width:376px;background-position:0 -1002px;}
+.c1{height:296px;width:586px;background-position:0 -1330px;}
+.c6{height:155px;width:595px;background-position:0 -1626px;}
+.c5{height:390px;width:754px;background-position:0 -1781px;}
 
 
 
-
-
+.img{background:url(../images/img.png)  no-repeat;}
+._4{height:400px;width:20px;background-position:0 0;}
+._3{height:144px;width:90px;background-position:0 -400px;}
+._5{height:112px;width:112px;background-position:0 -544px;}
+._2{height:70px;width:120px;background-position:0 -656px;}
+._7{height:74px;width:149px;background-position:0 -726px;}
+._9{height:237px;width:177px;background-position:0 -800px;}
+._1{height:420px;width:210px;background-position:0 -1037px;}
+.icons{height:198px;width:262px;background-position:0 -1457px;}
+._6{height:319px;width:289px;background-position:0 -1655px;}
+._8{height:240px;width:409px;background-position:0 -1974px;}
 
 
 
