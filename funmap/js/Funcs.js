@@ -69,17 +69,29 @@ function objMove(direc,movedis,movet,easing,easmove){
 //震动
 function objShake(){
     var self = this;
-    var lx = self.x,ly = self.y,disX = 10,disY = 5,t = 0.05;
+    var lx = self.x,ly = self.y,disX = 10,disY = 5,t = 0.06;
     LTweenLite.to(self,t,{x:lx+disX,y:ly-disY,ease:LEasing.None.easeIn}).to(self,t*2,{x:lx-disX,y:ly+disY,ease:LEasing.None.easeIn}).to(self,t,{x:lx,y:ly,ease:LEasing.None.easeIn})
 }
 
 //缩小到正常
-function scaleIn(){
+function scaleIn(movet){
     var self = this;
-    var t = 0.4;
-    self.scaleX = 1.4;
-    self.scaleY = 1.4;
-    LTweenLite.to(self,t,{scaleX:1,scaleY:1,alpha:1,ease:LEasing.Cubic.easeOut});
+    var t = movet==null?0.4:movet;
+    var sx = self.scaleX;
+    var sy = self.scaleY;
+    self.scaleX = sx+0.4;
+    self.scaleY = sy+0.4;
+    LTweenLite.to(self,t,{scaleX:sx,scaleY:sy,alpha:1,ease:LEasing.Cubic.easeOut});
+}
+//放大到正常
+function scaleOut(movet){
+    var self = this;
+    var t = movet==null?0.4:movet;
+    var sx = self.scaleX;
+    var sy = self.scaleY;
+    self.scaleX = sx-0.5;
+    self.scaleY = sy-0.5;
+    LTweenLite.to(self,t,{scaleX:sx,scaleY:sy,alpha:1,ease:LEasing.Cubic.easeOut});
 }
 
 //打字
@@ -129,5 +141,6 @@ function Car(){
 }
 Car.prototype.move = function(){
     var self = this;
-    LTweenLite.to(self.wheel,0.4,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.wheel,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+    LTweenLite.to(self.wheel,0.4,{rotate:-360,loop:true,ease:LEasing.None.easeIn}).to(self.wheel,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+    LTweenLite.to(self.wheel2,0.4,{rotate:-360,loop:true,ease:LEasing.None.easeIn}).to(self.wheel2,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
 };

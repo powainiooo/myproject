@@ -13,8 +13,8 @@
 </html>
 <script>
     var imgData = [
-        { name: "A2", path: "A2.jpg" },
-        { name: "B2", path: "B2.jpg" }
+        { name: "A2", path: "A2.jpg" },//遮罩
+        { name: "B2", path: "B2.jpg" }//底图
     ];
     var imglist;
     var loadingLayer, backSprite, middleLayer;
@@ -141,7 +141,6 @@
 
             var newBitmap = new LBitmap(new LBitmapData(imglist["B2"]));
             newBitmap.alpha = 0;
-            backSprite.addChild(newBitmap);
             LTweenLite.to(newBitmap, 1, { alpha: 1, ease: LEasing.Strong.easeInOut });
         }
     }
