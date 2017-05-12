@@ -4,7 +4,7 @@ var LoadingDoufen = (function(){
         base(this,LSprite,[]);
         var s = this;
 
-        s.graphics.drawRect(0,"#fff100",[0,0,750,1125],true,"#fff100");
+        s.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#eee93a");
 
         s.line1 = new LSprite();
         s.line1.pic = new LBitmap(new LBitmapData(loadinglist['L_line']));
@@ -62,20 +62,79 @@ var LoadingDoufen = (function(){
     return LoadingDoufen;
 })();
 
-//分享弹层
-function shareInit(){
-    sharelayer = new LSprite();
-    stage.addChild(sharelayer);
-    sharelayer.graphics.drawRect(0,"#000",[0,0,640,960],true,"rgba(0,0,0,0.5)");
-
-    var pic = new LBitmap(new LBitmapData(imglist["share"]));
-    pic.x = 350;
-    pic.y = 50;
-    pic.scaleX = 0.5;
-    pic.scaleY = 0.5;
-    sharelayer.addChild(pic);
-
-    sharelayer.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        stage.removeChild(sharelayer);
-    });
+//移动
+function objMove(opts){
+    var option = {
+        dis:150,
+        type:'fade',
+        direc:'in',
+        t:0.6,
+        delay:1,
+        ei:'Cubic',
+        em:'easeOut'
+    };
+    var self = this;
+    for(var p in opts){
+        if(option[p]!='undefined'){
+            option[p] = opts[p];
+        }
+    }
+    if(option.direc == 'in'){
+        switch (option.type){
+            case 'down':
+                self.y = self.y - option.dis;
+                LTweenLite.to(self,option.t,{alpha:1,y:self.y+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'up':
+                self.y = self.y + option.dis;
+                LTweenLite.to(self,option.t,{alpha:1,y:self.y-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'left':
+                self.x = self.x + option.dis;
+                LTweenLite.to(self,option.t,{alpha:1,x:self.x-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'right':
+                self.x = self.x - option.dis;
+                LTweenLite.to(self,option.t,{alpha:1,x:self.x+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'fade':
+                LTweenLite.to(self,option.t,{alpha:1,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'scaleL2S':
+                var sx = self.scaleX;
+                var sy = self.scaleY;
+                self.scaleX = sx+0.4;
+                self.scaleY = sy+0.4;
+                LTweenLite.to(self,option.t,{scaleX:sx,scaleY:sy,alpha:1,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'scaleS2L':
+                var sx = self.scaleX;
+                var sy = self.scaleY;
+                self.scaleX = sx-0.4;
+                self.scaleY = sy-0.4;
+                LTweenLite.to(self,option.t,{scaleX:sx,scaleY:sy,alpha:1,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+        }
+    }else if(option.direc == 'out'){
+        switch (option.type){
+            case 'down':
+                LTweenLite.to(self,option.t,{alpha:0,y:self.y+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'up':
+                LTweenLite.to(self,option.t,{alpha:0,y:self.y-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'left':
+                LTweenLite.to(self,option.t,{alpha:0,x:self.x-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'right':
+                LTweenLite.to(self,option.t,{alpha:0,x:self.x+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+            case 'fade':
+                LTweenLite.to(self,option.t,{alpha:0,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                break;
+        }
+    }
+    setTimeout(function(){
+        if(opts.callback) opts.callback();
+    },(option.t+option.delay)*1000)
 }
