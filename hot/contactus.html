@@ -41,7 +41,7 @@
                 </ul>
                 <ul class="btnArea">
                     <li class="shopBtn">
-                        <a href="#" target="_blank">
+                        <a href="build.html" target="_blank">
                             <img src="images/icon-cart.png" alt="">
                             <p class="montserrat">ONLINE<span>SHOP</span></p>
                         </a>
@@ -51,28 +51,39 @@
         </nav>
         <div class="secondNav">
             <ul>
-                <li><a href="#">官方首页</a> </li>
+                <li><a href="home.html">官方首页</a> </li>
                 <li>> </li>
-                <li><a href="#">新闻资讯</a> </li>
+                <li><a href="aboutus.html">关于米6</a> </li>
             </ul>
         </div>
     </header>
-    <div class="brand-frame">
+    <div class="join-pics aboutus-pics">
+        <img src="images/aboutuspic.jpg">
+    </div>
+    <div class="aboutus-frame">
         <div class="hgroup titPickup">
             <h2 class="secTit">
-                <span class="ti">NEWS</span>
-                <span class="ruby">新闻资讯</span>
+                <span class="ti">CONTACT US</span>
             </h2>
         </div>
-        <div class="news-frame">
-            <div class="news-title">
-                <p>2017.05.02</p>
-                <div>米6上海江桥万达旗舰店即将开业，敬请期待！</div>
+        <div class="contactframe">
+            <div>
+                <dl>
+                    <dt>授权方</dt>
+                    <dd class="icon1">三舒体育用品(福建)有限公司<br>SANSHU SPORTS GOODS(FUJIAN) CO.LTD.</dd>
+                    <dd class="icon2">福建省泉州市台商投资区张坂舒友路<br>FUJIAN QUANZHOU TAISHANG TOUZIQU SHUYOULU.</dd>
+                    <dd class="icon3">邮编: 362123<br>ZIP CODE: 362123</dd>
+                </dl>
+                <dl>
+                    <dt>生产销售</dt>
+                    <dd class="icon1">福建米六体育用品有限公司<br>FUJIAN SIX METERS SPORTS GOODS CO. LTD.</dd>
+                    <dd class="icon2">福建省泉州市晋江市陈埭镇涵口鞋都路<br>FUJIAN QUANZHOU JINJIANG CHENDAI HANKOU XIEDULU.</dd>
+                    <dd class="icon3">邮编: 362123<br>ZIP CODE: 362123</dd>
+                </dl>
+                <div id="map"></div>
             </div>
-            <div><img src="images/new3.jpg" style="width: 100%;"></div>
         </div>
     </div>
-
 </div>
 <footer id="footer" style="top: 0px;">
     <div class="container">
@@ -91,5 +102,21 @@
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/funcs.js"></script>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=9243fe9769a63a2356eda20b69b2668e"></script>
+<script>
+    var map = new AMap.Map('map', {
+        resizeEnable: true,
+        zoom:15,
+        center: [118.783762,24.883258]
+    });
+    map.plugin(["AMap.ToolBar"], function() {
+        map.addControl(new AMap.ToolBar());
+    });
+    marker = new AMap.Marker({
+        icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+        position: [118.783762,24.883258]
+    });
+    marker.setMap(map);
+</script>
 </body>
 </html>

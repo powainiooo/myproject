@@ -49,6 +49,7 @@ header {
     width: 100%;
     z-index: 500;
     overflow: hidden;;
+    height: 90px;
 }
 header.headerHome:not(.bg) {
     -moz-box-shadow: none;
@@ -314,6 +315,8 @@ footer #pagetop.stop {
 .home .secMv .mvImg {
     margin-bottom: -6px;
 }
+.home .secMv .mvImg img{ width: 100%;}
+.home .secMv .mvImg .img-phone{ display: none;}
 
 .home .secMv .mvfixed {
     background-image: url(../images/bg-top-mv-bottom01.jpg);
@@ -335,12 +338,47 @@ footer #pagetop.stop {
     z-index: 10;
 }
 .home .secMv .mvfixed .bg:before {
-    height: 5px;
-    top: -5px;
-    background-image: url(../images/line-mv-top.png);
+    height: 66px;
+    top: -66px;
+    background-image: url(../images/wave1.png);
+    z-index: 20;
+    -webkit-animation: wave1 70s linear infinite;
+    -o-animation: wave1 70s linear infinite;
+    animation: wave1 70s linear infinite;
+}
+@keyframes wave1 {
+    0%{ background-position: 0 center;}
+    100%{ background-position: 3324px center;}
+}
+@-webkit-keyframes wave1 {
+    0%{ background-position: 0 center;}
+    100%{ background-position: 3324px center;}
+}
+@-o-keyframes wave1 {
+    0%{ background-position: 0 center;}
+    100%{ background-position: 3324px center;}
 }
 .home .secMv .mvfixed .bg:after {
-    bottom: 0;
+    height: 66px;
+    top: -66px;
+    background-image: url(../images/wave2.png);
+    background-position: -400px center;
+    -webkit-animation: wave2 70s linear infinite;
+    -o-animation: wave2 70s linear infinite;
+    animation: wave2 70s linear infinite;
+    opacity: 0.7;
+}
+@keyframes wave2 {
+    0%{ background-position: -400px center;}
+    100%{ background-position: 2924px center;}
+}
+@-webkit-keyframes wave2 {
+    0%{ background-position: -400px center;}
+    100%{ background-position: 2924px center;}
+}
+@-o-keyframes wave2 {
+    0%{ background-position: -400px center;}
+    100%{ background-position: 2924px center;}
 }
 .home .secMv .mvfixed .bg .hgroup {
     width: 373px;
@@ -366,7 +404,7 @@ footer #pagetop.stop {
     line-height: 1;
     font-size: 30px;
     color: #fff;
-    padding-top: 90px;
+    padding-top: 60px;
     z-index: 40;
 }
 .home .secMv .mvfixed .bg .title span{
@@ -483,6 +521,8 @@ footer #pagetop.stop {
 .secPickup .imglist li:nth-child(2){
     margin: 0 55px;
 }
+.secPickup .container{ width: 100%;}
+.secPickup .container2{ width: 1180px;}
 .hgroup {
     position: relative;
 }
@@ -857,7 +897,8 @@ footer #pagetop.stop {
 }
 .container2{ width: 1180px;}
 
-
+.img-attact img{ width: 100%; display: block;}
+.img-attact .img-phone{ display: none;}
 /*
     join
 */
@@ -945,9 +986,22 @@ footer #pagetop.stop {
 .news-title div{ font-size: 24px; color: #0b0b0b;}
 
 
+/*
+    contactus
+*/
+.contactframe{margin: 80px auto; border: 1px solid #e6e6e6; background-color: #fafafa; overflow: hidden;}
+.contactframe>div{ margin: 100px;}
+.contactframe dl{ margin-bottom:80px;}
+.contactframe dt{ font-size: 30px; color: #2c2c2c; margin-bottom: 30px;}
+.contactframe dd{ font-size: 24px; color: #2c2c2c; margin-bottom: 40px; padding-left: 100px; background-repeat: no-repeat; background-position: left center;}
+.contactframe dd.icon1{ background-image: url('../images/icon-earth.png');}
+.contactframe dd.icon2{ background-image: url('../images/icon-address.png');}
+.contactframe dd.icon3{ background-image: url('../images/icon-email.png');}
+
+#map{ height: 400px; border: 1px solid #b6b6b6;}
 
 @media screen and (max-width: 768px) {
-    header{ position: static; min-width: auto;}
+    header{ position: static; min-width: auto; height: auto;}
     header .logo{ left: auto; right: 5%; top: 15px;}
     header .logo img{ width: 85px;}
     header .btnArea{ display: none;}
@@ -986,15 +1040,15 @@ footer #pagetop.stop {
     .aboutus-store>div div{ font-size: 16px; margin-top: 20px;}
     .aboutus-store>div div a{ width: 80%; font-size: 16px; padding: 6px 0; margin-bottom: 20px;}
 
-    .join-pics{ margin-top: 20px;}
+    .join-pics{ margin-top: 20px; overflow: hidden;}
+    .aboutus-pics img{ width: 150%; margin-left: -25%;}
     .hgroup{ padding-top: 30px;}
 
     .brand-frame{ width: auto; margin: 5%;}
     .brand-list>div{ font-size: 16px; padding: 8px 12px;}
     .brand-list ul{ margin-top: 5%; margin-bottom: 20px;}
     .brand-list ul li{ width: 48%; margin-right: 4%; margin-bottom: 5%;}
-    .brand-list ul li:nth-child(2n){ margin-right: 0;}
-    .brand-list ul li:nth-child(3n){ margin-right: 4%;}
+    .brand-list ul li:nth-child(2n){ margin-right: 0; float: right;}
     .brand-list ul li>div{ width: auto;}
     .brand-list ul li>div img{ width: 100%; height: auto;}
     .brand-list ul li>p a{ font-size: 14px;}
@@ -1012,23 +1066,24 @@ footer #pagetop.stop {
     .news-title div{ font-size: 18px;}
 
     .home .secMv .mvfixed{ height: auto;}
-    .home .secMv .mvfixed .bg{ width: auto; margin: 0 5%; padding-bottom: 10%;}
-    .home .secMv .mvfixed .bg .title{ font-size: 20px; padding-top: 20px;}
+    .home .secMv .mvfixed .bg{ padding-bottom: 10%;}
+    .home .secMv .mvfixed .bg .title{ font-size: 20px; padding-top: 40px; margin: 0 5%;}
     .home .secMv .mvfixed .bg .title span{ font-size: 14px;}
-    .home .secMv .mvfixed .bg .txt{ width: auto; margin: 15px auto; line-height: 150%; font-size: 14px;}
+    .home .secMv .mvfixed .bg .txt{ width: auto; margin: 15px 5%; line-height: 150%; font-size: 14px;}
 
-    .home .secPickup .picList{ margin: 0 5%;}
     .home .secPickup .picList li{ width: 100%;}
     .home .secPickup .picList li img{ width: 100%; height: auto;}
     .home .secPickup .picList li dl dt{ font-size: 16px; margin-bottom: 8px;}
+    .home .secPickup .picList li dl dd{ padding: 0;}
     .home .secCharacter .inner .hgroup{ margin-bottom: 20px;}
     .home .secCharacter .inner .character{margin-top: 0;}
     .home .secCharacter .inner .character ul{ width: auto; margin: 0 5%;}
     .home .secCharacter .inner .character ul li{ width: auto; float: none;}
     .home .secCharacter .inner .character ul li img{ width: 100%;}
-    .home .cloudBg, .brand .secBrand .cloudBg{ height: 250px;}
-    .home .secCharacter .inner{ height: 620px;}
+    .home .cloudBg, .brand .secBrand .cloudBg{ height: 250px; background-image: url('../images/bg-cloud.jpg'); background-size: 100% 100%;}
+    .home .secCharacter .inner{ height: 510px;}
 
+    .secPickup .container{ width: auto; margin: 0 5%;}
     .container{ width: auto; margin: 0 5%;}
     .home .secShop .hgroup{margin-bottom: 0;}
     .home .secShop .detail .thumb{ width: 100%; display: block;padding-top:50%;}
@@ -1049,4 +1104,16 @@ footer #pagetop.stop {
     .secPickup .imglist li{ width: 100%; float: none; margin-bottom: 5%;}
     .secPickup .imglist li img{ width: 100%;}
     .secPickup .imglist li:nth-child(2){ margin: 0 0 5% 0;}
+
+    .home .secMv .mvImg .img-phone{ display: block;}
+    .home .secMv .mvImg .img-normal{ display: none;}
+    .img-attact .img-phone{ display: block;}
+    .img-attact  .img-normal{ display: none;}
+
+    .contactframe{ margin: 20px 5%;}
+    .contactframe>div{ margin: 5%;}
+    .contactframe dl{ margin-bottom: 30px;}
+    .contactframe dt{ font-size: 18px;}
+    .contactframe dd{ font-size: 14px; padding-left: 40px; margin-bottom: 20px; background-size:30px; }
+
 }
