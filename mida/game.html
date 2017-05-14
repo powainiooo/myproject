@@ -12,13 +12,32 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+    <div class="last-page" id="lastPage" style="display: none;">
+        <div class="content">
+            <img src="images/title2.png" class="titlepic" id="titlepic">
+            <div class="frame" id="frame">
+                <div class="title">登记信息</div>
+                <div class="inputline">姓名<input type="text"></div>
+                <div class="inputline">电话<input type="text"></div>
+                <div class="inputline">微信<input type="text"></div>
+                <div class="inputline">省市<select>
+                        <option>江西</option>
+                    </select><select>
+                        <option>南昌</option>
+                    </select>
+                </div>
+                <div class="icon"><img src="images/icon1.png"></div>
+            </div>
+            <a class="btn" id="btn"><img src="images/btn1.png"> </a>
+        </div>
+    </div>
 
     <div id="stage"></div>
     <script>
         var imgsrc = '';
     </script>
     <script src="js/lufylegend-1.10.1.min.js" type="application/javascript" language="javascript"></script>
+    <script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
     <script src="js/Funcs.js" type="application/javascript" language="javascript"></script>
     <script src="js/game.js" type="application/javascript" language="javascript"></script>
     <script>

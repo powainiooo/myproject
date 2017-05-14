@@ -138,3 +138,28 @@ function objMove(opts){
         if(opts.callback) opts.callback();
     },(option.t+option.delay)*1000)
 }
+//普通图片
+function Zimg(imgData,x,y){
+    base(this,LBitmap,[]);
+    var self = this;
+    self.x = x==null?0:x;
+    self.y = y==null?0:y;
+    if(imgData.length == 1){
+        self.bitmapData = new LBitmapData(imgData[0]);
+    }else{
+        self.bitmapData = new LBitmapData(imgData[0],imgData[1],imgData[2],imgData[3],imgData[4]);
+    }
+}
+//旋转图片
+function ZRimg(imgData,rx,ry){
+    base(this,LSprite,[]);
+    var self = this;
+    if(arguments.length == 1){
+        self.img = new LBitmap(new LBitmapData(imgData[0]));
+    }else{
+        self.img = new LBitmap(new LBitmapData(imgData[0],imgData[1],imgData[2],imgData[3],imgData[4]));
+    }
+    self.img.x = rx;
+    self.img.y = ry;
+    self.addChild(self.img);
+}
