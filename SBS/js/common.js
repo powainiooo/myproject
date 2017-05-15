@@ -1,8 +1,8 @@
-//Êó±ê¹ö¶¯
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /***********************
- º¯Êý£ºÅÐ¶Ï¹öÂÖ¹ö¶¯·½Ïò
- ²ÎÊý£ºevent
- ·µ»Ø£º¹öÂÖ·½Ïò 1£ºÏòÉÏ -1£ºÏòÏÂ
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï¹ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½event
+ ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *************************/
 var scrollFunc=function(e){
     var direct=0;
@@ -20,16 +20,21 @@ var scrollFunc=function(e){
         console.log(e.detail);
     }
 };
-/*×¢²áÊÂ¼þ*/
+/*×¢ï¿½ï¿½ï¿½Â¼ï¿½*/
 if(document.addEventListener){
     document.addEventListener('DOMMouseScroll',scrollFunc,false);
 }//W3C
 window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari
 
 $(function(){
-    //µã»÷²Ëµ¥
+    //ï¿½ï¿½ï¿½ï¿½Ëµï¿½
     $("#showNav").on('click',function(){
         $("#header").removeClass("down");
         $("#showNav").hide();
     });
+
+    $("#btn-menu").on('click',function(){
+        $(this).toggleClass("btn-menu-close");
+        $(".single-header nav ul").slideToggle(200);
+    })
 });

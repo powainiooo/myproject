@@ -129,6 +129,9 @@
 .netsframe dl{ width: 50%; float: left;}
 .netsframe dl dt{ font-size: 28px; color: #01619f; margin-bottom: 30px;}
 .netsframe dl dd{ font-size: 18px; margin-bottom: 10px;}
+.netsframe .txt-size1{ width: 200px;}
+.netsframe .txt-size2{ width: 400px;}
+.netsframe .txt-size3{ width: 600px;}
 
 
 /*
@@ -142,6 +145,112 @@
 
 .join-list{ margin-top: 40px; border-top: 1px solid #e5e5e5;}
 .join-list ul li a{ display: block; border-bottom: 1px solid #e5e5e5; font-size: 20px; color: #111111; padding: 15px 0; position: relative;}
-.join-list ul li a:after{ content: ""; width: 10px; height: 7px; background: url('../images/icons.png') no-repeat; background-position: -69px -95px; position: absolute; top: 26px; right: 6px;}
+.join-list ul li a:after{ content: ""; width: 10px; height: 7px; background: url('../images/icons.png') no-repeat; background-position: -69px -95px; position: absolute; top: 50%; right: 6px; margin-top: -3px;}
 .join-list ul li a.active:after{ background-position:-69px -87px; }
 .join-list ul li div{ padding: 20px 35px; border-bottom: 1px solid #e5e5e5; display: none;}
+
+
+/*
+    移动端
+*/
+@media screen and (max-width: 768px) {
+    .single-header-frame{ position: relative;}
+    .single-header-frame nav{ border-bottom: 1px solid #ECECEC; position: relative; z-index: 50;}
+    .single-header nav ul{ padding: 0; margin: 0; border-top: 1px solid #ECECEC; display: none;}
+    .single-header-frame nav ul li,.single-header nav ul li{ display: block; border-bottom: 1px solid #ECECEC; background-color: #FFF; margin-right: 0;}
+    .single-header-frame nav ul li:last-child{ border-bottom: none;}
+    .single-header-frame nav ul li a{ padding: 15px 25px; display: block;}
+
+    footer nav{display: none;}
+    footer div{ margin: 20px 5%; line-height: 150%; font-size: 12px;}
+
+    .single-header .logo{ width: 60px; height: auto; margin: 15px auto;}
+
+    header .btn-menu{ display: block;}
+    .headerSub{ display: none;}
+
+    .head-height{display: none;}
+
+    .section1{ width: auto; margin: 30px 5% 0 5%;}
+    .section2{ width: auto; margin: 30px 5% 0 5%;}
+
+    .title-lv1{ margin: 40px 5%;}
+    .title-lv1 h3{ font-weight: bold; font-size: 24px;}
+    .title-lv1 div{ font-size: 16px;}
+
+    .auto-banner{overflow: hidden;}
+    .auto-banner img{ width: 150%; margin-left: -25%;}
+
+    .title-lv2{ font-size:20px; padding: 10px 0;margin-bottom: 40px;}
+
+    .company-info{ column-count: 1;-webkit-column-count: 1;-moz-column-count: 1; column-gap:7em;-webkit-column-gap: 7em;-moz-column-gap:7em; line-height: 200%; font-size: 14px;}
+
+    .company-culture div{ width: 100%; margin-bottom: 30px;}
+
+    .join-tab{margin: 0 5% 30px 5%;}
+    .join-tab li{ font-size: 14px;}
+    .join-banner{ margin: 0 5%;}
+    .join-banner img{ width: 100%; margin: 0;}
+    .join-list{ margin: 20px 5%;}
+    .join-list ul li a{ font-size: 16px; padding: 10px 0;}
+
+    .netscontent{ margin: 0;}
+    .netsframe{ margin: 30px 5%; padding-bottom: 0;}
+    .netsframe dl{ padding-right: 1%;}
+    .netsframe dl dt{ font-size: 20px; margin-bottom: 15px;}
+    .netsframe dl dd{ font-size: 14px; margin-bottom: 6px;}
+    .netsframe .mt80{ margin-top: 30px;}
+    .netsframe .mt30{ margin-top: 10px;}
+    .netsframe .f20{ font-size: 14px;}
+    .netsframe .txt-size1{ width: 70%;}
+    .netsframe .txt-size2{ width: 70%;}
+    .netsframe .txt-size3{ width: 70%;}
+
+    .news-list{ margin: 30px 5%;}
+    .news-list li{padding: 12px 0;}
+    .news-list li p{ font-size: 12px; margin-bottom: 0;}
+    .news-list li div{ font-size: 16px;}
+
+    .newsdetail{ width: auto; margin: 20px 5%;}
+    .news-title{ margin-bottom: 20px;}
+    .news-title p{ font-size: 14px; margin-bottom: 0;}
+    .news-title div{ font-size: 18px;}
+
+    .pro-classify{ margin: 30px 5% 10px 5%;}
+    .pro-classify>ul>li .pc-lv1{ font-size: 16px;}
+    .pro-classify>ul>li> ul{ top:55px;}
+    .pro-classify>ul>li> ul li{ padding: 12px 0;}
+    .pro-classify>ul>li> ul li a{font-size: 14px;}
+
+    .pro-banner{ width: auto; margin:0 5% 10px 5%;}
+
+    .pro-list{ width: auto; margin: 0 5%;}
+    .pro-list a{ width: 48%; margin-right: 4%; margin-left: 0; margin-bottom: 10px;}
+    .pro-list a:nth-child(2n){margin-right: 0;}
+    .pro-list a div{ width: 100%; height: auto;}
+    .pro-list a p{ font-size: 20px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
