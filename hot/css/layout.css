@@ -48,8 +48,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 500;
-    overflow: hidden;;
-    height: 90px;
+    overflow: hidden;
 }
 header.headerHome:not(.bg) {
     -moz-box-shadow: none;
