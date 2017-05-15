@@ -15,12 +15,13 @@
     <link href="css/layout.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
 </head>
 
 <body>
 <!--头部导航-->
-<header class="home-header">
-    <div class="frame1400">
+<header class="home-header" id="homeHeader">
+    <div class="frame1400 clearfix">
         <div class="logo"><img src="images/logo.png"></div>
         <nav>
             <ul>
@@ -32,75 +33,65 @@
                 <li><a href="#">加入我们</a> </li>
             </ul>
         </nav>
+        <ul class="right-nav">
+            <li><a href="#">联系我们</a> </li>
+            <li><a href="#">ENGLISH</a> </li>
+        </ul>
     </div>
 </header>
 
 <!--内容区-->
 <section class="banner wheight">
-    <a href="javascript:;" class="icons icon-scrolldown"></a>
+    <video id="videoPlay1" autoplay width="1920" height="1080" src="mp4/banner.mp4" poster="images/banner1.jpg" loop="loop">
+        您的浏览器暂不支持播放该视频，请升级至最新版浏览器。
+    </video>
+    <div class="cover"></div>
+    <a href="javascript:;" class="icons icon-scrolldown" id="slideDown"></a>
 </section>
 
 <section class="section1">
     <div class="frame1400">
-        <div class="title1"><p>荣誉证书</p></div>
-        <ul class="certificate-list">
-            <li>
-                <i class="icons icon-stars pull-left"></i>
-                <div class="pull-left">
-                    <h3>EUPD研究TOP BRAND PV 2016</h3>
-                    <div>美国和澳大利亚光伏行业最受欢迎和最有名的模块品牌之一。</div>
-                    <a href="#"><i class="icons icon-more"></i>阅读更多</a>
-                </div>
-            </li>
-            <li>
-                <i class="icons icon-stars pull-left"></i>
-                <div class="pull-left">
-                    <h3>EUPD研究TOP BRAND PV 2016</h3>
-                    <div>美国和澳大利亚光伏行业最受欢迎和最有名的模块品牌之一。</div>
-                    <a href="#"><i class="icons icon-more"></i>阅读更多</a>
-                </div>
-            </li>
-            <li>
-                <i class="icons icon-stars pull-left"></i>
-                <div class="pull-left">
-                    <h3>EUPD研究TOP BRAND PV 2016</h3>
-                    <div>美国和澳大利亚光伏行业最受欢迎和最有名的模块品牌之一。</div>
-                    <a href="#"><i class="icons icon-more"></i>阅读更多</a>
-                </div>
-            </li>
-        </ul>
+        <div class="title1"><p>关于思博</p></div>
+        <div class="aboutus-content">
+            思博扣具是福建浔兴集团在取得中国拉链中心的美誉后，为了满足广大客户的“一站式”购物需求而倾力打造的箱包配件品牌。<br>
+            公司专业生产各种中高档塑料扣具、运动水瓶、自行车水袋。借力浔兴拉链科技股份有限公司、SBS研发中心，不断开发新产品，产品质量居于国内同行前列。<br>
+            良好的产品质量、稳定的品质、准确无误的交货期、优质的服务是SBS扣具能够在激烈的市场竞争中飞速发展的重要原因。
+        </div>
+        <div class="tc mt50 mb50">
+            <a href="#" class="aboutus-btn-more">了解更多</a>
+        </div>
     </div>
 </section>
 
 <section class="section1">
     <div class="frame1400">
-        <div class="title1"><p>部门介绍</p></div>
+        <div class="title1"><p>产品介绍</p></div>
         <ul class="departs-list">
             <li>
                 <img src="images/pic1.jpg">
                 <a href="#">
-                    <p>市场部</p>
-                    <div>Marketing Department</div>
+                    <p>运动水瓶</p>
+                    <div>Sports drinking bottle</div>
                 </a>
             </li>
             <li>
-                <img src="images/pic1.jpg">
+                <img src="images/pic6.jpg">
                 <a href="#">
-                    <p>市场部</p>
-                    <div>Marketing Department</div>
+                    <p>运动水袋</p>
+                    <div>Sports drinking bottle</div>
                 </a>
             </li>
             <li>
-                <img src="images/pic1.jpg">
+                <img src="images/pic7.jpg">
                 <a href="#">
-                    <p>市场部</p>
-                    <div>Marketing Department</div>
+                    <p>金属配件</p>
+                    <div>Sports drinking bottle</div>
                 </a>
             </li>
             <li>
-                <img src="images/pic1.jpg">
+                <img src="images/pic8.jpg">
                 <a href="#">
-                    <p>市场部</p>
+                    <p>塑料配件</p>
                     <div>Marketing Department</div>
                 </a>
             </li>
@@ -129,34 +120,34 @@
         </div>
         <div class="col-lg-9">
             <div class="newbtn">
-                <a href="javascript:;" class="next">NEXT</a>
+                <a href="javascript:;" class="next" id="newsBtnNext">NEXT</a>
                 <p><span>1</span>/5</p>
-                <a href="javascript:;" class="prev">PREV</a>
+                <a href="javascript:;" class="prev" id="newsBtnPrev">PREV</a>
             </div>
             <div class="newsframe">
-                <ul class="nlist">
+                <ul class="nlist" id="newsList">
                     <li>
-                        <h3>SBS思博员工“德化-岱仙瀑布”一日游</h3>
+                        <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
                         <div>为了丰富广大员工的文化生活、完善公司福利，感谢各位员工辛勤的付出和努力的工作，公司特举行了“德化-岱仙瀑布”一日游...</div>
                         <p>2016.09.02</p>
                     </li>
                     <li>
-                        <h3>SBS思博员工“德化-岱仙瀑布”一日游</h3>
+                        <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
                         <div>为了丰富广大员工的文化生活、完善公司福利，感谢各位员工辛勤的付出和努力的工作，公司特举行了“德化-岱仙瀑布”一日游...</div>
                         <p>2016.09.02</p>
                     </li>
                     <li>
-                        <h3>SBS思博员工“德化-岱仙瀑布”一日游</h3>
+                        <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
                         <div>为了丰富广大员工的文化生活、完善公司福利，感谢各位员工辛勤的付出和努力的工作，公司特举行了“德化-岱仙瀑布”一日游...</div>
                         <p>2016.09.02</p>
                     </li>
                     <li>
-                        <h3>SBS思博员工“德化-岱仙瀑布”一日游</h3>
+                        <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
                         <div>为了丰富广大员工的文化生活、完善公司福利，感谢各位员工辛勤的付出和努力的工作，公司特举行了“德化-岱仙瀑布”一日游...</div>
                         <p>2016.09.02</p>
                     </li>
                     <li>
-                        <h3>SBS思博员工“德化-岱仙瀑布”一日游</h3>
+                        <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
                         <div>为了丰富广大员工的文化生活、完善公司福利，感谢各位员工辛勤的付出和努力的工作，公司特举行了“德化-岱仙瀑布”一日游...</div>
                         <p>2016.09.02</p>
                     </li>
@@ -170,8 +161,8 @@
     <div class="frame1400">
         <div class="title1"><p>企业文化</p></div>
         <ul class="culture-list">
-            <li><a href="#"><img src="images/pic2.jpg"></a></li>
             <li><a href="#"><img src="images/pic3.jpg"></a></li>
+            <li><a href="#"><img src="images/pic2.jpg"></a></li>
             <li><a href="#"><img src="images/pic4.jpg"></a></li>
         </ul>
     </div>
@@ -203,7 +194,33 @@
 </body>
 </html>
 <script>
+    var wheight;
+    var $homeHeader = $("#homeHeader");
     $(function(){
-        $(".wheight").height($(window).height());
+        wheight = parseInt($(window).height());
+        $(".wheight").height(wheight*0.85);
+
+        //点击向下箭头
+        $("#slideDown").on('click',function(){
+            $('body,html').animate({'scrollTop':wheight},200);
+            if(!$homeHeader.hasClass('bg')){
+                $homeHeader.addClass("bg");
+            }
+        });
+
+        //切换新闻播报
+        var newsIndex = 0,newsLen = 5;
+        $("#newsBtnNext").on('click',function(){
+            if(newsIndex != newsLen-1){
+                newsIndex++;
+                $("#newsList").animate({'margin-left':-newsIndex*350},300);
+            }
+        });
+        $("#newsBtnPrev").on('click',function(){
+            if(newsIndex != 0){
+                newsIndex--;
+                $("#newsList").animate({'margin-left':-newsIndex*350},300);
+            }
+        });
     })
 </script>

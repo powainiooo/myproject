@@ -15,10 +15,11 @@
     <link href="css/layout.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
 </head>
 <body>
 <!--头部导航-->
-<div id="header">
+<div id="header" class="single-header-frame">
     <header class="single-header">
         <div class="logo"><img src="images/logo.png"></div>
         <nav>
@@ -29,6 +30,7 @@
                 <li><a href="#">销售网络</a> </li>
                 <li><a href="#">新闻中心</a> </li>
                 <li><a href="#">加入我们</a> </li>
+                <li><a href="#">联系我们</a> </li>
             </ul>
         </nav>
     </header>
@@ -50,14 +52,10 @@
                 </ul>
             </li>
         </ul>
-        <button class="showNav icon2-menu"><i class="blind">Menu</i></button>
+        <button class="showNav icon2-menu" id="showNav"><img src="images/menu.png"> </button>
     </nav>
 </div>
-
-<!--
-    公司动态 和 行业新闻 分两个页面   样式一样
--->
-
+<div class="head-height"></div>
 
 <!--公司动态-->
 <div class="frame1220">
@@ -66,42 +64,6 @@
         <div>关注思博新闻, 了解思博最新动态!</div>
     </div>
     <section class="auto-banner"><img src="images/newsbanner1.jpg"> </section>
-    <ul class="news-list">
-        <li>
-            <p>2016-07-11</p>
-            <div><a href="#">2016年SBS思博员工“德化-岱仙瀑布”一日游</a> </div>
-        </li>
-    </ul>
-    <div class="tc mb100">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-
-<!--行业新闻-->
-<div class="frame1220">
-    <div class="title-lv1">
-        <h3>行业新闻</h3>
-        <div>关注思博新闻, 了解思博最新动态!</div>
-    </div>
-    <section class="auto-banner"><img src="images/newsbanner2.jpg"> </section>
     <ul class="news-list">
         <li>
             <p>2016-07-11</p>
@@ -141,6 +103,7 @@
             <li><a href="#">销售网络</a> </li>
             <li><a href="#">新闻中心</a> </li>
             <li><a href="#">加入我们</a> </li>
+            <li><a href="#">联系我们</a> </li>
         </ul>
     </nav>
     <div>
