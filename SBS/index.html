@@ -110,7 +110,14 @@
 
 <section class="section1 mapsection">
     <div>
-        <div class="col-lg-8 sale-area-img"></div>
+        <div class="col-lg-8 sale-area-img">
+            <ul>
+                <li style="background-image: url('images/banner2_1.jpg');display: block;"></li>
+                <li style="background-image: url('images/banner2_2.jpg')"></li>
+                <li style="background-image: url('images/banner2_3.jpg')"></li>
+                <li style="background-image: url('images/banner2_4.jpg')"></li>
+            </ul>
+        </div>
         <div class="col-lg-4 sale-area-info">
             <div class="aside-content">
                 <h3>销售地区</h3>
@@ -265,5 +272,16 @@
                 $(".departs-list").animate({'margin-left':-proIndex*200},300);
             }
         });
+
+        //地图切换
+        var mapIndex = 0,mapLen = $(".sale-area-img li").length;
+        setInterval(function(){
+            if(mapIndex != mapLen-1){
+                mapIndex++;
+            }else{
+                mapIndex = 0;
+            }
+            $(".sale-area-img li").eq(mapIndex).fadeIn(1000).siblings('li').hide();
+        },5000)
     })
 </script>
