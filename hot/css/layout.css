@@ -22,12 +22,14 @@
 }
 .btn.blk a {
     background-color: #333;
+    font-family: SimHei;
 }
 .no-touch .btn.blk a:hover {
     background: #4c4c4c;
 }
 .btn.org a {
     background-color: #f87e34;
+    font-family: SimHei;
 }
 .no-touch .btn.org a:hover {
     background: #ff974d;
@@ -64,6 +66,7 @@ header .logo {
 header .logo img {
     width: 120px;
 }
+header #globalNav{ height:90px;}
 header #globalNav .navArea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -551,7 +554,6 @@ footer #pagetop.stop {
 }
 .hgroup .secTit span {
     display: block;
-    font-weight: bold;
 }
 .hgroup .secTit span.ti {
     font-family: 'Montserrat', sans-serif;
@@ -570,6 +572,7 @@ footer #pagetop.stop {
 .hgroup .secTit span.ruby {
     font-size: 16px;
     margin-top: 20px;
+    font-family: SimHei;
 }
 .hgroup.titCollection .secTit:after {
     background-image: url(../images/line-dotted-red01.png);
@@ -986,6 +989,9 @@ footer #pagetop.stop {
 .news-title{ padding-bottom: 15px; border-bottom: 2px solid #cccccc; margin-bottom: 40px;}
 .news-title p{ font-size: 20px; color: #2c2c2c; margin-bottom: 10px;}
 .news-title div{ font-size: 24px; color: #0b0b0b;}
+.news-detail{ margin-top: 100px;}
+.news-detail .img-normal{ display: block;}
+.news-detail .img-phone{ display: none;}
 
 
 /*
@@ -1008,6 +1014,7 @@ footer #pagetop.stop {
     header .logo img{ width: 85px;}
     header .btnArea{ display: none;}
     header nav{ border-bottom: 1px solid #ECECEC; min-height: 55px; position: relative; z-index: 50;}
+    header #globalNav{height: auto;}
     header #globalNav .navArea{ border-top: 1px solid #ECECEC; text-align: left; padding-left: 0; margin-top: 55px; display: none;}
     header #globalNav .navArea li{ display: block; border-bottom: 1px solid #ECECEC; background-color: #FFF;}
     header #globalNav .navArea li:last-child{ border-bottom: none;}
@@ -1084,7 +1091,7 @@ footer #pagetop.stop {
     .home .secMv .mvfixed .bg .txt{ width: auto; margin: 15px 5%; line-height: 150%; font-size: 12px;}
 
     .home .secPickup .picList li{ width: 100%;}
-    .home .secPickup .picList li img{ width: 100%; height: auto;}
+    .home .secPickup .picList li img{ width: 80%; height: auto;}
     .home .secPickup .picList li dl dt{ font-size: 16px; margin-bottom: 8px;}
     .home .secPickup .picList li dl dd{ padding: 0;}
     .home .secCharacter .inner .hgroup{ margin-bottom: 20px;}
@@ -1128,4 +1135,7 @@ footer #pagetop.stop {
     .contactframe dt{ font-size: 18px;}
     .contactframe dd{ font-size: 14px; padding-left: 40px; margin-bottom: 20px; background-size:30px; }
 
+
+    .news-detail .img-normal{ display: none;}
+    .news-detail .img-phone{ display: block;}
 }
