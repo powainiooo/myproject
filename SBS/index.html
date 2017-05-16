@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Keywords" content="">
     <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          id="viewport">
 <title>无标题文档</title>
     <!-- html5.js for IE less than 9 -->
     <!--[if lt IE 9]>
@@ -23,6 +26,7 @@
 <header class="home-header" id="homeHeader">
     <div class="frame1400 clearfix">
         <div class="logo"><img src="images/logo.png"></div>
+        <a href="javascript:;" class="btn-menu" id="btn-menu"><span></span></a>
         <nav>
             <ul>
                 <li><a href="#">首页</a> </li>
@@ -31,6 +35,7 @@
                 <li><a href="#">销售网络</a> </li>
                 <li><a href="#">新闻中心</a> </li>
                 <li><a href="#">加入我们</a> </li>
+                <li><a href="#">联系我们</a> </li>
             </ul>
         </nav>
         <ul class="right-nav">
@@ -50,56 +55,60 @@
 </section>
 
 <section class="section1">
-    <div class="frame1400">
+    <div class="frame1300">
         <div class="title1"><p>关于思博</p></div>
         <div class="aboutus-content">
             思博扣具是福建浔兴集团在取得中国拉链中心的美誉后，为了满足广大客户的“一站式”购物需求而倾力打造的箱包配件品牌。<br>
             公司专业生产各种中高档塑料扣具、运动水瓶、自行车水袋。借力浔兴拉链科技股份有限公司、SBS研发中心，不断开发新产品，产品质量居于国内同行前列。<br>
             良好的产品质量、稳定的品质、准确无误的交货期、优质的服务是SBS扣具能够在激烈的市场竞争中飞速发展的重要原因。
         </div>
-        <div class="tc mt50 mb50">
+        <div class="tc">
             <a href="#" class="aboutus-btn-more">了解更多</a>
         </div>
     </div>
 </section>
 
 <section class="section1">
-    <div class="frame1400">
+    <div class="frame1300">
         <div class="title1"><p>产品介绍</p></div>
-        <ul class="departs-list">
-            <li>
-                <img src="images/pic1.jpg">
-                <a href="#">
-                    <p>运动水瓶</p>
-                    <div>Sports drinking bottle</div>
-                </a>
-            </li>
-            <li>
-                <img src="images/pic6.jpg">
-                <a href="#">
-                    <p>运动水袋</p>
-                    <div>Sports drinking bottle</div>
-                </a>
-            </li>
-            <li>
-                <img src="images/pic7.jpg">
-                <a href="#">
-                    <p>金属配件</p>
-                    <div>Sports drinking bottle</div>
-                </a>
-            </li>
-            <li>
-                <img src="images/pic8.jpg">
-                <a href="#">
-                    <p>塑料配件</p>
-                    <div>Marketing Department</div>
-                </a>
-            </li>
-        </ul>
+        <div class="pr ovh">
+            <ul class="departs-list clearfix">
+                <li>
+                    <img src="images/pic1.jpg">
+                    <a href="#">
+                        <p>塑料配件</p>
+                        <div>Sports drinking bottle</div>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic6.jpg">
+                    <a href="#">
+                        <p>运动水袋</p>
+                        <div>Sports drinking bottle</div>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic7.jpg">
+                    <a href="#">
+                        <p>运动水杯</p>
+                        <div>Sports drinking bottle</div>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic8.jpg">
+                    <a href="#">
+                        <p>渔具用品</p>
+                        <div>Marketing Department</div>
+                    </a>
+                </li>
+            </ul>
+            <a href="javascript:;" class="btn-arrow-left" id="pro-arrow-left"><i></i></a>
+            <a href="javascript:;" class="btn-arrow-right" id="pro-arrow-right"><i></i></a>
+        </div>
     </div>
 </section>
 
-<section class="section1">
+<section class="section1 mapsection">
     <div>
         <div class="col-lg-8 sale-area-img"></div>
         <div class="col-lg-4 sale-area-info">
@@ -125,6 +134,8 @@
                 <a href="javascript:;" class="prev" id="newsBtnPrev">PREV</a>
             </div>
             <div class="newsframe">
+                <a href="javascript:;" class="btn-arrow-left" id="news-arrow-left"><i></i></a>
+                <a href="javascript:;" class="btn-arrow-right" id="news-arrow-right"><i></i></a>
                 <ul class="nlist" id="newsList">
                     <li>
                         <h3><a href="#"> SBS思博员工“德化-岱仙瀑布”一日游</a></h3>
@@ -158,7 +169,7 @@
 </section>
 
 <section class="section1">
-    <div class="frame1400">
+    <div class="frame1300">
         <div class="title1"><p>企业文化</p></div>
         <ul class="culture-list">
             <li><a href="#"><img src="images/pic3.jpg"></a></li>
@@ -194,32 +205,64 @@
 </body>
 </html>
 <script>
-    var wheight;
+    var wwidth,wheight;
     var $homeHeader = $("#homeHeader");
     $(function(){
-        wheight = parseInt($(window).height());
-        $(".wheight").height(wheight*0.85);
+        wwidth = parseInt($(window).width());
+        var scrollHeight = 700;
+        if(wwidth>750){
+            $(".wheight").height(scrollHeight);
+            scrollHeight = wwidth*7.5/16;
+        }
+
 
         //点击向下箭头
         $("#slideDown").on('click',function(){
-            $('body,html').animate({'scrollTop':wheight},200);
+            $('body,html').animate({'scrollTop':scrollHeight},200);
             if(!$homeHeader.hasClass('bg')){
                 $homeHeader.addClass("bg");
             }
         });
 
         //切换新闻播报
-        var newsIndex = 0,newsLen = 5;
+        var newsIndex = 0,newsLen = $("#newsList li").length;
         $("#newsBtnNext").on('click',function(){
             if(newsIndex != newsLen-1){
                 newsIndex++;
-                $("#newsList").animate({'margin-left':-newsIndex*350},300);
+                $("#newsList").animate({'margin-left':-newsIndex*270},300);
             }
         });
         $("#newsBtnPrev").on('click',function(){
             if(newsIndex != 0){
                 newsIndex--;
-                $("#newsList").animate({'margin-left':-newsIndex*350},300);
+                $("#newsList").animate({'margin-left':-newsIndex*270},300);
+            }
+        });
+        $("#news-arrow-right").on('click',function(){
+            if(newsIndex != newsLen-1){
+                newsIndex++;
+                $("#newsList").animate({'margin-left':-newsIndex*200},300);
+            }
+        });
+        $("#news-arrow-left").on('click',function(){
+            if(newsIndex != 0){
+                newsIndex--;
+                $("#newsList").animate({'margin-left':-newsIndex*200},300);
+            }
+        });
+
+        //移动端切换chanp
+        var proIndex = 0,proLen = 4;
+        $("#pro-arrow-right").on('click',function(){
+            if(proIndex != proLen-1){
+                proIndex++;
+                $(".departs-list").animate({'margin-left':-proIndex*200},300);
+            }
+        });
+        $("#pro-arrow-left").on('click',function(){
+            if(proIndex != 0){
+                proIndex--;
+                $(".departs-list").animate({'margin-left':-proIndex*200},300);
             }
         });
     })

@@ -12,9 +12,11 @@ var scrollFunc=function(e){
         if(e.wheelDelta>0){//up
             $("#header").removeClass("down");
             $("#showNav").hide();
+            $(".head-height").height(205);
         }else if(e.wheelDelta<0){//down
             $("#header").addClass("down");
             $("#showNav").show();
+            $(".head-height").height(150);
         }
     }else if(e.detail){//Firefox
         console.log(e.detail);
@@ -36,5 +38,6 @@ $(function(){
     $("#btn-menu").on('click',function(){
         $(this).toggleClass("btn-menu-close");
         $(".single-header nav ul").slideToggle(200);
+        $(".home-header nav ul").slideToggle(200);
     })
 });
