@@ -10,11 +10,27 @@ var imglist = {};
 var imgData = new Array(
     {name:"logo",path:imgsrc+"./images/logo.png"},
     {name:"logo2",path:imgsrc+"./images/logo2.png"},
+    {name:"beespart",path:imgsrc+"./images/beespart.png"},
+    {name:"beesRotate",path:imgsrc+"./images/beesRotate.png"},
     {name:"title1",path:imgsrc+"./images/title1.png"},
     {name:"bg-cover",path:imgsrc+"./images/bg-cover.png"},
     {name:"circle",path:imgsrc+"./images/circle.png"},
     {name:"icons",path:imgsrc+"./images/icons.png"},
     {name:"lines",path:imgsrc+"./images/lines.png"},
+    {name:"vedio",path:imgsrc+"./images/vedio.jpg"},
+    {name:"p6_11",path:imgsrc+"./images/p6_11.jpg"},
+    {name:"p6_12",path:imgsrc+"./images/p6_12.jpg"},
+    {name:"p6_13",path:imgsrc+"./images/p6_13.jpg"},
+    {name:"p6_14",path:imgsrc+"./images/p6_14.jpg"},
+    {name:"p6_21",path:imgsrc+"./images/p6_21.jpg"},
+    {name:"p6_22",path:imgsrc+"./images/p6_22.jpg"},
+    {name:"p6_23",path:imgsrc+"./images/p6_23.jpg"},
+    {name:"p6_24",path:imgsrc+"./images/p6_24.jpg"},
+    {name:"p6_31",path:imgsrc+"./images/p6_31.jpg"},
+    {name:"p6_32",path:imgsrc+"./images/p6_32.jpg"},
+    {name:"p6_33",path:imgsrc+"./images/p6_33.jpg"},
+    {name:"p6_34",path:imgsrc+"./images/p6_34.jpg"},
+    {name:"p9_pic1",path:imgsrc+"./images/p9_pic1.png"},
     {name:"bg",path:imgsrc+"./images/bg.jpg"},
     {name:"bg4",path:imgsrc+"./images/bg4.jpg"},
     {name:"bg7",path:imgsrc+"./images/bg7.jpg"},
@@ -32,7 +48,7 @@ function main(){
 
     //添加舞台
     stage = new LSprite();
-    stage.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#eee93a");
+    //stage.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#eee93a");
     addChild(stage);
 
     //addChild(new FPS());
@@ -64,14 +80,14 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            page1Init();
+            page2Init();
         }
     );
 }
 
 function page1Init(){
     page1Layer = new LSprite();
-    page1Layer.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#eee93a");
+    page1Layer.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#ffff00");
     stage.addChild(page1Layer);
 
     var list = LGlobal.divideCoordinate(1957, 664, 1, 11);
@@ -83,10 +99,10 @@ function page1Init(){
     logo.setLabel("end",0,10,1,false);
     logo.addFrameScript("end",function(){
         logo.stop();
-        objMove.call(page1Layer,{
+        objMove.call(logo,{
             direc:'out',
-            t:1,
-            delay:1,
+            t:0.5,
+            delay:0.5,
             callback:page2Init
         })
     });
@@ -95,7 +111,7 @@ function page1Init(){
 
 function page2Init(){
     page2Layer = new LSprite();
-    page2Layer.graphics.drawRect(0,"#eee93a",[0,0,750,1125],true,"#eee93a");
+    page2Layer.graphics.drawRect(0,"#ffff00",[0,0,750,1125],true,"#ffff00");
     page2Layer.alpha = 0;
     stage.addChild(page2Layer);
 
@@ -123,8 +139,22 @@ function page2Init(){
     title.alpha = 0;
     page2Layer.addChild(title);
 
+    var btn = new ClickLogo(2,538,44,function(){
+        btn.canClick = false;
+        objMove.call(page2Layer,{
+            direc:'out',
+            callback:function(){
+                stage.removeChild(page2Layer);
+                page2Layer = null;
+            }
+        });
+
+    });
+    btn.alpha = 0;
+    page2Layer.addChild(btn);
+
     objMove.call(page2Layer,{
-        t:2,
+        t:1,
         callback:function(){
             LTweenLite.to(bee,1,{y:585,ease:LEasing.Cubic.easeOut});
             LTweenLite.to(bg,1,{alpha:1,ease:LEasing.None.easeIn,onComplete:function(){
@@ -135,29 +165,21 @@ function page2Init(){
     objMove.call(logo,{
         type:'left',
         ei:'Back',
-        delay:4
+        delay:3
     });
     objMove.call(title,{
         type:'scaleS2L',
         ei:'Back',
+        delay:3.4
+    });
+    objMove.call(btn,{
         delay:4.4,
         callback:function(){
-            objMove.call(bee,{
-                direc:'out',
-                t:1
-            });
-            objMove.call(logo,{
-                direc:'out',
-                t:1
-            });
-            objMove.call(title,{
-                direc:'out',
-                t:1
-            });
+            btn.move();
         }
     });
 
-    LTweenLite.to(bg,1,{y:-1120,delay:7,ease:LEasing.None.easeIn,onComplete:page4Init});
+    //LTweenLite.to(bg,1,{y:-1120,delay:7,ease:LEasing.None.easeIn,onComplete:page4Init});
 }
 
 function page3Init(){
@@ -165,9 +187,19 @@ function page3Init(){
     page3Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page3Layer);
 
-    var bg = new LBitmap(new LBitmapData(imglist['bg']));
-    bg.y = -1120;
-    page3Layer.addChild(bg);
+    var bgUpCover = new LSprite();
+    bgUpCover.graphics.drawVertices(0,'#f00',[[0,0],[750,0],[750,378],[0,800]]);
+    var bgUp = new LSprite();
+    bgUp.graphics.drawRect(0,"#fff",[0,0,750,800],true,"#ffff00");
+    bgUp.mask = bgUpCover;
+    page3Layer.addChild(bgUp);
+
+    var bgDownCover = new LSprite();
+    bgDownCover.graphics.drawVertices(0,'#f00',[[0,800],[750,378],[750,1125],[0,1125]]);
+    var bgDown = new LSprite();
+    bgDown.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#2eb7a4");
+    bgDown.mask = bgDownCover;
+    page3Layer.addChild(bgDown);
 
     var body = new LBitmap(new LBitmapData(imglist["beespart"],0,48,215,168));
     body.x = 138;
@@ -193,18 +225,60 @@ function page3Init(){
     head.alpha = 0;
     page3Layer.addChild(head);
 
-    objMove.call(body,{
-        delay:1
+    var list = LGlobal.divideCoordinate(5600, 415, 1, 8);
+    var data = new LBitmapData(imglist["beesRotate"]);
+    var bees = new LAnimationTimeline(data, list);
+    bees.x = 25;
+    bees.y = 360;
+    bees.speed = 10;
+    page3Layer.addChild(bees);
+    bees.setLabel("show",0,0,1,false);
+    bees.setLabel("hide",0,1,1,false);
+    bees.addFrameScript("show",function(){
+        vedio.visible = true;
+        hintHead.visible = true;
+        hintWings.visible = true;
+        hintBody.visible = true;
+        hintVedio.visible = true;
     });
-    objMove.call(wing,{
-        delay:1.3
+    bees.addFrameScript("hide",function(){
+        vedio.visible = false;
+        hintHead.visible = false;
+        hintWings.visible = false;
+        hintBody.visible = false;
+        hintVedio.visible = false;
     });
-    objMove.call(inside,{
-        delay:1.6
-    });
-    objMove.call(head,{
-        delay:1.9
-    });
+    bees.stop();
+
+    var vedio = new Zimg([imglist['vedio']],240,558);
+    page3Layer.addChild(vedio);
+
+    var btnRotate = new LButton(new Zimg([imglist['icons'],266,704,49,44]));
+    btnRotate.x = 350;
+    btnRotate.y = 800;
+    page3Layer.addChild(btnRotate);
+
+    var hintHead = new ClickHint(582,586,'#615724');
+    page3Layer.addChild(hintHead);
+
+    var hintWings = new ClickHint(300,465,'#615724');
+    page3Layer.addChild(hintWings);
+
+    var hintBody = new ClickHint(394,644,'#b2b2b2');
+    page3Layer.addChild(hintBody);
+
+    var hintVedio = new ClickHint(280,583,'#fff');
+    page3Layer.addChild(hintVedio);
+
+    var infoWings = new LButton(new Zimg([imglist['icons'],750,0,331,309],28,69));
+    page3Layer.addChild(infoWings);
+
+    var infoHead = new LButton(new Zimg([imglist['icons'],1096,0,331,309],390,66));
+    page3Layer.addChild(infoHead);
+
+    var infoBody = new LButton(new Zimg([imglist['icons'],375,644,333,312],70,743));
+    page3Layer.addChild(infoBody);
+
 }
 
 function page4Init(){
@@ -311,6 +385,138 @@ function page4Init(){
     }});
 }
 
+function page5Init(){
+    page5Layer = new LSprite();
+    stage.addChild(page5Layer);
+
+    var bgUpCover = new LSprite();
+    bgUpCover.graphics.drawVertices(0,'#f00',[[0,0],[750,0],[750,838],[0,966]]);
+    var bgUp = new Zimg([imglist['bg-cover']]);
+    bgUp.mask = bgUpCover;
+    page5Layer.addChild(bgUp);
+
+    var bgDownCover = new LSprite();
+    bgDownCover.graphics.drawVertices(0,'#f00',[[0,966],[750,838],[750,1125],[0,1125]]);
+    var bgDown = new LSprite();
+    bgDown.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#2eb7a4");
+    bgDown.mask = bgDownCover;
+    page5Layer.addChild(bgDown);
+
+    var content1 = new P5content([314,196],[365,56],[180,51,435,239],1);
+    page5Layer.addChild(content1);
+
+    var content2 = new P5content([55,78],[118,435],[90,378,286,286],2);
+    page5Layer.addChild(content2);
+
+    var content3 = new P5content([40,632],[418,644],[265,590,457,207],3);
+    page5Layer.addChild(content3);
+
+    var btn = new ClickLogo(5,548,900);
+    page5Layer.addChild(btn);
+
+    var title1 = new Zimg([imglist['icons'],0,1200,475,62],208,1000);
+    page5Layer.addChild(title1);
+
+    var title2 = new Zimg([imglist['icons'],0,1130,454,62],19,943);
+    page5Layer.addChild(title2);
+}
+
+function page6Init(){
+    page6Layer = new LSprite();
+    stage.addChild(page6Layer);
+
+    var bgUpCover = new LSprite();
+    bgUpCover.graphics.drawVertices(0,'#f00',[[0,0],[750,0],[750,1040],[0,762]]);
+    var bgUp = new Zimg([imglist['bg-cover']]);
+    bgUp.mask = bgUpCover;
+    page6Layer.addChild(bgUp);
+
+    var bgDownCover = new LSprite();
+    bgDownCover.graphics.drawVertices(0,'#f00',[[0,762],[750,1040],[750,1125],[0,1125]]);
+    var bgDown = new LSprite();
+    bgDown.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#000");
+    bgDown.mask = bgDownCover;
+    page6Layer.addChild(bgDown);
+
+    var wheelLine = new LSprite();
+    wheelLine.graphics.drawLine(5,'#464646',[378,782,490,625]);
+    wheelLine.graphics.drawLine(5,'#464646',[425,874,566,750]);
+    wheelLine.graphics.drawLine(5,'#464646',[470,748,352,548]);
+    wheelLine.graphics.drawLine(5,'#464646',[604,653,477,488]);
+    wheelLine.graphics.drawLine(5,'#464646',[369,441,500,242]);
+    wheelLine.graphics.drawLine(5,'#464646',[500,490,631,316]);
+    wheelLine.graphics.drawLine(5,'#464646',[511,380,330,301]);
+    wheelLine.graphics.drawLine(5,'#464646',[593,246,399,160]);
+    wheelLine.graphics.drawLine(5,'#464646',[310,145,486,37]);
+    wheelLine.graphics.drawLine(5,'#464646',[396,275,548,115]);
+    page6Layer.addChild(wheelLine);
+
+    var wheel1 = new ZRimg([imglist['icons'],0,1264,130,130],-65,-65);
+    wheel1.x = 407;
+    wheel1.y = 830;
+    page6Layer.addChild(wheel1);
+
+    var wheel2 = new ZRimg([imglist['icons'],130,1270,226,226],-113,-113);
+    wheel2.x = 543;
+    wheel2.y = 704;
+    page6Layer.addChild(wheel2);
+
+    var wheel3 = new ZRimg([imglist['icons'],492,1145,252,252],-126,-126);
+    wheel3.x = 407;
+    wheel3.y = 504;
+    page6Layer.addChild(wheel3);
+
+    var wheel4 = new ZRimg([imglist['icons'],718,584,282,282],-141,-141);
+    wheel4.x = 593;
+    wheel4.y = 300;
+    page6Layer.addChild(wheel4);
+
+    var wheel5 = new ZRimg([imglist['icons'],727,866,240,240],-120,-120);
+    wheel5.x = 332;
+    wheel5.y = 220;
+    page6Layer.addChild(wheel5);
+
+    var wheel6 = new ZRimg([imglist['icons'],361,1349,144,144],-72,-72);
+    wheel6.x = 513;
+    wheel6.y = 84;
+    page6Layer.addChild(wheel6);
+
+    var info1 = new ZRimg([imglist['icons'],517,1417,139,62],-70,-31);
+    info1.x = 543;
+    info1.y = 704;
+    page6Layer.addChild(info1);
+
+    var info2 = new ZRimg([imglist['icons'],1312,331,138,63],-69,-31);
+    info2.x = 407;
+    info2.y = 504;
+    page6Layer.addChild(info2);
+
+    var info3 = new ZRimg([imglist['icons'],1052,461,168,63],-84,-31);
+    info3.x = 593;
+    info3.y = 300;
+    page6Layer.addChild(info3);
+
+    var info4 = new ZRimg([imglist['icons'],1311,406,139,112],-70,-56);
+    info4.x = 332;
+    info4.y = 210;
+    page6Layer.addChild(info4);
+
+    var title1 = new Zimg([imglist['icons'],1003,627,488,75],212,968);
+    page6Layer.addChild(title1);
+
+    var title2 = new Zimg([imglist['icons'],1047,542,379,75],30,899);
+    page6Layer.addChild(title2);
+
+    var person = new Zimg([imglist['icons'],340,959,166,117],79,789);
+    page6Layer.addChild(person);
+
+    var point = new Zimg([imglist['icons'],671,290,56,53],252,784);
+    page6Layer.addChild(point);
+
+    var btn = new ClickLogo(6,550,882);
+    page6Layer.addChild(btn);
+}
+
 function page7Init(){
     page7Layer = new LSprite();
     page7Layer.alpha = 0;
@@ -408,4 +614,75 @@ function page7Init(){
             },2000);
         }});
     },15000);
+}
+
+function page8Init(){
+    page8Layer = new LSprite();
+    stage.addChild(page8Layer);
+
+    var bgUpCover = new LSprite();
+    bgUpCover.graphics.drawVertices(0,'#f00',[[0,0],[750,0],[750,690],[0,440]]);
+    var bgUp = new LSprite();
+    bgUp.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#000");
+    bgUp.mask = bgUpCover;
+    page8Layer.addChild(bgUp);
+
+    var bgDownCover = new LSprite();
+    bgDownCover.graphics.drawVertices(0,'#f00',[[0,440],[750,690],[750,1125],[0,1125]]);
+    var bgDown = new Zimg([imglist['bg-cover']]);
+    bgDown.mask = bgDownCover;
+    page8Layer.addChild(bgDown);
+
+    var claw = new Claw();
+    page8Layer.addChild(claw);
+
+    var hint = new LTextField();
+    hint.text = '快来捉我呀！';
+    hint.font = '微软雅黑';
+    hint.size = 36;
+    hint.color = '#ffff00';
+    hint.x = (LGlobal.width - hint.getWidth())/2;
+    hint.y = 350;
+    page8Layer.addChild(hint);
+
+    var chicken = new ZRimg([imglist['icons'],750,1141,190,169],-85,-84);
+    chicken.x = 375;
+    chicken.y = 870;
+    page8Layer.addChild(chicken);
+}
+
+function page82Init(){
+    page8Layer = new LSprite();
+    stage.addChild(page8Layer);
+
+    var bgUpCover = new LSprite();
+    bgUpCover.graphics.drawVertices(0,'#f00',[[0,0],[750,0],[750,690],[0,440]]);
+    var bgUp = new LSprite();
+    bgUp.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#000");
+    bgUp.mask = bgUpCover;
+    page8Layer.addChild(bgUp);
+
+    var bgDownCover = new LSprite();
+    bgDownCover.graphics.drawVertices(0,'#f00',[[0,440],[750,690],[750,1125],[0,1125]]);
+    var bgDown = new Zimg([imglist['bg-cover']]);
+    bgDown.mask = bgDownCover;
+    page8Layer.addChild(bgDown);
+
+    var txtframe1 = new Txtframe('迫不及待想加入我们？',375,180);
+    page8Layer.addChild(txtframe1);
+
+    var txtframe2 = new Txtframe('别捉鸡',375,260);
+    page8Layer.addChild(txtframe2);
+
+    var person = new Zimg([imglist['p9_pic1']],33,666);
+    page8Layer.addChild(person);
+
+    var lines = new Zimg([imglist['icons'],1434,748,33,74],410,787);
+    page8Layer.addChild(lines);
+
+    var infos = new Zimg([imglist['icons'],1144,710,270,141],451,726);
+    page8Layer.addChild(infos);
+
+    var btn = new ClickLogo(8,506,982);
+    page8Layer.addChild(btn);
 }
