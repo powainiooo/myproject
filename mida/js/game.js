@@ -284,7 +284,17 @@ function page3Init(){
     hintVedio.alpha = 0;
     page3Layer.addChild(hintVedio);
     hintVedio.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        document.getElementById('movie').play();
+        var media = document.getElementById('movie');
+        //media.style.display = 'block';
+        media.play();
+        setInterval(function(){
+            if(media.ended){
+                media.style.display = 'none';
+            }
+        },1000);
+        media.addEventListener('pause',function(){
+            media.style.display = 'none';
+        },false);
     });
 
     var infoWings = new LButton(new Zimg([imglist['icons'],750,0,331,309],28,69));
