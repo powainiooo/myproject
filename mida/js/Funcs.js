@@ -473,3 +473,28 @@ Coin.prototype.updates = function(){
         fallLayer.removeChild(self);
     }
 };
+
+//向上
+function slideUp(func){
+    var self = this;
+    var sy=0;
+    self.addEventListener(LMouseEvent.MOUSE_DOWN,function(e){
+        sy=e.selfY;
+    });
+    self.addEventListener(LMouseEvent.MOUSE_MOVE,function(e){
+        event.preventDefault();
+    });
+    self.addEventListener(LMouseEvent.MOUSE_UP,function(e){
+        var ey = e.selfY;
+        if(ey>sy+100){
+            objMove.call(self,{
+                direc:'out',
+                callback:function(){
+                    stage.removeChild(self);
+                    self = null;
+                    func();
+                }
+            });
+        }
+    });
+}

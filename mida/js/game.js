@@ -1,4 +1,4 @@
-﻿var stage;
+﻿var stage,slideIndex = 2;
 
 var loadinglist = {};
 var loadingData = new Array(
@@ -178,6 +178,7 @@ function page2Init(){
         delay:4.4,
         callback:function(){
             btn.move();
+            slideUp.call(page2Layer,page1Init);
         }
     });
 
@@ -377,6 +378,7 @@ function page3Init(){
     }});
     objMove.call(btn,{type:'fade',delay:6,callback:function(){
         btn.move();
+        slideUp.call(page3Layer,page2Init);
     }});
 }
 
@@ -528,6 +530,7 @@ function page4Init(){
         objMove.call(rect3,{delay:2.8,type:'scaleS2L',ei:'Back'});
         objMove.call(rect4,{delay:3.1,type:'scaleS2L',ei:'Back',callback:function(){
             btn.move();
+            slideUp.call(page4Layer,page3Init);
         }});
     }});
 }
@@ -597,6 +600,7 @@ function page5Init(){
     },8000);
     setTimeout(function(){
         btn.move();
+        slideUp.call(page5Layer,page4Init);
     },10500);
 }
 
@@ -749,6 +753,7 @@ function page6Init(){
                 isfall = true;
                 objMove.call(wheelLine,{type:'fade'});
                 btn.move();
+                slideUp.call(page6Layer,page5Init);
             }
         }
     });
@@ -953,6 +958,7 @@ function page7Init(){
                 objMove.call(card3,{type:'right',dis:250,ei:'Back',delay:0.5});
                 objMove.call(car4,{type:'fade'});
                 btn.move();
+                slideUp.call(page7Layer,page6Init);
             }});
         //}
     });
@@ -1088,6 +1094,7 @@ function page82Init(){
     objMove.call(infos,{type:'right',dis:30,delay:6,callback:function(){
         objMove.call(btn,{callback:function(){
             btn.move();
+            slideUp.call(page8Layer,page7Init);
         }})
     }})
 }
