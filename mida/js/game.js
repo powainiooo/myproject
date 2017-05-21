@@ -82,7 +82,7 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            page3Init();
+            page1Init();
         }
     );
 }
@@ -382,6 +382,7 @@ function page3Init(){
 
 function page4Init(){
     page4Layer = new LSprite();
+    page4Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page4Layer);
 
     var bgUpCover = new LSprite();
@@ -533,6 +534,7 @@ function page4Init(){
 
 function page5Init(){
     page5Layer = new LSprite();
+    page5Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page5Layer);
 
     var bgUpCover = new LSprite();
@@ -600,6 +602,7 @@ function page5Init(){
 
 function page6Init(){
     page6Layer = new LSprite();
+    page6Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page6Layer);
 
     var bgUpCover = new LSprite();
@@ -802,7 +805,7 @@ function page6Init(){
 
 function page7Init(){
     page7Layer = new LSprite();
-    page7Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#2ec0ad");
+    page7Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page7Layer);
 
     var bgUpCover = new LSprite();
@@ -969,6 +972,7 @@ function page7Init(){
 
 function page8Init(){
     page8Layer = new LSprite();
+    page8Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page8Layer);
 
     var bgUpCover = new LSprite();
@@ -1026,6 +1030,7 @@ function page8Init(){
 
 function page82Init(){
     page8Layer = new LSprite();
+    page8Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page8Layer);
 
     var bgUpCover = new LSprite();
@@ -1089,6 +1094,7 @@ function page82Init(){
 
 function page9Init(){
     page9Layer = new LSprite();
+    page9Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
     stage.addChild(page9Layer);
 
     var bgUpCover = new LSprite();

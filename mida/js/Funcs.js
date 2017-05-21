@@ -327,7 +327,7 @@ function ClickLogo(index,x,y,callback){
 ClickLogo.prototype.move = function(){
     var self = this;
     self.canClick = true;
-    ZBlink.call(self.btn,1);
+    ZBlink.call(self.btn,0.6);
 };
 
 
@@ -379,6 +379,8 @@ Claw.prototype.catch = function(func){
         self.chicken.alpha = 1;
         func();
     }}).to(self,2,{y:0,ease:LEasing.Cubic.easeOut,onComplete:function(){
+        stage.removeChild(page8Layer);
+        page8Layer = null;
         page82Init();
     }});
 };
@@ -424,7 +426,11 @@ function Txtframe(txt,x,y){
     self.content.size = 38;
     self.content.color = '#fff';
     self.content.x = -self.content.getWidth()/2;
-    self.content.y = 4;
+    if(LGlobal.android){
+        self.content.y = (64-self.content.getHeight())/2;
+    }else{
+        self.content.y = 4;
+    }
     self.content.font = '微软雅黑';
     self.content.weight = "bolder";
     self.addChild(self.content);
