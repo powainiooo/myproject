@@ -5,7 +5,6 @@
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>游戏</title>
@@ -14,7 +13,14 @@
 <body>
     <div class="last-page" id="lastPage" style="display: none;">
         <div class="content">
-            <img src="images/title2.png" class="titlepic" id="titlepic">
+            <div class="titleframe" id="titleframe">
+                <img src="images/title2.png">
+                <a href="tel:4000755236" class="phone">
+                    <div><img src="images/icon-phone.png"> </div>
+                    <p><img src="images/num-phone.png"> </p>
+                </a>
+            </div>
+
             <div class="frame" id="frame">
                 <div class="title">登记信息</div>
                 <div class="inputline">姓名<input type="text"></div>
@@ -43,5 +49,7 @@
     <script>
         LInit(16,"stage",750,1125,main);
     </script>
+
+    <video src="mp4/movie.mp4" id="movie"></video>
 </body>
 </html>

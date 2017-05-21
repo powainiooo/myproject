@@ -78,8 +78,8 @@ function objMove(opts){
         dis:150,
         type:'fade',
         direc:'in',
-        t:0.6,
-        delay:1,
+        t:0.5,
+        delay:0,
         ei:'Cubic',
         em:'easeOut'
     };
@@ -128,16 +128,24 @@ function objMove(opts){
     }else if(option.direc == 'out'){
         switch (option.type){
             case 'down':
-                LTweenLite.to(self,option.t,{alpha:0,y:self.y+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                LTweenLite.to(self,option.t,{alpha:0,y:self.y+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em],onComplete:function(){
+                    self.y -=  option.dis;
+                }});
                 break;
             case 'up':
-                LTweenLite.to(self,option.t,{alpha:0,y:self.y-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                LTweenLite.to(self,option.t,{alpha:0,y:self.y-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em],onComplete:function(){
+                    self.y +=  option.dis;
+                }});
                 break;
             case 'left':
-                LTweenLite.to(self,option.t,{alpha:0,x:self.x-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                LTweenLite.to(self,option.t,{alpha:0,x:self.x-option.dis,delay:option.delay,ease:LEasing[option.ei][option.em],onComplete:function(){
+                    self.x +=  option.dis;
+                }});
                 break;
             case 'right':
-                LTweenLite.to(self,option.t,{alpha:0,x:self.x+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em]});
+                LTweenLite.to(self,option.t,{alpha:0,x:self.x+option.dis,delay:option.delay,ease:LEasing[option.ei][option.em],onComplete:function(){
+                    self.x -=  option.dis;
+                }});
                 break;
             case 'fade':
                 LTweenLite.to(self,option.t,{alpha:0,delay:option.delay,ease:LEasing[option.ei][option.em]});
@@ -145,7 +153,7 @@ function objMove(opts){
         }
     }
     setTimeout(function(){
-        if(opts.callback) opts.callback();
+        if(opts.callback!=undefined) opts.callback();
     },(option.t+option.delay)*1000)
 }
 //普通图片
@@ -175,8 +183,9 @@ function ZRimg(imgData,rx,ry){
 }
 
 //闪烁
-function ZBlink(t){
+function ZBlink(time){
     var self = this;
+    var t = time==null?1:time;
     LTweenLite.to(self,t,{alpha:1,loop:true,ease:LEasing.None.easeIn}).to(self,t,{alpha:0,loop:true,ease:LEasing.None.easeIn});
 }
 
@@ -200,33 +209,34 @@ function P5content(pos,pos2,rect,index){
     self.lineL.graphics.drawRect(0,'#221814',[0,0,3,-rect[3]],true,'#221814');
     self.lineL.x = rect[0];
     self.lineL.y = rect[1]+rect[3];
-    self.lineL.scaleY = 1;
+    self.lineL.scaleY = 0;
     self.addChild(self.lineL);
 
     self.lineB = new LSprite();
     self.lineB.graphics.drawRect(0,'#221814',[0,0,rect[2],3],true,'#221814');
     self.lineB.x = rect[0];
     self.lineB.y = rect[1]+rect[3];
-    self.lineB.scaleX = 1;
+    self.lineB.scaleX = 0;
     self.addChild(self.lineB);
 
     self.lineR = new LSprite();
     self.lineR.graphics.drawRect(0,'#221814',[0,0,3,rect[3]],true,'#221814');
     self.lineR.x = rect[0]+rect[2];
     self.lineR.y = rect[1];
-    self.lineR.scaleY = 1;
+    self.lineR.scaleY = 0;
     self.addChild(self.lineR);
 
     self.lineT = new LSprite();
     self.lineT.graphics.drawRect(0,'#221814',[0,0,-rect[2],3],true,'#221814');
     self.lineT.x = rect[0]+rect[2];
     self.lineT.y = rect[1];
-    self.lineT.scaleX = 1;
+    self.lineT.scaleX = 0;
     self.addChild(self.lineT);
 
     self.picArr = [];
     for(var i=0;i<4;i++){
         self.picArr[i] = new Zimg([imglist['p6_'+index+(4-i)]],pos[0],pos[1]);
+        self.picArr[i].alpha = 0;
         self.addChild(self.picArr[i]);
     }
 
@@ -237,8 +247,36 @@ function P5content(pos,pos2,rect,index){
     }else if(index == 3){
         self.info = new Zimg([imglist['icons'],758,457,280,124],pos2[0],pos2[1]);
     }
+    self.info.alpha = 0;
     self.addChild(self.info);
+    self.index = index;
 }
+P5content.prototype.move = function(){
+    var self = this;
+    if(self.index == 2){
+        objMove.call(self.picArr[0],{type:'down',dis:200});
+        objMove.call(self.picArr[1],{type:'down',delay:0.3,dis:200});
+        objMove.call(self.picArr[2],{type:'down',delay:0.6,dis:200});
+        objMove.call(self.picArr[3],{type:'down',delay:0.9,dis:200});
+    }else{
+        objMove.call(self.picArr[0],{type:'left',dis:200});
+        objMove.call(self.picArr[1],{type:'left',delay:0.3,dis:200});
+        objMove.call(self.picArr[2],{type:'left',delay:0.6,dis:200});
+        objMove.call(self.picArr[3],{type:'left',delay:0.9,dis:200});
+    }
+    LTweenLite.to(self.lineB,0.5,{scaleX:1,delay:1.4,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineL,0.5,{scaleY:1,delay:1.4,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineT,0.5,{scaleX:1,delay:1.4,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineR,0.5,{scaleY:1,delay:1.4,ease:LEasing.Cubic.easeOut});
+    if(self.index == 1){
+        objMove.call(self.info,{type:'up',dis:30,delay:2});
+    }else if(self.index == 2){
+        objMove.call(self.info,{type:'left',dis:30,delay:2});
+    }else{
+        objMove.call(self.info,{type:'left',dis:50,delay:2});
+    }
+
+};
 
 
 //切换点击LOGO
@@ -252,12 +290,24 @@ function ClickLogo(index,x,y,callback){
             self.pic1 = new Zimg([imglist['icons'],769,1330,73,73]);
             self.btn = new LButton(new Zimg([imglist['icons'],847,1317,73,87],80,-14));
             break;
+        case 3:
+            self.pic1 = new Zimg([imglist['icons'],256,828,73,74]);
+            self.btn = new LButton(new Zimg([imglist['icons'],428,0,72,87],80,-14));
+            break;
+        case 4:
+            self.pic1 = new Zimg([imglist['icons'],350,14,73,73]);
+            self.btn = new LButton(new Zimg([imglist['icons'],582,270,73,87],80,-14));
+            break;
         case 5:
             self.pic1 = new Zimg([imglist['icons'],256,752,73,73]);
             self.btn = new LButton(new Zimg([imglist['icons'],428,0,72,87],80,-14));
             break;
         case 6:
             self.pic1 = new Zimg([imglist['icons'],28,1397,73,73]);
+            self.btn = new LButton(new Zimg([imglist['icons'],582,270,73,87],80,-14));
+            break;
+        case 7:
+            self.pic1 = new Zimg([imglist['icons'],1307,1414,74,75]);
             self.btn = new LButton(new Zimg([imglist['icons'],582,270,73,87],80,-14));
             break;
         case 8:
@@ -291,6 +341,12 @@ function Claw(){
     self.RL.y = -800;
     self.addChild(self.RL);
 
+    self.chicken = new ZRimg([imglist['icons'],750,1141,190,169],-85,-84);
+    self.chicken.x = 0;
+    self.chicken.y = 980;
+    self.chicken.alpha = 0;
+    self.RL.addChild(self.chicken);
+
     self.left = new ZRimg([imglist['icons'],1003,710,65,126],-60,-8);
     self.left.x = -30;
     self.left.y = 900;
@@ -307,6 +363,25 @@ function Claw(){
     self.L.graphics.drawArc(0,'#fff',[0,900,15,0,Math.PI*2],true,'#000');
     self.RL.addChild(self.L);
 }
+Claw.prototype.move = function(){
+    var self = this;
+    self.tmove = LTweenLite.to(self,1,{rotate:15,loop:true,ease:LEasing.None.easeIn}).to(self,2,{rotate:-15,loop:true,ease:LEasing.None.easeIn}).to(self,1,{rotate:0,loop:true,ease:LEasing.None.easeIn})
+};
+Claw.prototype.catch = function(func){
+    var self = this;
+    LTweenLite.remove(self.tmove);
+    self.rotate = 0;
+    self.left.rotate = 10;
+    self.right.rotate = -10;
+    LTweenLite.to(self,1.5,{y:700,ease:LEasing.Cubic.easeOut,onComplete:function(){
+        self.left.rotate = 0;
+        self.right.rotate = 0;
+        self.chicken.alpha = 1;
+        func();
+    }}).to(self,2,{y:0,ease:LEasing.Cubic.easeOut,onComplete:function(){
+        page82Init();
+    }});
+};
 
 //显示标题
 function Txtframe(txt,x,y){
@@ -342,7 +417,6 @@ function Txtframe(txt,x,y){
     self.circle.scaleX = 0;
     self.circle.scaleY = 0;
     self.addChild(self.circle);
-    self.move();
 
     self.txt = txt;
     self.content = new LTextField();
@@ -369,4 +443,27 @@ Txtframe.prototype.move = function(){
         self.content.speed = 5;
         self.content.wind();
     },1200)
+};
+
+function Coin(){
+    base(this,LBitmap,[]);
+    var self = this;
+    self.x = 10 + parseInt(Math.random()*300);
+    self.y = -30;
+    var type = parseInt(Math.random()*3);
+    if(type == 0){
+        self.bitmapData = new LBitmapData(imglist['icons'],335,1088,23,24);
+    }else if(type == 1){
+        self.bitmapData = new LBitmapData(imglist['icons'],364,1090,23,20);
+    }else if(type == 2){
+        self.bitmapData = new LBitmapData(imglist['icons'],394,1090,24,20);
+    }
+    fallLayer.addChild(self);
+}
+Coin.prototype.updates = function(){
+    var self = this;
+    self.y += 5;
+    if(self.y >1125){
+        fallLayer.removeChild(self);
+    }
 };
