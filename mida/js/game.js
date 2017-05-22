@@ -82,7 +82,7 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            page1Init();
+            page8Init();
         }
     );
 }
@@ -97,12 +97,14 @@ function page1Init(){
     var logo = new LAnimationTimeline(data, list);
     logo.x = 286;
     logo.y = 230;
-    logo.speed = 8;
+    logo.speed = 3;
     logo.setLabel("end",0,10,1,false);
     logo.addFrameScript("end",function(){
         logo.stop();
         objMove.call(logo,{
             direc:'out',
+            type:'up',
+            dis:50,
             t:0.5,
             delay:0.5,
             callback:page2Init
@@ -158,8 +160,8 @@ function page2Init(){
     objMove.call(page2Layer,{
         t:1,
         callback:function(){
-            LTweenLite.to(bee,1,{y:585,ease:LEasing.Cubic.easeOut});
-            LTweenLite.to(bg,1,{alpha:1,ease:LEasing.None.easeIn,onComplete:function(){
+            LTweenLite.to(bee,0.6,{y:585,ease:LEasing.Cubic.easeOut});
+            LTweenLite.to(bg,0.6,{alpha:1,ease:LEasing.None.easeIn,onComplete:function(){
                 page2Layer.graphics.drawRect(0,"#fff",[0,0,750,1125],true,"#fff");
             }});
         }
@@ -167,15 +169,15 @@ function page2Init(){
     objMove.call(logo,{
         type:'left',
         ei:'Back',
-        delay:3
+        delay:2
     });
     objMove.call(title,{
         type:'scaleS2L',
         ei:'Back',
-        delay:3.4
+        delay:2.4
     });
     objMove.call(btn,{
-        delay:4.4,
+        delay:3,
         callback:function(){
             btn.move();
             slideUp.call(page2Layer,page1Init);
@@ -352,31 +354,31 @@ function page3Init(){
 
     objMove.call(bgUpCover,{type:'down',dis:800});
     objMove.call(bgDownCover,{type:'up',dis:800});
-    objMove.call(body,{type:'fade',delay:1});
-    objMove.call(head,{type:'fade',delay:1.2});
-    objMove.call(wing,{type:'fade',delay:1.4});
-    objMove.call(inside,{type:'fade',delay:1.6,callback:function(){
+    objMove.call(body,{type:'fade',delay:0.6});
+    objMove.call(head,{type:'fade',delay:0.8});
+    objMove.call(wing,{type:'fade',delay:1});
+    objMove.call(inside,{type:'fade',delay:1.2,callback:function(){
         LTweenLite.to(body,0.4,{x:68,delay:0.5,ease:LEasing.Cubic.easeOut}).to(body,0.8,{x:178,alpha:0,ease:LEasing.Cubic.easeOut});
         LTweenLite.to(head,0.4,{x:502,delay:0.5,ease:LEasing.Cubic.easeOut}).to(head,0.8,{x:352,alpha:0,ease:LEasing.Cubic.easeOut});
         LTweenLite.to(wing,0.4,{x:120,y:360,delay:0.5,ease:LEasing.Cubic.easeOut}).to(wing,0.8,{x:200,y:470,alpha:0,ease:LEasing.Cubic.easeOut});
-        LTweenLite.to(inside,0.8,{alpha:0,delay:0.9,ease:LEasing.Cubic.easeOut});
+        LTweenLite.to(inside,0.8,{alpha:0,delay:1.2,ease:LEasing.Cubic.easeOut});
     }});
     objMove.call(bees,{type:'fade',t:0.8,delay:3.5});
-    objMove.call(btnRotate,{type:'fade',delay:3.7});
-    objMove.call(hintBody,{type:'fade',delay:3.9,callback:function(){
+    objMove.call(btnRotate,{type:'scaleL2S',delay:3.7});
+    objMove.call(hintBody,{type:'scaleL2S',delay:3.9,callback:function(){
         ZBlink.call(hintBody)
     }});
-    objMove.call(hintHead,{type:'fade',delay:4.1,callback:function(){
+    objMove.call(hintHead,{type:'scaleL2S',delay:4.1,callback:function(){
         ZBlink.call(hintHead)
     }});
-    objMove.call(hintWings,{type:'fade',delay:4.3,callback:function(){
+    objMove.call(hintWings,{type:'scaleL2S',delay:4.3,callback:function(){
         ZBlink.call(hintWings)
     }});
     objMove.call(vedio,{type:'fade',delay:4.5});
-    objMove.call(hintVedio,{type:'fade',delay:4.7,callback:function(){
+    objMove.call(hintVedio,{type:'scaleL2S',delay:4.7,callback:function(){
         ZBlink.call(hintVedio)
     }});
-    objMove.call(btn,{type:'fade',delay:6,callback:function(){
+    objMove.call(btn,{type:'left',ei:'Back',delay:6,callback:function(){
         btn.move();
         slideUp.call(page3Layer,page2Init);
     }});
@@ -508,27 +510,27 @@ function page4Init(){
 
     objMove.call(bgUpCover,{type:'down',dis:966});
     objMove.call(bgDownCover,{type:'up',dis:800});
-    objMove.call(title1,{type:'left',delay:0.8});
-    objMove.call(title2,{type:'right',delay:0.8});
-    objMove.call(btn,{delay:1.4});
-    objMove.call(player1,{t:0.6,delay:2});
-    objMove.call(player2,{t:0.6,delay:2.3});
-    objMove.call(player3,{t:0.6,delay:2.6});
-    objMove.call(player4,{t:0.6,delay:2.9});
-    LTweenLite.to(moveL,2,{y:280,delay:3.5,ease:LEasing.Cubic.easeInOut}).to(linesCover,0.5,{scaleY:1,ease:LEasing.None.easeIn,onComplete:function(){
+    objMove.call(title1,{type:'left',ei:'Back',delay:0.6});
+    objMove.call(title2,{type:'right',ei:'Back',delay:0.6});
+    objMove.call(btn,{type:'right',ei:'Back',delay:1.2});
+    objMove.call(player1,{t:0.6,delay:1.6});
+    objMove.call(player2,{t:0.6,delay:1.8});
+    objMove.call(player3,{t:0.6,delay:2});
+    objMove.call(player4,{t:0.6,delay:2.2});
+    LTweenLite.to(moveL,1.5,{y:280,delay:2.6,ease:LEasing.Cubic.easeInOut}).to(linesCover,0.4,{scaleY:1,ease:LEasing.None.easeIn,onComplete:function(){
         bee.visible = true;
-    }}).to(moveL,3,{y:0,ease:LEasing.Back.easeInOut,onComplete:function(){
+    }}).to(moveL,2,{y:0,ease:LEasing.Back.easeInOut,onComplete:function(){
         lines.visible = true;
         lines2.visible = false;
         LTweenLite.to(moveL,1,{y:10,loop:true,ease:LEasing.None.easeIn}).to(moveL,1,{y:0,loop:true,ease:LEasing.None.easeIn});
-        objMove.call(rectbg1,{delay:1,type:'scaleS2L',ei:'Back'});
-        objMove.call(rectbg2,{delay:1.3,type:'scaleS2L',ei:'Back'});
-        objMove.call(rectbg3,{delay:1.6,type:'scaleS2L',ei:'Back'});
-        objMove.call(rectbg4,{delay:1.9,type:'scaleS2L',ei:'Back'});
-        objMove.call(rect1,{delay:2.2,type:'scaleS2L',ei:'Back'});
-        objMove.call(rect2,{delay:2.5,type:'scaleS2L',ei:'Back'});
-        objMove.call(rect3,{delay:2.8,type:'scaleS2L',ei:'Back'});
-        objMove.call(rect4,{delay:3.1,type:'scaleS2L',ei:'Back',callback:function(){
+        objMove.call(rectbg1,{delay:0.4,type:'scaleS2L',ei:'Back'});
+        objMove.call(rectbg2,{delay:0.6,type:'scaleS2L',ei:'Back'});
+        objMove.call(rectbg3,{delay:0.8,type:'scaleS2L',ei:'Back'});
+        objMove.call(rectbg4,{delay:1,type:'scaleS2L',ei:'Back'});
+        objMove.call(rect1,{delay:1.2,type:'scaleS2L',ei:'Back'});
+        objMove.call(rect2,{delay:1.4,type:'scaleS2L',ei:'Back'});
+        objMove.call(rect3,{delay:1.6,type:'scaleS2L',ei:'Back'});
+        objMove.call(rect4,{delay:1.8,type:'scaleS2L',ei:'Back',callback:function(){
             btn.move();
             slideUp.call(page4Layer,page3Init);
         }});
@@ -586,22 +588,22 @@ function page5Init(){
 
     objMove.call(bgUpCover,{type:'down',dis:966});
     objMove.call(bgDownCover,{type:'up',dis:800});
-    objMove.call(title1,{type:'left',delay:0.8});
-    objMove.call(title2,{type:'right',delay:0.8});
-    objMove.call(btn,{delay:1.4});
+    objMove.call(title1,{type:'left',ei:'Back',delay:0.6});
+    objMove.call(title2,{type:'right',ei:'Back',delay:0.6});
+    objMove.call(btn,{type:'right',ei:'Back',delay:1.2});
     setTimeout(function(){
         content1.move();
     },2000);
     setTimeout(function(){
         content2.move();
-    },5000);
+    },3800);
     setTimeout(function(){
         content3.move();
-    },8000);
+    },5600);
     setTimeout(function(){
         btn.move();
         slideUp.call(page5Layer,page4Init);
-    },10500);
+    },7400);
 }
 
 function page6Init(){
@@ -754,6 +756,8 @@ function page6Init(){
                 objMove.call(wheelLine,{type:'fade'});
                 btn.move();
                 slideUp.call(page6Layer,page5Init);
+                LTweenLite.to(person,0.8,{x:180,ease:LEasing.Circ.easeOut});
+                objMove.call(point,{direc:'out'});
             }
         }
     });
@@ -788,21 +792,21 @@ function page6Init(){
 
     objMove.call(bgUpCover,{type:'down',dis:966});
     objMove.call(bgDownCover,{type:'up',dis:800});
-    objMove.call(title1,{type:'left',delay:0.8});
-    objMove.call(title2,{type:'right',delay:0.8});
-    objMove.call(btn,{delay:1.4});
-    objMove.call(wheel1,{type:'scaleS2L',delay:2});
-    objMove.call(wheel2,{type:'scaleS2L',delay:2.3});
-    objMove.call(wheel3,{type:'scaleS2L',delay:2.6});
-    objMove.call(wheel4,{type:'scaleS2L',delay:2.9});
-    objMove.call(wheel5,{type:'scaleS2L',delay:3.2});
-    objMove.call(wheel6,{type:'scaleS2L',delay:3.5});
-    objMove.call(info1,{delay:4});
-    objMove.call(info2,{delay:4.3});
-    objMove.call(info3,{delay:4.9});
-    objMove.call(info4,{delay:5.2});
-    objMove.call(person,{delay:6});
-    objMove.call(point,{delay:6,callback:function(){
+    objMove.call(title1,{type:'left',ei:'Back',delay:0.6});
+    objMove.call(title2,{type:'right',ei:'Back',delay:0.6});
+    objMove.call(btn,{type:'right',ei:'Back',delay:1.2});
+    objMove.call(wheel1,{type:'scaleS2L',ei:'Back',delay:1.6});
+    objMove.call(wheel2,{type:'scaleS2L',ei:'Back',delay:1.7});
+    objMove.call(wheel3,{type:'scaleS2L',ei:'Back',delay:1.8});
+    objMove.call(wheel4,{type:'scaleS2L',ei:'Back',delay:1.9});
+    objMove.call(wheel5,{type:'scaleS2L',ei:'Back',delay:2});
+    objMove.call(wheel6,{type:'scaleS2L',ei:'Back',delay:2.1});
+    objMove.call(info1,{delay:2.4});
+    objMove.call(info2,{delay:2.5});
+    objMove.call(info3,{delay:2.6});
+    objMove.call(info4,{delay:2.7});
+    objMove.call(person,{type:'right',dis:200,delay:3.5});
+    objMove.call(point,{delay:4,callback:function(){
         cansilde = true;
         LTweenLite.to(point,0.6,{x:270,loop:true,ease:LEasing.None.easeIn}).to(point,0,{x:252,loop:true,ease:LEasing.None.easeIn});
     }});
@@ -967,9 +971,9 @@ function page7Init(){
     objMove.call(bgDownCover,{type:'up',dis:1080});
     objMove.call(tree1,{delay:0.8});
     objMove.call(tree2,{delay:0.8});
-    objMove.call(title1,{type:'left',delay:1.4});
-    objMove.call(title2,{type:'right',delay:1.4});
-    objMove.call(btn,{delay:1.8});
+    objMove.call(title1,{type:'left',ei:'Back',delay:0.6});
+    objMove.call(title2,{type:'right',ei:'Back',delay:0.6});
+    objMove.call(btn,{type:'right',ei:'Back',delay:1.2});
     objMove.call(hand,{delay:2.5,callback:function(){
         ZBlink.call(hand);
     }});

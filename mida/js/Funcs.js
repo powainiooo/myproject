@@ -255,25 +255,25 @@ P5content.prototype.move = function(){
     var self = this;
     if(self.index == 2){
         objMove.call(self.picArr[0],{type:'down',dis:200});
-        objMove.call(self.picArr[1],{type:'down',delay:0.3,dis:200});
-        objMove.call(self.picArr[2],{type:'down',delay:0.6,dis:200});
-        objMove.call(self.picArr[3],{type:'down',delay:0.9,dis:200});
+        objMove.call(self.picArr[1],{type:'down',delay:0.2,dis:200});
+        objMove.call(self.picArr[2],{type:'down',delay:0.4,dis:200});
+        objMove.call(self.picArr[3],{type:'down',delay:0.6,dis:200});
     }else{
         objMove.call(self.picArr[0],{type:'left',dis:200});
-        objMove.call(self.picArr[1],{type:'left',delay:0.3,dis:200});
-        objMove.call(self.picArr[2],{type:'left',delay:0.6,dis:200});
-        objMove.call(self.picArr[3],{type:'left',delay:0.9,dis:200});
+        objMove.call(self.picArr[1],{type:'left',delay:0.2,dis:200});
+        objMove.call(self.picArr[2],{type:'left',delay:0.4,dis:200});
+        objMove.call(self.picArr[3],{type:'left',delay:0.6,dis:200});
     }
-    LTweenLite.to(self.lineB,0.5,{scaleX:1,delay:1.4,ease:LEasing.Cubic.easeOut});
-    LTweenLite.to(self.lineL,0.5,{scaleY:1,delay:1.4,ease:LEasing.Cubic.easeOut});
-    LTweenLite.to(self.lineT,0.5,{scaleX:1,delay:1.4,ease:LEasing.Cubic.easeOut});
-    LTweenLite.to(self.lineR,0.5,{scaleY:1,delay:1.4,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineB,0.5,{scaleX:1,delay:1,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineL,0.5,{scaleY:1,delay:1,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineT,0.5,{scaleX:1,delay:1,ease:LEasing.Cubic.easeOut});
+    LTweenLite.to(self.lineR,0.5,{scaleY:1,delay:1,ease:LEasing.Cubic.easeOut});
     if(self.index == 1){
-        objMove.call(self.info,{type:'up',dis:30,delay:2});
+        objMove.call(self.info,{type:'up',ei:'Back',dis:30,delay:1.3});
     }else if(self.index == 2){
-        objMove.call(self.info,{type:'left',dis:30,delay:2});
+        objMove.call(self.info,{type:'left',ei:'Back',dis:30,delay:1.3});
     }else{
-        objMove.call(self.info,{type:'left',dis:50,delay:2});
+        objMove.call(self.info,{type:'left',ei:'Back',dis:50,delay:1.3});
     }
 
 };
