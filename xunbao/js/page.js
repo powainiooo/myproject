@@ -1,13 +1,13 @@
 ﻿var stage;
 
 var loadinglist = {};
-var loadingData = new Array(
+var loadingData = [
     {name:"L_loading",path:imgsrc+"./images/loading_cover.png"},
     {name:"L_line",path:imgsrc+"./images/loading_line.png"}
-);
+];
 
 var imglist = {};
-var imgData = new Array(
+var imgData = [
     {name:"bg1",path:imgsrc+"./images/bg1.jpg"},
     {name:"bg2",path:imgsrc+"./images/bg2.jpg"},
     {name:"select-female",path:imgsrc+"./images/select-female.png"},
@@ -16,7 +16,7 @@ var imgData = new Array(
     {name:"icons",path:imgsrc+"./images/icons.png"},
     {name:"male",path:imgsrc+"./images/male.png"},
     {name:"female",path:imgsrc+"./images/female.png"}
-);
+];
 
 function main(){
     LGlobal.setDebug(true);
@@ -62,6 +62,7 @@ function loading_gameData(){
     );
 }
 
+//选择宠物页
 function selectPage(){
     selectLayer = new LSprite();
     stage.addChild(selectLayer);
@@ -80,7 +81,8 @@ function selectPage(){
     female.addChild(btnFemale);
     btnFemale.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
         Zclick.call(btnFemale,function(){
-            homePage('female');
+            //homePage('female');
+            mapPage();
         });
     });
 
@@ -100,6 +102,7 @@ function selectPage(){
     });
 }
 
+//首页
 function homePage(sex){
     homeLayer = new LSprite();
     stage.addChild(homeLayer);
@@ -161,4 +164,44 @@ function homePage(sex){
 
     var transParams = {type:LTransition.Curtain,dimension:1,duration:2,direction:LTransition.IN,easing:Strong.easeOut};
     LTransitionManager.start(homeLayer,transParams);
+}
+
+//地图页
+function mapPage(){
+    var mapWindow = document.getElementById('mapWindow');
+    mapWindow.style.display = 'block';
+    setTimeout(function(){
+        mapWindow.firstElementChild.className += ' tsf-reset';
+    },100);
+    document.getElementById('map').style.height = window.innerHeight*0.8+'px';
+
+    map = new AMap.Map('map', {
+        resizeEnable: true
+    });
+    map.plugin('AMap.Geolocation', function() {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            buttonPosition:'RB'
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, 'complete', function(data){
+            var lng = data.position.getLng();
+            var lat = data.position.getLat();
+            console.log('lng:'+lng+';lat:'+lat);
+
+            marker = new AMap.Marker({
+                map : map,
+                icon : "images/icon-marker.png",
+                position : [lng-0.001,lat-0.001],
+                offset : new AMap.Pixel(-25, -36)
+            })
+        });//返回定位信息
+        AMap.event.addListener(geolocation, 'error', function(data){
+            console.log("fail");
+        });      //返回定位出错信息
+    });
 }
