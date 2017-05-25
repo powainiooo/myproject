@@ -12,11 +12,24 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<script>
+    !function (t, e) {
+        var i = t.documentElement,
+                n = "orientationchange"in window ? "orientationchange" : "resize",
+                d = navigator.userAgent.match(/iphone|ipad|ipod/i),
+                a = function () {
+                    var e = i.clientWidth, n = i.clientHeight;
+                    e && (e >= 750 ? (e = 750, t.body.style.width = "750px") : t.body.style.width = e + "px", i.style.fontSize = 100 * (e / 750) + "px", i.dataset.percent = 100 * (e / 750), i.dataset.width = e, i.dataset.height = n)
+                };
+        a(), d && t.documentElement.classList.add("iosx" + e.devicePixelRatio), t.addEventListener && e.addEventListener(n, a, !1)
+    }(document, window)
+</script>
+
     <div id="stage"></div>
 
     <!-- 地图寻宝 -->
     <div class="window" id="mapWindow">
-        <div class="frame tsf-down" id="mapframe">
+        <div class="frame tsf-down tsf-reset" id="mapframe">
             <div class="title">
                 <p>探宝</p>
             </div>
@@ -25,11 +38,13 @@
             </div>
         </div>
 
-        <div class="infoWindow">
-            <div>
-
-            </div>
-        </div>
+        <!--<div class="infoWindow">-->
+            <!--<div>-->
+                <!--<i class="icon-box"></i>-->
+                <!--<span>牛厨零食的宝箱距离你只有350米</span>-->
+            <!--</div>-->
+            <!--<i class="icon-arrow"></i>-->
+        <!--</div>-->
     </div>
 
     <script>

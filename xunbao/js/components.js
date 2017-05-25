@@ -233,3 +233,49 @@ function Female(){
     self.pic.y = -240;
     self.addChild(self.pic);
 }
+
+//计时器
+function Timer(times){
+    base(this,LSprite,[]);
+    var self = this;
+    self.times = times;
+
+    self.bg = new Zimg([imglist['icons'],311,570,320,30]);
+    self.addChild(self.bg);
+
+    self.cover = new LSprite();
+    self.cover.graphics.drawRoundRect(0,'#f00',[3,3,314,23,10]);
+    self.line = new Zimg([imglist['icons'],315,609,314,23],3,3);
+    self.line.mask = self.cover;
+    self.addChild(self.line);
+
+    self.icon = new Zimg([imglist['icons'],785,180,66,72],340,-20);
+    self.addChild(self.icon);
+
+    self.txt = new LTextField();
+    self.txt.text = times;
+    self.txt.size = 24;
+    self.txt.color = '#cc2400';
+    self.txt.textAlign = 'center';
+    self.txt.x = 373;
+    self.txt.y = 6;
+    self.addChild(self.txt);
+}
+Timer.prototype.count = function(callback){
+    var self = this;
+    self.tw = LTweenLite.to(self.cover,self.times,{scaleX:0,ease:LEasing.None.easeIn});
+    self.t = setInterval(function(){
+        if(self.times == 0){
+            clearInterval(self.t);
+            //callback();
+        }else{
+            self.times --;
+            self.txt.text = self.times;
+        }
+    },1000)
+};
+Timer.prototype.stop = function(){
+    var self = this;
+    clearInterval(self.t);
+    LTweenLite.remove(self.tw);
+};

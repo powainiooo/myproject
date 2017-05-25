@@ -14,6 +14,8 @@ var imgData = [
     {name:"select-male",path:imgsrc+"./images/select-male.png"},
     {name:"person",path:imgsrc+"./images/person.jpg"},
     {name:"icons",path:imgsrc+"./images/icons.png"},
+    {name:"light",path:imgsrc+"./images/light.png"},
+    {name:"light2",path:imgsrc+"./images/light2.png"},
     {name:"male",path:imgsrc+"./images/male.png"},
     {name:"female",path:imgsrc+"./images/female.png"}
 ];
@@ -58,6 +60,9 @@ function loading_gameData(){
             stage.removeChild(loadinglayer);
             loadinglayer = null;
             selectPage();
+            var gameLayer = new Game();
+            gameLayer.init();
+            stage.addChild(gameLayer);
         }
     );
 }
@@ -173,7 +178,7 @@ function mapPage(){
     setTimeout(function(){
         mapWindow.firstElementChild.className += ' tsf-reset';
     },100);
-    document.getElementById('map').style.height = window.innerHeight*0.8+'px';
+    document.getElementById('map').style.height = (window.innerHeight-178)+'px';
 
     map = new AMap.Map('map', {
         resizeEnable: true
@@ -197,11 +202,125 @@ function mapPage(){
                 map : map,
                 icon : "images/icon-marker.png",
                 position : [lng-0.001,lat-0.001],
-                offset : new AMap.Pixel(-25, -36)
+                offset : new AMap.Pixel(-25, -70),
+                extData : {
+                    name : '牛厨零食',
+                    mile : 250,
+                    lng:lng-0.001,
+                    lat:lat-0.001
+                }
+            }).on('click',function(event){
+                var data = event.target.getExtData();
+                var html = '<div class="infoWindow">';
+                    html += '<div><i class="icon-box"></i>';
+                    html += '<span>'+data.name+'的宝箱距离你只有'+data.mile+'米</span>';
+                    html += '</div><i class="icon-arrow"></i></div>';
+                infoWindow.setContent(html);
+                infoWindow.open(map, [data.lng, data.lat]);
             })
         });//返回定位信息
         AMap.event.addListener(geolocation, 'error', function(data){
             console.log("fail");
         });      //返回定位出错信息
+        infoWindow = new AMap.InfoWindow({
+            isCustom: true,  //使用自定义窗体
+            content: 'test',
+            offset: new AMap.Pixel(85,-185)//-113, -140
+        });
     });
 }
+
+//游戏页
+function Game(){
+    base(this,LSprite,[]);
+    var self = this;
+    self.graphics.drawRect(0,'#fff',[0,0,750,1333],true,'rgba(0,0,0,0.5)');
+
+    self.times = 30;//游戏时间
+    self.clickPassNums = 30;//通关点击次数
+    self.clickNums = 0;//当前点击次数
+    self.isGaming = false;//是否正在游戏中
+}
+var p = {
+    init:function(){
+        var self = this;
+
+        self.light1 = new ZRimg([imglist['light']],-382,-375);
+        self.light1.x = 375;
+        self.light1.y = 650;
+        self.light1.alpha = 0;
+        self.addChild(self.light1);
+
+        self.timer = new Timer(30);
+        self.timer.x = 200;
+        self.timer.y = 210;
+        self.timer.alpha = 0;
+        self.addChild(self.timer);
+
+        self.hint = new Zimg([imglist['icons'],657,280,265,32],365,300);
+        self.hint.alpha = 0;
+        self.addChild(self.hint);
+
+        self.point = new Zimg([imglist['icons'],865,185,26,68],440,330);
+        self.point.alpha = 0;
+        self.addChild(self.point);
+
+        self.cat = new Zimg([imglist['icons'],0,350,295,440],320,350);
+        self.cat.alpha = 0;
+        self.addChild(self.cat);
+
+        self.boxClose = new Zimg([imglist['icons'],300,340,260,222],210,620);
+        self.boxClose.alpha = 0;
+        self.addChild(self.boxClose);
+
+        self.boxOpen = new Zimg([imglist['icons'],566,317,244,253],226,588);
+        self.boxOpen.alpha = 0;
+        self.addChild(self.boxOpen);
+
+        self.light2 = new ZRimg([imglist['light2']],-96,-100);
+        self.light2.x = 330;
+        self.light2.y = 740;
+        self.light2.alpha = 0;
+        self.addChild(self.light2);
+
+        self.move();
+    },
+    move:function(){
+        var self = this;
+        objMove.call(self.boxClose,{type:'down',dis:800});
+        objMove.call(self.cat,{type:'up',ei:'Back',delay:0.6});
+        objMove.call(self.light1,{delay:1.2});
+        objMove.call(self.timer,{delay:1.5});
+        objMove.call(self.hint,{type:'left',delay:1.5,callback:function(){
+            self.point.alpha = 1;
+            LTweenLite.to(self.point,0.8,{y:340,loop:true,ease:LEasing.None.easeIn}).to(self.point,0,{y:330,loop:true,ease:LEasing.None.easeIn})
+        }});
+        setTimeout(function(){
+            self.timer.count();
+            self.twL1 = LTweenLite.to(self.light1,4,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+            self.twL2 = LTweenLite.to(self.light1,0.6,{alpha:0,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0.6,{alpha:1,loop:true,ease:LEasing.None.easeIn});
+            self.isGaming = true;
+        },3000);
+
+        self.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+            if(self.isGaming){
+                self.clickNums++;
+                LTweenLite.to(self.boxClose,0.05,{x:220,ease:LEasing.None.easeIn}).to(self.boxClose,0.1,{x:200,ease:LEasing.None.easeIn}).to(self.boxClose,0.05,{x:210,ease:LEasing.None.easeIn});
+                if(self.clickNums > self.clickPassNums){//通关
+                    self.isGaming = false;
+                    self.timer.stop();
+                    self.boxClose.alpha = 0;
+                    self.boxOpen.alpha = 1;
+                    objMove.call(self.light2,{type:'scaleS2L',callback:function(){
+                        LTweenLite.to(self.light2,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light2,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+                        LTweenLite.remove(self.twL1);
+                        LTweenLite.remove(self.twL2);
+                        LTweenLite.to(self.light1,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+                        LTweenLite.to(self.light1,0.3,{alpha:0,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0.3,{alpha:1,loop:true,ease:LEasing.None.easeIn});
+                    }})
+                }
+            }
+        })
+    }
+};
+for(var k in p)Game.prototype[k]=p[k];
