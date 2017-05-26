@@ -60,9 +60,6 @@ function loading_gameData(){
             stage.removeChild(loadinglayer);
             loadinglayer = null;
             selectPage();
-            var gameLayer = new Game();
-            gameLayer.init();
-            stage.addChild(gameLayer);
         }
     );
 }
@@ -180,54 +177,78 @@ function mapPage(){
     },100);
     document.getElementById('map').style.height = (window.innerHeight-178)+'px';
 
-    map = new AMap.Map('map', {
-        resizeEnable: true
-    });
-    map.plugin('AMap.Geolocation', function() {
-        geolocation = new AMap.Geolocation({
-            enableHighAccuracy: true,//是否使用高精度定位，默认:true
-            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-            buttonPosition:'RB'
+    setTimeout(function(){
+        map = new AMap.Map('map', {
+            resizeEnable: true
         });
-        map.addControl(geolocation);
-        geolocation.getCurrentPosition();
-        AMap.event.addListener(geolocation, 'complete', function(data){
-            var lng = data.position.getLng();
-            var lat = data.position.getLat();
-            console.log('lng:'+lng+';lat:'+lat);
+        map.plugin('AMap.Geolocation', function() {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                buttonPosition:'RB'
+            });
+            map.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            AMap.event.addListener(geolocation, 'complete', function(data){
+                var lng = data.position.getLng();
+                var lat = data.position.getLat();
+                console.log('lng:'+lng+';lat:'+lat);
 
-            marker = new AMap.Marker({
-                map : map,
-                icon : "images/icon-marker.png",
-                position : [lng-0.001,lat-0.001],
-                offset : new AMap.Pixel(-25, -70),
-                extData : {
-                    name : '牛厨零食',
-                    mile : 250,
-                    lng:lng-0.001,
-                    lat:lat-0.001
-                }
-            }).on('click',function(event){
-                var data = event.target.getExtData();
-                var html = '<div class="infoWindow">';
-                    html += '<div><i class="icon-box"></i>';
-                    html += '<span>'+data.name+'的宝箱距离你只有'+data.mile+'米</span>';
-                    html += '</div><i class="icon-arrow"></i></div>';
-                infoWindow.setContent(html);
-                infoWindow.open(map, [data.lng, data.lat]);
-            })
-        });//返回定位信息
-        AMap.event.addListener(geolocation, 'error', function(data){
-            console.log("fail");
-        });      //返回定位出错信息
-        infoWindow = new AMap.InfoWindow({
-            isCustom: true,  //使用自定义窗体
-            content: 'test',
-            offset: new AMap.Pixel(85,-185)//-113, -140
+                marker = new AMap.Marker({
+                    map : map,
+                    icon : "images/icon-marker.png",
+                    position : [lng-0.001,lat-0.001],
+                    offset : new AMap.Pixel(-25, -70),
+                    extData : {
+                        name : '牛厨零食',
+                        mile : 250,
+                        lng:lng-0.001,
+                        lat:lat-0.001
+                    }
+                }).on('click',function(event){
+                        var data = event.target.getExtData();
+                        var html = '<div class="infoWindow">';
+                        html += '<div>';
+                        html += '<span>'+data.name+'的宝箱距离你只有'+data.mile+'米</span>';
+                        html += '<p>（200米内才能打开宝箱噢！）</p>';
+                        html += '</div><i class="icon-arrow"></i></div>';
+                        infoWindow.setContent(html);
+                        infoWindow.open(map, [data.lng, data.lat]);
+                    })
+
+                marker2 = new AMap.Marker({
+                    map : map,
+                    icon : "images/icon-marker.png",
+                    position : [lng+0.001,lat+0.001],
+                    offset : new AMap.Pixel(-25, -70),
+                    extData : {
+                        name : '牛厨零食',
+                        mile : 250,
+                        lng:lng-0.001,
+                        lat:lat-0.001
+                    }
+                }).on('click',function(event){
+                    var frame = document.getElementById('mapOpenbox');
+                        frame.style.display = 'block';
+                        setTimeout(function(){
+                            frame.className += ' tsf-reset';
+                        },100)
+                })
+            });//返回定位信息
+            AMap.event.addListener(geolocation, 'error', function(data){
+                console.log(data);
+                console.log("fail");
+            });      //返回定位出错信息
+            infoWindow = new AMap.InfoWindow({
+                isCustom: true,  //使用自定义窗体
+                content: 'test',
+                offset: new AMap.Pixel(85,-185)//-113, -140
+            });
         });
-    });
+    },500);
+
 }
 
 //游戏页
@@ -237,7 +258,7 @@ function Game(){
     self.graphics.drawRect(0,'#fff',[0,0,750,1333],true,'rgba(0,0,0,0.5)');
 
     self.times = 30;//游戏时间
-    self.clickPassNums = 30;//通关点击次数
+    self.clickPassNums = 5;//通关点击次数
     self.clickNums = 0;//当前点击次数
     self.isGaming = false;//是否正在游戏中
 }
@@ -269,7 +290,9 @@ var p = {
         self.cat.alpha = 0;
         self.addChild(self.cat);
 
-        self.boxClose = new Zimg([imglist['icons'],300,340,260,222],210,620);
+        self.boxClose = new ZRimg([imglist['icons'],300,340,260,222],-130,-111);
+        self.boxClose.x = 340;
+        self.boxClose.y = 731;
         self.boxClose.alpha = 0;
         self.addChild(self.boxClose);
 
@@ -287,7 +310,9 @@ var p = {
     },
     move:function(){
         var self = this;
-        objMove.call(self.boxClose,{type:'down',dis:800});
+        objMove.call(self.boxClose,{type:'down',t:0.5,dis:800,callback:function(){
+            LTweenLite.to(self.boxClose,0.15,{scaleX:1.15,scaleY:0.85,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:0.95,scaleY:1.05,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn})
+        }});
         objMove.call(self.cat,{type:'up',ei:'Back',delay:0.6});
         objMove.call(self.light1,{delay:1.2});
         objMove.call(self.timer,{delay:1.5});
@@ -305,20 +330,45 @@ var p = {
         self.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
             if(self.isGaming){
                 self.clickNums++;
-                LTweenLite.to(self.boxClose,0.05,{x:220,ease:LEasing.None.easeIn}).to(self.boxClose,0.1,{x:200,ease:LEasing.None.easeIn}).to(self.boxClose,0.05,{x:210,ease:LEasing.None.easeIn});
+                LTweenLite.to(self.boxClose,0.05,{x:350,ease:LEasing.None.easeIn}).to(self.boxClose,0.1,{x:330,ease:LEasing.None.easeIn}).to(self.boxClose,0.05,{x:340,ease:LEasing.None.easeIn});
                 if(self.clickNums > self.clickPassNums){//通关
-                    self.isGaming = false;
-                    self.timer.stop();
-                    self.boxClose.alpha = 0;
-                    self.boxOpen.alpha = 1;
-                    objMove.call(self.light2,{type:'scaleS2L',callback:function(){
-                        LTweenLite.to(self.light2,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light2,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
-                        LTweenLite.remove(self.twL1);
-                        LTweenLite.remove(self.twL2);
-                        LTweenLite.to(self.light1,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
-                        LTweenLite.to(self.light1,0.3,{alpha:0,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0.3,{alpha:1,loop:true,ease:LEasing.None.easeIn});
-                    }})
+                    self.pass();
                 }
+            }
+        })
+    },
+    pass:function(){
+        var self = this;
+        self.isGaming = false;
+        self.timer.stop();
+        LTweenLite.to(self.boxClose,0.05,{x:350,ease:LEasing.None.easeIn}).to(self.boxClose,0.1,{x:330,ease:LEasing.None.easeIn}).to(self.boxClose,0.05,{x:340,ease:LEasing.None.easeIn}).to(self.boxClose,0.3,{scaleX:1.25,scaleY:0.75,ease:LEasing.None.easeIn}).to(self.boxClose,0.1,{scaleX:0.75,scaleY:1.25,ease:LEasing.None.easeIn,onComplete:function(){
+            self.boxClose.alpha = 0;
+            self.boxOpen.alpha = 1;
+            objMove.call(self.light2,{type:'scaleS2L',callback:function(){
+                LTweenLite.to(self.light2,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light2,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+                LTweenLite.remove(self.twL1);
+                LTweenLite.remove(self.twL2);
+                LTweenLite.to(self.light1,2,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+                LTweenLite.to(self.light1,0.3,{alpha:0,loop:true,ease:LEasing.None.easeIn}).to(self.light1,0.3,{alpha:1,loop:true,ease:LEasing.None.easeIn});
+            }})
+        }});
+
+        self.initFall();
+    },
+    initFall:function(){
+        var self = this;
+        self.fallLayer = new LSprite();
+        self.addChild(self.fallLayer);
+        var addIndex = 0;
+        self.fallLayer.addEventListener(LEvent.ENTER_FRAME,function(){
+            if(addIndex -- < 0){
+                addIndex = 60;
+                var item = new Redbag();
+                self.fallLayer.addChild(item);
+            }
+            for(var i=self.fallLayer.numChildren-1;i>=0;i--){
+                var _child = self.fallLayer.childList[i];
+                _child.updates();
             }
         })
     }

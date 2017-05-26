@@ -279,3 +279,30 @@ Timer.prototype.stop = function(){
     clearInterval(self.t);
     LTweenLite.remove(self.tw);
 };
+
+//红包掉落
+function Redbag(){
+    base(this,LSprite,[]);
+    var self = this;
+    self.y = -150;
+
+    self.pic1 = new ZRimg([imglist['icons'],900,190,50,61],-25,-30);
+    self.pic1.x = 80+parseInt(Math.random()*150);
+    self.pic1.y = -40 - parseInt(Math.random()*100);
+    self.addChild(self.pic1);
+    LTweenLite.to(self.pic1,1,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.pic1,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+
+    self.pic2 = new ZRimg([imglist['icons'],900,190,50,61],-25,-30);
+    self.pic2.x = 520+parseInt(Math.random()*150);
+    self.pic2.y = -40 - parseInt(Math.random()*50);
+    self.addChild(self.pic2);
+    LTweenLite.to(self.pic2,1,{rotate:360,loop:true,ease:LEasing.None.easeIn}).to(self.pic2,0,{rotate:0,loop:true,ease:LEasing.None.easeIn});
+}
+Redbag.prototype.updates = function(){
+    var self = this;
+    var speed = 5;
+    self.y += speed;
+    if(self.y > 1400){
+        self.parent.removeChild(self);
+    }
+};
