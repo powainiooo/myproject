@@ -15,7 +15,7 @@ canvas{display: block;}
 .title{ width: 100%; overflow: hidden; border-radius: 20px 20px 0 0; background: -webkit-gradient(linear,0 0,0 100%,from(#1cbae8),to(#1ab7e7)); padding: 6px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5);}
 .title p{ font-size: 20px; text-align: center; color: #FFF; font-weight: bold;}
 .content{ width: 94%; margin: 20px auto; background-color: #e5f6fe; border-radius: 14px; overflow: hidden;}
-#map{ border: 2px solid #1795bb; min-height: 500px;}
+#map{ border: 2px solid #1795bb;}
 #map .amap-maps{  border-radius: 10px;}
 .amap-e, .amap-layers, .amap-maps, .amap-tile, .amap-tile-container{  border-radius: 10px;}
 

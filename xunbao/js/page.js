@@ -234,7 +234,14 @@ function mapPage(){
                         frame.style.display = 'block';
                         setTimeout(function(){
                             frame.className += ' tsf-reset';
-                        },100)
+                        },100);
+                        var btn = document.getElementById('btnPlayGame');
+                        btn.addEventListener('click',function(){
+                            mapWindow.style.display = 'none';
+                            var game = new Game();
+                            stage.addChild(game);
+                            game.init();
+                        })
                 })
             });//返回定位信息
             AMap.event.addListener(geolocation, 'error', function(data){
