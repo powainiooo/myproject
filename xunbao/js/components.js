@@ -1,5 +1,5 @@
 //首页开始按钮
-function StartBtn(){
+function StartBtn(callBack){
     base(this,LSprite,[]);
     var self = this;
     self.x = 360;
@@ -13,7 +13,7 @@ function StartBtn(){
     self.btn = new ZRimg([imglist['icons'],0,155,190,193],-85,-86);
     self.addChild(self.btn);
     self.btn.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
-        Zclick.call(self.btn);
+        Zclick.call(self.btn,callBack);
     })
 }
 

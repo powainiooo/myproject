@@ -24,7 +24,7 @@ function main(){
     LGlobal.setDebug(true);
     //全屏操作
     LGlobal.align = LStageAlign.TOP_MIDDLE;
-    LGlobal.stageScale = LStageScaleMode.EXACT_FIT;
+    LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
     LSystem.screen(LStage.FULL_SCREEN);
 
     //添加舞台
@@ -83,8 +83,7 @@ function selectPage(){
     female.addChild(btnFemale);
     btnFemale.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
         Zclick.call(btnFemale,function(){
-            //homePage('female');
-            mapPage();
+            homePage('female');
         });
     });
 
@@ -112,7 +111,7 @@ function homePage(sex){
     var bg = new Zimg([imglist['bg1']]);
     homeLayer.addChild(bg);
 
-    var startBtn = new StartBtn();
+    var startBtn = new StartBtn(mapPage);
     homeLayer.addChild(startBtn);
 
     var lvline = new Lvline(5);
@@ -175,7 +174,7 @@ function mapPage(){
     setTimeout(function(){
         mapWindow.firstElementChild.className += ' tsf-reset';
     },100);
-    document.getElementById('map').style.height = (window.innerHeight-178)+'px';
+    document.getElementById('map').style.height = (window.innerHeight-98)+'px';
 
     setTimeout(function(){
         map = new AMap.Map('map', {
@@ -216,7 +215,7 @@ function mapPage(){
                         html += '</div><i class="icon-arrow"></i></div>';
                         infoWindow.setContent(html);
                         infoWindow.open(map, [data.lng, data.lat]);
-                    })
+                    });
 
                 marker2 = new AMap.Marker({
                     map : map,
@@ -234,6 +233,7 @@ function mapPage(){
                         frame.style.display = 'block';
                         setTimeout(function(){
                             frame.className += ' tsf-reset';
+                            LGlobal.preventDefault = false;
                         },100);
                         var btn = document.getElementById('btnPlayGame');
                         btn.addEventListener('click',function(){
@@ -241,6 +241,7 @@ function mapPage(){
                             var game = new Game();
                             stage.addChild(game);
                             game.init();
+                            LGlobal.preventDefault = true;
                         })
                 })
             });//返回定位信息
@@ -265,7 +266,7 @@ function Game(){
     self.graphics.drawRect(0,'#fff',[0,0,750,1333],true,'rgba(0,0,0,0.5)');
 
     self.times = 30;//游戏时间
-    self.clickPassNums = 5;//通关点击次数
+    self.clickPassNums = 30;//通关点击次数
     self.clickNums = 0;//当前点击次数
     self.isGaming = false;//是否正在游戏中
 }

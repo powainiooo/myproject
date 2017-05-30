@@ -2,7 +2,7 @@
 /* CSS Document */
 *{ margin:0; padding:0; font-family:"Microsoft YaHei", "微软雅黑",arial, helvetica, sans-serif; -webkit-box-sizing: border-box;box-sizing: border-box;}
 html{height: 100%;}
-body{height: 100%;}
+body{height: 100%; background-color: #000;}
 a{ text-decoration:none; border:none;}
 li{ list-style:none;}
 input{ -webkit-appearance:none; border-radius:0;}
@@ -11,7 +11,7 @@ select{ -webkit-appearance:select; border-radius:0;}
 canvas{display: block;}
 
 .window{ width: 100%; height: 100%; position: fixed; top:0; left: 0; z-index: 100; background-color: rgba(0,0,0,0.5); overflow: hidden; display: none;}
-.frame{ width: 98%; margin: 50px auto; border-radius: 20px; background-color: #67d8f2; overflow: hidden; transition: all 0.3s ease-out;-webkit-transition: all 0.3s ease-out;}
+.frame{ width: 98%; margin: 10px auto; border-radius: 20px; background-color: #67d8f2; overflow: hidden; transition: all 0.3s ease-out;-webkit-transition: all 0.3s ease-out;}
 .title{ width: 100%; overflow: hidden; border-radius: 20px 20px 0 0; background: -webkit-gradient(linear,0 0,0 100%,from(#1cbae8),to(#1ab7e7)); padding: 6px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5);}
 .title p{ font-size: 20px; text-align: center; color: #FFF; font-weight: bold;}
 .content{ width: 94%; margin: 20px auto; background-color: #e5f6fe; border-radius: 14px; overflow: hidden;}
@@ -29,7 +29,7 @@ canvas{display: block;}
 .infoWindow>div p{ color: #f4761f; font-size: 0.24rem;}
 .infoWindow .icon-arrow{ position: absolute; bottom: -16px; left: 50%; margin-left: -20px;}
 
-.openInfo{ width: 90%;border: 0.03rem solid #275bb0;  background-color: #67d8f2; border-radius: 24px; padding: 12px 12px; position: absolute; bottom: 30px; left: 5%; display: none;}
+.openInfo{ width: 90%;border: 0.03rem solid #275bb0;  background-color: #67d8f2; border-radius: 24px; padding: 12px 12px; position: absolute; bottom: 30px; left: 5%; display: none; z-index: 1000;}
 .openInfo>div{ border-radius: 20px; background-color: #fff; overflow: hidden; padding: 10px 15px;}
 .openInfo>div span{ width: 5rem; color: #0d5d94; display: block; font-size: 0.24rem;}
 .openInfo>div p{width: 5rem;color: #f4761f; font-size: 0.24rem;}
