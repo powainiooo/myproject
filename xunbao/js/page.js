@@ -318,10 +318,12 @@ var p = {
     },
     move:function(){
         var self = this;
-        objMove.call(self.boxClose,{type:'down',t:0.5,dis:800,callback:function(){
+        self.boxClose.scaleX = 0.85;
+        self.boxClose.scaleY = 1.15;
+        objMove.call(self.boxClose,{type:'down',t:0.3,dis:800,ei:'None',callback:function(){
             LTweenLite.to(self.boxClose,0.15,{scaleX:1.15,scaleY:0.85,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:0.95,scaleY:1.05,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn})
         }});
-        objMove.call(self.cat,{type:'up',ei:'Back',delay:0.6});
+        objMove.call(self.cat,{type:'up',ei:'Back',delay:1});
         objMove.call(self.light1,{delay:1.2});
         objMove.call(self.timer,{delay:1.5});
         objMove.call(self.hint,{type:'left',delay:1.5,callback:function(){
