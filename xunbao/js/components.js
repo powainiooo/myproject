@@ -306,3 +306,106 @@ Redbag.prototype.updates = function(){
         self.parent.removeChild(self);
     }
 };
+
+//关闭按钮
+function BtnClose(callback){
+    var imgData = new Zimg([imglist['icons'],90,120,34,34]);
+    base(this,LButton,[imgData]);
+    var self = this;
+    self.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        setTimeout(callback,500);
+    })
+}
+
+//文字
+function RuleTXT(txt,x,y){
+    base(this,LTextField,[]);
+    var self = this;
+    self.text = txt;
+    self.color = '#1494bb';
+    self.size = 28;
+    self.font = '微软雅黑';
+    self.x = x;
+    self.y = y;
+}
+
+//好友列表项
+function MyfriendItem(){
+    base(this,LSprite,[]);
+    var self = this;
+    self.bg = new Zimg([imglist['icons'],0,854,655,86]);
+    self.addChild(self.bg);
+
+    var cover = new LSprite();
+    cover.graphics.drawArc(1,'#f00',[80,42,40,0,Math.PI*2]);
+    self.pic = new Zimg([imglist['person']],40,2);
+    self.pic.mask = cover;
+    self.addChild(self.pic);
+
+    var sexIcon = new Zimg([imglist['icons'],155,63,40,40],110,42);
+    self.addChild(sexIcon);
+
+    var name = new LTextField();
+    name.text = 'DA橙子';
+    name.size = 28;
+    name.color = '#fff';
+    name.x = 160;
+    name.y = 12;
+    self.addChild(name);
+
+    var lvz = new LTextField();
+    lvz.text = 'LV.6';
+    lvz.size = 24;
+    lvz.color = '#ffde27';
+    lvz.x = 160;
+    lvz.y = 50;
+    self.addChild(lvz);
+
+    var btn = new LButton(new Zimg([imglist['icons'],825,315,123,42]));
+    btn.x = 460;
+    btn.y = 20;
+    self.addChild(btn);
+}
+
+//翻页
+function PageInfo(currentPage,pageCount){
+    base(this,LSprite,[]);
+    var self = this;
+    self.graphics.drawRoundRect(0,'#000',[-80,0,160,50,20],true,'#57c0fc');
+
+    var txt = new LTextField();
+    txt.text = currentPage+'/'+pageCount;
+    txt.size = 30;
+    txt.color = '#fff';
+    txt.textAlign = 'center';
+    txt.y = 10;
+    self.addChild(txt);
+
+    var btnPrev = new LButton(new Zimg([imglist['icons'],825,360,60,60]));
+    btnPrev.x = -175;
+    btnPrev.y = -5;
+    self.addChild(btnPrev);
+
+    var btnNext = new LButton(new Zimg([imglist['icons'],890,360,60,60]));
+    btnNext.x = 115;
+    btnNext.y = -5;
+    self.addChild(btnNext);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

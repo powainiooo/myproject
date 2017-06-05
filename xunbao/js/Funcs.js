@@ -152,9 +152,9 @@ function objMove(opts){
 
 //点击效果
 function Zclick(callback){
-    var t = 0.7;
+    var t = 0.8;
     var self = this;
-    LTweenLite.to(self,t*0.3,{scaleX:1.25,scaleY:0.75,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:0.75,scaleY:1.25,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:1.15,scaleY:0.85,ease:LEasing.None.easeIn}).to(self,t*0.15,{scaleX:0.95,scaleY:1.05,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:1.05,scaleY:0.95,ease:LEasing.None.easeIn}).to(self,t*0.25,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn,onComplete:function(){
+    LTweenLite.to(self,t*0.3,{scaleX:1.25,scaleY:0.75,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:0.75,scaleY:1.25,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:1.15,scaleY:0.85,ease:LEasing.None.easeIn}).to(self,t*0.15,{scaleX:0.95,scaleY:1.05,ease:LEasing.None.easeIn}).to(self,t*0.1,{scaleX:1.05,scaleY:0.95,ease:LEasing.None.easeIn}).to(self,t*0.25,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn}).to(self,t*0.5,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn,onComplete:function(){
         if(callback != null && typeof callback == 'function') callback();
     }})
 }

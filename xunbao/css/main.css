@@ -12,12 +12,16 @@ canvas{display: block;}
 
 .window{ width: 100%; height: 100%; position: fixed; top:0; left: 0; z-index: 100; background-color: rgba(0,0,0,0.5); overflow: hidden; display: none;}
 .frame{ width: 98%; margin: 10px auto; border-radius: 20px; background-color: #67d8f2; overflow: hidden; transition: all 0.3s ease-out;-webkit-transition: all 0.3s ease-out;}
-.title{ width: 100%; overflow: hidden; border-radius: 20px 20px 0 0; background: -webkit-gradient(linear,0 0,0 100%,from(#1cbae8),to(#1ab7e7)); padding: 6px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5);}
-.title p{ font-size: 20px; text-align: center; color: #FFF; font-weight: bold;}
+.frame-min{ width: 80%; margin-top: 20%;}
+.title{ width: 100%; overflow: hidden; position: relative; border-radius: 20px 20px 0 0; background: -webkit-gradient(linear,0 0,0 100%,from(#1cbae8),to(#1ab7e7)); padding: 6px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5);}
+.title p{ font-size: 24px; text-align: center; color: #FFF; font-weight: bold;}
+.title .btnClose{ width: 0.34rem; height: 0.34rem; background: url('../images/icons.png') no-repeat; background-position: -0.9rem -1.2rem; background-size: 15rem; position: absolute; top:0.1rem;right: 0.22rem;}
 .content{ width: 94%; margin: 20px auto; background-color: #e5f6fe; border-radius: 14px; overflow: hidden;}
 #map{ border: 2px solid #1795bb;}
 #map .amap-maps{  border-radius: 10px;}
 .amap-e, .amap-layers, .amap-maps, .amap-tile, .amap-tile-container{  border-radius: 10px;}
+
+.adcode{ width: 60%; display: block; margin: 20% auto;}
 
 
 .tsf-down{ transform: translate(0,200px);-webkit-transform: translate(0,200px);opacity: 0;}

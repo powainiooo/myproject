@@ -10,6 +10,8 @@ var imglist = {};
 var imgData = [
     {name:"bg1",path:imgsrc+"./images/bg1.jpg"},
     {name:"bg2",path:imgsrc+"./images/bg2.jpg"},
+    {name:"hint1",path:imgsrc+"./images/hint1.jpg"},
+    {name:"acpic1",path:imgsrc+"./images/acpic1.png"},
     {name:"select-female",path:imgsrc+"./images/select-female.png"},
     {name:"select-male",path:imgsrc+"./images/select-male.png"},
     {name:"person",path:imgsrc+"./images/person.jpg"},
@@ -59,7 +61,8 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            selectPage();
+            homePage('male');
+            myfriendsPage();
         }
     );
 }
@@ -318,10 +321,12 @@ var p = {
     },
     move:function(){
         var self = this;
-        objMove.call(self.boxClose,{type:'down',t:0.5,dis:800,callback:function(){
+        self.boxClose.scaleX = 0.85;
+        self.boxClose.scaleY = 1.15;
+        objMove.call(self.boxClose,{type:'down',t:0.3,dis:800,ei:'None',callback:function(){
             LTweenLite.to(self.boxClose,0.15,{scaleX:1.15,scaleY:0.85,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:0.95,scaleY:1.05,ease:LEasing.None.easeIn}).to(self.boxClose,0.15,{scaleX:1,scaleY:1,ease:LEasing.None.easeIn})
         }});
-        objMove.call(self.cat,{type:'up',ei:'Back',delay:0.6});
+        objMove.call(self.cat,{type:'up',ei:'Back',delay:1});
         objMove.call(self.light1,{delay:1.2});
         objMove.call(self.timer,{delay:1.5});
         objMove.call(self.hint,{type:'left',delay:1.5,callback:function(){
@@ -382,3 +387,267 @@ var p = {
     }
 };
 for(var k in p)Game.prototype[k]=p[k];
+
+//升级方式
+function uploadPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,275,710,620,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[45,365,660,500,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,275);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '升级方式';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 280;
+    upLayer.addChild(title);
+
+    var txtRule = [],ruleData = staticGameData.uploadRule;
+    for(var i= 0;i<ruleData.length;i++){
+        txtRule[i] = new RuleTXT(ruleData[i],70,400+i*45);
+        upLayer.addChild(txtRule[i]);
+    }
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 290;
+    upLayer.addChild(btnClose);
+
+    var btnInvite = new ZRimg([imglist['icons'],1010,0,270,97],-135,-48);
+    btnInvite.x = 375;
+    btnInvite.y = 770;
+    upLayer.addChild(btnInvite);
+    btnInvite.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnInvite,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//体力值获取方式
+function energyPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,275,710,620,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[45,365,660,500,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,275);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '体力值获取方式';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 280;
+    upLayer.addChild(title);
+
+    var txtRule = [],ruleData = staticGameData.energyRule;
+    for(var i= 0;i<ruleData.length;i++){
+        txtRule[i] = new RuleTXT(ruleData[i],70,400+i*45);
+        upLayer.addChild(txtRule[i]);
+    }
+    txtRule[5].color = '#fe8300';
+    txtRule[5].size = 24;
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 290;
+    upLayer.addChild(btnClose);
+
+    var btnInvite = new ZRimg([imglist['icons'],1010,0,270,97],-135,-48);
+    btnInvite.x = 375;
+    btnInvite.y = 770;
+    upLayer.addChild(btnInvite);
+    btnInvite.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnInvite,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//体力值不足
+function energyLessPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,275,710,620,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[45,365,660,500,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,275);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '很遗憾';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 280;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 290;
+    upLayer.addChild(btnClose);
+
+    var hint = new Zimg([imglist['hint1']],213,380);
+    upLayer.addChild(hint);
+
+    var btnInvite = new ZRimg([imglist['icons'],1010,0,270,97],-135,-48);
+    btnInvite.x = 375;
+    btnInvite.y = 770;
+    upLayer.addChild(btnInvite);
+    btnInvite.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnInvite,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//邀请好友
+function invitePage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,275,710,620,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[45,365,660,500,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,275);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '邀请好友';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 280;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 290;
+    upLayer.addChild(btnClose);
+
+    var txtRule = [],ruleData = staticGameData.inviteRule;
+    for(var i= 0;i<ruleData.length;i++){
+        txtRule[i] = new RuleTXT(ruleData[i],70,380+i*45);
+        upLayer.addChild(txtRule[i]);
+    }
+    txtRule[3].y = 530;
+
+    var btnInvite = new ZRimg([imglist['icons'],320,635,287,85],-143,-42);
+    btnInvite.x = 375;
+    btnInvite.y = 770;
+    upLayer.addChild(btnInvite);
+    btnInvite.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnInvite,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//活动列表
+function eventsPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,160,710,940,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,250,680,820,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,160);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '活动列表';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 165;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 175;
+    upLayer.addChild(btnClose);
+
+    var pic1 = new Zimg([imglist['acpic1']],45,260);
+    upLayer.addChild(pic1);
+
+    var pic2 = new Zimg([imglist['acpic1']],45,660);
+    upLayer.addChild(pic2);
+}
+
+//我的好友
+function myfriendsPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,160,710,940,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,250,680,820,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,160);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '我的好友';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 165;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 175;
+    upLayer.addChild(btnClose);
+
+    var item1 = new MyfriendItem();
+    item1.x = 45;
+    item1.y = 270;
+    upLayer.addChild(item1);
+
+    var pageInfo = new PageInfo(1,5);
+    pageInfo.x = 375;
+    pageInfo.y = 1000;
+    upLayer.addChild(pageInfo);
+}
