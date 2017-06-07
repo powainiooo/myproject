@@ -12,6 +12,8 @@ var imgData = [
     {name:"bg2",path:imgsrc+"./images/bg2.jpg"},
     {name:"hint1",path:imgsrc+"./images/hint1.jpg"},
     {name:"acpic1",path:imgsrc+"./images/acpic1.png"},
+    {name:"infoframe",path:imgsrc+"./images/infoframe.png"},
+    {name:"crashframe",path:imgsrc+"./images/crashfame.jpg"},
     {name:"select-female",path:imgsrc+"./images/select-female.png"},
     {name:"select-male",path:imgsrc+"./images/select-male.png"},
     {name:"person",path:imgsrc+"./images/person.jpg"},
@@ -62,7 +64,8 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            selectPage();
+            homePage('male');
+            crashPage();
         }
     );
 }
@@ -681,7 +684,7 @@ function myfriendsPage(){
     upLayer.addChild(pageInfo);
 }
 
-//我的好友
+//排行榜
 function ranksPage(){
     var upLayer = new LSprite();
     stage.addChild(upLayer);
@@ -732,4 +735,181 @@ function ranksPage(){
     pageInfo.x = 375;
     pageInfo.y = 1000;
     upLayer.addChild(pageInfo);
+}
+
+//个人信息
+function personData(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,160,710,990,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(2,'#15a7d3',[35,710,680,400,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,160);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '个人信息';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 165;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 175;
+    upLayer.addChild(btnClose);
+
+    var infoframe = new Zimg([imglist['infoframe']],32,230);
+    upLayer.addChild(infoframe);
+
+    //头像
+    var cover = new LSprite();
+    cover.graphics.drawArc(0,'#f00',[375,290,50,0,Math.PI*2]);
+    var head = new Zimg([imglist['person']],325,240);
+    head.mask = cover;
+    upLayer.addChild(head);
+
+    //性别
+    var sex = new Zimg([imglist['icons'],153,19,38,40],410,300);
+    upLayer.addChild(sex);
+
+    //姓名
+    var name = new LTextField();
+    name.text = '大脸猫爱吃鱼';
+    name.size = 30;
+    name.color = '#116992';
+    name.textAlign = 'center';
+    name.x = 375;
+    name.y = 360;
+    upLayer.addChild(name);
+
+    //昨日总收益
+    var value1 = name.clone();
+    value1.text = 13.5;
+    value1.size = 24;
+    value1.x = 195;
+    value1.y = 455;
+    upLayer.addChild(value1);
+
+    //零钱
+    var value2 = value1.clone();
+    value2.text = 130;
+    value2.x = 545;
+    upLayer.addChild(value2);
+
+    //总金额
+    var value3 = value1.clone();
+    value3.text = 130;
+    value3.x = 125;
+    value3.y = 585;
+    upLayer.addChild(value3);
+
+    //消费金额
+    var value4 = value3.clone();
+    value4.text = 130;
+    value4.x = 355;
+    upLayer.addChild(value4);
+
+    //可提现
+    var value5 = value3.clone();
+    value5.text = 130;
+    value5.x = 585;
+    upLayer.addChild(value5);
+
+    //过关红包
+    var txt1 = name.clone();
+    txt1.text = '过关红包';
+    txt1.color = '#ff5aa0';
+    txt1.y = 670;
+    upLayer.addChild(txt1);
+
+    //箭头
+    var arrow = new Zimg([imglist['icons'],130,120,45,23],352,1120);
+    upLayer.addChild(arrow);
+
+    //红包列表
+    var listView = new LListView();
+    listView.resize(680,360);
+    upLayer.addChild(listView);
+    listView.x = 35;
+    listView.y = 730;
+    listView.maxPerLine = 1;
+    listView.cellWidth = 680;
+    listView.cellHeight = 95;
+    listView.graphics.drawRect(0, "#f00", [0, 0, listView.clipping.width,listView.clipping.height]);
+    var scrollBarVertical = new LListScrollBar(new LPanel("#9370DB", 0, 0), new LPanel("#9400D3", 0, 0), LListView.ScrollBarCondition.OnlyIfNeeded);
+    listView.setVerticalScrollBar(scrollBarVertical);
+
+
+    var item1 = new MoneBagItem();
+    listView.insertChildView(item1);
+    var item1 = new MoneBagItem();
+    listView.insertChildView(item1);
+    var item1 = new MoneBagItem();
+    listView.insertChildView(item1);
+    var item1 = new MoneBagItem();
+    listView.insertChildView(item1);
+}
+
+//提现
+function crashPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,160,710,940,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,250,680,820,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,160);
+    upLayer.addChild(tbg);
+
+    var btnClose = new BtnBack(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 70;
+    btnClose.y = 170;
+    upLayer.addChild(btnClose);
+
+    var crashframe = new Zimg([imglist['crashframe']],90,250);
+    upLayer.addChild(crashframe);
+
+    var money = new LTextField();
+    money.text = 120;
+    money.size = 44;
+    money.color = '#02303e';
+    money.x = 330;
+    money.y = 470;
+    upLayer.addChild(money);
+
+    var inputLayer = new LSprite();
+    inputLayer.graphics.drawRect(1,"#000000",[0, 0, 380, 60]);
+    var money2 = money.clone();
+    money2.text = '';
+    money2.x = 150;
+    money2.y = 685;
+    money2.setType(LTextFieldType.INPUT,inputLayer);
+    upLayer.addChild(money2);
+
+    var btn = new ZRimg([imglist['icons'],720,720,278,90],-139,-45);
+    btn.x = 375;
+    btn.y = 870;
+    upLayer.addChild(btn);
+    btn.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btn,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//消费明细
+function spenddetailsPage(){
+
 }

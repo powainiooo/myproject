@@ -325,6 +325,16 @@ function BtnClose(callback){
     })
 }
 
+//返回按钮
+function BtnBack(callback){
+    var imgData = new Zimg([imglist['icons'],1443,3,52,40]);
+    base(this,LButton,[imgData]);
+    var self = this;
+    self.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        setTimeout(callback,500);
+    })
+}
+
 //文字
 function RuleTXT(txt,x,y){
     base(this,LTextField,[]);
@@ -450,7 +460,6 @@ function Tab(){
     })
 }
 
-
 //排行榜列表项
 function RankItem(rank){
     base(this,LSprite,[]);
@@ -507,7 +516,43 @@ function RankItem(rank){
     self.addChild(btn);
 }
 
+//个人信息-过关红包
+function MoneBagItem(){
+    base(this,LListChildView,[]);
+    var self = this;
 
+    var bg = new Zimg([imglist['icons'],0,854,655,85],12);
+    self.addChild(bg);
+
+    var icon = new Zimg([imglist['icons'],657,862,58,70],60,6);
+    self.addChild(icon);
+
+    var name = new LTextField();
+    name.text = '张三的红包';
+    name.size = 26;
+    name.color = '#fff';
+    name.x = 140;
+    name.y = 15;
+    self.addChild(name);
+
+    var money = name.clone();
+    money.text = '10元';
+    money.size = 24;
+    money.textAlign = 'center';
+    money.color = '#ff5aa0';
+    money.x = 210;
+    money.y = 50;
+    self.addChild(money);
+
+    var btn = new LButton(new Zimg([imglist['icons'],825,425,123,42]));//825,471,124,43
+    btn.x = 480;
+    btn.y = 18;
+    self.addChild(btn);
+}
+MoneBagItem.prototype.onClick = function(event){
+    var self = this;
+
+};
 
 
 
