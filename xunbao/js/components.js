@@ -554,7 +554,18 @@ MoneBagItem.prototype.onClick = function(event){
 
 };
 
-
+//头像
+function Portrait(){
+    base(this,LSprite,[]);
+    var self = this;
+    var cover = new LSprite();
+    cover.graphics.drawArc(1,'#f00',[0,0,50,0,Math.PI*2]);
+    self.pic = new Zimg([imglist['person']]);
+    self.pic.x = -self.pic.getWidth()/2;
+    self.pic.y = -self.pic.getHeight()/2;
+    self.pic.mask = cover;
+    self.addChild(self.pic);
+}
 
 
 

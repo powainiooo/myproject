@@ -11,6 +11,7 @@ var imgData = [
     {name:"bg1",path:imgsrc+"./images/bg1.jpg"},
     {name:"bg2",path:imgsrc+"./images/bg2.jpg"},
     {name:"hint1",path:imgsrc+"./images/hint1.jpg"},
+    {name:"hint2",path:imgsrc+"./images/hint2.jpg"},
     {name:"acpic1",path:imgsrc+"./images/acpic1.png"},
     {name:"infoframe",path:imgsrc+"./images/infoframe.png"},
     {name:"crashframe",path:imgsrc+"./images/crashfame.jpg"},
@@ -64,8 +65,9 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            homePage('male');
-            crashPage();
+            selectPage();
+            //homePage('male');
+            //MoneybagListPage();
         }
     );
 }
@@ -417,6 +419,116 @@ var p = {
     }
 };
 for(var k in p)Game.prototype[k]=p[k];
+
+//恭喜获得红包
+function getMoneybagPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,275,710,650,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[45,365,660,530,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,275);
+    upLayer.addChild(tbg);
+
+    var title = new LTextField();
+    title.text = '恭喜你获得';
+    title.size = 36;
+    title.color = '#fff';
+    title.font = '微软雅黑';
+    title.textAlign = 'center';
+    title.x = 375;
+    title.y = 280;
+    upLayer.addChild(title);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 290;
+    upLayer.addChild(btnClose);
+
+    var hint = new Zimg([imglist['hint2']],200,380);
+    upLayer.addChild(hint);
+
+    var money = new LTextField();
+    money.text = '5.0';
+    money.size = 36;
+    money.color = '#ec5f01';
+    money.textAlign = 'center';
+    money.x = 375;
+    money.y = 630;
+    upLayer.addChild(money);
+
+    var info = new LTextField();
+    info.text = '说明：过关红包需要在下一关才能领取红包\n　　　可在个人中心查看.';
+    info.size = 22;
+    info.color = '#fc8731';
+    info.x = 190;
+    info.y = 700;
+    info.width = 420;
+    info.setWordWrap(true,20);
+    upLayer.addChild(info);
+
+    var btnInvite = new ZRimg([imglist['icons'],964,330,260,84],-130,-42);
+    btnInvite.x = 375;
+    btnInvite.y = 820;
+    upLayer.addChild(btnInvite);
+    btnInvite.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnInvite,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
+}
+
+//红包列表1
+function MoneybagListPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,175,710,1080,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,265,680,960,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,175);
+    upLayer.addChild(tbg);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 190;
+    upLayer.addChild(btnClose);
+
+    var redTop = new Zimg([imglist['icons'],0,1304,682,165],35,265);
+    upLayer.addChild(redTop);
+
+    var head = new Portrait();
+    head.x = 375;
+    head.y = 420;
+    upLayer.addChild(head);
+
+    var name = new LTextField();
+    name.text = '卡动猫的红包';
+    name.size = 28;
+    name.color = '#e89901';
+    name.textAlign = 'center';
+    name.x = 375;
+    name.y = 480;
+    upLayer.addChild(name);
+
+    var price = name.clone();
+    price.text = '10.0元';
+    price.size = 44;
+    price.color = '#000';
+    price.y = 520;
+    upLayer.addChild(price);
+
+    var erweima = new LSprite();
+    erweima.graphics.drawRoundRect()
+}
 
 //升级方式
 function uploadPage(){
