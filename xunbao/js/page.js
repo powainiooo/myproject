@@ -10,6 +10,7 @@ var imglist = {};
 var imgData = [
     {name:"bg1",path:imgsrc+"./images/bg1.jpg"},
     {name:"bg2",path:imgsrc+"./images/bg2.jpg"},
+    {name:"pic1",path:imgsrc+"./images/pic1.jpg"},
     {name:"hint1",path:imgsrc+"./images/hint1.jpg"},
     {name:"hint2",path:imgsrc+"./images/hint2.jpg"},
     {name:"acpic1",path:imgsrc+"./images/acpic1.png"},
@@ -67,7 +68,7 @@ function loading_gameData(){
             loadinglayer = null;
             selectPage();
             //homePage('male');
-            //MoneybagListPage();
+            //getMoneyBagView();
         }
     );
 }
@@ -484,12 +485,12 @@ function getMoneybagPage(){
 }
 
 //红包列表1
-function MoneybagListPage(){
+function moneybagListPage(){
     var upLayer = new LSprite();
     stage.addChild(upLayer);
     upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
     upLayer.graphics.drawRoundRect(0,'#000',[20,175,710,1080,36],true,'#65d7f1');
-    upLayer.graphics.drawRoundRect(0,'#000',[35,265,680,960,20],true,'#e6f6ff');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,265,680,940,20],true,'#e6f6ff');
 
     var tbg = new Zimg([imglist['icons'],0,790,710,61],20,175);
     upLayer.addChild(tbg);
@@ -527,7 +528,145 @@ function MoneybagListPage(){
     upLayer.addChild(price);
 
     var erweima = new LSprite();
-    erweima.graphics.drawRoundRect()
+    erweima.graphics.drawRoundRect(1,'#c64e0b',[0,0,200,200,10],true,'#fe8440');
+    erweima.pic = new Zimg([imglist['pic1']],10,10);
+    erweima.addChild(erweima.pic);
+    erweima.x = 275;
+    erweima.y = 580;
+    upLayer.addChild(erweima);
+
+    var info = new LTextField();
+    info.text = '说明：多出去走走，Ipong7有可能就在你身边哦，\n　　　快点行动起来吧.';
+    info.size = 22;
+    info.color = '#fc8731';
+    info.x = 120;
+    info.y = 800;
+    info.width = 500;
+    info.setWordWrap(true,20);
+    upLayer.addChild(info);
+
+    var arrow = new Zimg([imglist['icons'],130,120,45,23],352,1220);
+    upLayer.addChild(arrow);
+
+    //红包列表
+    var listView = new LListView();
+    listView.resize(680,285);
+    upLayer.addChild(listView);
+    listView.x = 35;
+    listView.y = 900;
+    listView.maxPerLine = 1;
+    listView.cellWidth = 680;
+    listView.cellHeight = 95;
+    listView.graphics.drawRect(0, "#f00", [0, 0, listView.clipping.width,listView.clipping.height]);
+    var scrollBarVertical = new LListScrollBar(new LPanel("#9370DB", 0, 0), new LPanel("#9400D3", 0, 0), LListView.ScrollBarCondition.OnlyIfNeeded);
+    listView.setVerticalScrollBar(scrollBarVertical);
+
+
+    var item1 = new GetMoneyListItem();
+    listView.insertChildView(item1);
+}
+
+//过关领取红包
+function getMoneyBagView(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,175,710,1080,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,265,680,940,20],true,'#e6f6ff');
+
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,175);
+    upLayer.addChild(tbg);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 190;
+    upLayer.addChild(btnClose);
+
+    var redTop = new Zimg([imglist['icons'],0,1304,682,165],35,265);
+    upLayer.addChild(redTop);
+
+    var head = new Portrait();
+    head.x = 375;
+    head.y = 420;
+    upLayer.addChild(head);
+
+    var name = new LTextField();
+    name.text = '卡动猫的红包';
+    name.size = 28;
+    name.color = '#e89901';
+    name.textAlign = 'center';
+    name.x = 375;
+    name.y = 480;
+    upLayer.addChild(name);
+
+    var price = name.clone();
+    price.text = '10.0元';
+    price.size = 44;
+    price.color = '#000';
+    price.y = 520;
+    upLayer.addChild(price);
+
+    var info = new LTextField();
+    info.text = '说明：过关红包需要在下一关才能领取红包\n　　　可在个人中心查看……';
+    info.size = 22;
+    info.color = '#fc8731';
+    info.x = 80;
+    info.y = 760;
+    info.width = 500;
+    info.setWordWrap(true,35);
+    upLayer.addChild(info);
+
+    var address = info.clone();
+    address.text = '过关地址：广东省深圳市文锦北路文锦广场A座1-2商铺';
+    address.size = 26;
+    address.color = '#222323';
+    address.y = 620;
+    address.width = 460;
+    upLayer.addChild(address);
+
+    var mapImg = new Zimg([imglist['icons'],1302,2,130,126],550,620);
+    upLayer.addChild(mapImg);
+
+    var btnGuide = new LButton(new Zimg([imglist['icons'],825,520,123,42]));
+    btnGuide.x = 390;
+    btnGuide.y = 660;
+    upLayer.addChild(btnGuide);
+
+    var btnSao = new ZRimg([imglist['icons'],962,420,272,88],-136,-44);
+    btnSao.x = 375;
+    btnSao.y = 900;
+    upLayer.addChild(btnSao);
+    btnSao.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btnSao,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    });
+
+    var arrow = new Zimg([imglist['icons'],130,120,45,23],352,1220);
+    upLayer.addChild(arrow);
+
+    //红包列表
+    var listView = new LListView();
+    listView.resize(680,190);
+    upLayer.addChild(listView);
+    listView.x = 35;
+    listView.y = 1000;
+    listView.maxPerLine = 1;
+    listView.cellWidth = 680;
+    listView.cellHeight = 95;
+    listView.graphics.drawRect(0, "#f00", [0, 0, listView.clipping.width,listView.clipping.height]);
+    var scrollBarVertical = new LListScrollBar(new LPanel("#9370DB", 0, 0), new LPanel("#9400D3", 0, 0), LListView.ScrollBarCondition.OnlyIfNeeded);
+    listView.setVerticalScrollBar(scrollBarVertical);
+
+
+    var item1 = new GetMoneyListItem();
+    listView.insertChildView(item1);
+    var item1 = new GetMoneyListItem();
+    listView.insertChildView(item1);
 }
 
 //升级方式

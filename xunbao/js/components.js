@@ -555,11 +555,12 @@ MoneBagItem.prototype.onClick = function(event){
 };
 
 //头像
-function Portrait(){
+function Portrait(r){
     base(this,LSprite,[]);
     var self = this;
+    var radius = r || 50;
     var cover = new LSprite();
-    cover.graphics.drawArc(1,'#f00',[0,0,50,0,Math.PI*2]);
+    cover.graphics.drawArc(1,'#f00',[0,0,radius,0,Math.PI*2]);
     self.pic = new Zimg([imglist['person']]);
     self.pic.x = -self.pic.getWidth()/2;
     self.pic.y = -self.pic.getHeight()/2;
@@ -567,7 +568,38 @@ function Portrait(){
     self.addChild(self.pic);
 }
 
+//红包领取列表项
+function GetMoneyListItem(){
+    base(this,LListChildView,[]);
+    var self = this;
 
+    var bg = new Zimg([imglist['icons'],717,810,656,84],12,0);
+    self.addChild(bg);
+
+    var head = new Portrait(38);
+    head.x = 100;
+    head.y = 42;
+    self.addChild(head);
+
+    var name = new LTextField();
+    name.text = 'DA橙子';
+    name.color = '#fff';
+    name.size = 30;
+    name.x = 170;
+    name.y = 25;
+    self.addChild(name);
+
+    var date = name.clone();
+    date.text = '2017-5-10';
+    date.x = 320;
+    self.addChild(date);
+
+    var money = name.clone();
+    money.text = '2.5元';
+    money.color = '#f15500';
+    money.x = 520;
+    self.addChild(money);
+}
 
 
 
