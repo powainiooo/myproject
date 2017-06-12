@@ -601,9 +601,48 @@ function GetMoneyListItem(){
     self.addChild(money);
 }
 
+//消费明细切换
+function SpendDetailNavItem(text,x,y){
+    base(this,LSprite,[]);
+    var self = this;
+    self.x = x;
+    self.y = y;
+    self.name = new LTextField();
+    self.name.text = text;
+    self.name.color = '#117eb6';
+    self.name.size = 30;
+    self.name.textAlign = 'center';
+    self.addChild(self.name);
+}
 
+//消费明细列表项
+function SpendDetailItem(){
+    base(this,LListChildView,[]);
+    var self = this;
 
+    var bg = new Zimg([imglist['icons'],0,1061,654,120],13,0);
+    self.addChild(bg);
 
+    var date = new LTextField();
+    date.text = '2017-5-14';
+    date.color = '#fff';
+    date.size = 24;
+    date.x = 80;
+    date.y = 10;
+    self.addChild(date);
+
+    var time = date.clone();
+    time.text = '时间   01 : 35 pm';
+    time.y = 65;
+    time.size = 26;
+    self.addChild(time);
+
+    var money = new LTextField();
+    money.htmlText = '<font color="#fffc06" size="26">收益</font>　<font color="#ff5aa0" size="26">10元</font>';
+    money.x = 400;
+    money.y = 65;
+    self.addChild(money);
+}
 
 
 

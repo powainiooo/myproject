@@ -48,3 +48,5 @@ canvas{display: block;}
 .icon-box{ width: 0.98rem; height: 0.94rem; display: inline-block; background: url('../images/icons.png') no-repeat; background-size: 15rem; background-position: -6.8rem -1.8rem;}
 .icon-arrow{ width: 40px; height: 25px; background: url('../images/info-arrow.png') no-repeat; background-size:100% 100%;}
 .icon-btn-openbox{ width: 2.6rem; height: 0.84rem; display:block; background: url('../images/icons.png') no-repeat; background-size: 15rem; background-position: -6.8rem -0.9rem;}
+
+#stage_InputText{ font-size: 0;}

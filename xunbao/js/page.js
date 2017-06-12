@@ -13,6 +13,7 @@ var imgData = [
     {name:"pic1",path:imgsrc+"./images/pic1.jpg"},
     {name:"hint1",path:imgsrc+"./images/hint1.jpg"},
     {name:"hint2",path:imgsrc+"./images/hint2.jpg"},
+    {name:"raffle1",path:imgsrc+"./images/raffle1.png"},
     {name:"acpic1",path:imgsrc+"./images/acpic1.png"},
     {name:"infoframe",path:imgsrc+"./images/infoframe.png"},
     {name:"crashframe",path:imgsrc+"./images/crashfame.jpg"},
@@ -66,11 +67,18 @@ function loading_gameData(){
             imglist = result;
             stage.removeChild(loadinglayer);
             loadinglayer = null;
-            selectPage();
-            //homePage('male');
-            //getMoneyBagView();
+            //selectPage();
+            homePage('male');
+            firstDayInGift();
         }
     );
+
+    //LAjax.post('http://120.77.211.29/web/api.php?c=Message&a=lists',{
+    //    num:10,
+    //    p:1
+    //},function(data){
+    //
+    //})
 }
 
 //选择宠物页
@@ -1140,7 +1148,7 @@ function crashPage(){
     upLayer.addChild(money);
 
     var inputLayer = new LSprite();
-    inputLayer.graphics.drawRect(1,"#000000",[0, 0, 380, 60]);
+    inputLayer.graphics.drawRect(0,"#000000",[0, 0, 380, 60]);
     var money2 = money.clone();
     money2.text = '';
     money2.x = 150;
@@ -1161,6 +1169,99 @@ function crashPage(){
 }
 
 //消费明细
-function spenddetailsPage(){
+function spendDetailsPage(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+    upLayer.graphics.drawRoundRect(0,'#000',[20,175,710,940,36],true,'#65d7f1');
+    upLayer.graphics.drawRoundRect(0,'#000',[35,265,680,800,20],true,'#e6f6ff');
+    upLayer.graphics.drawRect(0,'#000',[35,350,680,4],true,'#1ab7e7');
+    upLayer.graphics.drawRect(0,'#000',[245,275,3,65],true,'#1ab7e7');
+    upLayer.graphics.drawRect(0,'#000',[480,275,3,65],true,'#1ab7e7');
 
+    var tbg = new Zimg([imglist['icons'],0,790,710,61],20,175);
+    upLayer.addChild(tbg);
+
+    var btnClose = new BtnClose(function(){
+        stage.removeChild(upLayer);
+        upLayer = null;
+    });
+    btnClose.x = 670;
+    btnClose.y = 190;
+    upLayer.addChild(btnClose);
+
+    var btn1 = new SpendDetailNavItem('收入明细',135,290);
+    upLayer.addChild(btn1);
+
+    var btn2 = new SpendDetailNavItem('提现明细',360,290);
+    upLayer.addChild(btn2);
+
+    var btn3 = new SpendDetailNavItem('消费明细',590,290);
+    upLayer.addChild(btn3);
+
+
+    //明细列表
+    var listView = new LListView();
+    listView.resize(680,680);
+    upLayer.addChild(listView);
+    listView.x = 35;
+    listView.y = 360;
+    listView.maxPerLine = 1;
+    listView.cellWidth = 680;
+    listView.cellHeight = 130;
+    listView.graphics.drawRect(0, "#f00", [0, 0, listView.clipping.width,listView.clipping.height]);
+    var scrollBarVertical = new LListScrollBar(new LPanel("#9370DB", 0, 0), new LPanel("#9400D3", 0, 0), LListView.ScrollBarCondition.OnlyIfNeeded);
+    listView.setVerticalScrollBar(scrollBarVertical);
+
+
+    var item1 = new SpendDetailItem();
+    listView.insertChildView(item1);
+}
+
+//第一日奖励
+function firstDayInGift(){
+    var upLayer = new LSprite();
+    stage.addChild(upLayer);
+    upLayer.graphics.drawRect(0,'#000',[0,0,750,1333],true,'rgba(0,0,0,0.7)');
+
+    var img = new Zimg([imglist['raffle1']],0,170);
+    upLayer.addChild(img);
+
+    var icon1 = new Zimg([imglist['icons'],955,92,108,115],145,675);
+    upLayer.addChild(icon1);
+
+    var icon2 = new Zimg([imglist['icons'],1073,92,108,115],320,675);
+    upLayer.addChild(icon2);
+
+    var icon3 = new Zimg([imglist['icons'],1188,92,108,115],500,675);
+    upLayer.addChild(icon3);
+
+    var value1 = new LTextField();
+    value1.text = 10;
+    value1.size = 46;
+    value1.color = '#fff';
+    value1.x = 170;
+    value1.y = 800;
+    upLayer.addChild(value1);
+
+    var value2 = value1.clone();
+    value2.text = 10;
+    value2.x = 350;
+    upLayer.addChild(value2);
+
+    var value3 = value1.clone();
+    value3.text = 10;
+    value3.x = 530;
+    upLayer.addChild(value3);
+
+    var btn = new ZRimg([imglist['icons'],961,217,304,108],-152,-54);
+    btn.x = 375;
+    btn.y = 950;
+    upLayer.addChild(btn);
+    btn.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+        Zclick.call(btn,function(){
+            stage.removeChild(upLayer);
+            upLayer = null;
+        })
+    })
 }
