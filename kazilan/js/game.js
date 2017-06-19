@@ -66,6 +66,12 @@ function drawInit(){
 
     var brush = new Brush();
     stage.addChild(brush);
+
+    title = new LTextField();
+    title.size = 18;
+    title.x = 10;
+    title.y = 23;
+    stage.addChild(title);
 }
 function addTouchPointID(e){
     //event.preventDefault();
@@ -81,13 +87,13 @@ function addTouchPointID(e){
     draw();
 }
 function removeTouchPointID(e){
-    //for(var i=0;i<touchPointIDList.length;i++){
-    //    if(touchPointIDList[i].touchPointID == e.touchPointID){
-    //        touchPointIDList.splice(i,1);
-    //        break;
-    //    }
-    //}
-    //drawEnd();
+    for(var i=0;i<touchPointIDList.length;i++){
+        if(touchPointIDList[i].touchPointID == e.touchPointID){
+            touchPointIDList.splice(i,1);
+            break;
+        }
+    }
+    drawEnd();
 }
 function draw(){
     if(touchPointIDList.length == 1){
@@ -116,4 +122,5 @@ function drawImg(e){
     dot.x = e.selfX;
     dot.y = e.selfY;
     drawImgLayer.addChild(dot);
+    title.text = "id:"+e.touchPointID+","+e.offsetX+","+e.offsetY;
 }
