@@ -81,12 +81,12 @@ function addTouchPointID(e){
     draw();
 }
 function removeTouchPointID(e){
-    for(var i=0;i<touchPointIDList.length;i++){
-        if(touchPointIDList[i].touchPointID == e.touchPointID){
-            touchPointIDList.splice(i,1);
-            break;
-        }
-    }
+    //for(var i=0;i<touchPointIDList.length;i++){
+    //    if(touchPointIDList[i].touchPointID == e.touchPointID){
+    //        touchPointIDList.splice(i,1);
+    //        break;
+    //    }
+    //}
     //drawEnd();
 }
 function draw(){
