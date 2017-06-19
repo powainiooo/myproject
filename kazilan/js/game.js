@@ -87,7 +87,7 @@ function removeTouchPointID(e){
             break;
         }
     }
-    drawEnd();
+    //drawEnd();
 }
 function draw(){
     if(touchPointIDList.length == 1){
