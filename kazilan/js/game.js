@@ -69,7 +69,7 @@ function drawInit(){
     stage.addChild(brush);
 
     title = new LTextField();
-    title.size = 18;
+    title.size = 36;
     title.x = 10;
     title.y = 23;
     stage.addChild(title);
