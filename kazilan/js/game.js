@@ -7,6 +7,7 @@ function main(){
     LGlobal.align = LStageAlign.TOP_MIDDLE;
     LGlobal.stageScale = LStageScaleMode.EXACT_FIT;
     LSystem.screen(LStage.FULL_SCREEN);
+    LMultitouch.inputMode = LMultitouchInputMode.TOUCH_POINT;
 
     //添加舞台
     stage = new LSprite();
