@@ -68,7 +68,7 @@ function drawInit(){
     stage.addChild(brush);
 }
 function addTouchPointID(e){
-    event.preventDefault();
+    //event.preventDefault();
     var f = false;
     for(var i=0;i<touchPointIDList.length;i++){
         if(touchPointIDList[i].touchPointID == e.touchPointID){
