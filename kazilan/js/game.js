@@ -61,7 +61,10 @@ function drawInit(){
     drawLayer.graphics.drawRect(0,'#f00',[50,180,650,780]);
     stage.addChild(drawLayer);
     drawLayer.addEventListener(LMouseEvent.MOUSE_DOWN,addTouchPointID);
-    drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,addTouchPointID);
+    drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,function(){
+        event.preventDefault();
+        addTouchPointID();
+    });
     drawLayer.addEventListener(LMouseEvent.MOUSE_UP,removeTouchPointID);
 
     var brush = new Brush();
