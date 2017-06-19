@@ -50,7 +50,7 @@ function drawInit(){
     stage.addChild(photo);
 
     drawImgLayer = new LSprite();
-    drawImgLayer.alpha = 0.3;
+    //drawImgLayer.alpha = 0.3;
     stage.addChild(drawImgLayer);
 
     showImgPic = new LSprite();
@@ -61,16 +61,14 @@ function drawInit(){
     drawLayer.graphics.drawRect(0,'#f00',[50,180,650,780]);
     stage.addChild(drawLayer);
     drawLayer.addEventListener(LMouseEvent.MOUSE_DOWN,addTouchPointID);
-    drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,function(){
-        event.preventDefault();
-        addTouchPointID();
-    });
+    drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,addTouchPointID);
     drawLayer.addEventListener(LMouseEvent.MOUSE_UP,removeTouchPointID);
 
     var brush = new Brush();
     stage.addChild(brush);
 }
 function addTouchPointID(e){
+    event.preventDefault();
     var f = false;
     for(var i=0;i<touchPointIDList.length;i++){
         if(touchPointIDList[i].touchPointID == e.touchPointID){
@@ -118,6 +116,4 @@ function drawImg(e){
     dot.x = e.selfX;
     dot.y = e.selfY;
     drawImgLayer.addChild(dot);
-
-
 }
