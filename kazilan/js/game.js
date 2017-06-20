@@ -41,12 +41,12 @@ function drawInit(){
     cover.graphics.drawRect(2,'#fff',[0,0,650,780]);
 
     photo = new LSprite();
-    photo.img = new Zimg([imglist['photo']]);
-    photo.img.x = -photo.img.getWidth()/2;
-    photo.img.y = -photo.img.getHeight()/2;
-    photo.addChild(photo.img);
-    photo.x = 375;
-    photo.y = 570;
+    //photo.img = new Zimg([imglist['face']]);
+    //photo.img.x = -photo.img.getWidth()/2;
+    //photo.img.y = -photo.img.getHeight()/2;
+    //photo.addChild(photo.img);
+    photo.x = 50;
+    photo.y = 180;
     photo.mask = cover;
     stage.addChild(photo);
 
@@ -62,9 +62,9 @@ function drawInit(){
     var drawLayer = new LSprite();
     drawLayer.graphics.drawRect(0,'#f00',[50,180,650,780]);
     stage.addChild(drawLayer);
-    drawLayer.addEventListener(LMouseEvent.MOUSE_DOWN,addTouchPointID);
-    drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,addTouchPointID);
-    drawLayer.addEventListener(LMouseEvent.MOUSE_UP,removeTouchPointID);
+    //drawLayer.addEventListener(LMouseEvent.MOUSE_DOWN,addTouchPointID);
+    //drawLayer.addEventListener(LMouseEvent.MOUSE_MOVE,addTouchPointID);
+    //drawLayer.addEventListener(LMouseEvent.MOUSE_UP,removeTouchPointID);
 
     var brush = new Brush();
     stage.addChild(brush);
@@ -75,6 +75,33 @@ function drawInit(){
     title.y = 23;
     stage.addChild(title);
 }
+
+function drawPhoto(src,dots){
+    var loader = new LLoader();
+    loader.addEventListener(LEvent.COMPLETE, function(event){
+        var bitmapdata = new LBitmapData(event.target);
+        var bitmap = new LBitmap(bitmapdata);
+        photo.addChild(bitmap);
+        var layer = new LSprite();
+        photo.addChild(layer);
+
+        var uplip = [6,7,8,9,10,11,12,21,20,19,18,17];
+        var downlip = [0,1,2,3,4,5,16,15,14,13,12];
+        var upArr = [],downArr = [];
+        uplip.map(function(i){
+            upArr.push([dots[i].x,dots[i].y]);
+        });
+        downlip.map(function(i){
+            downArr.push([dots[i].x,dots[i].y]);
+        });
+        //layer.graphics.drawArc(1,'#f00',[dots[12].x,dots[12].y,4, 0, 2*Math.PI],true,'#f00');
+        layer.graphics.drawVertices(0,'#f00',upArr,true,'rgba(255,0,0,0.3)');
+        layer.graphics.drawVertices(0,'#f00',downArr,true,'rgba(255,0,0,0.3)');
+    });
+    loader.load(src, "bitmapData");
+}
+
+
 function addTouchPointID(e){
     //event.preventDefault();
     var f = false;

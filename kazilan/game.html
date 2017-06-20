@@ -20,7 +20,8 @@
         var imgData = [
             {name:"bg-draw",path:imgsrc+"./images/bg-draw.png"},
             {name:"icons",path:imgsrc+"./images/icons.png"},
-            {name:"photo",path:imgsrc+"./images/photo.png"}
+            {name:"photo",path:imgsrc+"./images/photo.png"},
+            {name:"face",path:imgsrc+"./images/face_01.jpg"}
         ];
     </script>
     <script src="js/lufylegend-1.10.1.min.js" type="application/javascript" language="javascript"></script>
@@ -32,7 +33,15 @@
     <script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
 
     <script>
-
+        $.ajax({
+            type : "POST",
+            url : 'http://carslan.pc-online.cc/sample.php',
+            datatype : "json",
+            success : function(data) {
+                var d = JSON.parse(data);
+                drawPhoto(d.img_url,d.mouth);
+            }
+        });
     </script>
 </body>
 </html>
