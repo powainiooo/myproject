@@ -51,10 +51,11 @@ function drawInit(){
     stage.addChild(photo);
 
     drawImgLayer = new LSprite();
-    //drawImgLayer.alpha = 0.3;
+    drawImgLayer.alpha = 0.5;
     stage.addChild(drawImgLayer);
 
     showImgPic = new LSprite();
+    showImgPic.alpha = 0.5;
     //showImgPic.mask = cover;
     stage.addChild(showImgPic);
 
@@ -106,15 +107,11 @@ function draw(){
 }
 
 function drawEnd(){
-    if(touchPointIDList.length == 1){
-        var bitmapData = new LBitmapData(null, 0, 0, 700, 960);
-        bitmapData.draw(drawImgLayer);
-        var img = new LBitmap(bitmapData);
-        showImgPic.addChild(img);
-        drawImgLayer.removeAllChild();
-    }else{
-        console.log(2)
-    }
+    var bitmapData = new LBitmapData(null, 0, 0, 700, 960);
+    bitmapData.draw(drawImgLayer);
+    var img = new LBitmap(bitmapData);
+    showImgPic.addChild(img);
+    drawImgLayer.removeAllChild();
 
 }
 
