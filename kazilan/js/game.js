@@ -67,12 +67,6 @@ function drawInit(){
 
     var brush = new Brush();
     stage.addChild(brush);
-
-    title = new LTextField();
-    title.size = 36;
-    title.x = 10;
-    title.y = 23;
-    stage.addChild(title);
 }
 function addTouchPointID(e){
     //event.preventDefault();
@@ -123,5 +117,4 @@ function drawImg(e){
     dot.x = e.selfX;
     dot.y = e.selfY;
     drawImgLayer.addChild(dot);
-    title.text = "id:"+e.touchPointID+","+e.offsetX+","+e.offsetY;
 }
