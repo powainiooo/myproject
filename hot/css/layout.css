@@ -113,7 +113,7 @@ header .btnArea > li p {
 header .btnArea > li.shopBtn a {
     display: block;
     height: 100%;
-    background: #f87e34;
+    background: #fbb625;
     line-height: 1.1;
 }
 .no-touch header .btnArea > li.shopBtn a:hover {
@@ -299,6 +299,9 @@ footer #pagetop.stop {
     bottom: 183px !important;
     position: absolute;
 }
+
+.twocode{ position: absolute; bottom: -10px; right: 250px;z-index: 1000;}
+.twocode img{ width: 100px; height:100px;}
 #wrapper {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -658,7 +661,7 @@ footer #pagetop.stop {
     position: relative;
 }
 .home .secCharacter .inner {
-    height: 750px;
+    padding-bottom: 50px;
 }
 .home .secCharacter .inner .hgroup {
     margin-bottom: 40px;
@@ -734,7 +737,7 @@ footer #pagetop.stop {
     right: -130px;
 }
 .home .secCharacter .inner .character {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .home .secCharacter .inner .character ul {
     width: 850px;
@@ -1005,11 +1008,12 @@ footer #pagetop.stop {
 .contactframe dd.icon1{ background-image: url('../images/icon-earth.png');}
 .contactframe dd.icon2{ background-image: url('../images/icon-address.png');}
 .contactframe dd.icon3{ background-image: url('../images/icon-email.png');}
+.contactframe dd.icon4{ background-image: url('../images/icon-fax.jpg');}
 
 #map{ height: 400px; border: 1px solid #b6b6b6;}
 
-@media screen and (max-width: 768px) {
-    header{ position: static; min-width: auto; height: auto;}
+@media screen and (max-width: 830px) {
+    header{min-width: auto; height: auto;}
     header .logo{ left: auto; right: 5%; top: 15px;}
     header .logo img{ width: 85px;}
     header .btnArea{ display: none;}
@@ -1021,7 +1025,7 @@ footer #pagetop.stop {
     header #globalNav .navArea li a{ padding: 15px 25px;}
     header .btn-menu,header .btn-back{ display: block; z-index: 100;}
 
-    footer{ padding: 5%;}
+    footer{padding: 5%;}
     footer .nav{ display: none;}
     footer .container{ width: auto;}
     footer .copyright, footer .txt{ margin-top: 0; text-align: center;}
@@ -1030,6 +1034,7 @@ footer #pagetop.stop {
 
     .aboutus-frame{ width: 100%;}
 
+    #wrapper{ padding-top: 56px;}
 
     .hgroup .secTit span.ti{ font-size: 16px;}
     .hgroup .secTit span.ruby{ font-size: 12px; margin-top: 0;}
@@ -1100,7 +1105,6 @@ footer #pagetop.stop {
     .home .secCharacter .inner .character ul li{ width: auto; float: none;}
     .home .secCharacter .inner .character ul li img{ width: 100%;}
     .home .cloudBg, .brand .secBrand .cloudBg{ height: 250px; background-image: url('../images/bg-cloud.jpg'); background-size: 100% 100%;}
-    .home .secCharacter .inner{ height: 510px;}
 
     .secPickup .container{ width: auto; margin: 0 5%;}
     .container{ width: auto; margin: 0 5%;}
@@ -1138,4 +1142,6 @@ footer #pagetop.stop {
 
     .news-detail .img-normal{ display: none;}
     .news-detail .img-phone{ display: block;}
+
+    .twocode{ display: none;}
 }
