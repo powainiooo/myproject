@@ -23,37 +23,37 @@
 <div id="inputs">
     <div>
         <p>R:</p>
-        <span>r:</span><input type="text" class="txt" id="redR">
-        <span>g:</span><input type="text" class="txt" id="redG">
-        <span>b:</span><input type="text" class="txt" id="redB">
-        <span>a:</span><input type="text" class="txt" id="redA">
-        <span>5:</span><input type="text" class="txt" id="red5">
+        <span>r:</span><input type="text" class="txt" id="redR" value="0.3086">
+        <span>g:</span><input type="text" class="txt" id="redG" value="0.6094">
+        <span>b:</span><input type="text" class="txt" id="redB" value="0.0820">
+        <span>a:</span><input type="text" class="txt" id="redA" value="0">
+        <span>5:</span><input type="text" class="txt" id="red5" value="0">
     </div>
     <div>
         <p>G:</p>
-        <span>r:</span><input type="text" class="txt" id="greenR">
-        <span>g:</span><input type="text" class="txt" id="greenG">
-        <span>b:</span><input type="text" class="txt" id="greenB">
-        <span>a:</span><input type="text" class="txt" id="greenA">
-        <span>5:</span><input type="text" class="txt" id="green5">
+        <span>r:</span><input type="text" class="txt" id="greenR" value="0.3086">
+        <span>g:</span><input type="text" class="txt" id="greenG" value="0.6094">
+        <span>b:</span><input type="text" class="txt" id="greenB" value="0.0820">
+        <span>a:</span><input type="text" class="txt" id="greenA" value="0">
+        <span>5:</span><input type="text" class="txt" id="green5" value="0">
     </div>
     <div>
         <p>B:</p>
-        <span>r:</span><input type="text" class="txt" id="blueR">
-        <span>g:</span><input type="text" class="txt" id="blueG">
-        <span>b:</span><input type="text" class="txt" id="blueB">
-        <span>a:</span><input type="text" class="txt" id="blueA">
-        <span>5:</span><input type="text" class="txt" id="blue5">
+        <span>r:</span><input type="text" class="txt" id="blueR" value="0.3086">
+        <span>g:</span><input type="text" class="txt" id="blueG" value="0.6094">
+        <span>b:</span><input type="text" class="txt" id="blueB" value="0.0820">
+        <span>a:</span><input type="text" class="txt" id="blueA" value="0">
+        <span>5:</span><input type="text" class="txt" id="blue5" value="0">
     </div>
     <div>
         <p>A:</p>
-        <span>r:</span><input type="text" class="txt" id="alphaR">
-        <span>g:</span><input type="text" class="txt" id="alphaG">
-        <span>b:</span><input type="text" class="txt" id="alphaB">
-        <span>a:</span><input type="text" class="txt" id="alphaA">
-        <span>5:</span><input type="text" class="txt" id="alpha5">
+        <span>r:</span><input type="text" class="txt" id="alphaR" value="0">
+        <span>g:</span><input type="text" class="txt" id="alphaG" value="0">
+        <span>b:</span><input type="text" class="txt" id="alphaB" value="0">
+        <span>a:</span><input type="text" class="txt" id="alphaA" value="1">
+        <span>5:</span><input type="text" class="txt" id="alpha5" value="0">
     </div>
-    <div><button>try</button></div>
+    <div><button id="try">try</button></div>
 </div>
 <script src="js/lufylegend-1.10.1.min.js" type="application/javascript" language="javascript"></script>
 <script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
@@ -110,7 +110,36 @@
         normal.scaleY = 0.6;
         normal.x = 1020;
         layer.addChild(normal);
+        layer.filters = [new LColorMatrixFilter([0.3086,0.6094, 0.0820, 0, 0, 0.3086, 0.6094, 0.0820, 0, 0, 0.3086, 0.6094, 0.0820, 0, 0, 0, 0, 0, 1, 0])];
     }
+
+    $("#try").on('click',function(){
+        var r1 = parseFloat($("#redR").val());
+        var r2 = parseFloat($("#redG").val());
+        var r3 = parseFloat($("#redB").val());
+        var r4 = parseFloat($("#redA").val());
+        var r5 = parseFloat($("#red5").val());
+
+        var g1 = parseFloat($("#greenR").val());
+        var g2 = parseFloat($("#greenG").val());
+        var g3 = parseFloat($("#greenB").val());
+        var g4 = parseFloat($("#greenA").val());
+        var g5 = parseFloat($("#green5").val());
+
+        var b1 = parseFloat($("#blueR").val());
+        var b2 = parseFloat($("#blueG").val());
+        var b3 = parseFloat($("#blueB").val());
+        var b4 = parseFloat($("#blueA").val());
+        var b5 = parseFloat($("#blue5").val());
+
+        var a1 = parseFloat($("#alphaR").val());
+        var a2 = parseFloat($("#alphaG").val());
+        var a3 = parseFloat($("#alphaB").val());
+        var a4 = parseFloat($("#alphaA").val());
+        var a5 = parseFloat($("#alpha5").val());
+        layer.filters = [new LColorMatrixFilter([r1,r2,r3,r4,r5,g1,g2,g3,g4,g5,b1,b2,b3,b4,b5,a1,a2,a3,a4,a5])];
+
+    })
 </script>
 </body>
 </html>
