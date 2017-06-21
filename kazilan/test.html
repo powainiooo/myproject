@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>游戏</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <style>
+        #inputs{ margin-top: 550px;}
+        #inputs>div{ margin: 10px 30px;}
+        #inputs button{ width: 100px;}
+        #stage{ overflow: hidden;}
+        .txt{ width: 80px;}
+    </style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="inputs">
+    <div>
+        <p>R:</p>
+        <span>r:</span><input type="text" class="txt" id="redR">
+        <span>g:</span><input type="text" class="txt" id="redG">
+        <span>b:</span><input type="text" class="txt" id="redB">
+        <span>a:</span><input type="text" class="txt" id="redA">
+        <span>5:</span><input type="text" class="txt" id="red5">
+    </div>
+    <div>
+        <p>G:</p>
+        <span>r:</span><input type="text" class="txt" id="greenR">
+        <span>g:</span><input type="text" class="txt" id="greenG">
+        <span>b:</span><input type="text" class="txt" id="greenB">
+        <span>a:</span><input type="text" class="txt" id="greenA">
+        <span>5:</span><input type="text" class="txt" id="green5">
+    </div>
+    <div>
+        <p>B:</p>
+        <span>r:</span><input type="text" class="txt" id="blueR">
+        <span>g:</span><input type="text" class="txt" id="blueG">
+        <span>b:</span><input type="text" class="txt" id="blueB">
+        <span>a:</span><input type="text" class="txt" id="blueA">
+        <span>5:</span><input type="text" class="txt" id="blue5">
+    </div>
+    <div>
+        <p>A:</p>
+        <span>r:</span><input type="text" class="txt" id="alphaR">
+        <span>g:</span><input type="text" class="txt" id="alphaG">
+        <span>b:</span><input type="text" class="txt" id="alphaB">
+        <span>a:</span><input type="text" class="txt" id="alphaA">
+        <span>5:</span><input type="text" class="txt" id="alpha5">
+    </div>
+    <div><button>try</button></div>
+</div>
+<script src="js/lufylegend-1.10.1.min.js" type="application/javascript" language="javascript"></script>
+<script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
+<script>
+    var imglist = {},imgsrc='';
+    var imgData = [
+        {name:"an",path:imgsrc+"./images/an.jpg"},
+        {name:"lan",path:imgsrc+"./images/lan.jpg"},
+        {name:"liang",path:imgsrc+"./images/liang.jpg"},
+        {name:"normal",path:imgsrc+"./images/normal.jpg"}
+    ];
+    LInit(16,"stage",1500,500,main);
+
+    function main(){
+        //添加舞台
+        stage = new LSprite();
+        stage.graphics.drawRect(0,'#fff',[0,0,1500,500],true,'#eee');
+        addChild(stage);
+
+        addChild(new FPS());
+
+        //添加加载层
+        var loadinglayer = new LoadingSample1();
+        stage.addChild(loadinglayer);
+        LLoadManage.load(
+                imgData,
+                function(progress){
+                    loadinglayer.setProgress(progress);
+                },
+                function(result){
+                    imglist = result;
+                    stage.removeChild(loadinglayer);
+                    loadinglayer = null;
+                    drawInit();
+                }
+        );
+    }
+    function drawInit(){
+        layer = new LSprite();
+        stage.addChild(layer);
+
+        var an = new LBitmap(new LBitmapData(imglist['an']));
+        layer.addChild(an);
+        var lan = new LBitmap(new LBitmapData(imglist['lan']));
+        lan.x = 320;
+        layer.addChild(lan);
+        var liang = new LBitmap(new LBitmapData(imglist['liang']));
+        liang.scaleX = 0.6;
+        liang.scaleY = 0.6;
+        liang.x = 600;
+        layer.addChild(liang);
+        var normal = new LBitmap(new LBitmapData(imglist['normal']));
+        normal.scaleX = 0.6;
+        normal.scaleY = 0.6;
+        normal.x = 1020;
+        layer.addChild(normal);
+    }
+</script>
+</body>
+</html>
