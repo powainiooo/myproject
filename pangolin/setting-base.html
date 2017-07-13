@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>基础设置</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body style="background-color: rgb(247,247,247);">
+<!--顶部导航-->
+<header class="header">
+    <div class="logo"><img src="images/logo.png"> </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">矿池</a> </li>
+            <li><a href="#">矿机</a> </li>
+            <li><a href="#">帮助</a> </li>
+        </ul>
+    </nav>
+    <div class="btns">
+        <a href="#" id="btnRegister">注册</a>
+        <a href="#" id="btnLogin">登录</a>
+    </div>
+</header>
+
+<!--内容区-->
+<section class="content">
+    <!-- 左侧导航栏-->
+    <div class="nav-slide">
+        <div class="name">MINER 1</div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name active">账户设置</a>
+            <ul>
+                <li class="active">
+                    <i class="dot"></i>
+                    <a href="#">基础设置</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">地址设置</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">挖矿账户</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">付款记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name">矿工管理</a>
+        </div>
+    </div>
+
+    <!-- 中间内容区-->
+    <div class="setting-content">
+        <div class="base-title">基本信息</div>
+        <div class="base-setting-frame">
+            <div class="mb10"><input type="text" class="text" readonly value="用户名"></div>
+            <div><input type="text" class="text" readonly value="123@qq.com"></div>
+        </div>
+
+        <div class="base-title">修改密码</div>
+        <div class="base-setting-frame">
+            <div class="mb10"><input type="password" class="text" placeholder="新密码 6-16位数字、字母或特殊符号组成"></div>
+            <div class="mb10"><input type="password" class="text" placeholder="确认新密码"></div>
+            <div class="mb30 identify-line">
+                <input type="text" class="text" placeholder="验证码">
+                <a href="#" class="btn">获取验证码</a>
+            </div>
+            <div><a href="#" class="btn btn-auto">修改</a></div>
+        </div>
+
+        <div class="base-title">联系方式</div>
+        <div class="base-setting-frame">
+            <div class="mb10"><input type="password" class="text" placeholder="现联系方式"></div>
+            <div class="mb30 identify-line">
+                <input type="text" class="text" placeholder="验证码">
+                <a href="#" class="btn">获取验证码</a>
+            </div>
+            <div class="mb10"><input type="password" class="text" placeholder="新联系方式"></div>
+            <div class="mb30 identify-line">
+                <input type="text" class="text" placeholder="验证码">
+                <a href="#" class="btn">获取验证码</a>
+            </div>
+            <div><a href="#" class="btn btn-auto">修改</a></div>
+        </div>
+
+        <footer class="footer">
+            <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
+            <span>QQ群：12335419</span>
+            <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
+        </footer>
+    </div>
+</section>
+
+</body>
+</html>
+<script>
+    //showMsg为共用弹窗  具体参数请查看common.js
+    
+    //showMsg('修改成功　　<i class="icons icons-check-small"></i>');
+    //showMsg('修改失败　　<i class="icons icons-exclamation-small"></i>');
+</script>
