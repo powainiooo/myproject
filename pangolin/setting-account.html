@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>挖矿账户</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body style="background-color: rgb(247,247,247);">
+<!--顶部导航-->
+<header class="header">
+    <div class="logo"><img src="images/logo.png"> </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">矿池</a> </li>
+            <li><a href="#">矿机</a> </li>
+            <li><a href="#">帮助</a> </li>
+        </ul>
+    </nav>
+    <div class="btns">
+        <a href="#" id="btnRegister">注册</a>
+        <a href="#" id="btnLogin">登录</a>
+    </div>
+</header>
+
+<!--内容区-->
+<section class="content">
+    <!-- 左侧导航栏-->
+    <div class="nav-slide">
+        <div class="name">MINER 1</div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name active">账户设置</a>
+            <ul>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">基础设置</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">地址设置</a>
+                </li>
+                <li class="active">
+                    <i class="dot"></i>
+                    <a href="#">挖矿账户</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">付款记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name">矿工管理</a>
+        </div>
+        <div class="arrow"><i class="icons icons-triangle"></i></div>
+    </div>
+
+    <!-- 中间内容区-->
+    <div class="setting-content">
+        <section class="frame1000">
+            <div class="setting-table account-table" id="accountTable">
+                <ul class="thead">
+                    <li class="td1">名称</li>
+                    <li class="td2">备注</li>
+                    <li class="td3">
+                        <span>操作</span>
+                        <a href="javascript:;" id="btnAdd" class="fr"><i class="icons icons-add"></i></a>
+                    </li>
+                </ul>
+                <ul class="tbody">
+                    <li>
+                        <ul class="lines-content">
+                            <li class="td1">
+                                <span>用户</span>
+                            </li>
+                            <li class="td2">
+                                <span>v</span>
+                            </li>
+                            <li class="td3">
+                                <a href="javascript:;" class="btn-close"><i class="icons icons-close-circle"></i></a>
+                                <a href="javascript:;" class="btn">修改备注</a>
+                                <a href="javascript:;" class="btn">修改地址</a>
+                                <a href="javascript:;" class="btn btn-key">APL Key</a>
+                            </li>
+                        </ul>
+                        <ul class="keys-content">
+                            <li>
+                                <p>API Key</p>
+                                <div>adgasdgatgwegeg</div>
+                            </li>
+                            <li>
+                                <p>创建时间</p>
+                                <div>2017-7-5 13：00</div>
+                            </li>
+                            <li>
+                                <p>只读页面链接</p>
+                                <div>http://www.f2pool.com<br>复制此链接，可以无须密码登入挖矿账户，此页面仅有只读功能，不能修改付款地址等。</div>
+                                <a href="javascirpt:;" class="btn">更新</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="lines-content">
+                            <li class="td1">
+                                <span>用户</span>
+                            </li>
+                            <li class="td2">
+                                <span>v</span>
+                            </li>
+                            <li class="td3">
+                                <a href="javascript:;" class="btn-close"><i class="icons icons-close-circle"></i></a>
+                                <a href="javascript:;" class="btn">修改备注</a>
+                                <a href="javascript:;" class="btn">修改地址</a>
+                                <a href="javascript:;" class="btn btn-key">APL Key</a>
+                            </li>
+                        </ul>
+                        <ul class="keys-content">
+                            <li>
+                                <p>API Key</p>
+                                <div>adgasdgatgwegeg</div>
+                            </li>
+                            <li>
+                                <p>创建时间</p>
+                                <div>2017-7-5 13：00</div>
+                            </li>
+                            <li>
+                                <p>只读页面链接</p>
+                                <div>http://www.f2pool.com<br>复制此链接，可以无须密码登入挖矿账户，此页面仅有只读功能，不能修改付款地址等。</div>
+                                <a href="javascirpt:;" class="btn">更新</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!--翻页-->
+            <div class="page-info tr mt100">
+                <a href="#"><i class="icons icons-page-first"></i></a>
+                <a href="#"><i class="icons icons-page-prev"></i></a>
+                <a href="#" class="number active">1</a>
+                <a href="#" class="number">2</a>
+                <a href="#" class="number">3</a>
+                <span>...</span>
+                <a href="#" class="number">10</a>
+                <a href="#"><i class="icons icons-page-next"></i></a>
+                <a href="#"><i class="icons icons-page-last"></i></a>
+            </div>
+        </section>
+
+        <footer class="footer footer-fixed">
+            <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
+            <span>QQ群：12335419</span>
+            <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
+        </footer>
+    </div>
+</section>
+
+</body>
+</html>
+<script>
+    $(function(){
+        //打开API KEY
+        $(".btn-key").on('click',function(){
+            $(this).parent().find('.btn').hide();
+            $(this).siblings('.btn-close').show();
+            $(this).parents(".lines-content").next('.keys-content').slideDown(200);
+        });
+        //关闭API KEY
+        $(".btn-close").on('click',function(){
+            $(this).parent().find('.btn').show();
+            $(this).hide();
+            $(this).parents(".lines-content").next('.keys-content').slideUp(200);
+        });
+
+        //点击打开新增栏
+        $("#btnAdd").on('click',openAddLines);
+    });
+    //打开新增栏
+    function openAddLines(){
+        var html = '';
+        html += '<li class="operalines">' +
+                '<ul class="lines-content">' +
+                '<li class="td1"><input type="text" class="text" placeholder="名称"></li>' +
+                '<li class="td2"><input type="text" class="text" placeholder="备注"></li>' +
+                '<li class="td3">' +
+                '<a href="javascript:;" class="btns" onclick="removeAddLines()"><i class="icons icons-close-circle"></i></a>' +
+                '<a href="javascript:;" class="btns" onclick="doAddLines()"><i class="icons icons-check-circle"></i></a>' +
+                '</li></ul></li>';
+        $("#accountTable .tbody").append(html);
+    }
+    //移除新增栏
+    function removeAddLines(){
+        $("#accountTable .tbody .operalines").remove();
+    }
+    //点击确认添加
+    function doAddLines(){
+
+    }
+</script>

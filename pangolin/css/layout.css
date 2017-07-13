@@ -4,3 +4,44 @@
 .setting-content{ margin: 70px 0 0 200px;}
 .base-title{ font-size: 18px; font-weight: bold; color: #000; padding: 12px 50px; background-color: #eeeef0;}
 .base-setting-frame{ width: 400px; margin: 35px auto;}
+
+/*
+    挖矿账户
+*/
+.setting-table{ width: 100%; margin: 140px 0 0 0;}
+.setting-table .thead{ width: 100%; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; padding: 0 50px 10px 50px; overflow: hidden; border-bottom: 3px solid #000;}
+.setting-table .thead li{ float: left; font-size: 18px; font-weight: bold;}
+.setting-table .tbody>li .lines-content,.setting-table .tbody>li .keys-content li{ overflow: hidden; border-bottom: 1px solid #000; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 50px;}
+.setting-table .tbody>li .lines-content li{ float: left;}
+.setting-table .tbody>li .lines-content li span{ margin-top: 10px; display: inline-block;}
+.setting-table .tbody>.operalines .lines-content li .btns{ float: right; margin-left: 20px; margin-top: 8px;}
+.setting-table .tbody>.operalines .lines-content li .text{ width: 200px;}
+
+.account-table .thead{ padding: 0 50px;}
+.account-table .tbody>li .lines-content li .btn{ float: left; margin-right: 20px;}
+.account-table .tbody>li .lines-content li .btn:last-child{margin-right: 0;}
+.account-table .tbody>li .lines-content li .btn-close{ float: right; margin: 8px 30px 0 0; display: none;}
+.account-table .tbody>li .keys-content{ display: none;}
+.account-table .tbody>li .keys-content p{ float:left; width: 110px; border-right: 1px solid #000; padding: 15px 0;}
+.account-table .tbody>li .keys-content div{ float:left; width: 649px; padding: 15px 20px;}
+.account-table .tbody>li  .keys-content li:last-child{ border-bottom: 3px solid #000;}
+.account-table .tbody>li  .keys-content li:last-child div{ padding: 5px 20px;}
+.account-table .tbody>li .keys-content a{ float:left; }
+.account-table .td1{ width: 240px;}
+.account-table .td2{ width: 320px;}
+.account-table .td3{ width: 340px;}
+
+
+/*
+    付款记录
+*/
+.coin-type-list{ text-align: right; margin-top: 120px;}
+.coin-type-list a{ margin-left: 30px;}
+
+.record-table{ margin-top: 60px;}
+.record-table .td1{ width: 260px;}
+.record-table .td2{ width: 260px;}
+.record-table .td3{ width: 260px;}
+.record-table .td4{ width: 120px;}
+.record-table .tbody>li .lines-content{ padding: 15px 50px;}
+.record-table .tbody>li:last-child .lines-content{ border-bottom: none;}
