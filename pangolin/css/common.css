@@ -52,11 +52,17 @@
 .icons-edit:hover{ background-position: -442px -261px;}
 .icons-trash{ width: 26px; height: 26px; background-position: -486px -222px;}
 .icons-trash:hover{ background-position: -486px -260px;}
+.icons-arrow-link{ width: 81px; height: 81px; background-position: -43px -15px;}
+.icons-arrow-link:hover{ background-position: -43px -108px;}
+.icons-close-large{ width: 26px; height: 26px; background-position: -189px -85px;}
+.icons-check-large{ width: 42px; height: 30px; background-position: -316px -80px;}
+.icons-exclamation-large{ width: 6px; height: 37px; background-position: -386px -76px; vertical-align: bottom;}
 
 
 /*
     框
 */
+.frame300{ width: 300px; margin-left: auto; margin-right: auto;}
 .frame1000{ width: 1000px; margin-left: auto; margin-right: auto;}
 
 
