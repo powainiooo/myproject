@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>矿工管理</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body style="background-color: rgb(247,247,247);">
+<!--顶部导航-->
+<header class="header">
+    <div class="logo"><img src="images/logo.png"> </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">矿池</a> </li>
+            <li><a href="#">矿机</a> </li>
+            <li><a href="#">帮助</a> </li>
+        </ul>
+    </nav>
+    <div class="btns">
+        <a href="#" id="btnRegister">注册</a>
+        <a href="#" id="btnLogin">登录</a>
+    </div>
+</header>
+
+<!--内容区-->
+<section class="content">
+    <!-- 左侧导航栏-->
+    <div class="nav-slide">
+        <div class="name">MINER 1</div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name">账户设置</a>
+            <ul>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">基础设置</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">地址设置</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">挖矿账户</a>
+                </li>
+                <li>
+                    <i class="dot"></i>
+                    <a href="#">付款记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-list">
+            <a href="#" class="nav-list-name active">矿工管理</a>
+        </div>
+        <div class="arrow" style="top:528px;"><i class="icons icons-triangle"></i></div>
+    </div>
+
+    <!-- 中间内容区-->
+    <div class="setting-content">
+        <section class="frame1000">
+            <div class="clearfix mt120">
+                <div class="select-frame fl">
+                    <p>状态</p>
+                    <ul>
+                        <li><a href="javascript:;">在线</a> </li>
+                        <li><a href="javascript:;">离线</a> </li>
+                    </ul>
+                </div>
+                <div class="coin-type-list fr">
+                    <a href="javascript:;">全部</a>
+                    <a href="javascript:;"><i class="icons icons-btc"></i></a>
+                    <a href="javascript:;"><i class="icons icons-ltc"></i></a>
+                    <a href="javascript:;"><i class="icons icons-eth"></i></a>
+                </div>
+            </div>
+
+
+            <div class="setting-table manager-table">
+                <ul class="thead">
+                    <li class="td1">矿工</li>
+                    <li class="td2">币种</li>
+                    <li class="td3">15分钟<br>平均速度</li>
+                    <li class="td4">24小时<br>平均速度</li>
+                    <li class="td5">接受数</li>
+                    <li class="td6">拒绝率</li>
+                    <li class="td7">最近提交时间</li>
+                    <li class="td8"><a href="javascript:;" id="btnAdd"><i class="icons icons-add"></i></a> </li>
+                </ul>
+                <ul class="tbody">
+                    <li>
+                        <ul class="lines-content">
+                            <li class="td1">
+                                <span>123456</span>
+                            </li>
+                            <li class="td2">
+                                <span>BTC</span>
+                            </li>
+                            <li class="td3"><span>12kb</span></li>
+                            <li class="td4"><span>12kb</span></li>
+                            <li class="td5"><span>15</span></li>
+                            <li class="td6"><span>15</span></li>
+                            <li class="td7"><span>2017-02-01 16:00</span></li>
+                            <li class="td8">
+                                <a href="javascript:;" onclick="editor(this)"><i class="icons icons-edit"></i></a>
+                                <a href="javascript:;" onclick="del(this)"><i class="icons icons-trash"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!--翻页-->
+            <div class="page-info tr mt100">
+                <a href="#"><i class="icons icons-page-first"></i></a>
+                <a href="#"><i class="icons icons-page-prev"></i></a>
+                <a href="#" class="number active">1</a>
+                <a href="#" class="number">2</a>
+                <a href="#" class="number">3</a>
+                <span>...</span>
+                <a href="#" class="number">10</a>
+                <a href="#"><i class="icons icons-page-next"></i></a>
+                <a href="#"><i class="icons icons-page-last"></i></a>
+            </div>
+        </section>
+
+        <footer class="footer footer-fixed">
+            <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
+            <span>QQ群：12335419</span>
+            <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
+        </footer>
+    </div>
+</section>
+
+<!--规则-->
+<div class="alert-frame" id="ruleFrame" style="display: none;">
+    <div class="alert-content rules-content">
+        <a href="javascript:;" class="btn-close"><i class="icons icons-close-circle"></i></a>
+        <div class="title">矿工添加方法</div>
+        <ul>
+            <li>1.连接矿机所在的局域网，登录矿机后台。</li>
+            <li>2.填写矿工名，命名规则为：用户名+英文句号+编号<br>例如您的挖矿账户是MINER，可以设置矿工名为MINER.001、MINER.002，<br>依此类推，一个矿工名字对应一台矿机。</li>
+            <li>3.保存设置。</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        //打开下拉框
+        $(document).on('click',".select-frame p",function(e){
+            e.stopPropagation();
+            $(this).parent().addClass('select-frame-slide');
+            $(this).next('ul').css('height',$(this).next('ul').find('li').length*32);
+        });
+        //选择下拉框
+        $(document).on('click',".select-frame ul li a",function(e){
+            e.stopPropagation();
+            $(this).parents('ul').prev('p').html($(this).html());
+            $(this).parent().parent().css('height',0);
+            $(this).parents('.select-frame').removeClass('select-frame-slide');
+        });
+        //点击文档关闭下拉框
+        $(document).on('click',function(e){
+            $('.select-frame').removeClass('select-frame-slide');
+            $('.select-frame ul').css('height',0);
+        });
+
+        //打开规则
+        $("#btnAdd").on('click',function(){
+            $("#ruleFrame").show();
+        });
+        //关闭规则
+        $("#ruleFrame .btn-close").on('click',function(){
+            $("#ruleFrame").hide();
+        })
+    });
+
+    var isOperaing = false;//是否正在执行某个操作;
+    //点击编辑
+    function editor(obj){
+        if(isOperaing)return;
+        isOperaing = true;
+        var html = '';
+        html += '<ul class="lines-content warn-content">' +
+                '<li class="td8">' +
+                '<a href="javascript:;" onclick="doEditor(this)"><i class="icons icons-check-circle"></i></a>' +
+                '<a href="javascript:;" onclick="cancelEditor(this)"><i class="icons icons-close-circle"></i></a>' +
+                '</li>' +
+                '<li class="td7">是否确定修改</li>' +
+                '</ul>';
+        $(obj).parents('.lines-content').after(html);
+
+        //插入输入框
+        var text = '<input type="text" class="text" value="'+$(obj).parents('.lines-content').find('.td1 span').html()+'">';
+        $(obj).parents('.lines-content').find('.td1').append(text).addClass('tdEditor');
+
+        //插入下拉框
+        var selectHtml = '';
+        selectHtml += '<div class="select-frame fl">' +
+                '<p>'+$(obj).parents('.lines-content').find('.td2 span').html()+'</p>' +
+                '<ul>' +
+                '<li><a href="javascript:;">BTC</a> </li>' +
+                '<li><a href="javascript:;">LTC</a> </li>' +
+                '<li><a href="javascript:;">ETH</a> </li>' +
+                '</ul>' +
+                '</div>';
+        $(obj).parents('.lines-content').find('.td2').append(selectHtml).addClass('tdEditor');
+    }
+    //取消编辑
+    function cancelEditor(obj){
+        $(obj).parents('.warn-content').prev('.lines-content').find('.td1 .text').remove();
+        $(obj).parents('.warn-content').prev('.lines-content').find('.td2 .select-frame').remove();
+        $(obj).parents('.warn-content').prev('.lines-content').find('.td1').removeClass('tdEditor');
+        $(obj).parents('.warn-content').prev('.lines-content').find('.td2').removeClass('tdEditor');
+        $(obj).parents('.warn-content').remove();
+        isOperaing = false;
+    }
+    //确认编辑
+    function doEditor(obj){
+
+    }
+
+    //点击编辑
+    function del(obj){
+        if(isOperaing)return;
+        isOperaing = true;
+        var html = '';
+        html += '<ul class="lines-content warn-content">' +
+                '<li class="td8">' +
+                '<a href="javascript:;" onclick="doDel(this)"><i class="icons icons-check-circle"></i></a>' +
+                '<a href="javascript:;" onclick="cancelDel(this)"><i class="icons icons-close-circle"></i></a>' +
+                '</li>' +
+                '<li class="td7">是否确定删除</li>' +
+                '</ul>';
+        $(obj).parents('.lines-content').after(html);
+    }
+    //取消编辑
+    function cancelDel(obj){
+        $(obj).parents('.warn-content').remove();
+        isOperaing = false;
+    }
+    //确认编辑
+    function doDel(obj){
+        $(obj).parents('.warn-content').parent().remove();
+        isOperaing = false;
+    }
+</script>

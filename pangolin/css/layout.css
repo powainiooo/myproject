@@ -12,7 +12,7 @@
 .setting-table .thead{ width: 100%; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; padding: 0 50px 10px 50px; overflow: hidden; border-bottom: 3px solid #000;}
 .setting-table .thead li{ float: left; font-size: 18px; font-weight: bold;}
 .setting-table .tbody>li .lines-content,.setting-table .tbody>li .keys-content li{ overflow: hidden; border-bottom: 1px solid #000; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 50px;}
-.setting-table .tbody>li .lines-content li{ float: left;}
+.setting-table .tbody>li .lines-content>li{ float: left;}
 .setting-table .tbody>li .lines-content li span{ margin-top: 10px; display: inline-block;}
 .setting-table .tbody>.operalines .lines-content li .btns{ float: right; margin-left: 20px; margin-top: 8px;}
 .setting-table .tbody>.operalines .lines-content li .text{ width: 200px;}
@@ -35,8 +35,9 @@
 /*
     付款记录
 */
-.coin-type-list{ text-align: right; margin-top: 120px;}
-.coin-type-list a{ margin-left: 30px;}
+.coin-type-list{ text-align: right;}
+.coin-type-list a{ margin-left: 30px; font-weight: bold; font-size: 16px; color: #000;}
+.coin-type-list a i{ vertical-align: sub;}
 
 .record-table{ margin-top: 60px;}
 .record-table .td1{ width: 260px;}
@@ -45,3 +46,62 @@
 .record-table .td4{ width: 120px;}
 .record-table .tbody>li .lines-content{ padding: 15px 50px;}
 .record-table .tbody>li:last-child .lines-content{ border-bottom: none;}
+
+
+/*
+    矿工管理
+*/
+.select-frame{ width: 80px; position: relative;box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+.select-frame p{ height: 33px; font-size: 14px; border-bottom: 1px solid #000; padding:6px 10px; position: relative;box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; cursor: pointer;}
+.select-frame p:after{ content: ''; width: 12px; height: 6px; background: url('../images/icons.png') no-repeat; background-position: -245px -100px; position: absolute; top: 14px; right: 8px;}
+.select-frame ul{ width: 100%; overflow: hidden; height: 0; position: absolute; top: 100%; left: 0;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+.select-frame ul li{ padding: 6px 0; border-bottom: 1px solid #000;}
+.select-frame ul li:last-child{ border-bottom: none;}
+.select-frame ul li a{ display: block; color: #000; text-align: center; font-size: 14px;}
+.select-frame-slide p{  border-radius: 6px 6px 0 0; border: 1px solid #000; background-color: #fff;}
+.select-frame-slide ul{ height: auto; border-radius: 0 0 6px 6px; border: 1px solid #000; border-top: none; background-color: #FFF;}
+
+.manager-table{ margin-top: 50px;}
+.manager-table .td1{ width: 120px;}
+.manager-table .td2{ width: 80px;}
+.manager-table .td3{ width: 120px;}
+.manager-table .td4{ width: 120px;}
+.manager-table .td5{ width: 100px;}
+.manager-table .td6{ width: 100px;}
+.manager-table .td7{ width: 160px;}
+.manager-table .td8{ width: 100px;}
+.manager-table .thead li{ margin-top: 24px;}
+.manager-table .thead .td3{ margin-top: 0;}
+.manager-table .thead .td4{ margin-top: 0;}
+.manager-table .tbody>li .lines-content{ padding: 15px 50px;}
+.manager-table .tbody>li .lines-content li span{ margin-top: 4px;}
+.manager-table .tbody>li .lines-content li.td8 a{ float: left;}
+.manager-table .tbody>li .lines-content li.td8 a:last-child{ float: right;}
+.manager-table .tbody>li .warn-content li{ float: right;}
+.manager-table .tbody .td1 .text{ width: 100px; padding: 5px 10px;}
+.manager-table .tbody .td2 .select-frame{ width: 60px;}
+.manager-table .tbody .td2 .select-frame p{ padding: 6px; height: 30px;}
+.manager-table .tbody>li .lines-content{ overflow: visible;}
+.manager-table .tbody>li .lines-content:after{content: ".";display: block; height: 0; clear: both; visibility: hidden;}
+.setting-table .tbody>li .lines-content li.tdEditor span{ display: none;}
+.manager-table .tbody .tdEditor .text{ display: block;}
+.manager-table .tbody .tdEditor .select-frame{ display: block;}
+
+.alert-frame .rules-content{ width: 600px;padding: 50px; margin-left: -350px;}
+.rules-content .title{ font-size: 24px; font-weight: bold; margin-bottom: 40px;}
+.rules-content li{ margin-bottom: 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

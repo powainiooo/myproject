@@ -48,6 +48,10 @@
 .icons-ltc-active,.icons-ltc:hover{ background-position: -296px -257px;}
 .icons-eth{ width: 52px; height: 20px; background-position: -362px -227px;}
 .icons-eth-active,.icons-eth:hover{ background-position: -362px -254px;}
+.icons-edit{ width: 26px; height: 26px; background-position: -442px -222px;}
+.icons-edit:hover{ background-position: -442px -261px;}
+.icons-trash{ width: 26px; height: 26px; background-position: -486px -222px;}
+.icons-trash:hover{ background-position: -486px -260px;}
 
 
 /*
