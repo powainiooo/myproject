@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>矿机</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+</head>
+
+<body>
+<!--顶部导航-->
+<header class="header">
+    <div class="logo"><img src="images/logo.png"> </div>
+    <nav class="nav">
+        <ul>
+            <li class="active"><a href="#">矿池</a> </li>
+            <li><a href="#">矿机</a> </li>
+            <li><a href="#">帮助</a> </li>
+        </ul>
+    </nav>
+    <div class="btns">
+        <a href="#" onclick="openFrames('login')">MINER1</a>
+    </div>
+</header>
+
+<!--内容区-->
+<section class="content mt70">
+    <div class="chart-frame">
+        <div class="clearfix frame1000">
+            <ul class="pool-list">
+                <li class="active"><a href="#">矿池</a> </li>
+                <li><a href="#">我的矿池</a> </li>
+            </ul>
+            <div class="coin-type-list fr">
+                <a href="javascript:;"><i class="icons icons-btc icons-btc-active"></i></a>
+                <a href="javascript:;"><i class="icons icons-ltc"></i></a>
+                <a href="javascript:;"><i class="icons icons-eth"></i></a>
+            </div>
+        </div>
+        <div id="chartFrame" class="frame1000"></div>
+    </div>
+    <div class="frame1000 mt40">
+        <div class="table-data">
+            <div class="table-title">
+                <h3>报快信息</h3>
+                <a href="#">查看更多》</a>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>高度</th>
+                    <th>时间</th>
+                    <th>信息</th>
+                    <th>信息奖励</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>474600</td>
+                    <td>2017-07-07 14:30:20</td>
+                    <td>10928356129385612365981236598126305861203850128365</td>
+                    <td>14.18</td>
+                </tr>
+                <tr>
+                    <td>474600</td>
+                    <td>2017-07-07 14:30:20</td>
+                    <td>10928356129385612365981236598126305861203850128365</td>
+                    <td>14.18</td>
+                </tr>
+                </tbody>
+            </table>
+            <ul class="infos">
+                <li>
+                    <p>全网算力</p>
+                    <div>4.5EH/S</div>
+                </li>
+                <li>
+                    <p>当前挖矿难度</p>
+                    <div>708，659，466，230</div>
+                </li>
+                <li>
+                    <p>预计下次难度调整</p>
+                    <div>708，659，466，230（+10.52%）</div>
+                </li>
+                <li>
+                    <p>根据块计算出来的调整时间</p>
+                    <div>1160个区块之后（约7.3天）</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" style="color: #dddddb;">
+    <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
+    <span>QQ群：12335419</span>
+    <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
+</footer>
+
+
+
+</body>
+</html>
+<script>
+    $(function(){
+        //图表
+        chart = echarts.init(document.getElementById('chartFrame'));
+        chart.setOption({
+            tooltip : {
+                trigger: 'axis',
+                formatter:'<i class="icons icons-tool mr20"></i>Hashrate:{c}PH/s {b}',
+                extraCssText:'background:-webkit-gradient(linear,0 100%,100% 100%,from(rgb(200,200,200)),to(rgba(255,255,255,1)));border-radius:20px; padding-left:20px; padding-right:15px;',
+                textStyle:{color:'#000'}
+            },
+            grid: {
+                left: '40',
+                right: '0%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis :{
+                axisLabel:{textStyle:{color:'#9f9f9f'}},
+                type : 'category',
+                boundaryGap : ['5%','5%'],
+                axisLine:{lineStyle:{color:'#9f9f9f'}},
+                axisTick:{alignWithLabel:true},
+                data : ['16:00','18:00','20:00','00:00','02:00','04:00','06:00','08:00','10:00','12:00','14:00']
+            },
+            yAxis :{
+                offset:40,
+                axisLine:{show:false},
+                splitLine:{lineStyle:{color:'#9f9f9f',type:'dashed'}},
+                axisLabel:{formatter:'{value}P',textStyle:{color:'#9f9f9f'}}
+            },
+            series : [
+                {
+                    type:'line',
+                    smooth:true,
+                    itemStyle:{normal:{color:'#fff',opacity:0}},
+                    lineStyle:{normal:{color:'#fff'}},
+                    data:[120, 132, 101, 134, 90, 230, 210,100,80,105,95]
+                }
+            ]
+        })
+    })
+</script>

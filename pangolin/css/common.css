@@ -1,3 +1,4 @@
+.bg1{background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(50,50,50)),to(rgba(0,0,0,0.85)));}
 /*
     顶部导航
 */
@@ -57,12 +58,18 @@
 .icons-close-large{ width: 26px; height: 26px; background-position: -189px -85px;}
 .icons-check-large{ width: 42px; height: 30px; background-position: -316px -80px;}
 .icons-exclamation-large{ width: 6px; height: 37px; background-position: -386px -76px; vertical-align: bottom;}
+.icons-phone{ width: 80px; height: 80px; background-position: -589px -208px;}
+.icons-logout{ width: 81px; height: 81px; background-position: -589px -207px;}
+.icons-tool{ width: 22px; height: 22px; background-position: -528px -227px; vertical-align: middle;}
+.icons-dots{ width: 82px; height: 4px; background-position: -744px -223px; }
+.icons-arrow-right{ width: 10px; height: 17px; background-position: -715px -240px; }
 
 
 /*
     框
 */
 .frame300{ width: 300px; margin-left: auto; margin-right: auto;}
+.frame800{ width: 800px; margin-left: auto; margin-right: auto;}
 .frame1000{ width: 1000px; margin-left: auto; margin-right: auto;}
 
 
@@ -79,14 +86,23 @@
 */
 .nav-slide{ width: 200px; position: fixed; top: 0; left: 0; bottom: 0; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(50,50,50)),to(rgba(0,0,0,0.85)));}
 .nav-slide .name{ font-size: 18px; color: #fff; font-weight: bold; margin: 190px 0 0 45px;}
-.nav-slide .nav-list{ margin: 80px 0 0 45px;}
-.nav-slide .nav-list .nav-list-name{ display: block; font-size: 18px; color: rgb(158,158,159); font-weight: bold; margin-bottom: 20px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
-.nav-slide .nav-list>.active,.nav-slide .nav-list .nav-list-name:hover{ font-size: 24px; color: #FFF;}
-.nav-slide .nav-list ul li{ margin-bottom: 6px;}
-.nav-slide .nav-list ul li .dot{ display: inline-block; width: 10px; height: 10px; border: 1px solid rgb(158,158,159); border-radius: 50%; -webkit-border-radius: 50%;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
-.nav-slide .nav-list ul li a{ font-size: 14px; color: rgb(158,158,159); margin-left: 2px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
-.nav-slide .nav-list ul li:hover .dot,.nav-slide .nav-list ul li.active .dot{ border: 1px solid #FFF; background-color: #FFF;}
-.nav-slide .nav-list ul li:hover a,.nav-slide .nav-list ul li.active a{ color: #FFF;}
+.nav-list{ margin: 80px 0 0 45px;}
+.nav-list .nav-list-name{ display: block; font-size: 18px; color: rgb(158,158,159); font-weight: bold; margin-bottom: 20px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
+.nav-list>.active,.nav-list .nav-list-name:hover{ font-size: 24px; color: #FFF;}
+.nav-list ul li{ margin-bottom: 6px;}
+.nav-list ul li .dot{ display: inline-block; width: 10px; height: 10px; border: 1px solid rgb(158,158,159); border-radius: 50%; -webkit-border-radius: 50%;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
+.nav-list ul li a{ font-size: 14px; color: rgb(158,158,159); margin-left: 2px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
+.nav-list ul li:hover .dot,.nav-list ul li.active .dot{ border: 1px solid #FFF; background-color: #FFF;}
+.nav-list ul li:hover a, .nav-list ul li.active a{ color: #FFF;}
+
+.nav-list-person{ margin-left: 0;}
+.nav-list-person .nav-list-name{ color: #000; text-align: left;}
+.nav-list-person ul li a{ color: #000;}
+.nav-list-person ul li a:hover{ color: #000;}
+.nav-list-person ul li .dot{ border-color:#000; }
+.nav-list-person ul li:hover .dot{border-color:#000; background-color: #000;}
+
+
 
 .nav-slide .arrow{ position: absolute; top: 300px; left: 100%;}
 
