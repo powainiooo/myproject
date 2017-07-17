@@ -125,7 +125,7 @@
 .infos-frame .btn-links a:last-child{ border-right: none;}
 
 .infos-frame .logout{ position: absolute; bottom: 50px; left: 190px;}
-.infos-frame .logout>a{ width: 81px; height: 81px; display: block; border-radius: 50%; overflow: hidden;}
+.infos-frame .logout>a{ width: 80px; height: 80px; display: block; border-radius: 50%; overflow: hidden;}
 .infos-frame .logout>a:hover{box-shadow: -5px 5px 10px rgba(0,0,0,0.3);}
 .logout .logout-sign{ width: 260px; border-radius: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: absolute; top: -80px; left: -90px; padding: 10px 0; display: none;}
 .logout .logout-sign:after{ content: ''; width: 12px; height: 6px; background: url('../images/icons.png') no-repeat; background-position: -564px -71px; position: absolute; bottom: -6px; left: 124px;}
