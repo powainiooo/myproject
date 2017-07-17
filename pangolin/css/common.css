@@ -10,7 +10,8 @@
 .header .nav ul li a{ font-size: 14px; color: #000; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
 .header .nav ul li:hover a,.header .nav ul li.active a{ font-size: 18px; font-weight: bold;}
 .header .btns{ position: absolute; top: 22px; right: 40px;}
-.header .btns a{ font-size: 14px; color: #000; float: left; padding-right: 8px; position: relative;}
+.header .btns a{ font-size: 14px; color: #000; float: left; padding-right: 8px; position: relative; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
+.header .btns a:hover{font-weight: bold;}
 .header .btns a:after{ content: ''; width: 1px; height: 16px; background-color: #000; position: absolute; top: 2px; right: 0;}
 .header .btns a:last-child{ padding-right: 0; padding-left: 8px;}
 .header .btns a:last-child:after{ width: 0;}
@@ -54,12 +55,12 @@
 .icons-trash{ width: 26px; height: 26px; background-position: -486px -222px;}
 .icons-trash:hover{ background-position: -486px -260px;}
 .icons-arrow-link{ width: 81px; height: 81px; background-position: -43px -15px;}
-.icons-arrow-link:hover{ background-position: -43px -108px;}
+.icons-arrow-link:hover{ background-position: -43px -107px;}
 .icons-close-large{ width: 26px; height: 26px; background-position: -189px -85px;}
 .icons-check-large{ width: 42px; height: 30px; background-position: -316px -80px;}
 .icons-exclamation-large{ width: 6px; height: 37px; background-position: -386px -76px; vertical-align: bottom;}
-.icons-phone{ width: 80px; height: 80px; background-position: -589px -208px;}
-.icons-logout{ width: 80px; height: 80px; background-position: -691px -38px;}
+.icons-phone{ width: 81px; height: 81px; background-position: -589px -206px;}
+.icons-logout{ width: 81px; height: 81px; background-position: -710px -27px;}
 .icons-tool{ width: 22px; height: 22px; background-position: -528px -227px; vertical-align: middle;}
 .icons-dots{ width: 82px; height: 4px; background-position: -744px -223px; }
 .icons-arrow-right{ width: 10px; height: 17px; background-position: -715px -240px; }
