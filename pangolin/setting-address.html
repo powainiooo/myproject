@@ -34,7 +34,7 @@
 </header>
 
 <!--内容区-->
-<section class="content">
+<section class="content" style="padding-bottom: 0;">
     <!-- 左侧导航栏-->
     <div class="nav-slide">
         <div class="name">MINER 1</div>
@@ -67,36 +67,37 @@
 
     <!-- 中间内容区-->
     <div class="setting-content">
-        <div class="base-title">BTC</div>
-        <div class="base-setting-frame">
-            <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
-            <div class="mb30 identify-line clearfix">
-                <input type="text" class="text" placeholder="验证码">
-                <a href="#" class="btn">获取验证码</a>
+        <div id="content">
+            <div class="base-title">BTC</div>
+            <div class="base-setting-frame">
+                <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
+                <div class="mb30 identify-line clearfix">
+                    <input type="text" class="text" placeholder="验证码">
+                    <a href="#" class="btn">获取验证码</a>
+                </div>
+                <div><a href="#" class="btn btn-auto">修改</a></div>
             </div>
-            <div><a href="#" class="btn btn-auto">修改</a></div>
-        </div>
 
-        <div class="base-title">LTC</div>
-        <div class="base-setting-frame">
-            <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
-            <div class="mb30 identify-line clearfix">
-                <input type="text" class="text" placeholder="验证码">
-                <a href="#" class="btn">获取验证码</a>
+            <div class="base-title">LTC</div>
+            <div class="base-setting-frame">
+                <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
+                <div class="mb30 identify-line clearfix">
+                    <input type="text" class="text" placeholder="验证码">
+                    <a href="#" class="btn">获取验证码</a>
+                </div>
+                <div><a href="#" class="btn btn-auto">修改</a></div>
             </div>
-            <div><a href="#" class="btn btn-auto">修改</a></div>
-        </div>
 
-        <div class="base-title">EHT</div>
-        <div class="base-setting-frame">
-            <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
-            <div class="mb30 identify-line clearfix">
-                <input type="text" class="text" placeholder="验证码">
-                <a href="#" class="btn">获取验证码</a>
+            <div class="base-title">EHT</div>
+            <div class="base-setting-frame">
+                <div class="mb10"><input type="text" class="text" placeholder="付款地址"></div>
+                <div class="mb30 identify-line clearfix">
+                    <input type="text" class="text" placeholder="验证码">
+                    <a href="#" class="btn">获取验证码</a>
+                </div>
+                <div><a href="#" class="btn btn-auto">修改</a></div>
             </div>
-            <div><a href="#" class="btn btn-auto">修改</a></div>
         </div>
-
         <footer class="footer">
             <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
             <span>QQ群：12335419</span>
@@ -108,6 +109,11 @@
 </body>
 </html>
 <script>
+    $(function(){
+        //设置最小高度
+        $("#content").css('min-height',$(window).height()-70-81);
+    })
+
     //showMsg为共用弹窗  具体参数请查看common.js
     
     //showMsg('修改成功　　<i class="icons icons-check-small"></i>');

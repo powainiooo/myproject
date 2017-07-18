@@ -34,7 +34,7 @@
 </header>
 
 <!--内容区-->
-<section class="content">
+<section class="content" style="padding-bottom: 0;">
     <!-- 左侧导航栏-->
     <div class="nav-slide">
         <div class="name">MINER 1</div>
@@ -67,7 +67,7 @@
 
     <!-- 中间内容区-->
     <div class="setting-content">
-        <section class="frame1000">
+        <section class="frame1000" id="content">
             <div class="coin-type-list mt120">
                 <a href="javascript:;"><i class="icons icons-btc icons-btc-active"></i></a>
                 <a href="javascript:;"><i class="icons icons-ltc"></i></a>
@@ -123,7 +123,7 @@
             </div>
         </section>
 
-        <footer class="footer footer-fixed">
+        <footer class="footer">
             <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
             <span>QQ群：12335419</span>
             <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
@@ -135,41 +135,7 @@
 </html>
 <script>
     $(function(){
-        //打开API KEY
-        $(".btn-key").on('click',function(){
-            $(this).parent().find('.btn').hide();
-            $(this).siblings('.btn-close').show();
-            $(this).parents(".lines-content").next('.keys-content').slideDown(200);
-        });
-        //关闭API KEY
-        $(".btn-close").on('click',function(){
-            $(this).parent().find('.btn').show();
-            $(this).hide();
-            $(this).parents(".lines-content").next('.keys-content').slideUp(200);
-        });
-
-        //点击打开新增栏
-        $("#btnAdd").on('click',openAddLines);
+        //设置最小高度
+        $("#content").css('min-height',$(window).height()-70-106-90);
     });
-    //打开新增栏
-    function openAddLines(){
-        var html = '';
-        html += '<li class="operalines">' +
-                '<ul class="lines-content">' +
-                '<li class="td1"><input type="text" class="text" placeholder="名称"></li>' +
-                '<li class="td2"><input type="text" class="text" placeholder="备注"></li>' +
-                '<li class="td3">' +
-                '<a href="javascript:;" class="btns" onclick="removeAddLines()"><i class="icons icons-close-circle"></i></a>' +
-                '<a href="javascript:;" class="btns" onclick="doAddLines()"><i class="icons icons-check-circle"></i></a>' +
-                '</li></ul></li>';
-        $("#accountTable .tbody").append(html);
-    }
-    //移除新增栏
-    function removeAddLines(){
-        $("#accountTable .tbody .operalines").remove();
-    }
-    //点击确认添加
-    function doAddLines(){
-
-    }
 </script>

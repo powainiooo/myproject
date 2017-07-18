@@ -34,7 +34,7 @@
 </header>
 
 <!--内容区-->
-<section class="content">
+<section class="content" style="padding-bottom: 0;">
     <!-- 左侧导航栏-->
     <div class="nav-slide">
         <div class="name">MINER 1</div>
@@ -67,7 +67,7 @@
 
     <!-- 中间内容区-->
     <div class="setting-content">
-        <section class="frame1000">
+        <section class="frame1000" id="content">
             <div class="clearfix mt120">
                 <div class="select-frame fl">
                     <p>状态</p>
@@ -133,7 +133,7 @@
             </div>
         </section>
 
-        <footer class="footer footer-fixed">
+        <footer class="footer">
             <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
             <span>QQ群：12335419</span>
             <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
@@ -143,7 +143,7 @@
 
 <!--规则-->
 <div class="alert-frame" id="ruleFrame" style="display: none;">
-    <div class="alert-content rules-content">
+    <div class="alert-content rules-content" style="top:50%; margin-top: -150px;">
         <a href="javascript:;" class="btn-close"><i class="icons icons-close-circle"></i></a>
         <div class="title">矿工添加方法</div>
         <ul>
@@ -157,6 +157,9 @@
 </html>
 <script>
     $(function(){
+        //设置最小高度
+        $("#content").css('min-height',$(window).height()-70-106-90);
+
         //打开下拉框
         $(document).on('click',".select-frame p",function(e){
             e.stopPropagation();
@@ -181,8 +184,11 @@
             $("#ruleFrame").show();
         });
         //关闭规则
-        $("#ruleFrame .btn-close").on('click',function(){
+        $("#ruleFrame,#ruleFrame .btn-close").on('click',function(){
             $("#ruleFrame").hide();
+        })
+        $("#ruleFrame .rules-content").on('click',function(e){
+            e.stopPropagation();
         })
     });
 
@@ -202,8 +208,8 @@
         $(obj).parents('.lines-content').after(html);
 
         //插入输入框
-        var text = '<input type="text" class="text" value="'+$(obj).parents('.lines-content').find('.td1 span').html()+'">';
-        $(obj).parents('.lines-content').find('.td1').append(text).addClass('tdEditor');
+//        var text = '<input type="text" class="text" value="'+$(obj).parents('.lines-content').find('.td1 span').html()+'">';
+//        $(obj).parents('.lines-content').find('.td1').append(text).addClass('tdEditor');
 
         //插入下拉框
         var selectHtml = '';
@@ -219,9 +225,9 @@
     }
     //取消编辑
     function cancelEditor(obj){
-        $(obj).parents('.warn-content').prev('.lines-content').find('.td1 .text').remove();
+//        $(obj).parents('.warn-content').prev('.lines-content').find('.td1 .text').remove();
         $(obj).parents('.warn-content').prev('.lines-content').find('.td2 .select-frame').remove();
-        $(obj).parents('.warn-content').prev('.lines-content').find('.td1').removeClass('tdEditor');
+//        $(obj).parents('.warn-content').prev('.lines-content').find('.td1').removeClass('tdEditor');
         $(obj).parents('.warn-content').prev('.lines-content').find('.td2').removeClass('tdEditor');
         $(obj).parents('.warn-content').remove();
         isOperaing = false;

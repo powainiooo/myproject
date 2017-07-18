@@ -34,7 +34,7 @@
 </header>
 
 <!--内容区-->
-<section class="content mt70">
+<section class="content mt70" id="content">
     <div class="chart-frame">
         <div class="clearfix frame1000">
             <ul class="pool-list">
@@ -91,6 +91,9 @@
 </html>
 <script>
     $(function(){
+        //设置最小高度
+        $("#content").css('min-height',$(window).height()-70-106);
+
         //图表
         chart = echarts.init(document.getElementById('chartFrame'));
         chart.setOption({

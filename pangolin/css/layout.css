@@ -1,7 +1,7 @@
 /*
     基础设置
 */
-.setting-content{ margin: 70px 0 0 200px;}
+.setting-content{ margin: 0 0 0 200px;}
 .base-title{ font-size: 18px; font-weight: bold; color: #000; padding: 12px 50px; background-color: #eeeef0;}
 .base-setting-frame{ width: 400px; margin: 35px auto;}
 
@@ -21,12 +21,12 @@
 .account-table .tbody>li .lines-content li .btn{ float: left; margin-right: 20px;}
 .account-table .tbody>li .lines-content li .btn:last-child{margin-right: 0;}
 .account-table .tbody>li .lines-content li .btn-close{ float: right; margin: 8px 30px 0 0; display: none;}
-.account-table .tbody>li .keys-content{ display: none;}
+.account-table .tbody>li .keys-content{ display: none; border-top: 2px solid #000;}
 .account-table .tbody>li .keys-content p{ float:left; width: 110px; border-right: 1px solid #000; padding: 15px 0;}
 .account-table .tbody>li .keys-content div{ float:left; width: 649px; padding: 15px 20px;}
 .account-table .tbody>li  .keys-content li:last-child{ border-bottom: 3px solid #000;}
 .account-table .tbody>li  .keys-content li:last-child div{ padding: 5px 20px;}
-.account-table .tbody>li .keys-content a{ float:left; }
+.account-table .tbody>li .keys-content a{ float:left; margin-top: 6px;}
 .account-table .td1{ width: 240px;}
 .account-table .td2{ width: 320px;}
 .account-table .td3{ width: 340px;}
@@ -168,12 +168,12 @@
 /*
     矿池
 */
-.step-frame{ margin: 150px 0 70px;}
+.step-frame{ margin: 80px 0 70px;}
 .step-frame .list{ width: 742px; overflow: hidden; margin: 0 auto;}
 .step-frame .list li{ float: left; margin:0 12px;}
-.step-frame .list li.number{ width: 82px; height: 98px;}
-.step-frame .list li.dots{ margin-top: 45px;}
-.step-frame .list li p{ font-size: 36px; color: rgb(158,158,159);  font-weight: bold; text-align: center;}
+.step-frame .list li.number{ width: 82px; height: 102px;}
+.step-frame .list li.dots{ margin-top: 48px;}
+.step-frame .list li p{ height: 50px; font-size: 36px; color: rgb(158,158,159);  font-weight: bold; text-align: center;}
 .step-frame .list li div{ color: rgb(158,158,159);  font-weight: bold; text-align: center;}
 .step-frame .list li.active{ background: url('../images/icons_circle.png') no-repeat; background-position: 0 bottom;}
 .step-frame .list li.active p,.step-frame .list li.active div{ color: #fff;}

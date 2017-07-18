@@ -34,7 +34,7 @@
 </header>
 
 <!--内容区-->
-<section class="content mt70">
+<section class="content mt70" id="content">
     <div class="frame1000 mt40">
         <!--步骤-->
         <div class="step-frame">
@@ -129,5 +129,7 @@
 </body>
 </html>
 <script>
-
+    $(function(){
+        $("#content").css('min-height',$(window).height()-70-106);
+    })
 </script>

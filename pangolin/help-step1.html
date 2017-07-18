@@ -45,8 +45,8 @@
 </div>
 
 <!--内容区-->
-<section class="content mt70">
-    <div class="frame1000 mt40">
+<section class="content mt70 clearfix" id="content">
+    <div class="frame1000">
         <!--步骤-->
         <div class="step-frame">
             <ul class="list">
@@ -98,5 +98,7 @@
 </body>
 </html>
 <script>
-
+    $(function(){
+        $("#content").css('min-height',$(window).height()-70-106);
+    })
 </script>
