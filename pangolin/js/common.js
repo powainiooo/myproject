@@ -8,7 +8,7 @@ function showMsg(msg,callback){
         '<div class="alert-content">' +
         '<a href="javascript:;" class="btn-close"><i class="icons icons-close-circle"></i></a>' +
         '<div class="msg">'+msg+'</div>' +
-        '<div class="btns"><a href="javascript:;" class="btn btn-confirm">确定</a> </div>' +
+        '<div class="btns"><a href="javascript:;" class="btn btn-confirm btn-auto">确定</a> </div>' +
         '</div></div>';
     $("body").append(html);
 

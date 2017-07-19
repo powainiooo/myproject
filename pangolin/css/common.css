@@ -1,4 +1,4 @@
-.bg1{background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(50,50,50)),to(rgba(0,0,0,0.85)));}
+.bg1{background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(50,50,50,1)),to(rgba(0,0,0,1)));}
 /*
     顶部导航
 */
@@ -10,11 +10,13 @@
 .header .nav ul li a{ font-size: 14px; color: #000; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
 .header .nav ul li:hover a,.header .nav ul li.active a{ font-size: 18px; font-weight: bold;}
 .header .btns{ position: absolute; top: 22px; right: 40px;}
-.header .btns a{ font-size: 14px; color: #000; float: left; padding-right: 8px; position: relative; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
-.header .btns a:hover{font-weight: bold;}
-.header .btns a:after{ content: ''; width: 1px; height: 16px; background-color: #000; position: absolute; top: 2px; right: 0;}
-.header .btns a:last-child{ padding-right: 0; padding-left: 8px;}
-.header .btns a:last-child:after{ width: 0;}
+.header .btns a{ width: 40px; height: 16px; text-align: center; font-size: 14px; color: #000; float: left; position: relative;  border-right: 1px solid #000;}
+.header .btns a span{transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; display: block; margin-top: -1px;}
+.header .btns a:hover span{font-weight: bold; transform: scale(1.1,1.1);}
+.header .btns a:last-child{ border-right: none;}
+/*.header .btns a:after{ content: ''; width: 1px; height: 16px; background-color: #000; position: absolute; top: 2px; right: 0;}*/
+/*.header .btns a:last-child{ padding-right: 0; padding-left: 8px;}*/
+/*.header .btns a:last-child:after{ width: 0;}*/
 
 .content{ overflow: hidden; position: relative; margin-top: 70px; padding-bottom: 30px;}
 
@@ -81,17 +83,17 @@
 */
 .page-info a{ width: 26px; height: 26px; display: inline-block; vertical-align: bottom; margin: 0 6px}
 .page-info .number{ text-align: center;; line-height: 26px; color: #000;}
-.page-info .active,.page-info .number:hover{ background-color: #000; color: #fff; border-radius: 50%;}
+.page-info .active,.page-info .number:hover{ background-color: rgb(255,206,15); color: #000; border-radius: 50%;}
 
 
 /*
     个人设置侧边栏
 */
-.nav-slide{ width: 200px; position: fixed; top: 0; left: 0; bottom: 0; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(50,50,50)),to(rgba(0,0,0,0.85)));}
+.nav-slide{ width: 200px; position: fixed; top: 0; left: 0; bottom: 0; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(50,50,50,1)),to(rgba(0,0,0,0.85)));}
 .nav-slide .name{ font-size: 18px; color: #fff; font-weight: bold; margin: 190px 0 0 45px;}
 .nav-list{ margin: 80px 0 0 45px;}
 .nav-list .nav-list-name{ display: block; font-size: 18px; color: rgb(158,158,159); font-weight: bold; margin-bottom: 20px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
-.nav-list>.active,.nav-list .nav-list-name:hover{ font-size: 24px; color: #FFF;}
+.nav-list>.active,.nav-list .nav-list-name:hover{ font-size: 24px; color: rgb(255,206,15);}
 .nav-list ul li{ margin-bottom: 6px;}
 .nav-list ul li .dot{ display: inline-block; width: 10px; height: 10px; border: 1px solid rgb(158,158,159); border-radius: 50%; -webkit-border-radius: 50%;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; vertical-align: -1px;}
 .nav-list ul li a{ font-size: 14px; color: rgb(158,158,159); margin-left: 2px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
@@ -100,11 +102,12 @@
 
 .nav-list-person{ margin-left: 0;}
 .nav-list-person .nav-list-name{ color: #000; text-align: left;}
+.nav-list-person .nav-list-name:hover{ color: #000;}
 .nav-list-person ul li a{ color: #000;}
 .nav-list-person ul li a:hover{ color: #000;}
 .nav-list-person ul li .dot{ border-color:#000; }
 .nav-list-person ul li:hover .dot{border-color:#000; background-color: #000;}
-
+.nav-list-person ul li:hover a{ color: #000;}
 
 
 .nav-slide .arrow{ position: absolute; top: 300px; left: 100%;}
@@ -122,16 +125,16 @@
 .identify-line .text{ width: calc(100% - 110px); float: left;}
 .identify-line .btn{ float: right;}
 
-.btn{ width: 100px; display: inline-block; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(50,50,50)),to(rgba(0,0,0,0.85))); padding: 11px 0; text-align: center; font-size: 14px; color: #FFF; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
+.btn{ width: 100px; display: inline-block; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(50,50,50,1)),to(rgba(0,0,0,1))); padding: 11px 0; text-align: center; font-size: 14px; color: #FFF; transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
 .btn:hover{ box-shadow: -5px 5px 7px rgba(0,0,0,0.3);}
-.btn-auto{ width: 100%;}
-
+.btn-auto{ width: 100%; background: rgb(255,206,15); color: #000; font-weight: bold;}
+.btn-auto:hover{box-shadow: -5px 5px 7px rgba(0,0,0,0.1);}
 
 /*
     弹窗
 */
-.alert-frame{ position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: 800; background: rgba(0,0,0,0.85); background: -webkit-gradient(linear,0 100%,100% 100%,from(rgb(70,70,70)),to(rgba(35,24,21,0.85)));}
+.alert-frame{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 800; background: rgba(0,0,0,0.85); background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(70,70,70,0.7)),to(rgba(35,24,21,0.7)));}
 .alert-frame .alert-content{ width: 500px; position: relative; left: 50%; top: 20%; background-color: #FFF; border-radius: 6px; margin: 0 0 0 -250px; overflow: hidden;}
 .alert-frame .alert-content .msg{ font-size: 18px; font-weight: bold; margin: 60px 30px 50px 30px; text-align: center;}
-.alert-frame .alert-content .btns{ text-align: center; margin-bottom: 20px;}
+.alert-frame .alert-content .btns{ width: 100px; margin: 0 auto 20px auto;}
 .alert-frame .alert-content .btn-close{ position: absolute; top: 10px; right: 15px;}

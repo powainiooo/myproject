@@ -31,7 +31,7 @@
         </ul>
     </nav>
     <div class="btns">
-        <a href="#" onclick="openFrames('login')">MINER1</a>
+        <a href="#" onclick="openFrames('login')"><span>MINER1</span></a>
     </div>
 </header>
 
@@ -138,10 +138,20 @@
         });
 
         //关闭侧边弹窗
-        $("#btnCloseInfos").on('click',function(){
+        $("#btnCloseInfos,#modelCover").on('click',function(){
             $("#modelCover").fadeOut(300);
             $("#infosFrame").removeClass('infos-frame-in');
         });
+
+        //侧边栏导航子项移入放大导航名称效果
+        $(".nav-list-person ul").hover(
+                function(){
+                    $(this).parents('.nav-list-person').find('.nav-list-name').css('font-size','24px');
+                },
+                function(){
+                    $(this).parents('.nav-list-person').find('.nav-list-name').css('font-size','18px');
+                }
+        )
     });
 
     //打开侧边弹窗

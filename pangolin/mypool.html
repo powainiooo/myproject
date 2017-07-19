@@ -99,8 +99,10 @@
         chart.setOption({
             tooltip : {
                 trigger: 'axis',
+                axisPointer:{lineStyle:{width:0}},
                 formatter:'<i class="icons icons-tool mr20"></i>Hashrate:{c}PH/s {b}',
-                extraCssText:'background:-webkit-gradient(linear,0 100%,100% 100%,from(rgb(200,200,200)),to(rgba(255,255,255,1)));border-radius:20px; padding-left:20px; padding-right:15px;',
+                backgroundColor:'rgb(254,205,51)',
+                extraCssText:'border-radius:20px; padding-left:20px; padding-right:15px;',
                 textStyle:{color:'#000'}
             },
             grid: {
@@ -127,7 +129,7 @@
                 {
                     type:'line',
                     smooth:true,
-                    itemStyle:{normal:{color:'#fff',opacity:0}},
+                    itemStyle:{normal:{color:'#fff',opacity:0},emphasis:{color:'rgb(255,206,15)',opacity:1,borderColor:'rgb(255,206,15)'}},
                     lineStyle:{normal:{color:'#fff'}},
                     data:[120, 132, 101, 134, 90, 230, 210,100,80,105,95]
                 }

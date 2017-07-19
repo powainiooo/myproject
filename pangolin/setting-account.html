@@ -176,6 +176,7 @@
         $(".btn-key").on('click',function(){
             $(this).parent().find('.btn').hide();
             $(this).siblings('.btn-close').show();
+            $(this).parents(".lines-content").parent().addClass('slideDown');
             $(this).parents(".lines-content").next('.keys-content').slideDown(200);
         });
         //关闭API KEY
@@ -183,6 +184,7 @@
             $(this).parent().find('.btn').show();
             $(this).hide();
             $(this).parents(".lines-content").next('.keys-content').slideUp(200);
+            $(this).parents(".lines-content").parent().removeClass('slideDown');
         });
 
         //点击打开新增栏
