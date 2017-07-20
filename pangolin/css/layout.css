@@ -170,7 +170,46 @@
 
 
 /*
-    矿池
+    我的矿池
+*/
+.mypool-frame1{ width: 360px; overflow: hidden; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.mypool-frame1 h3{ text-align: center; font-size: 18px; font-weight: bold; padding: 12px 0; border-bottom: 2px solid #eaeaea;}
+.mypool-frame1 h3{ text-align: center; font-size: 18px; font-weight: bold; padding: 12px 0;}
+.mypool-frame1 ul{ overflow: hidden; background-color: #f7f7f7;}
+.mypool-frame1 ul li{ width: 50%; float: left}
+.mypool-frame1 ul li p{ font-size: 14px; color: #717171; text-align: center; margin: 30px 10px;}
+.mypool-frame1 ul li div{ font-size: 14px; color: #717171; text-align: center; margin: 30px 10px;}
+.mypool-frame1 ul li div span{ font-size: 18px; color: #000; font-weight: bold;}
+
+.mypool-frame2{ width: 240px; margin: 0 20px; overflow: hidden; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.mypool-frame2 div p{text-align: center; font-size: 18px; font-weight: bold; padding: 12px 0;}
+.mypool-frame2 div div{text-align: center; font-size: 18px; font-weight: bold; margin-top: 6px;}
+.mypool-frame2 ul{overflow: hidden;}
+.mypool-frame2 ul li{ width: 50%; float: left}
+.mypool-frame2 ul li p{ font-size: 14px; color: #717171; text-align: center; margin:15px 10px;}
+.mypool-frame2 ul li div{ font-size: 18px; font-weight: bold; text-align: center; margin:0 10px 32px 10px;}
+
+.mypool-frame3{ width: 490px; overflow: hidden; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.mypool-frame3>div{ padding: 8px 15px;border-bottom: 2px solid #eaeaea;}
+.mypool-frame3>div h3{font-size: 18px; font-weight: bold; float: left;}
+.mypool-frame3>div a{color: #000; font-size: 14px; font-weight: bold; float: right;}
+.mypool-frame3 ul{ background-color: #f7f7f7;}
+.mypool-frame3 ul li{ overflow: hidden; padding: 10px 15px;}
+.mypool-frame3 ul li p{ color: #717171; float: left; font-size: 14px;}
+.mypool-frame3 ul li p a{ color: #000; font-weight: bold; font-size: 14px; margin-left: 10px;}
+.mypool-frame3 ul li div{ color: #717171; float: right; font-size: 14px;}
+.mypool-frame3 ul li.bg{ background-color: #FFF;}
+.mypool-frame3 ul li.border{ border-top: 2px solid #eaeaea;}
+
+.pool-date{ float: left; margin-left: 45px; margin-top: 30px;}
+.pool-date li{ float: left;  margin-right: 20px; font-size: 18px; color: #9e9e9f;}
+.pool-date li.active{  color: #fff;}
+.pool-date li input[type=radio]{ -webkit-appearance: none; display: inline-block; width: 21px; height: 21px;  background: url('../images/icons.png') no-repeat; background-position: -760px -245px; vertical-align: sub;}
+.pool-date li input[type=radio]:checked{ background-position: -787px -245px;}
+
+
+/*
+    帮助
 */
 .step-frame{ margin: 80px 0 70px;}
 .step-frame .list{ width: 742px; overflow: hidden; margin: 0 auto;}
@@ -201,14 +240,25 @@
 
 
 
+/*
+    收益计算机
+*/
+.table-input-frame{ background-color: #f7f7f7; overflow: hidden;}
+.table-input-frame>.clearfix{ width: 630px; margin-left: auto; margin-right: auto;}
+.table-input-frame .table-input input{ width: 188px; border: 1px solid #000; border-radius: 6px 0 0 6px; float: left; font-size: 16px; padding: 10px; border-right: none; background-color: #fff;}
+.table-input-frame .table-input input::-webkit-input-placeholder{ color: #000;}
+.table-input-frame .table-input input:-moz-placeholder{ color: #000;}
+.table-input-frame .table-input input:-ms-input-placeholder{ color: #000;}
+.table-input-frame .table-input .unit{ width: 58px; border: 1px solid #000; border-radius: 0 6px 6px 0; float: left; font-size: 16px; padding: 10px; text-align: center;}
+.table-input-frame .table-input .select-frame{ width: 78px; float: left;}
+.table-input-frame .table-input .select-frame p{ font-size: 16px; height: auto; padding: 10px;  border: 1px solid #000; border-radius: 0 6px 6px 0;}
+.table-input-frame .table-input .select-frame-slide p{  border-radius: 0 6px 0 0; border-bottom: none;}
+.table-input-frame>.btns{ width: 400px; margin-left: auto; margin-right: auto; margin-bottom: 30px;}
+.table-input-frame>.hint{  padding: 10px; font-size: 12px; color: #9a9a9a; line-height: 200%;}
 
-
-
-
-
-
-
-
+.table-data .computer-table td:first-child{ width: 80px; font-weight: bold;color: #000; font-size: 14px;}
+.table-data .computer-table td{ width: 670px; color: #6f6f6f;}
+.table-data .computer-table td span{ color: #000; font-weight: bold; font-size: 18px;}
 
 
 

@@ -41,6 +41,16 @@
                 <li><a href="#">矿池</a> </li>
                 <li class="active"><a href="#">我的矿池</a> </li>
             </ul>
+            <ul class="pool-date" id="poolDate">
+                <li class="active">
+                    <input type="radio" name="date" id="hour" checked>
+                    <label for="hour">小时</label>
+                </li>
+                <li>
+                    <input type="radio" name="date" id="day">
+                    <label for="day">天数</label>
+                </li>
+            </ul>
             <div class="coin-type-list fr">
                 <a href="javascript:;"><i class="icons icons-btc icons-btc-active"></i></a>
                 <a href="javascript:;"><i class="icons icons-ltc"></i></a>
@@ -50,32 +60,147 @@
         <div id="chartFrame" class="frame1000"></div>
     </div>
     <div class="frame1000 mt40">
-        <div class="table-data account-table-info">
-            <div class="table-title">
-                <h3>账户信息</h3>
+        <div class="clearfix mb20">
+            <div class="mypool-frame1 fl">
+                <h3>实时算力</h3>
+                <ul>
+                    <li>
+                        <p>实时</p>
+                        <div><span>0.000</span>GH/S</div>
+                    </li>
+                    <li>
+                        <p>24小时</p>
+                        <div><span>0.000</span>GH/S</div>
+                    </li>
+                </ul>
             </div>
-            <table>
-                <thead>
-                <tr>
-                    <th style="width: 333px;"></th>
-                    <th style="width: 333px;">BTC</th>
-                    <th style="width: 333px;">LTC</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>过去24小时收益</td>
-                    <td>00000</td>
-                    <td>00000</td>
-                </tr>
-                <tr>
-                    <td>总收益</td>
-                    <td>00000</td>
-                    <td>00000</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="mypool-frame2 fl">
+                <div>
+                    <p>矿机数</p>
+                    <div>0</div>
+                </div>
+                <ul>
+                    <li>
+                        <p>活跃</p>
+                        <div>0</div>
+                    </li>
+                    <li>
+                        <p>非活跃</p>
+                        <div>0</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mypool-frame1 fl">
+                <h3>收益</h3>
+                <ul>
+                    <li>
+                        <p>今日预估</p>
+                        <div><span>0.000</span></div>
+                    </li>
+                    <li>
+                        <p>昨日实收</p>
+                        <div><span>0.000</span></div>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div class="clearfix mb20">
+            <div class="mypool-frame3 fl">
+                <div class="clearfix">
+                    <h3>账户收益</h3>
+                    <a href="#">查看更多》</a>
+                </div>
+                <ul>
+                    <li>
+                        <p>余额</p>
+                        <div>-BTC</div>
+                    </li>
+                    <li>
+                        <p>已支付<a href="#">支付记录》</a> </p>
+                        <div>-BTC</div>
+                    </li>
+                    <li class="bg border">
+                        <p>上一次支付时间 </p>
+                        <div>-</div>
+                    </li>
+                    <li class="bg">
+                        <p>待确认支付 </p>
+                        <div>无</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mypool-frame3 fr">
+                <div class="clearfix">
+                    <h3>挖矿地址</h3>
+                    <a href="#">查看更多》</a>
+                </div>
+                <ul>
+                    <li>
+                        <p>sz.ss.btc.com:1800</p>
+                    </li>
+                    <li>
+                        <p>sz.ss.btc.com:1800</p>
+                    </li>
+                    <li>
+                        <p>sz.ss.btc.com:1800</p>
+                    </li>
+                    <li class="bg border">
+                        <p>矿机名设置参考：‘123ddd.001’，‘123ddd.002’ </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix mb20">
+            <div class="mypool-frame3 fl">
+                <div class="clearfix">
+                    <h3>网络状态</h3>
+                    <a href="#">查看更多》</a>
+                </div>
+                <ul>
+                    <li>
+                        <p>全网算力</p>
+                        <div>5.80 EH/s</div>
+                    </li>
+                    <li>
+                        <p>矿池算力</p>
+                        <div>5.80 EH/s</div>
+                    </li>
+                    <li>
+                        <p>每T收益</p>
+                        <div>1T*24H = 0.0003 BTC = ￥ 4.96</div>
+                    </li>
+                    <li class="bg border">
+                        <p>预测下次难度 </p>
+                        <div>+7.92%（868.20 G）</div>
+                    </li>
+                    <li class="bg">
+                        <p>距离调整还剩 </p>
+                        <div>8天21小时</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mypool-frame3 fr">
+                <div class="clearfix">
+                    <h3>售后服务</h3>
+                    <a href="#">查看更多》</a>
+                </div>
+                <ul>
+                    <li>
+                        <p>工单系统</p>
+                        <div>在线客服一对一交流</div>
+                    </li>
+                    <li>
+                        <p>吐槽</p>
+                        <div>给开发人员留言</div>
+                    </li>
+                    <li>
+                        <p>QQ群</p>
+                        <div>12335419</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -93,6 +218,11 @@
     $(function(){
         //设置最小高度
         $("#content").css('min-height',$(window).height()-70-106);
+
+        //选择时间
+        $("#poolDate li").on('click',function(){
+            $(this).addClass('active').siblings('li').removeClass('active');
+        });
 
         //图表
         chart = echarts.init(document.getElementById('chartFrame'));

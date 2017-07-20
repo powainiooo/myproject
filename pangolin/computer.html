@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>矿机</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+</head>
+
+<body class="bg1">
+<!--顶部导航-->
+<header class="header">
+    <div class="logo"><a href="home.html"><img src="images/logo.png"> </a>  </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">矿池</a> </li>
+            <li><a href="#">矿机</a> </li>
+            <li><a href="#">帮助</a> </li>
+            <li class="active"><a href="#">收益计算机</a> </li>
+        </ul>
+    </nav>
+    <div class="btns">
+        <a href="#" onclick="openFrames('login')">MINER1</a>
+    </div>
+</header>
+
+<!--内容区-->
+<section class="content mt70" id="content">
+    <div class="frame800 mt90 mb20">
+        <div class="table-data">
+            <div class="table-title">
+                <h3>以太坊数据</h3>
+            </div>
+            <ul class="infos" style="background-color: #f7f7f7;">
+                <li style="width: 128px;">
+                    <p>价格（云币网）</p>
+                    <div>￥1408.00</div>
+                </li>
+                <li style="width: 128px;">
+                    <p>全网算力</p>
+                    <div>69.975 TH/s</div>
+                </li>
+                <li style="width: 120px;">
+                    <p>当前难度</p>
+                    <div>1256.785 T</div>
+                </li>
+                <li style="width: 160px;">
+                    <p>每M每日收益 ETH</p>
+                    <div>0.000349 ETH</div>
+                </li>
+                <li style="width: 164px;">
+                    <p>每M每日收益 RMB</p>
+                    <div>0.491 元</div>
+                </li>
+                <li style="width: 92px;">
+                    <p>报块时间</p>
+                    <div>18.7s</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="table-data mt20">
+            <div class="table-title">
+                <h3>以太坊挖矿收益计算器</h3>
+            </div>
+            <div class="table-input-frame">
+                <div class="clearfix mb20 mt20">
+                    <div class="table-input fl">
+                        <input type="text" placeholder="每M日收益">
+                        <span class="unit">ETH</span>
+                    </div>
+                    <div class="table-input fr">
+                        <input type="text" placeholder="币价">
+                        <span class="unit">￥</span>
+                    </div>
+                </div>
+                <div class="clearfix mb20">
+                    <div class="table-input fl">
+                        <input type="text" placeholder="拥有算力">
+                        <div class="select-frame">
+                            <p>MH/s</p>
+                            <ul>
+                                <li><a href="javascript:;">MH/s</a> </li>
+                                <li><a href="javascript:;">MM/s</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-input fr">
+                        <input type="text" placeholder="总功耗">
+                        <span class="unit">W</span>
+                    </div>
+                </div>
+                <div class="clearfix mb40">
+                    <div class="table-input fl">
+                        <input type="text" placeholder="电费">
+                        <span class="unit">￥/度</span>
+                    </div>
+                    <div class="table-input fr">
+                        <input type="text" placeholder="机器成本">
+                        <span class="unit">￥</span>
+                    </div>
+                </div>
+                <div class="btns"><a href="#" class="btn btn-auto">修改</a> </div>
+            </div>
+        </div>
+
+        <div class="table-data mt20">
+            <div class="table-title">
+                <h3>以太坊挖矿收益计算器</h3>
+            </div>
+            <table class="computer-table">
+                <tbody>
+                <tr>
+                    <td>回本时间</td>
+                    <td>预计回本时间为154.35天（5.14月）</td>
+                </tr>
+                <tr>
+                    <td>日收益</td>
+                    <td>日收益<span>0.08</span>ETH，合计<span>113.02</span>元；耗电<span>31.20</span>度，电费<span>9.36</span>元，净收益<span>103.66</span>元。</td>
+                </tr>
+                <tr>
+                    <td>周收益</td>
+                    <td>周收益<span>0.08</span>ETH，合计<span>113.02</span>元；耗电<span>31.20</span>度，电费<span>9.36</span>元，净收益<span>103.66</span>元。</td>
+                </tr>
+                <tr>
+                    <td>月收益</td>
+                    <td>月收益<span>0.08</span>ETH，合计<span>113.02</span>元；耗电<span>31.20</span>度，电费<span>9.36</span>元，净收益<span>103.66</span>元。</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="table-input-frame">
+                <div class="hint">提示：本次计算是基于以太网全网总算力1256.785TH/S和以太币价格1408.00元进行的。<br>区块奖励为每个块5个以太币。不考虑未来挖矿算法的情况。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" style="color: #dddddb;">
+    <span>&copy;2013-2017 PANGOLIN MINER 版权所有</span>
+    <span>QQ群：12335419</span>
+    <span>浙ICP备140113741号-1· 豫公网安备41132502000006号</span>
+</footer>
+
+
+
+</body>
+</html>
+<script>
+    $(function(){
+        //设置最小高度
+        $("#content").css('min-height',$(window).height()-70-106);
+
+        //打开下拉框
+        $(document).on('click',".select-frame p",function(e){
+            $('.select-frame').removeClass('select-frame-slide');
+            $('.select-frame ul').css('height',0)
+            e.stopPropagation();
+            $(this).parent().addClass('select-frame-slide');
+            $(this).next('ul').css('height',$(this).next('ul').find('li').length*32);
+        });
+        //选择下拉框
+        $(document).on('click',".select-frame ul li a",function(e){
+            e.stopPropagation();
+            $(this).parents('ul').prev('p').html($(this).html());
+            $(this).parent().parent().css('height',0);
+            $(this).parents('.select-frame').removeClass('select-frame-slide');
+        });
+        //点击文档关闭下拉框
+        $(document).on('click',function(e){
+            $('.select-frame').removeClass('select-frame-slide');
+            $('.select-frame ul').css('height',0);
+        });
+    })
+</script>
