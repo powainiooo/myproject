@@ -162,6 +162,8 @@
 
         //打开下拉框
         $(document).on('click',".select-frame p",function(e){
+            $('.select-frame').removeClass('select-frame-slide');
+            $('.select-frame ul').css('height',0)
             e.stopPropagation();
             $(this).parent().addClass('select-frame-slide');
             $(this).next('ul').css('height',$(this).next('ul').find('li').length*32);
@@ -190,6 +192,19 @@
         $("#ruleFrame .rules-content").on('click',function(e){
             e.stopPropagation();
         })
+
+
+        //侧边栏导航子项移入放大导航名称效果
+        $(".nav-list ul").hover(
+                function(){
+                    $(this).parents('.nav-list').find('.nav-list-name').addClass('active');
+                    $('.arrow').css('top','535px');
+                },
+                function(){
+                    $(this).parents('.nav-list').find('.nav-list-name').removeClass('active');
+                    $('.arrow').css('top','528px');
+                }
+        )
     });
 
     var isOperaing = false;//是否正在执行某个操作;
