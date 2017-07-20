@@ -89,7 +89,7 @@
 /*
     个人设置侧边栏
 */
-.nav-slide{ width: 200px; position: fixed; top: 0; left: 0; bottom: 0; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(50,50,50,1)),to(rgba(0,0,0,0.85)));}
+.nav-slide{ width: 200px; height: 100%; position: fixed; top: 0; left: 0; bottom: 0; background: #29211f; background: -webkit-gradient(linear,0 100%,100% 100%,from(rgba(50,50,50,1)),to(rgba(0,0,0,0.85)));}
 .nav-slide .name{ font-size: 18px; color: #fff; font-weight: bold; margin: 190px 0 0 45px;}
 .nav-list{ margin: 80px 0 0 45px;}
 .nav-list .nav-list-name{ display: block; font-size: 18px; color: rgb(158,158,159); font-weight: bold; margin-bottom: 20px;transition: all 0.1s linear; -webkit-transition: all 0.1s linear; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear;}
