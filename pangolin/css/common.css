@@ -117,9 +117,9 @@
     组件样式
 */
 .text{ width: 100%; border: 1px solid #000; border-radius: 6px; font-size: 14px; padding: 10px; background-color: #FFF; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
-.text::-webkit-input-placeholder{ color: #000;}
-.text:-moz-placeholder{ color: #000;}
-.text:-ms-input-placeholder{ color: #000;}
+.text::-webkit-input-placeholder{ color: rgb(158,158,159);}
+.text:-moz-placeholder{ color: rgb(158,158,159);}
+.text:-ms-input-placeholder{ color: rgb(158,158,159);}
 .text[readonly]{ background-color: #dcdcdc; border-color: #dcdcdc;}
 
 .identify-line .text{ width: calc(100% - 110px); float: left;}

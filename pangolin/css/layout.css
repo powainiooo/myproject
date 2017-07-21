@@ -161,6 +161,7 @@
 .table-data table tbody tr:nth-child(2n) td{ background-color: #f7f7f7;}
 .table-data .infos{ overflow: hidden;}
 .table-data .infos li{ width: 25%; float: left; padding: 16px 0; border-right: 1px solid #e5e5e5; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+.table-data .infos li:last-child{ border-right: none;}
 .table-data .infos li p{ font-size: 12px; color: rgb(113,112,113); margin-bottom: 5px; margin-left: 10px;}
 .table-data .infos li div{ font-size: 12px; color: #000; margin-left: 10px; font-weight: bold;}
 
@@ -203,9 +204,10 @@
 
 .pool-date{ float: left; margin-left: 45px; margin-top: 30px;}
 .pool-date li{ float: left;  margin-right: 20px; font-size: 18px; color: #9e9e9f;}
-.pool-date li.active{  color: #fff;}
+.pool-date li.active,.pool-date li:hover{  color: #fff;}
 .pool-date li input[type=radio]{ -webkit-appearance: none; display: inline-block; width: 21px; height: 21px;  background: url('../images/icons.png') no-repeat; background-position: -760px -245px; vertical-align: sub;}
 .pool-date li input[type=radio]:checked{ background-position: -787px -245px;}
+.pool-date li:hover input[type=radio]{ background-position: -787px -245px;}
 
 
 /*
@@ -246,9 +248,9 @@
 .table-input-frame{ background-color: #f7f7f7; overflow: hidden;}
 .table-input-frame>.clearfix{ width: 630px; margin-left: auto; margin-right: auto;}
 .table-input-frame .table-input input{ width: 188px; border: 1px solid #000; border-radius: 6px 0 0 6px; float: left; font-size: 16px; padding: 10px; border-right: none; background-color: #fff;}
-.table-input-frame .table-input input::-webkit-input-placeholder{ color: #000;}
-.table-input-frame .table-input input:-moz-placeholder{ color: #000;}
-.table-input-frame .table-input input:-ms-input-placeholder{ color: #000;}
+.table-input-frame .table-input input::-webkit-input-placeholder{ color: rgb(158,158,159);}
+.table-input-frame .table-input input:-moz-placeholder{ color: rgb(158,158,159);}
+.table-input-frame .table-input input:-ms-input-placeholder{ color: rgb(158,158,159);}
 .table-input-frame .table-input .unit{ width: 58px; border: 1px solid #000; border-radius: 0 6px 6px 0; float: left; font-size: 16px; padding: 10px; text-align: center;}
 .table-input-frame .table-input .select-frame{ width: 78px; float: left;}
 .table-input-frame .table-input .select-frame p{ font-size: 16px; height: auto; padding: 10px;  border: 1px solid #000; border-radius: 0 6px 6px 0;}
@@ -260,8 +262,9 @@
 .table-data .computer-table td{ width: 670px; color: #6f6f6f;}
 .table-data .computer-table td span{ color: #000; font-weight: bold; font-size: 18px;}
 
-
-
+.infos-computer{background-color: #f7f7f7;}
+.infos-computer li p{ text-align: center;}
+.infos-computer li div{ margin-left: 5px; margin-right: 5px; text-align: center;}
 
 
 

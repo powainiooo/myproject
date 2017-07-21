@@ -26,6 +26,7 @@
             <li class="active"><a href="#">矿池</a> </li>
             <li><a href="#">矿机</a> </li>
             <li><a href="#">帮助</a> </li>
+            <li><a href="computer.html">收益计算机</a> </li>
         </ul>
     </nav>
     <div class="btns">
@@ -43,11 +44,11 @@
             </ul>
             <ul class="pool-date" id="poolDate">
                 <li class="active">
-                    <input type="radio" name="date" id="hour" checked>
+                    <input type="radio" name="date" id="hour" value="hour" checked>
                     <label for="hour">小时</label>
                 </li>
                 <li>
-                    <input type="radio" name="date" id="day">
+                    <input type="radio" name="date" id="day" value="day">
                     <label for="day">天数</label>
                 </li>
             </ul>
@@ -116,7 +117,7 @@
                         <div>-BTC</div>
                     </li>
                     <li>
-                        <p>已支付<a href="#">支付记录》</a> </p>
+                        <p>已支付<a href="setting-record.html">支付记录》</a> </p>
                         <div>-BTC</div>
                     </li>
                     <li class="bg border">
@@ -222,11 +223,19 @@
         //选择时间
         $("#poolDate li").on('click',function(){
             $(this).addClass('active').siblings('li').removeClass('active');
+            var value = $(this).find('input').val();
+
+            //下面为模拟切换数据
+            if(value == 'hour'){//条件为小时
+                chartOptions.xAxis.data = ['2017/07/01 01:00','2017/07/02 02:00','2017/07/03 03:00','2017/07/04 04:00','2017/07/05 05:00','2017/07/06 06:00','2017/07/07 07:00','2017/07/08 08:00','2017/07/09 09:00','2017/07/10 10:00','2017/07/11 11:00'];
+            }else if(value == 'day'){//条件为天数
+                chartOptions.xAxis.data = ['2017/07/01','2017/07/02','2017/07/03','2017/07/04','2017/07/05','2017/07/06','2017/07/07','2017/07/08','2017/07/09','2017/07/10','2017/07/11'];
+            }
+            chart.setOption(chartOptions);
         });
 
-        //图表
-        chart = echarts.init(document.getElementById('chartFrame'));
-        chart.setOption({
+        //图表  使用的是百度的 echarts
+        var chartOptions = {
             tooltip : {
                 trigger: 'axis',
                 axisPointer:{lineStyle:{width:0}},
@@ -242,12 +251,14 @@
                 containLabel: true
             },
             xAxis :{
-                axisLabel:{textStyle:{color:'#9f9f9f'}},
                 type : 'category',
                 boundaryGap : ['5%','5%'],
                 axisLine:{lineStyle:{color:'#9f9f9f'}},
                 axisTick:{alignWithLabel:true},
-                data : ['16:00','18:00','20:00','00:00','02:00','04:00','06:00','08:00','10:00','12:00','14:00']
+                axisLabel:{textStyle:{color:'#9f9f9f'},formatter:function(value){
+                    return value.substring(value.length-5,value.length);
+                }},
+                data : ['2017/07/01 01:00','2017/07/02 02:00','2017/07/03 03:00','2017/07/04 04:00','2017/07/05 05:00','2017/07/06 06:00','2017/07/07 07:00','2017/07/08 08:00','2017/07/09 09:00','2017/07/10 10:00','2017/07/11 11:00']
             },
             yAxis :{
                 offset:40,
@@ -264,6 +275,8 @@
                     data:[120, 132, 101, 134, 90, 230, 210,100,80,105,95]
                 }
             ]
-        })
+        };
+        chart = echarts.init(document.getElementById('chartFrame'));
+        chart.setOption(chartOptions);
     })
 </script>
