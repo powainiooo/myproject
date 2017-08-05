@@ -42,6 +42,7 @@
 .pro-list li>a{ display: block; overflow: hidden; border-radius: 4px; border: 1px solid #fff;}
 .pro-list li.active>a{ border-color: #7179c6; border-radius: 4px 4px 0 0;}
 .pro-list li .info{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:100%; background-color: #7179c6; border-radius:0 0 4px 4px; display: none; padding: 0.1rem 0; z-index: 10;}
+.pro-list li:nth-child(2n) .info{ left: 0.1rem;}
 .pro-list li .info p{ font-size: 12px; text-align: center; color: #FFF;}
 .pro-list li .info div{ font-size: 14px; text-align: center; color: #FFF;}
 .pro-list li.active .info,.pro-list li.active .btns{ display: block;}
