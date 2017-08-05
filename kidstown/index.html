@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>游戏</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.1.min.js" type="application/javascript"></script>
+    <script src="js/common.js" type="application/javascript"></script>
+    <script src="js/swipe.js" type="application/javascript"></script>
+</head>
+<body>
+<div class="frame top-hint">
+    <div class="fl">Well come to KidsTown store! Let’s start to shopping NOW!</div>
+    <a href="#" class="fr">Login   or  Register</a>
+</div>
+<div class="top-tools">
+    <a href="#"><i class="icons icons-menu"></i></a>
+    <a href="#">
+        <i class="icons icons-bag"></i>
+        <span>0</span>
+    </a>
+    <a href="#"><i class="icons icons-search"></i></a>
+</div>
+<div class="pr">
+    <div id="slider">
+        <div class="swipe-wrap2">
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+            <div class="ovh"><img src="images/pic1.jpg"></div>
+        </div>
+    </div>
+    <a href="javascript:;" class="btn-prev" id="btnPrev1"><i class="icons icons-prev-circle"></i></a>
+    <a href="javascript:;" class="btn-next" id="btnNext1"><i class="icons icons-next-circle"></i></a>
+</div>
+
+<div class="mt3"><img src="images/title1.png"> </div>
+<div class="frame mt3"><img src="images/pic2.jpg"> </div>
+
+<div class="frame clearfix mt8">
+    <div class="fl w50 prr10">
+        <a href="#"><img src="images/pic3.jpg"> </a>
+    </div>
+    <div class="fr w50 prl10">
+        <div class="mrb20">
+            <a href="#"><img src="images/pic4.jpg"> </a>
+        </div>
+        <div>
+            <a href="#"><img src="images/pic5.jpg"> </a>
+        </div>
+    </div>
+</div>
+
+<div class="mt10"><img src="images/title2.png"> </div>
+<div class="frame">
+    <ul class="tag-list">
+        <li class="active"><a href="javascript:;">Filter - all</a> </li>
+        <li><a href="javascript:;">BOYS</a> </li>
+        <li><a href="javascript:;">Girls</a> </li>
+        <li><a href="javascript:;">Dresses & JUMPSUITS</a> </li>
+        <li><a href="javascript:;">TOYS & GAMES</a> </li>
+        <li><a href="javascript:;">UNISEX</a> </li>
+        <li><a href="javascript:;">BABY CLOTHES</a> </li>
+    </ul>
+</div>
+
+<div class="frame">
+    <ul>
+        <li>
+            <a href="javascript:;"><img src="images/pic6.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="images/pic6.jpg"></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    //banner滑动
+    window.mySwipe = new Swipe(document.getElementById('slider'), {
+        startSlide: 0,
+        speed: 400,
+        auto: 0,
+        continuous: true,
+        disableScroll: true,
+        stopPropagation: false
+    });
+    $("#btnPrev1").on('click',function(){
+        mySwipe.prev();
+    })
+    $("#btnNext1").on('click',function(){
+        mySwipe.next();
+    })
+</script>
