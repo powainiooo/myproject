@@ -7,10 +7,14 @@
 .icons-prev-circle{ width: 0.84rem; height: 0.84rem; background-position: -1.5rem 0;}
 .icons-next-circle{ width: 0.84rem; height: 0.84rem; background-position: -2.4rem 0;}
 .icons-prev-half{ width: 0.42rem; height: 0.84rem; background-position: -0.5rem -0.5rem;}
-.icons-next-half{ width: 0.42rem; height: 0.84rem; background-position: -0.5rem -0.5rem;}
+.icons-next-half{ width: 0.42rem; height: 0.84rem; background-position:0 -0.5rem;}
 .icons-heart{ width: 0.74rem; height: 0.74rem; background-position: 0 -1.4rem;}
 .icons-heart{ width: 0.74rem; height: 0.74rem; background-position: 0 -1.4rem;}
 .icons-shopcart{ width: 0.74rem; height: 0.74rem; background-position: -0.8rem -1.4rem;}
+.icons-house{ width: 0.3rem; height: 0.3rem; background-position: -3.5rem 0;}
+.icons-phone{ width: 0.3rem; height: 0.3rem; background-position: -3.5rem -0.4rem;}
+.icons-mail{ width: 0.3rem; height: 0.3rem; background-position: -3.5rem -0.8rem;}
+.icons-earth{ width: 0.3rem; height: 0.3rem; background-position: -3.5rem -1.2rem;}
 
 .top-hint{ margin: 3%;}
 .top-hint div,.top-hint a{ font-size: 0.18rem; color: #bdbebf;}
@@ -19,7 +23,7 @@
 .top-tools a{ float: right; margin-left: 0.3rem; position: relative;}
 .top-tools a span{ width: 0.3rem; height: 0.3rem; background-color: #ff91b8; color: #fff; border-radius: 50%; position: absolute; top: -0.12rem; right: -0.12rem; font-size: 0.1rem; text-align: center; padding-top: 0.02rem;}
 
-#slider{overflow: hidden;visibility: hidden;position: relative; margin: 0.3rem 3%;}
+.slider{overflow: hidden;visibility: hidden;position: relative; margin: 0.3rem 3%;}
 .swipe-wrap2 {overflow: hidden;position: relative;}
 .swipe-wrap2 > div {float:left;width:100%;position: relative;}
 .swipe-wrap2 img{ height:100%;}
@@ -32,3 +36,66 @@
 .tag-list li a{ color: #000;}
 .tag-list li.active{background-color: #7179c6;}
 .tag-list li.active a{ color: #fff;}
+
+.pro-list li{ width: 50%; float: left; padding-right: 0.1rem; margin-bottom: 0.2rem; position: relative;}
+.pro-list li:nth-child(2n){ padding-right: 0; padding-left: 0.1rem;}
+.pro-list li>a{ display: block; overflow: hidden; border-radius: 4px; border: 1px solid #fff;}
+.pro-list li.active>a{ border-color: #7179c6; border-radius: 4px 4px 0 0;}
+.pro-list li .info{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:100%; background-color: #7179c6; border-radius:0 0 4px 4px; display: none; padding: 0.1rem 0;}
+.pro-list li .info p{ font-size: 12px; text-align: center; color: #FFF;}
+.pro-list li .info div{ font-size: 14px; text-align: center; color: #FFF;}
+.pro-list li.active .info,.pro-list li.active .btns{ display: block;}
+.pro-list li .btns{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:50%; margin-top: -0.36rem; text-align: center;display: none; }
+.pro-list li .btns a{ display: inline-block; background-color: rgba(0,0,0,0.6); margin: 0 0.2rem; border-radius: 50%;}
+.pro-list li .btns a i{ display: block;}
+.pro-list li .btns a.active{ background-color: #7179c6;}
+
+.type-list{ overflow: hidden; display: flex; flex-flow: row; flex-wrap: wrap;}
+.type-list a{ width: 33.3%; flex: 0 1 auto; position: relative;}
+.type-list a div{ width: 100%; height: 100%; background-color: rgba(113,121,198,0.5); position: absolute; top:0; left: 0; display: flex; justify-content: center;flex-direction:column;}
+.type-list a div span{ font-size: 12px; color: #FFF; text-align: center;}
+
+.pro-list2 li .info{ display: block; position: static; background-color: transparent;}
+.pro-list2 li .info p{ color: #000; margin: 0.1rem 0;}
+.pro-list2 li .info div{ font-size: 12px; color: #ff91b8;}
+.pro-list2 li>a{ border-radius: 0; border-width: 3px;}
+.pro-list2 li.active>a{  border-color: #d1ebf6;}
+
+.type-swipe-tag{ width: 100%; position: absolute; left: 0; bottom:-10px;}
+.type-swipe-tag ul{ text-align: center;}
+.type-swipe-tag li{ width: 0.5rem; height: 2px; background-color: #d1ebf6; display: inline-block;}
+.type-swipe-tag li.active{ background-color: #7179c6; }
+
+.blog-list li{ width: 50%; float: left; padding-right: 0.1rem; margin-bottom: 0.2rem; position: relative;}
+.blog-list li:nth-child(2n){ padding-right: 0; padding-left: 0.1rem;}
+.blog-list li .date{ float: left; position: relative;}
+.blog-list li .date span{ font-size: 1rem; color: #d1ebf6;}
+.blog-list li .date div{ font-size: 0.36rem; color: #7179c6; position: absolute; top: 0.4rem; left: 0; width: 100%; text-align: center;}
+.blog-list li .title h3{ font-size: 14px; font-weight: bold;}
+.blog-list li .title span{ font-size: 0.14rem; color: #ababab;}
+.blog-list li .details{ font-size: 12px; color: #ababab;}
+.blog-list li a{ font-size: 12px; color: #7179c6; margin-top: 0.5rem; display: block; position: relative; padding-left: 10px;}
+.blog-list li a:before{ content: ''; width: 1px; height: 12px; background-color: #7179c6; position: absolute; top:0; left: 6px; transform: rotateZ(20deg);-webkit-transform: rotateZ(20deg);}
+
+.person-list{ overflow: hidden;}
+.person-list a{ width: 25%; float: left;}
+
+.bottom-hint{ background-color: #7179c6; text-align: center; color: #fff; padding: 0.14rem 0; font-size: 12px;}
+
+.footer{ width: 100%; background-color: #444444; overflow: hidden;}
+.footer h3{ font-size: 16px; color: #ff91b8;}
+.footer .info-list{ margin: 0.14rem 0;}
+.footer .info-list li{ margin-bottom: 0.14rem; font-size: 12px; color: #ababab;}
+.footer .info-list li i{ vertical-align: middle; margin-right: 6px;}
+.footer .tags{ overflow: hidden; margin-top: 0.1rem;}
+.footer .tags li{ float: left; border: 1px solid #ababab; color: #ababab; padding: 0.1rem 0.2rem; border-radius: 4px; margin-right: 0.1rem; margin-bottom: 0.1rem; font-size: 12px;}
+.footer .tags li.active{ color: #fff; border-color: #7179c6; background-color: #7179c6;}
+
+
+
+
+
+
+
+
+
