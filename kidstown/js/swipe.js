@@ -148,6 +148,8 @@ function Swipe(container, options) {
 
     index = to;
     offloadFn(options.callback && options.callback(index, slides[index]));
+
+    options.transitionEnd && options.transitionEnd.call(event, index, slides[index]);
   }
 
   function move(index, dist, speed) {
@@ -278,8 +280,11 @@ function Swipe(container, options) {
       delta = {};
 
       // attach touchmove and touchend listeners
-      element.addEventListener('touchmove', this, false);
-      element.addEventListener('touchend', this, false);
+      if(options.isTouch){
+        element.addEventListener('touchmove', this, false);
+        element.addEventListener('touchend', this, false);
+      }
+
 
     },
     move: function(event) {
@@ -417,6 +422,7 @@ function Swipe(container, options) {
       }
 
       // kill touchmove and touchend event listeners until touchstart called again
+
       element.removeEventListener('touchmove', events, false)
       element.removeEventListener('touchend', events, false)
 
@@ -494,6 +500,7 @@ function Swipe(container, options) {
       stop();
 
       next();
+
 
     },
     stop: function() {

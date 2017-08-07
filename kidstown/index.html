@@ -39,30 +39,77 @@
             <div class="ovh"><img src="images/pic1.jpg"></div>
         </div>
     </div>
-    <a href="javascript:;" class="btn-prev" id="btnPrev1"><i class="icons icons-prev-circle"></i></a>
-    <a href="javascript:;" class="btn-next" id="btnNext1"><i class="icons icons-next-circle"></i></a>
+    <a href="javascript:;" class="btn-prev" id="btnPrev1" style="left: 10px;"><i class="icons icons-prev-circle"></i></a>
+    <a href="javascript:;" class="btn-next" id="btnNext1" style="right: 10px;"><i class="icons icons-next-circle"></i></a>
 </div>
 
 <div class="mt3"><img src="images/title1.png"> </div>
 <div class="frame mt3"><img src="images/pic2.jpg"> </div>
 
-<div class="frame clearfix mt8">
-    <div class="fl w50 prr10">
-        <a href="#"><img src="images/pic3.jpg"> </a>
+
+
+<div class="pr">
+    <div id="slider4" class="slider">
+        <div class="swipe-wrap2">
+            <div class="ovh">
+                <div class=" clearfix">
+                    <div class="fl w50 prr10">
+                        <a href="#"><img src="images/pic3.jpg"> </a>
+                    </div>
+                    <div class="fr w50 prl10">
+                        <div class="mrb20">
+                            <a href="#"><img src="images/pic4.jpg"> </a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="images/pic5.jpg"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ovh">
+                <div class=" clearfix">
+                    <div class="fl w50 prr10">
+                        <a href="#"><img src="images/pic3.jpg"> </a>
+                    </div>
+                    <div class="fr w50 prl10">
+                        <div class="mrb20">
+                            <a href="#"><img src="images/pic4.jpg"> </a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="images/pic5.jpg"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ovh">
+                <div class=" clearfix">
+                    <div class="fl w50 prr10">
+                        <a href="#"><img src="images/pic3.jpg"> </a>
+                    </div>
+                    <div class="fr w50 prl10">
+                        <div class="mrb20">
+                            <a href="#"><img src="images/pic4.jpg"> </a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="images/pic5.jpg"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="fr w50 prl10">
-        <div class="mrb20">
-            <a href="#"><img src="images/pic4.jpg"> </a>
-        </div>
-        <div>
-            <a href="#"><img src="images/pic5.jpg"> </a>
-        </div>
+    <div class="type-swipe-tag2" id="typeSwipeTag2">
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 </div>
 
-<div class="mt10"><img src="images/title2.png"> </div>
+<div class="mt15"><img src="images/title2.png"> </div>
 <div class="frame">
-    <ul class="tag-list">
+    <ul class="tag-list" id="tagList">
         <li class="active"><a href="javascript:;">Filter - all</a> </li>
         <li><a href="javascript:;">BOYS</a> </li>
         <li><a href="javascript:;">Girls</a> </li>
@@ -186,11 +233,38 @@
                     </li>
                 </ul>
             </div>
+            <div class="ovh">
+                <ul class="pro-list clearfix pro-list2">
+                    <li>
+                        <a href="javascript:;"><img src="images/pic8.jpg"></a>
+                        <div class="info">
+                            <p>JACQUARD PRINT DRESS</p>
+                            <div>$24.00</div>
+                        </div>
+                        <div class="btns">
+                            <a href="javascript:;" class="active"><i class="icons icons-heart"></i></a>
+                            <a href="javascript:;"><i class="icons icons-shopcart"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="images/pic8.jpg"></a>
+                        <div class="info">
+                            <p>JACQUARD PRINT DRESS</p>
+                            <div>$24.00</div>
+                        </div>
+                        <div class="btns">
+                            <a href="javascript:;" class="active"><i class="icons icons-heart"></i></a>
+                            <a href="javascript:;"><i class="icons icons-shopcart"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="type-swipe-tag">
+    <div class="type-swipe-tag" id="typeSwipeTag">
         <ul>
             <li class="active"></li>
+            <li></li>
             <li></li>
         </ul>
     </div>
@@ -290,7 +364,7 @@
 <div class="bottom-hint">INSTAGRAM FEED</div>
 <footer class="footer">
     <div class="clearfix mt5 mb5">
-        <div class="w50 fl pl4">
+        <div class="w100 fl pl4">
             <h3>关于米六</h3>
             <ul class="info-list">
                 <li><i class="icons icons-house"></i>福建省泉州市晋江市陈埭镇涵口鞋都路</li>
@@ -299,18 +373,18 @@
                 <li><i class="icons icons-earth"></i>www.cnmi6.com</li>
             </ul>
         </div>
-        <div class="w50 fl">
-            <h3>标签</h3>
-            <ul class="tags">
-                <li class="active">Girl clothing</li>
-                <li>Top</li>
-                <li>Collection</li>
-                <li>new</li>
-                <li>Unisex</li>
-                <li>Gallery</li>
-                <li>Online store</li>
-            </ul>
-        </div>
+        <!--<div class="w50 fl">-->
+            <!--<h3>标签</h3>-->
+            <!--<ul class="tags">-->
+                <!--<li class="active">Girl clothing</li>-->
+                <!--<li>Top</li>-->
+                <!--<li>Collection</li>-->
+                <!--<li>new</li>-->
+                <!--<li>Unisex</li>-->
+                <!--<li>Gallery</li>-->
+                <!--<li>Online store</li>-->
+            <!--</ul>-->
+        <!--</div>-->
     </div>
     <div><img src="images/footer.jpg"> </div>
 </footer>
@@ -322,6 +396,7 @@
         startSlide: 0,
         speed: 400,
         auto: 0,
+        isTouch:false,
         continuous: true,
         disableScroll: false,
         stopPropagation: false
@@ -334,24 +409,36 @@
     });
 
     //打开产品详情
+    var globalSelector = null;
     $(".pro-list li>a").on('click',function(){
+        if(globalSelector != null && globalSelector.hasClass('active')){
+            globalSelector.removeClass('active');
+        }
         if($(this).parent().hasClass('active')){
             $(this).parent().removeClass('active');
         }else{
             $(this).parent().addClass('active');
+            globalSelector = $(this).parent();
         }
     });
 
+    //分类切换
+    $("#tagList li").on('click',function(){
+        $(this).addClass('active').siblings('li').removeClass('active');
+    });
+
     //产品滑动
+    var slideIndex = 0;
     window.mySwipe2 = new Swipe(document.getElementById('slider2'), {
         startSlide: 0,
         speed: 400,
         auto: 0,
+        isTouch:false,
         continuous: true,
         disableScroll: false,
         stopPropagation: false,
         transitionEnd:function(index){
-            $(".type-swipe-tag li").eq(index).addClass('active').siblings('li').removeClass('active');
+            $("#typeSwipeTag li").eq(index).addClass('active').siblings('li').removeClass('active');
         }
     });
     $("#btnPrev2").on('click',function(){
@@ -366,6 +453,7 @@
         startSlide: 0,
         speed: 400,
         auto: 0,
+        isTouch:false,
         continuous: true,
         disableScroll: false,
         stopPropagation: false
@@ -375,5 +463,18 @@
     });
     $("#btnNext3").on('click',function(){
         mySwipe3.next();
+    });
+
+    window.mySwipe4 = new Swipe(document.getElementById('slider4'), {
+        startSlide: 0,
+        speed: 400,
+        auto: 0,
+        isTouch:true,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        transitionEnd:function(index){
+            $("#typeSwipeTag2 li").eq(index).addClass('active').siblings('li').removeClass('active');
+        }
     });
 </script>

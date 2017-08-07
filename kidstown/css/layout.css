@@ -67,6 +67,11 @@
 .type-swipe-tag li{ width: 0.5rem; height: 2px; background-color: #d1ebf6; display: inline-block;}
 .type-swipe-tag li.active{ background-color: #7179c6; }
 
+.type-swipe-tag2{ width: 100%; position: absolute; left: 0; bottom:-30px;}
+.type-swipe-tag2 ul{ text-align: center;}
+.type-swipe-tag2 li{ width: 10px;height: 10px; margin: 0 5px; border-radius: 50%; background-color: #d1ebf6; display: inline-block;}
+.type-swipe-tag2 li.active{ background-color: #7179c6; }
+
 .blog-list li{ width: 50%; float: left; padding-right: 0.1rem; margin-bottom: 0.2rem; position: relative;}
 .blog-list li:nth-child(2n){ padding-right: 0; padding-left: 0.1rem;}
 .blog-list li .date{ float: left; position: relative;}
