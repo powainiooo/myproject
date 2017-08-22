@@ -34,14 +34,14 @@
 .tag-list{ margin: 5% 0; overflow: hidden;}
 .tag-list li{ float: left; margin-right: 0.2rem; padding: 0.1rem 0.2rem; font-size: 12px; background-color: #f5f6f6; border-radius: 3px; margin-bottom: 0.2rem;}
 .tag-list li a{ color: #000;}
-.tag-list li.active{background-color: #7179c6;}
+.tag-list li.active{background-color: #5985c0;}
 .tag-list li.active a{ color: #fff;}
 
 .pro-list li{ width: 50%; float: left; padding-right: 0.1rem; margin-bottom: 0.2rem; position: relative;}
 .pro-list li:nth-child(2n){ padding-right: 0; padding-left: 0.1rem;}
 .pro-list li>a{ display: block; overflow: hidden; border-radius: 4px; border: 1px solid #fff;}
-.pro-list li.active>a{ border-color: #7179c6; border-radius: 4px 4px 0 0;}
-.pro-list li .info{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:100%; background-color: #7179c6; border-radius:0 0 4px 4px; display: none; padding: 0.1rem 0; z-index: 10;}
+.pro-list li.active>a{ border-color: #5985c0; border-radius: 4px 4px 0 0;}
+.pro-list li .info{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:100%; background-color: #5985c0; border-radius:0 0 4px 4px; display: none; padding: 0.1rem 0; z-index: 10;}
 .pro-list li:nth-child(2n) .info{ left: 0.1rem;}
 .pro-list li .info p{ font-size: 12px; text-align: center; color: #FFF;}
 .pro-list li .info div{ font-size: 14px; text-align: center; color: #FFF;}
@@ -49,7 +49,7 @@
 .pro-list li .btns{ width: calc(100% - 0.1rem);width: -webkit-calc(100% - 0.1rem); position: absolute; left: 0; top:50%; margin-top: -0.36rem; text-align: center;display: none; z-index: 10; }
 .pro-list li .btns a{ display: inline-block; background-color: rgba(0,0,0,0.6); margin: 0 0.2rem; border-radius: 50%;}
 .pro-list li .btns a i{ display: block;}
-.pro-list li .btns a.active{ background-color: #7179c6;}
+.pro-list li .btns a.active{ background-color: #5985c0;}
 
 .type-list{ overflow: hidden; display: flex; flex-flow: row; flex-wrap: wrap;}
 .type-list a{ width: 33.3%; flex: 0 1 auto; position: relative;}
@@ -58,14 +58,14 @@
 
 .pro-list2 li .info{ display: block; position: static; background-color: transparent;}
 .pro-list2 li .info p{ color: #000; margin: 0.1rem 0;}
-.pro-list2 li .info div{ font-size: 12px; color: #ff91b8;}
+.pro-list2 li .info div{ font-size: 12px; color: #5985c0;}
 .pro-list2 li>a{ border-radius: 0; border-width: 3px;}
-.pro-list2 li.active>a{  border-color: #d1ebf6;}
+.pro-list2 li.active>a{  border-color: #5985c0;}
 
 .type-swipe-tag{ width: 100%; position: absolute; left: 0; bottom:-10px;}
 .type-swipe-tag ul{ text-align: center;}
 .type-swipe-tag li{ width: 0.5rem; height: 2px; background-color: #d1ebf6; display: inline-block;}
-.type-swipe-tag li.active{ background-color: #7179c6; }
+.type-swipe-tag li.active{ background-color: #5985c0; }
 
 .type-swipe-tag2{ width: 100%; position: absolute; left: 0; bottom:-30px;}
 .type-swipe-tag2 ul{ text-align: center;}
