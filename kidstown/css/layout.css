@@ -27,6 +27,11 @@
 .swipe-wrap2 {overflow: hidden;position: relative;}
 .swipe-wrap2 > div {float:left;width:100%;position: relative;}
 .swipe-wrap2 img{ height:100%;}
+.slider-mid{ width: 100%; position: absolute; top: 0; left: 0; z-index: 100;}
+.slider-mid img{ width: 34%; margin: 0 auto;}
+.mitlist{ width: 34%; position: absolute; bottom: 5%; left: 33%;}
+.mitlist li{ width: 4px; height: 4px; border-radius: 50%; background-color: #d1ebf6; float: left; margin-top: 1px; margin-right: 3px;}
+.mitlist li.active{ width: 6px; height: 6px; background-color: #5985c0; margin-top: 0;}
 
 .btn-prev{ position: absolute; top:50%; left: 0; margin-top: -0.42rem;}
 .btn-next{ position: absolute; top:50%; right: 0; margin-top: -0.42rem;}

@@ -44,7 +44,21 @@
 </div>
 
 <div class="mt3"><img src="images/title1.png"> </div>
-<div class="frame mt3"><img src="images/pic2.jpg"> </div>
+<div class="pr">
+    <div id="slider3" class="slider">
+        <div class="swipe-wrap2">
+            <div class="ovh"><img src="images/pic2.jpg"></div>
+            <div class="ovh"><img src="images/pic2.jpg"></div>
+            <div class="ovh"><img src="images/pic2.jpg"></div>
+        </div>
+    </div>
+    <div class="slider-mid" id="sliderMid"><img src="images/pic21.jpg"> </div>
+    <ul class="mitlist">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 
 
 
@@ -438,21 +452,36 @@
     });
 
     //产品滑动
-//    window.mySwipe3 = new Swipe(document.getElementById('slider3'), {
-//        startSlide: 0,
-//        speed: 400,
-//        auto: 0,
-//        isTouch:false,
-//        continuous: true,
-//        disableScroll: false,
-//        stopPropagation: false
-//    });
-//    $("#btnPrev3").on('click',function(){
-//        mySwipe3.prev();
-//    });
-//    $("#btnNext3").on('click',function(){
-//        mySwipe3.next();
-//    });
+    window.mySwipe3 = new Swipe(document.getElementById('slider3'), {
+        startSlide: 0,
+        speed: 400,
+        auto: 0,
+        isTouch:true,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        transitionEnd:function(index){
+            $(".mitlist li").eq(index).addClass('active').siblings('li').removeClass('active');
+        }
+    });
+    var sx;
+    $("#sliderMid").on('touchstart',function(){
+        if(event.targetTouches.length == 1){
+            var touch = event.targetTouches[0];
+            sx = touch.pageX;
+        }
+    });
+    $("#sliderMid").on('touchend',function(){
+        if(event.changedTouches.length == 1){
+            var touch = event.changedTouches[0];
+            var ex = touch.pageX;
+            if(ex > sx + 100){
+                mySwipe3.prev();
+            }else if(sx > ex + 100){
+                mySwipe3.next();
+            }
+        }
+    });
 
     window.mySwipe4 = new Swipe(document.getElementById('slider4'), {
         startSlide: 0,
