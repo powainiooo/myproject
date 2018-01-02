@@ -1,7 +1,84 @@
-.page-frame{ width: 100%; min-height:100%; position: absolute; top: 0; left: 0;}
-#welcomePage{ background-color: #000; z-index: 10;}
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'huakang';
+    src:url('../css/HelveticaNeue.ttc')  format('truetype'); /* Safari, Android, iOS */
+}
+.huakang{ font-family: 'huakang';}
+
+.page-frame{ width: 100%; height:100%; position: absolute; top: 0; left: 0; overflow-y: scroll;}
+.page-frame::-webkit-scrollbar{ width: 6px; background-color: #fff;}
+.page-frame::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
+#welcomePage{ background-color: #000; z-index: 10; display: none;}
+#welcomePage::-webkit-scrollbar{ width: 0px; background-color: #fff;}
 .intro{ width: 1200px; font-size: 12px; color: #fff;position: absolute; top: 50%; left: 50%; margin: -100px 0 0 -600px; text-align: center; opacity: 0;}
 .intro p{ margin-bottom: 10px;}
 
 .logo{ width: 78px; position: absolute; top: 50%; left: 50%; margin: 170px 0 0 -39px; z-index: 1000; opacity: 0;}
 #logoBlack{ position: absolute; top: 0; left: 0; opacity: 0;}
+
+.worker-list{ width: 100%; overflow: hidden; position: relative; z-index: 5; margin-top: 8%;}
+.worker-list li{ width: 190px; height: 250px; float: left; margin-right: 12px; background-size: 100% 100%;}
+
+.about-intro,.contact-info{ width: 50%; float: right; padding: 90px 50px 0 50px; position: relative; z-index: 5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;}
+.about-intro>div{ margin-bottom: 50px; overflow: hidden;}
+.about-intro>div p{ font-size: 16px; font-weight: bold; width: 230px; float: left;}
+.about-intro>div div{ font-size: 12px; color: rgb(113,112,113); margin-left: 230px; line-height: 2;}
+
+.navs{ width: 46%; position: fixed; bottom: 20px; left: 50px;}
+.navs>div{ margin-bottom: 30px;}
+.navs>div img{ width: 100%;}
+.navs>ul{ overflow: hidden; margin-bottom: 30px;}
+.navs>ul li{ width: 50%; float: left;}
+.navs>ul li a{ width: 50%; display: block;}
+.navs>ul li a img{ width: 100%;}
+.navs>p{ font-size: 12px; color: rgb(179,179,180);}
+
+.contact-info{ height: 97%; padding: 0 50px;}
+.contact-info>div{ height: 17%;}
+.contact-info>div:first-child{ margin-top: 20%;}
+.contact-info>div p{ font-size: 24px; width: 230px; float: left;}
+.contact-info>div p span{ font-size: 16px;}
+.contact-info>div div{ font-size: 12px; color: rgb(113,112,113); margin-left: 230px; line-height: 2;}
+
+.pro-list{ width: 100%; margin-top: 100px; overflow: hidden;}
+.pro-list ul{ width: 100%; overflow: hidden; margin-left: 50px;}
+.pro-list ul li{ width: 24%; float: left; margin-right: 40px;}
+.pro-list ul li a{ display: block;  position: relative; overflow: hidden;}
+.pro-list ul li a:first-child{ margin-bottom: 36px;}
+.pro-list ul li img{ width: 100%; display: block;}
+.pro-list ul li div{ width: 100%; background-color: #000; font-size: 16px; color: #fff; padding: 14px 18px; position: absolute; left: 0; bottom: -50px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;}
+.pro-list ul li a:hover div{ bottom: 0;}
+
+.worker-intro{ width: 400px; margin: 100px auto;}
+.worker-intro h3{ font-size: 48px; font-weight: bold; margin-bottom: 30px;}
+.worker-intro ul{ overflow: hidden;}
+.worker-intro li{ float: left; margin-right: 40px;}
+.worker-intro li p{ font-size: 18px; font-weight: bold; margin-bottom: 20px;}
+.worker-intro li div{ font-size: 12px;}
+
+.detail-list{ overflow: hidden; margin-right: 50px; margin-top: 100px;}
+.detail-list ul{ margin-left: 42%; overflow: hidden;}
+.detail-list ul li{ width: 58%; float: left; margin-right: 50px;}
+.detail-list ul li img{ width: 100%;}
+
+.nav-bars{ float: right;}
+.nav-bars a{ display: block; float: left; width: 50px; height: 2px; background-color: rgb(218,219,219); margin-left: 6px;}
+.nav-bars a.active{ background-color: #000;}
+
+
+
+
+
+
+
+
