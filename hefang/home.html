@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <title>首页</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/layout.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.fullpage.min.css" rel="stylesheet" type="text/css">
     <!-- html5.js for IE less than 9 -->
@@ -20,7 +19,44 @@
 </head>
 
 <body>
+<div class="logo" id="logo">
+    <img src="images/logoWhite.png" id="logoWhite">
+    <img src="images/logoBlack.png" id="logoBlack">
+</div>
 
+<div class="page-frame" id="welcomePage">
+    <div class="intro" id="intro">
+        <p>To exploring for a higher level of design orientation is the fundamental to achieve our optimum capabilties.We devote ourselves to offer out customers and organizations a better solution.</p>
+        <p>探索寻求设计方向的更高层次，是促进我们实现最佳能力的根本，並为企业及组织团体带来更好的解决方案。</p>
+    </div>
+</div>
 
 </body>
 </html>
+<script>
+    $(function(){
+        $("#intro").animate({
+            "opacity":1,
+            "margin-top":"-26px"
+        },2000);
+        $("#logo").animate({
+            "opacity":1,
+            "margin-top":"100px"
+        },2000);
+
+        setTimeout(function(){
+            $("#intro").animate({
+                "opacity":0
+            },500);
+            $("#logo").animate({
+                "top":"0",
+                "margin-top":"15px"
+            },2000,"easeInOutQuad");
+            $("#welcomePage").fadeOut(2000);
+            $("#logoBlack").animate({
+                "opacity":"1"
+            },2000,"easeInOutQuad");
+
+        },4000);
+    })
+</script>
