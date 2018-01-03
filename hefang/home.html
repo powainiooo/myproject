@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Keywords" content="">
     <meta name="description" content="">
     <title>首页</title>
@@ -31,8 +31,8 @@
     </div>
 </div>
 
-<div class="page-frame" id="aboutPage" style="display: none;">
-    <div class="worker-list">
+<div class="page-frame" id="aboutPage">
+    <div class="worker-list" id="workerList">
         <ul>
             <li style="background-image: url('images/worker1.png')"></li>
             <li style="background-image: url('images/worker2.png')"></li>
@@ -52,14 +52,14 @@
                 <div>何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）何 方 设 计 事 务 所（H O）</div>
             </div>
         </div>
-        <div class="navs">
-            <div><img src="images/about-large.jpg"> </div>
-            <ul>
-                <li><a href="javascript:;"><img src="images/works-small.jpg"> </a> </li>
-                <li><a href="javascript:;"><img src="images/contacts-small.jpg"> </a> </li>
-            </ul>
-            <p class="copyright">Copyright HO All Rights Reserved.</p>
-        </div>
+    </div>
+    <div class="navs">
+        <div><img src="images/about-large.jpg"> </div>
+        <ul>
+            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
+        </ul>
+        <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
 </div>
 
@@ -87,8 +87,8 @@
     <div class="navs">
         <div><img src="images/contacts-large.jpg"> </div>
         <ul>
-            <li><a href="javascript:;"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;"><img src="images/works-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.jpg"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -138,6 +138,8 @@
                 </a>
             </li>
         </ul>
+        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftPro"><img src="images/arrowLeft.png"></a>
+        <a href="javascript:;" class="arrow arrow-right" id="arrowRightPro"><img src="images/arrowRight.png"></a>
     </div>
     <div class="clearfix">
         <div style="width: 50%; float: right;">
@@ -167,21 +169,23 @@
     <div class="navs">
         <div><img src="images/works-large.jpg"> </div>
         <ul>
-            <li><a href="javascript:;"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;"><img src="images/contacts-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
 </div>
 
-<div class="page-frame" id="detailPage">
+<div class="page-frame" id="detailPage" style="display: none;">
     <div class="detail-list" id="detailList">
         <ul>
             <li><img src="images/goods1.jpg"> </li>
             <li><img src="images/goods2.jpg"> </li>
         </ul>
+        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftDetail"><img src="images/arrowLeft.png"></a>
+        <a href="javascript:;" class="arrow arrow-right" id="arrowRightDetail"><img src="images/arrowRight.png"></a>
         <div class="clearfix">
-            <div class="nav-bars">
+            <div class="nav-bars" id="navBars">
                 <a href="javascript:;" class="active"></a>
                 <a href="javascript:;"></a>
             </div>
@@ -198,8 +202,8 @@
     <div class="navs">
         <div><img src="images/works-large.jpg"> </div>
         <ul>
-            <li><a href="javascript:;"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;"><img src="images/contacts-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -209,6 +213,11 @@
 <script>
     $(function(){
         initSize();
+        workerMove();
+        proMove();
+        detailMove();
+        navMove();
+
         $("#intro").animate({
             "opacity":1,
             "margin-top":"-26px"
