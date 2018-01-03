@@ -18,7 +18,7 @@
     <script src="js/common.js"></script>
 </head>
 
-<body>
+<body onresize="initSize()">
 <div class="logo" id="logo">
     <img src="images/logoWhite.png" id="logoWhite">
     <img src="images/logoBlack.png" id="logoBlack">
@@ -54,10 +54,10 @@
         </div>
     </div>
     <div class="navs">
-        <div><img src="images/about-large.jpg"> </div>
+        <div><img src="images/about-large.png"> </div>
         <ul>
-            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.jpg"> </a> </li>
-            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.png"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.png"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -85,10 +85,10 @@
         </div>
     </div>
     <div class="navs">
-        <div><img src="images/contacts-large.jpg"> </div>
+        <div><img src="images/contacts-large.png"> </div>
         <ul>
-            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.png"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="workerPage"><img src="images/works-small.png"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -138,8 +138,8 @@
                 </a>
             </li>
         </ul>
-        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftPro"><img src="images/arrowLeft.png"></a>
-        <a href="javascript:;" class="arrow arrow-right" id="arrowRightPro"><img src="images/arrowRight.png"></a>
+        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftPro"><img src="images/arrowLeft.jpg"></a>
+        <a href="javascript:;" class="arrow arrow-right" id="arrowRightPro"><img src="images/arrowRight.jpg"></a>
     </div>
     <div class="clearfix">
         <div style="width: 50%; float: right;">
@@ -167,10 +167,10 @@
         </div>
     </div>
     <div class="navs">
-        <div><img src="images/works-large.jpg"> </div>
+        <div><img src="images/works-large.png"> </div>
         <ul>
-            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.png"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.png"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -182,8 +182,8 @@
             <li><img src="images/goods1.jpg"> </li>
             <li><img src="images/goods2.jpg"> </li>
         </ul>
-        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftDetail"><img src="images/arrowLeft.png"></a>
-        <a href="javascript:;" class="arrow arrow-right" id="arrowRightDetail"><img src="images/arrowRight.png"></a>
+        <a href="javascript:;" class="arrow arrow-left" id="arrowLeftDetail"><img src="images/arrowLeft.jpg"></a>
+        <a href="javascript:;" class="arrow arrow-right" id="arrowRightDetail"><img src="images/arrowRight.jpg"></a>
         <div class="clearfix">
             <div class="nav-bars" id="navBars">
                 <a href="javascript:;" class="active"></a>
@@ -200,10 +200,10 @@
         </div>
     </div>
     <div class="navs">
-        <div><img src="images/works-large.jpg"> </div>
+        <div><img src="images/works-large.png"> </div>
         <ul>
-            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.jpg"> </a> </li>
-            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.jpg"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="aboutPage"><img src="images/about-small.png"> </a> </li>
+            <li><a href="javascript:;" class="navBtn" data-page="contactsPage"><img src="images/contacts-small.png"> </a> </li>
         </ul>
         <p class="copyright">Copyright HO All Rights Reserved.</p>
     </div>
@@ -241,6 +241,12 @@
             },2000,"easeInOutQuad");
 
         },4000);
+
+        //点击产品进入详情页
+        $("#proList .item").on('click',function(){
+            $("#workerPage").fadeOut(1000);
+            $("#detailPage").fadeIn(1000);
+        });
     });
 
     function initSize(){
@@ -252,5 +258,11 @@
         var detailLen = $("#detailList li").length;
         $("#detailList li").css("width",ww*0.58);
         $("#detailList ul").css("width",(ww*0.58+50)*detailLen);
+
+        var proh = (ww*0.24*220/460)*2+36;
+        $("#arrowLeftPro,#arrowRightPro").width(proh*50/630);
+
+        var detailh = ww*0.58*630/1120;
+        $("#arrowLeftDetail,#arrowRightDetail").width(detailh*50/630);
     }
 </script>

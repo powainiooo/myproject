@@ -61,9 +61,10 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 
 .pro-list:hover .arrow{ display: block;}
 .detail-list:hover .arrow{ display: block;}
-.arrow{ position: absolute; top: 50%; margin-top: -17px; z-index: 10; display: none;}
-#arrowLeftPro,#arrowLeftDetail{ left: 10px;}
-#arrowRightPro,#arrowRightDetail{ right: 10px;}
+.arrow{ width: auto; height: 100%; position: absolute; top: 0%; margin-top: 0px; z-index: 10; display: none;}
+.arrow img{ width: 100%; height: 100%;}
+#arrowLeftPro,#arrowLeftDetail{ left: 0;}
+#arrowRightPro,#arrowRightDetail{ right: 0;}
 
 .worker-intro{ width: 400px; margin: 60px auto 0 auto;}
 .worker-intro h3{ font-size: 48px; font-weight: bold; margin-bottom: 30px;}
