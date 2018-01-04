@@ -230,6 +230,8 @@
 <script>
     $(function(){
         initSize();
+        setInterval(initSize,500);
+        setInterval(initSize,1000);
         workerMove();
         proMove();
         detailMove();
@@ -257,7 +259,8 @@
             $("#logoBlack").animate({
                 "opacity":"1"
             },2000,"easeInOutQuad",function(){
-                $("#logoWhite").hide()
+                $("#logoWhite").hide();
+                initSize();
             });
 
         },4000);
