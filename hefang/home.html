@@ -157,24 +157,22 @@
                     <p class="normal"><img src="images/all-normal.png"> </p>
                     <p class="large"><img src="images/all-large.png"> </p>
                 </a>
-                <div>
-                    <a href="javascript:;" data-type="web">
-                        <p class="normal"><img src="images/web-normal.png"> </p>
-                        <p class="large"><img src="images/web-large.png"> </p>
-                    </a>
-                    <a href="javascript:;" data-type="graphic">
-                        <p class="normal"><img src="images/graphic-normal.png"> </p>
-                        <p class="large"><img src="images/graphic-large.png"> </p>
-                    </a>
-                    <a href="javascript:;" data-type="vi">
-                        <p class="normal"><img src="images/vi-normal.png"> </p>
-                        <p class="large"><img src="images/VI-large.png"> </p>
-                    </a>
-                    <a href="javascript:;" data-type="interior">
-                        <p class="normal"><img src="images/interior-normal.png"> </p>
-                        <p class="large"><img src="images/interior-large.png"> </p>
-                    </a>
-                </div>
+                <a href="javascript:;" data-type="web">
+                    <p class="normal"><img src="images/web-normal.png"> </p>
+                    <p class="large"><img src="images/web-large.png"> </p>
+                </a>
+                <a href="javascript:;" data-type="graphic">
+                    <p class="normal"><img src="images/graphic-normal.png"> </p>
+                    <p class="large"><img src="images/graphic-large.png"> </p>
+                </a>
+                <a href="javascript:;" data-type="vi">
+                    <p class="normal"><img src="images/vi-normal.png"> </p>
+                    <p class="large"><img src="images/VI-large.png"> </p>
+                </a>
+                <a href="javascript:;" data-type="interior">
+                    <p class="normal"><img src="images/interior-normal.png"> </p>
+                    <p class="large"><img src="images/interior-large.png"> </p>
+                </a>
             </div>
         </div>
     </div>
@@ -258,7 +256,9 @@
             $("#footer").fadeIn(2000);
             $("#logoBlack").animate({
                 "opacity":"1"
-            },2000,"easeInOutQuad");
+            },2000,"easeInOutQuad",function(){
+                $("#logoWhite").hide()
+            });
 
         },4000);
 
@@ -289,12 +289,15 @@
         $("#detailList ul").css("width",(ww*0.58+50)*detailLen);
 
         var proh = (ww*0.24*220/460)*2+36;
-        $("#arrowLeftPro,#arrowRightPro").width(proh*60/630);
+        $("#arrowLeftPro,#arrowRightPro").width(proh*55/630);
 
         var detailh = ww*0.58*630/1120;
-        $("#arrowLeftDetail,#arrowRightDetail").width(detailh*60/630);
+        $("#arrowLeftDetail,#arrowRightDetail").width(detailh*55/630);
 
         var navsh = parseInt($("#aboutNavs").height());
         $("#workerList").css("margin-top",wh-navsh-20-250-90);
+
+        var mt = (wh-100-180-proh)/2;
+        $("#proType").css("margin-top",mt-10);
     }
 </script>
