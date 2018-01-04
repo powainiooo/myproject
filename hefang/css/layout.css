@@ -139,6 +139,7 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 
 .pro-type{ width: 540px; margin: 0 auto 0 auto; overflow: hidden; position: relative;}
 .pro-type>a{float: left; margin-top: 90px;}
+.pro-type>a:hover{ opacity: 0.4;}
 .pro-type a .normal{ display: block;}
 .pro-type a .large{ display: none;}
 .pro-type a.active{ position: absolute; top: 0; left: 0; margin-top: 0;}
