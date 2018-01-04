@@ -10,7 +10,7 @@
 .page-frame{ width: 100%; height:100%; position: absolute; top: 0; left: 0;}
 body::-webkit-scrollbar{ width: 6px; background-color: #fff;}
 body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
-#welcomePage{ background-color: #000; z-index: 10;}
+#welcomePage{ background-color: #000; z-index: 200;}
 #welcomePage::-webkit-scrollbar{ width: 0px; background-color: #fff;}
 .intro{ width: 1200px; font-size: 12px; color: #fff;position: absolute; top: 50%; left: 50%; margin: -100px 0 0 -600px; text-align: center; opacity: 0;}
 .intro p{ margin-bottom: 10px;}
@@ -18,7 +18,7 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 .logo{ width: 78px; position: fixed; top: 50%; left: 50%; margin: 170px 0 0 -39px; z-index: 1000; opacity: 0;}
 #logoBlack{ position: absolute; top: 0; left: 0; opacity: 0;}
 
-.worker-list{ width: 100%; overflow: hidden; position: relative; z-index: 5; margin-top: 8%;}
+.worker-list{ width: 100%; overflow: hidden; position: relative; margin-top: 8%;}
 .worker-list li{ width: 190px; height: 250px; float: left; margin-right: 12px; background-size: 100% 100%;}
 
 .about-intro,.contact-info{ width: 50%; float: right; padding: 90px 50px 0 50px; position: relative; z-index: 5;
@@ -29,14 +29,14 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 .about-intro>div p{ font-size: 16px; font-weight: bold; width: 230px; float: left;}
 .about-intro>div div{ font-size: 12px; color: rgb(113,112,113); margin-left: 230px; line-height: 2;}
 
-.navs{ width: 46%; position: fixed; bottom: 20px; left: 50px;}
+.navs{ width: 46%; position: fixed; bottom: 20px; left: 50px; z-index: 10;}
 .navs>div{ margin-bottom: 30px;}
 .navs>div img{ width: 100%;}
 .navs>ul{ overflow: hidden; margin-bottom: 30px;}
 .navs>ul li{ width: 50%; float: left;}
 .navs>ul li a{ width: 50%; display: block;}
 .navs>ul li a img{ width: 100%;}
-.navs>p{ font-size: 12px; color: rgb(179,179,180);}
+.navs>ul li:hover{ opacity: 0.4;}
 
 .contact-info{ height: 97%; padding: 0 50px;}
 .contact-info>div{ height: 17%;}
@@ -45,24 +45,68 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 .contact-info>div p span{ font-size: 16px;}
 .contact-info>div div{ font-size: 12px; color: rgb(113,112,113); margin-left: 230px; line-height: 2;}
 
-.pro-list{ width: 100%; margin-top: 100px; overflow: hidden; position: relative;}
+.pro-list{ width: 100%; overflow: hidden; position: relative;
+    -webkit-transition: all 0.3s ease-in-out 0.06s;
+    -moz-transition: all 0.3s ease-in-out 0.06s;
+    -ms-transition: all 0.3s ease-in-out 0.06s;
+    -o-transition: all 0.3s ease-in-out 0.06s;
+    transition: all 0.3s ease-in-out 0.06s;}
 .pro-list ul{ width: 100%; overflow: hidden; margin-left: 50px;}
-.pro-list ul li{ width: 24%; float: left; margin-right: 40px;}
+.pro-list ul li{ width: 24%; float: left; margin-right: 50px;}
 .pro-list ul li a{ display: block;  position: relative; overflow: hidden;}
 .pro-list ul li a:first-child{ margin-bottom: 36px;}
 .pro-list ul li img{ width: 100%; display: block;}
-.pro-list ul li div{ width: 100%; background-color: #000; font-size: 16px; color: #fff; padding: 14px 18px; position: absolute; left: 0; bottom: -50px;
+.pro-list ul li div{ width: 100%; background-color: #000; font-size: 16px; color: #fff; padding: 2% 5%; position: absolute; left: 0; bottom: -50px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;}
 .pro-list ul li a:hover div{ bottom: 0;}
+.pro-list ul li div span{ opacity: 0;-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out 0.2s;}
+.pro-list ul li a:hover div span{ opacity: 1;}
 
-.pro-list:hover .arrow{ display: block;}
-.detail-list:hover .arrow{ display: block;}
-.arrow{ width: auto; height: 100%; position: absolute; top: 0%; margin-top: 0px; z-index: 10; display: none;}
-.arrow img{ width: 100%; height: 100%;}
+.pro-list-frame{ width: 100%; position: relative; overflow: hidden; margin-top: 100px;}
+/*.pro-list-frame:hover .pro-list,.pro-list-frame:hover .detail-list{*/
+    /*-webkit-transform: translate(-40px, 0);*/
+    /*-moz-transform: translate(-40px, 0);*/
+    /*-ms-transform: translate(-40px, 0);*/
+    /*-o-transform: translate(-40px, 0);*/
+    /*transform: translate(-40px, 0);}*/
+.arrow{ width: auto; height: 100%; background-color: #fff; position: absolute; top: 0; z-index: 10; opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out 0.06s;
+    -moz-transition: all 0.3s ease-in-out 0.06s;
+    -ms-transition: all 0.3s ease-in-out 0.06s;
+    -o-transition: all 0.3s ease-in-out 0.06s;
+    transition: all 0.3s ease-in-out 0.06s;}
+.arrow img{ width: 70%; position: relative; top: 50%; margin: -14px auto 0 auto; display: block;
+    -webkit-transition: all 0.3s ease-in-out 0.16s;
+    -moz-transition: all 0.3s ease-in-out 0.16s;
+    -ms-transition: all 0.3s ease-in-out 0.16s;
+    -o-transition: all 0.3s ease-in-out 0.16s;
+    transition: all 0.3s ease-in-out 0.16s;}
+.arrow-left,.arrow-left img{
+    -webkit-transform: translate(-40px, 0);
+    -moz-transform: translate(-40px, 0);
+    -ms-transform: translate(-40px, 0);
+    -o-transform: translate(-40px, 0);
+    transform: translate(-40px, 0);}
+.arrow-right,.arrow-right img{
+    -webkit-transform: translate(40px, 0);
+    -moz-transform: translate(40px, 0);
+    -ms-transform: translate(40px, 0);
+    -o-transform: translate(40px, 0);
+    transform: translate(40px, 0); }
+.pro-list-frame:hover .arrow-left,.pro-list-frame:hover .arrow-right,.pro-list-frame:hover .arrow-left img,.pro-list-frame:hover .arrow-right img{
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); opacity: 1;}
 #arrowLeftPro,#arrowLeftDetail{ left: 0;}
 #arrowRightPro,#arrowRightDetail{ right: 0;}
 
@@ -73,7 +117,12 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 .worker-intro li p{ font-size: 18px; font-weight: bold; margin-bottom: 20px;}
 .worker-intro li div{ font-size: 12px;}
 
-.detail-list{ overflow: hidden; margin-right: 50px; margin-top: 100px; position: relative;}
+.detail-list{ overflow: hidden; margin-right: 50px; position: relative;
+    -webkit-transition: all 0.3s ease-in-out 0.06s;
+    -moz-transition: all 0.3s ease-in-out 0.06s;
+    -ms-transition: all 0.3s ease-in-out 0.06s;
+    -o-transition: all 0.3s ease-in-out 0.06s;
+    transition: all 0.3s ease-in-out 0.06s;}
 .detail-list ul{ margin-left: 42%; overflow: hidden;}
 .detail-list ul li{ width: 58%; float: left; margin-right: 50px;}
 .detail-list ul li img{ width: 100%;}
@@ -83,9 +132,17 @@ body::-webkit-scrollbar-thumb{ width: 6px; background-color: #aaa;}
 .nav-bars a.active{ background-color: #000;}
 
 
+.footer{ position: fixed; left: 0; bottom: 0; width: 100%; height: 40px; background-color: #fff; z-index: 100; display: none;}
+.footer p{ float: left; margin: 10px 0 0 50px;  font-size: 12px; color: rgb(179,179,180);}
+.footer a{ float: right; margin-right: 50px; margin-top: 8px;}
 
+.pro-type{ width: 540px; margin: 0 auto 0 auto;}
+.pro-type>a{display: block;}
+.pro-type a .normal{ display: block;}
+.pro-type a .large{ display: none;}
+.pro-type a.active .normal{ display: none;}
+.pro-type a.active .large{ display: block;}
 
-
-
-
+.pro-type div{ overflow: hidden;}
+.pro-type div a{float: left;}
 
