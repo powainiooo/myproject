@@ -51,20 +51,31 @@ function proMove(){
     var ul = $("#proList ul");
 
     $("#arrowLeftPro").on('click',function(){
-        if(moveIndex == 0){
-            ul.animate({"margin-left":60},50).animate({"margin-left":50},50);
-        }else{
+        if(moveIndex != 0){
             moveIndex--;
             ul.animate({"margin-left":-moveIndex*dis+50},600,"easeInOutCubic");
+        }
+
+        $("#arrowLeftPro").addClass('arrow-left');
+        $("#arrowRightPro").addClass('arrow-right');
+        if(moveIndex == 0){
+            $("#arrowLeftPro").removeClass('arrow-left');
+        }if(moveIndex == moveLen-1){
+            $("#arrowRightPro").removeClass('arrow-right');
         }
     });
 
     $("#arrowRightPro").on('click',function(){
-        if(moveIndex == moveLen-1){
-            ul.animate({"margin-left":-moveIndex*dis+40},50).animate({"margin-left":-moveIndex*dis+50},50);
-        }else{
+        if(moveIndex != moveLen-1){
             moveIndex++;
             ul.animate({"margin-left":-moveIndex*dis+50},600,"easeInOutCubic");
+        }
+        $("#arrowLeftPro").addClass('arrow-left');
+        $("#arrowRightPro").addClass('arrow-right');
+        if(moveIndex == 0){
+            $("#arrowLeftPro").removeClass('arrow-left');
+        }if(moveIndex == moveLen-1){
+            $("#arrowRightPro").removeClass('arrow-right');
         }
     });
 }
@@ -81,22 +92,32 @@ function detailMove(){
     var ul = $("#detailList ul");
 
     $("#arrowLeftDetail").on('click',function(){
-        if(moveIndex == 0){
-            ul.animate({"margin-left":ww*0.42+10},50).animate({"margin-left":ww*0.42},50);
-        }else{
+        if(moveIndex != 0){
             moveIndex--;
             ul.animate({"margin-left":ww*0.42-moveIndex*dis+50},600,"easeInOutCubic");
             $("#navBars a").eq(moveIndex).addClass('active').siblings("a").removeClass('active');
         }
+        $("#arrowLeftDetail").addClass('arrow-left');
+        $("#arrowRightDetail").addClass('arrow-right');
+        if(moveIndex == 0){
+            $("#arrowLeftDetail").removeClass('arrow-left');
+        }if(moveIndex == moveLen-1){
+            $("#arrowRightDetail").removeClass('arrow-right');
+        }
     });
 
     $("#arrowRightDetail").on('click',function(){
-        if(moveIndex == moveLen-1){
-            ul.animate({"margin-left":ww*0.42-moveIndex*dis+40},50).animate({"margin-left":ww*0.42-moveIndex*dis+50},50);
-        }else{
+        if(moveIndex != moveLen-1){
             moveIndex++;
             ul.animate({"margin-left":ww*0.42-moveIndex*dis+50},600,"easeInOutCubic");
             $("#navBars a").eq(moveIndex).addClass('active').siblings("a").removeClass('active');
+        }
+        $("#arrowLeftDetail").addClass('arrow-left');
+        $("#arrowRightDetail").addClass('arrow-right');
+        if(moveIndex == 0){
+            $("#arrowLeftDetail").removeClass('arrow-left');
+        }if(moveIndex == moveLen-1){
+            $("#arrowRightDetail").removeClass('arrow-right');
         }
     });
 }
