@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>新项目</title>
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+	<script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
+    <script src="js/common.js" type="application/javascript" language="javascript"></script>
+</head>
+
+<body>
+<div><img src="images/title.jpg"> </div>
+<ul class="section">
+    <li>
+        <p><img src="images/title0.jpg"> </p>
+        <div><img src="images/content0.jpg"> </div>
+    </li>
+    <li>
+        <p><img src="images/title1.jpg"> </p>
+        <div>
+            <p class="date">2018/01/27</p>
+            <p class="time1" id="time1">0:00<span>pm</span></p>
+        </div>
+    </li>
+    <li>
+        <p><img src="images/title2.jpg"> </p>
+        <div>
+            <p class="date" id="date1">2016/12/02</p>
+            <p class="time2">　　　　　2:00pm-9:00pm</p>
+            <p class="date" id="date2">2016/12/02</p>
+            <p class="time2">　　　　　11:00am-9:00pm</p>
+        </div>
+    </li>
+    <li>
+        <p><img src="images/title3.jpg"> </p>
+        <div>
+            <p class="addr">深圳市福田区南园接到T-Park深港影视创意园10楼</p>
+            <div class="clearfix">
+                <a href="javascript:;" id="btnopen">点击打开腾讯地图</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <p><img src="images/title4.jpg"> </p>
+        <div>
+            <p class="date">2018/01/27</p>
+            <p class="time2">　　　　　8:00pm-9:00pm</p>
+        </div>
+    </li>
+    <li class="contents">
+        <p><img src="images/title5.jpg"> </p>
+        <div id="contents">
+            <p id="content1"><img src="images/logos.jpg"> </p>
+            <p><img src="images/content1.jpg"> </p>
+            <p><img src="images/content2.jpg"> </p>
+            <p><img src="images/content3.jpg"> </p>
+            <p><img src="images/content4.jpg"> </p>
+            <p><img src="images/content5.jpg"> </p>
+        </div>
+    </li>
+</ul>
+<div><img src="images/bottom.jpg"> </div>
+</body>
+</html>
+<script>
+    $(function(){
+        window.onscroll = scroll;
+    });
+    var time1do = false,datedo = false;
+    function scroll(){
+        var st = parseInt($(document).scrollTop());
+
+        var time1ct = $("#time1").offset().top;
+        if(time1ct-st<400 && !time1do){
+            time1do = true;
+            time1Move();
+        }
+        var datect = $("#date1").offset().top;
+        if(datect-st<400 && !datedo){
+            datedo = true;
+            dateMove();
+        }
+        var btnct = $("#btnopen").offset().top;
+        if(btnct-st<400){
+            $("#btnopen").addClass('reset');
+        }
+
+        var contents = $("#contents p");
+        for(var i=0;i<contents.length;i++){
+            var ct = contents.eq(i).offset().top;
+            if(ct-st<400){
+                contents.eq(i).addClass('reset');
+            }
+        }
+    }
+
+    function time1Move(){
+        var time1Arr = ['0:02','0:13','0:24','0:35','0:46','0:57','1:08','1:19','1:20','1:31','1:32','1:43','1:54','2:00'];
+        var index = 0;
+        var t = setInterval(function(){
+            if(index != time1Arr.length){
+                $("#time1").html(time1Arr[index]+'<span>pm</span>');
+                index++;
+            }else{
+                clearInterval(t);
+            }
+
+        },50);
+    }
+
+    function dateMove(){
+        var date1Arr = ['2016/12/02','2017/01/13','2017/02/18','2017/03/21','2017/04/11','2017/05/27','2017/06/06','2017/07/21','2017/08/26','2017/09/09','2017/10/19','2017/11/22','2017/12/17','2018/01/27'];
+        var date2Arr = ['2016/12/02','2017/01/13','2017/02/18','2017/03/21','2017/04/11','2017/05/27','2017/06/06','2017/07/21','2017/08/26','2017/09/09','2017/10/19','2017/11/22','2017/12/17','2018/01/28'];
+        var index = 0;
+        var t = setInterval(function(){
+            if(index != date1Arr.length){
+                $("#date1").html(date1Arr[index]);
+                $("#date2").html(date2Arr[index]);
+                index++;
+            }else{
+                clearInterval(t);
+            }
+
+        },50);
+    }
+</script>
