@@ -11,8 +11,8 @@ body{ background-color: #f4f3f1;}
 
 .section{ margin: 0 3%;}
 .section li{ border-bottom: 1px solid #8c8b89; overflow: hidden; padding: 9% 0;}
-.section li>p{ width: 32%; float: left; border-right: 1px solid #8c8b89;}
-.section li>div{ width: 68%; float: left; position: relative;}
+.section li>p{ width: 32.5%; float: left; border-right: 1px solid #8c8b89;}
+.section li>div{ width: 67.5%; float: left; position: relative;}
 .section li>div .date{ color: #595758; font-size: 0.8rem; font-family: "huakang"; font-weight: bold;  margin: 7% 0 0 6%;}
 .section li>div .time1{ color: #595758; font-size: 2rem; font-family: "huakang"; font-weight: bold;  margin: -5% 0 0 6%;}
 .section li>div .time1 span{ font-size: 0.6rem; margin-left: 3%;}
