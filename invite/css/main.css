@@ -13,12 +13,12 @@ body{ background-color: #f4f3f1;}
 .section li{ border-bottom: 1px solid #8c8b89; overflow: hidden; padding: 9% 0;}
 .section li>p{ width: 32%; float: left; border-right: 1px solid #8c8b89;}
 .section li>div{ width: 68%; float: left; position: relative;}
-.section li>div .date{ color: #595758; font-size: 0.54rem; font-family: "huakang"; font-weight: bold;  margin: 7% 0 0 6%;}
-.section li>div .time1{ color: #595758; font-size: 1.3rem; font-family: "huakang"; font-weight: bold;  margin: -5% 0 0 6%;}
-.section li>div .time1 span{ font-size: 0.4rem; margin-left: 3%;}
-.section li>div .time2{  color: #595758; font-size: 0.24rem; font-family: "huakang"; font-weight: bold; }
-.section li>div .addr{ color: #595758; font-size: 0.2rem; font-family: "huakang"; font-weight: bold;  margin: 7% 6% 0 6%; }
-.section li>div a{ float: right; background-color: #100b07; padding: 0.1rem 0.3rem; border-radius: 5px; color: #fff; font-size: 0.2rem; margin-top: 6%; transition:all 0.5s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1); transform: scale(0,0); -webkit-transform: scale(0,0);}
+.section li>div .date{ color: #595758; font-size: 0.8rem; font-family: "huakang"; font-weight: bold;  margin: 7% 0 0 6%;}
+.section li>div .time1{ color: #595758; font-size: 2rem; font-family: "huakang"; font-weight: bold;  margin: -5% 0 0 6%;}
+.section li>div .time1 span{ font-size: 0.6rem; margin-left: 3%;}
+.section li>div .time2{  color: #595758; font-size: 0.4rem; font-family: "huakang"; font-weight: bold; }
+.section li>div .addr{ color: #595758; font-size: 0.4rem; font-family: "huakang"; font-weight: bold;  margin: 7% 6% 0 6%; }
+.section li>div a{ float: right; background-color: #100b07; padding: 0.1rem 0.3rem; border-radius: 5px; color: #fff; font-size: 0.2rem; margin-top: 6%; margin-right: 6%; transition:all 0.5s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1); transform: scale(0,0); -webkit-transform: scale(0,0);}
 .section li>div a.reset{ transform: scale(1,1); -webkit-transform: scale(1,1);}
 .section li.contents>p{ border-right: none;}
 .section li.contents>div{ border-left: 1px solid #8c8b89;}
