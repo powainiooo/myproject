@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <title>新项目</title>
     <link href="css/reset.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css?v=5" type="text/css" rel="stylesheet" />
-    <script src="js/jquery-2.2.3.min.js" type="application/javascript" language="javascript"></script>
+    <script src="js/jquery-2.1.1.min.js" type="application/javascript" language="javascript"></script>
     <script src="js/common.js" type="application/javascript" language="javascript"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
             <p class="date" id="date1">2016/12/02</p>
             <p class="time2">　　　　　　　 &nbsp;2:00pm-9:00pm</p>
             <p class="date" id="date2">2016/12/02</p>
-            <p class="time2">　　　　　　　 11:00am-9:00pm</p>
+            <p class="time2">　　　　　　　 10:00am-9:00pm</p>
         </div>
     </li>
     <li>
@@ -82,7 +82,7 @@
     $(function(){
         window.onscroll = scroll;
     });
-    var time1do = false,datedo = false;
+    var time1do = false,datedo = false,stardo = false;
     function scroll(){
         var st = parseInt($(document).scrollTop());
         var time1ct = $("#time1").offset().top;
@@ -100,17 +100,9 @@
             $("#btnopen").addClass('reset');
         }
         var stars = $("#stars li"),starsct = $("#stars").offset().top;
-        if(starsct-st<400){
-            for(var j=0;j<stars.length;j++){
-                stars.eq(j).addClass('reset');
-            }
-            setTimeout(function(){
-//                stars.eq(1).removeClass('reset');
-//                stars.eq(3).removeClass('reset');
-//                stars.eq(0).addClass('move');
-//                stars.eq(2).addClass('move');
-//                stars.eq(4).addClass('move');
-            },600);
+        if(starsct-st<400 && !stardo){
+            stardo = true;
+            starsMove();
         }
 
         var contents = $("#contents p");
@@ -147,4 +139,44 @@
             }
         },50);
     }
+    function starsMove(){
+        var indexArr = [0,5,1,4,6,4,5,2,0,7,3];
+        var stars = $("#stars li");
+        for(var i=0;i<indexArr.length;i++){
+            if(i!=indexArr.length){
+                starmove(i,indexArr[i]);
+            }
+        }
+        setTimeout(function(){
+            stars.eq(2).addClass('move');
+            stars.eq(3).addClass('move');
+            stars.eq(5).addClass('move');
+        },100*i)
+    }
+    function starmove(i,eq){
+        var t = 100;
+        var stars = $("#stars li");
+        setTimeout(function(){
+            stars.eq(eq).addClass('reset');
+        },t*i);
+        setTimeout(function(){
+            stars.eq(eq).removeClass('reset');
+        },t*i+50);
+    }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

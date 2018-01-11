@@ -24,20 +24,20 @@ body{ background-color: #f4f3f1;}
 .section li.contents>div p.reset{transform: translate(0,0); -webkit-transform: translate(0,0); opacity: 1;}
 
 .stars{ width: 68%; height: 100%; position: absolute; top: 0; left: 32%;}
-.stars li{ position: absolute;}
-.stars li:first-child{ width: 4%; top: 18%; left: 23%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1);}
-.stars li:nth-child(2){ width: 7%; top: 3%; left: 49%; transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.1s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.1s;}
-.stars li:nth-child(3){ width: 8%; top: 25%; left: 75%; transform: rotateZ(12deg); -webkit-transform: rotateZ(12deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.2s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.2s;}
-.stars li:nth-child(4){ width: 12%; top: 50%; left: 80%; transform: rotateZ(15deg); -webkit-transform: rotateZ(15deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.3s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.3s;}
-.stars li:nth-child(5){ width: 5%; top: 85%; left: 55%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.4s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.4s;}
-.stars li:nth-child(6){ width: 8%; top: 60%; left: 35%; transform: rotateZ(-16deg); -webkit-transform: rotateZ(-16deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.5s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.5s;}
-.stars li:nth-child(7){ width: 8%; top: 75%; left: 15%; transform: rotateZ(5deg); -webkit-transform: rotateZ(5deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.6s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.6s;}
-.stars li:nth-child(8){ width: 4%; top: 55%; left: 3%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.7s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.7s;}
-.stars li.reset{ }
+.stars li{ position: absolute; transition:all 0.1s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.1s cubic-bezier(.1,.41,.24,1); opacity: 0;}
+.stars li:first-child{ width: 4%; top: 18%; left: 23%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg);}
+.stars li:nth-child(2){ width: 7%; top: 3%; left: 49%;}
+.stars li:nth-child(3){ width: 8%; top: 25%; left: 75%; transform: rotateZ(12deg); -webkit-transform: rotateZ(12deg);}
+.stars li:nth-child(4){ width: 12%; top: 50%; left: 80%; transform: rotateZ(15deg); -webkit-transform: rotateZ(15deg);}
+.stars li:nth-child(5){ width: 5%; top: 85%; left: 55%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg);}
+.stars li:nth-child(6){ width: 8%; top: 60%; left: 35%; transform: rotateZ(-16deg); -webkit-transform: rotateZ(-16deg);}
+.stars li:nth-child(7){ width: 8%; top: 75%; left: 15%; transform: rotateZ(5deg); -webkit-transform: rotateZ(5deg);}
+.stars li:nth-child(8){ width: 4%; top: 55%; left: 3%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg);}
+.stars li.reset{ opacity: 1;}
 
-.stars li:first-child.move{ animation: shine 3s linear infinite; -webkit-animation: shine 3s linear infinite;}
-.stars li:nth-child(3).move{ animation: shine 3s linear 0.4s infinite; -webkit-animation: shine 3s linear 0.4s infinite;}
-.stars li:nth-child(5).move{ animation: shine 3s linear 0.7s infinite; -webkit-animation: shine 3s linear 0.7s infinite;}
+.stars li:nth-child(3).move{ animation: shine 3s linear infinite; -webkit-animation: shine 3s linear infinite;}
+.stars li:nth-child(4).move{ animation: shine 3s linear 0.4s infinite; -webkit-animation: shine 3s linear 0.4s infinite;}
+.stars li:nth-child(6).move{ animation: shine 3s linear 0.7s infinite; -webkit-animation: shine 3s linear 0.7s infinite;}
 @keyframes shine {
      0%,100%{ opacity: 1;}
      50%{ opacity: 0;}
