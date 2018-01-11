@@ -1,23 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
-
 @font-face {
     font-family: 'huakang';
-    src:url('../css/HelveticaNeue.ttc')  format('truetype'); /* Safari, Android, iOS */
+    src:url('../css/HelveticaNeue.ttc') format('truetype'); /* Safari, Android, iOS */
 }
 .huakang{ font-family: 'huakang';}
-
 body{ background-color: #f4f3f1;}
-
 .section{ margin: 0 3%;}
-.section li{ border-bottom: 1px solid #8c8b89; overflow: hidden; padding: 9% 0;}
+.section>li{ border-bottom: 1px solid #8c8b89; overflow: hidden; padding: 9% 0; position: relative;}
 .section li>p{ width: 32.5%; float: left; border-right: 1px solid #8c8b89;}
 .section li>div{ width: 67.5%; float: left; position: relative;}
-.section li>div .date{ color: #595758; font-size: 0.8rem; font-family: "huakang"; font-weight: bold;  margin: 7% 0 0 6%;}
-.section li>div .time1{ color: #595758; font-size: 2rem; font-family: "huakang"; font-weight: bold;  margin: -5% 0 0 6%;}
-.section li>div .time1 span{ font-size: 0.6rem; margin-left: 3%;}
-.section li>div .time2{  color: #595758; font-size: 0.4rem; font-family: "huakang"; font-weight: bold; }
-.section li>div .addr{ color: #595758; font-size: 0.3rem; font-family: "huakang"; font-weight: bold;  margin: 7% 6% 0 6%; }
+.section li>div .date{ color: #595758; font-size: 0.86rem; font-family: "huakang"; font-weight: bold; margin: 7% 0 0 6%;}
+.section li>div .time1{ color: #595758; font-size: 2.36rem; font-family: "huakang"; font-weight: bold; margin: -5% 0 0 6%;}
+.section li>div .time1 span{ font-size: 0.86rem; margin-left: 3%;}
+.section li>div .time2{ color: #595758; font-size: 0.3rem; font-family: "huakang"; font-weight: bold; }
+.section li>div .addr{ color: #595758; font-size: 0.3rem; font-family: "huakang"; font-weight: bold; margin: 7% 6% 0 6%; }
 .section li>div a{ float: right; background-color: #100b07; padding: 0.1rem 0.3rem; border-radius: 5px; color: #fff; font-size: 0.3rem; margin-top: 6%; margin-right: 6%; transition:all 0.5s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1); transform: scale(0,0); -webkit-transform: scale(0,0);}
 .section li>div a.reset{ transform: scale(1,1); -webkit-transform: scale(1,1);}
 .section li.contents>p{ border-right: none;}
@@ -25,3 +22,27 @@ body{ background-color: #f4f3f1;}
 .section li.contents>div p:first-child{ border-bottom: 1px solid #8c8b89;}
 .section li.contents>div p{ transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; transform: translate(800px,0); -webkit-transform: translate(800px,0); opacity: 0;}
 .section li.contents>div p.reset{transform: translate(0,0); -webkit-transform: translate(0,0); opacity: 1;}
+
+.stars{ width: 68%; height: 100%; position: absolute; top: 0; left: 32%;}
+.stars li{ position: absolute;}
+.stars li:first-child{ width: 4%; top: 18%; left: 23%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1); -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1);}
+.stars li:nth-child(2){ width: 7%; top: 3%; left: 49%; transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.1s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.1s;}
+.stars li:nth-child(3){ width: 8%; top: 25%; left: 75%; transform: rotateZ(12deg); -webkit-transform: rotateZ(12deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.2s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.2s;}
+.stars li:nth-child(4){ width: 12%; top: 50%; left: 80%; transform: rotateZ(15deg); -webkit-transform: rotateZ(15deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.3s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.3s;}
+.stars li:nth-child(5){ width: 5%; top: 85%; left: 55%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.4s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.4s;}
+.stars li:nth-child(6){ width: 8%; top: 60%; left: 35%; transform: rotateZ(-16deg); -webkit-transform: rotateZ(-16deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.5s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.5s;}
+.stars li:nth-child(7){ width: 8%; top: 75%; left: 15%; transform: rotateZ(5deg); -webkit-transform: rotateZ(5deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.6s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.6s;}
+.stars li:nth-child(8){ width: 4%; top: 55%; left: 3%; transform: rotateZ(-10deg); -webkit-transform: rotateZ(-10deg); transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.7s; -webkit-transition:all 0.5s cubic-bezier(.1,.41,.24,1) 0.7s;}
+.stars li.reset{ }
+
+.stars li:first-child.move{ animation: shine 3s linear infinite; -webkit-animation: shine 3s linear infinite;}
+.stars li:nth-child(3).move{ animation: shine 3s linear 0.4s infinite; -webkit-animation: shine 3s linear 0.4s infinite;}
+.stars li:nth-child(5).move{ animation: shine 3s linear 0.7s infinite; -webkit-animation: shine 3s linear 0.7s infinite;}
+@keyframes shine {
+     0%,100%{ opacity: 1;}
+     50%{ opacity: 0;}
+}
+@-webkit-keyframes shine {
+    0%,100%{ opacity: 1;}
+    50%{ opacity: 0;}
+}
